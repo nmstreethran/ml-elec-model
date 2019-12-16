@@ -142,3 +142,6 @@ dmypy.json
 data/*
 archive/*
 draft/*
+
+# credentials
+login.py
