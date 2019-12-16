@@ -1,0 +1,3 @@
+[submodule "docs"]
+	path = docs
+	url = git@github.com:nmstreethran/elec-sys-data.wiki.git
