@@ -1,0 +1,8 @@
+# Visual Studio Code
+*.code-workspace
+.vscode/
+
+# Folders
+data/*
+archive/*
+draft/*
