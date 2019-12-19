@@ -1,4 +1,4 @@
-#%%
+# %%
 """Hourly wind data extraction from Deutscher Wetterdienst
 
 Automatically extracts, processes and saves hourly wind data for
@@ -7,7 +7,7 @@ stored in separate directories created for each state and weather
 station in Germany.
 """
 
-#%%
+# %%
 # import libraries
 import pandas as pd
 import os
@@ -18,74 +18,79 @@ import zipfile
 import io
 from datetime import datetime, timedelta
 
-#%%
+# %%
 # define start and end dates of data (must be from the same year)
-start = 2019010100 # YYYYMMDDHH
+# YYYYMMDDHH
+start = 2019010100
 end = 2019060123
 
-#%%
+# %%
 # current year; translates to YYYY-01-01 00:00:00
 yr = pd.to_datetime(datetime.now().year, format='%Y')
 
-#%%
+# %%
 # convert times to datetime
 start = pd.to_datetime(start, format='%Y%m%d%H')
 end = pd.to_datetime(end, format='%Y%m%d%H')
 
-#%% 
+# %% 
 # hourly wind data repo url
 repourl = ('https://opendata.dwd.de/climate_environment/CDC/'
     'observations_germany/climate/hourly/wind/')
 
-#%% 
+# %% 
 # read fixed width formatted text file
 # with list of weather stations in DE
 # first, extract list of column names (separated by space(s))
-if start < yr or end < yr: # historical data (not current year)
+if start < yr or end < yr:
+    # historical data (not current year)
     cols_stn = pd.read_csv(
-        repourl+'historical/FF_Stundenwerte_Beschreibung_Stationen.txt',
-        sep=r'\s+', nrows=1).columns.tolist()
-else: # recent data (current year)
+        repourl + 'historical/FF_Stundenwerte_Beschreibung_Stationen.txt',
+        sep=r'\s + ', nrows=1).columns.tolist()
+else:
+    # recent data (current year)
     cols_stn = pd.read_csv(
-        repourl+'recent/FF_Stundenwerte_Beschreibung_Stationen.txt',
-        sep=r'\s+', nrows=1).columns.tolist()
+        repourl + 'recent/FF_Stundenwerte_Beschreibung_Stationen.txt',
+        sep=r'\s + ', nrows=1).columns.tolist()
 
-#%%
+# %%
 # then, extract the data,
 # skipping first two rows and assigning column names
 # encoding used due to presence of accented latin characters (e.g., ü)
-if start < yr or end < yr: # historical data (not current year)
+if start < yr or end < yr:
+    # historical data (not current year)
     df_stn = pd.read_fwf(
-        repourl+'historical/FF_Stundenwerte_Beschreibung_Stationen.txt',
+        repourl + 'historical/FF_Stundenwerte_Beschreibung_Stationen.txt',
         encoding='ISO-8859-1', skiprows=2, names=cols_stn)
-else: # recent data (current year)
+else:
+    # recent data (current year)
     df_stn = pd.read_fwf(
-        repourl+'recent/FF_Stundenwerte_Beschreibung_Stationen.txt',
+        repourl + 'recent/FF_Stundenwerte_Beschreibung_Stationen.txt',
         encoding='ISO-8859-1', skiprows=2, names=cols_stn)
 
-#%%
+# %%
 # tanslate column titles to English
 df_stn = df_stn.set_axis([
     'station_id', 'start_date', 'end_date', 'station_height', 'latitude',
     'longitude', 'station_name', 'state'], axis='columns', inplace=False)
 
-#%%
+# %%
 # convert dtypes for start_date and end_date to datetime
 df_stn['start_date'] = pd.to_datetime(df_stn['start_date'], format='%Y%m%d')
 df_stn['end_date'] = pd.to_datetime(df_stn['end_date'], format='%Y%m%d')
 
-#%%
+# %%
 # filter stations with data between start and end dates
 df_stn = df_stn.drop(
-    df_stn[(df_stn.start_date>start)|(df_stn.end_date<end)].index)
+    df_stn[(df_stn.start_date > start)|(df_stn.end_date < end)].index)
 
-#%%
+# %%
 # list of states
 states = df_stn['state'].unique()
 for state in states:
     # create directories to store files
     # for each state if they do not exist
-    path = 'data/met/de/wind_hourly/'+state.replace(' ', '')
+    path = 'data/met/de/wind_hourly/' + state.replace(' ', '')
     try:
         os.makedirs(path)
     except OSError as exception:
@@ -106,30 +111,36 @@ for state in states:
     for stn, sd, ed in stations:
         # add leading zeros to station ids if less than 5 digits
         stn = stn.zfill(5)
-        dest = path+'/'+stn # file download directory
-        if start < yr or end < yr: # historical data (not current year)
-            sd_str = sd.strftime('%Y%m%d') # convert datetime to string
+        # file download directory
+        dest = path + '/' + stn
+        # historical data (not current year)
+        if start < yr or end < yr:
+            # convert datetime to string
+            sd_str = sd.strftime('%Y%m%d')
             ed_str = ed.strftime('%Y%m%d')
             # if the end date falls within the current year
             if ed_str >= yr.strftime('%Y%m%d'):
                 # change end date to be the
                 # last day of the previous year
-                ed_str = (yr-timedelta(days=1)).strftime('%Y%m%d')
-            url = (repourl+'historical/stundenwerte_FF_'+stn+'_'+sd_str+'_'
-                +ed_str+'_hist.zip') # zip file url
-        else: # recent data (current year) zip file url
-            url = repourl+'recent/stundenwerte_FF_'+stn+'_akt.zip'
+                ed_str = (yr - timedelta(days=1)).strftime('%Y%m%d')
+                # zip file url
+            url = (repourl + 'historical/stundenwerte_FF_' + stn + '_'
+                + sd_str + '_' + ed_str + '_hist.zip')
+        else:
+            # recent data (current year) zip file url
+            url = repourl + 'recent/stundenwerte_FF_' + stn + '_akt.zip'
         
         # download contents of zip file into directory
         try:
             r = requests.get(url)
             z = zipfile.ZipFile(io.BytesIO(r.content))
             z.extractall(dest)
-        except zipfile.BadZipFile: # exception if no zip file exists
-            print ('No data exists for station '+stn+' in '+state)
+        # exception if no zip file exists
+        except zipfile.BadZipFile:
+            print ('No data exists for station ' + stn + ' in ' + state)
         
         # read weather data for station
-        for file in glob.glob(dest+'/produkt*.txt'):
+        for file in glob.glob(dest + '/produkt*.txt'):
             df_station = pd.read_csv(file, sep=';')
             
             # tanslate column titles to English
@@ -144,9 +155,9 @@ for state in states:
             
             # filter for date range
             df_station = df_station.drop(
-                df_station[(df_station.timestamp_end<start)|
-                (df_station.timestamp_end>end)].index)
+                df_station[(df_station.timestamp_end < start)|
+                (df_station.timestamp_end > end)].index)
             
             # set end timestamps as index
             df_station.set_index(['timestamp_end'], inplace=True)
-            df_station.to_csv(dest+'/wind_hourly_'+stn+'.csv')
+            df_station.to_csv(dest + '/wind_hourly_' + stn + '.csv')

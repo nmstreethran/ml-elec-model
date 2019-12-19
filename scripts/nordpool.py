@@ -1,4 +1,4 @@
-#%%
+# %%
 """Nord Pool market data extraction
 
 Using Pandas to automatically extract and process historical market
@@ -10,7 +10,7 @@ hourly resolution:
 - market coupling capacities and flows
 """
 
-#%%
+# %%
 # import libraries
 import pandas as pd
 import numpy as np
@@ -19,12 +19,13 @@ import errno
 from datetime import datetime
 from itertools import cycle, islice
 
-#%%
+# %%
 # define start and end dates of data (must be from the same year)
-start = 20190101 # YYYYMMDD
+# YYYYMMDD
+start = 20190101
 end = 20190601
 
-#%%
+# %%
 # convert times to datetime
 start = pd.to_datetime(start, format='%Y%m%d')
 end = pd.to_datetime(end, format='%Y%m%d')
@@ -37,11 +38,11 @@ for hour in list(range(0, 24)):
     hour = str(hour).zfill(2)
     hours.append(hour)
 
-#%% 
+# %% 
 # market data repo url
 repourl = 'https://www.nordpoolgroup.com/globalassets/marketdata-excel-files/'
 
-#%%
+# %%
 # create directories to store files for each state if they do not exist
 path = 'data/market/nordpool'
 try:
@@ -52,42 +53,45 @@ except OSError as exception:
     else:
         print ('\nBE CAREFUL! Directory %s already exists.' % path)
 
-#%%
+# %%
 # list of datasets to download
 datasets = [
-    'elspot-prices_'+yr+'_hourly_eur', # Elspot
-    'elspot-volumes_'+yr+'_hourly',
-    'elspot-flow-dk_'+yr+'_hourly',
-    'elspot-flow-no_'+yr+'_hourly',
-    'elspot-flow-se_'+yr+'_hourly',
-    'elspot-capacities-dk_'+yr+'_hourly',
-    'elspot-capacities-no_'+yr+'_hourly',
-    'elspot-capacities-se_'+yr+'_hourly',
-    'n2ex-day-ahead-auction-prices_'+yr+'_hourly_eur', # N2EX
-    'n2ex-market-coupling-capacities_'+yr+'_hourly',
-    'n2ex-day-ahead-auction-volumes_'+yr+'_hourly',
-    'market-coupling-capacities_'+yr+'_hourly', # other
-    'market-coupling-flow_'+yr+'_hourly'
+    # Elspot
+    'elspot-prices_' + yr + '_hourly_eur',
+    'elspot-volumes_' + yr + '_hourly',
+    'elspot-flow-dk_' + yr + '_hourly',
+    'elspot-flow-no_' + yr + '_hourly',
+    'elspot-flow-se_' + yr + '_hourly',
+    'elspot-capacities-dk_' + yr + '_hourly',
+    'elspot-capacities-no_' + yr + '_hourly',
+    'elspot-capacities-se_' + yr + '_hourly',
+    # N2EX
+    'n2ex-day-ahead-auction-prices_' + yr + '_hourly_eur',
+    'n2ex-market-coupling-capacities_' + yr + '_hourly',
+    'n2ex-day-ahead-auction-volumes_' + yr + '_hourly',
+    # other
+    'market-coupling-capacities_' + yr + '_hourly',
+    'market-coupling-flow_' + yr + '_hourly'
     ]
 
-#%%
+# %%
 # read and parse data
 for dataset in datasets:
     # different header level for N2EX volume dataset
     if 'n2ex-day-ahead-auction-volumes' in dataset:
         data = pd.read_html(
-            repourl+dataset+'.xls', header=[3], thousands=None,
+            repourl + dataset + '.xls', header=[3], thousands=None,
             decimal=',', encoding='utf-8')[0]
     else:
         data = pd.read_html(
-            repourl+dataset+'.xls', header=[2], thousands=None,
+            repourl + dataset + '.xls', header=[2], thousands=None,
             decimal=',', encoding='utf-8')[0]
     
     # iterate list of hours over dataset
     it = cycle(hours)
     # change range of hours to start hour
     data['Hours'] = list(islice(it, len(data)))
-    # create new column with timestamp (date and start hour) 
+    # create new column with timestamp (date and start hour)
     data['timestamp'] = data.iloc[:, 0] + '-' + data.iloc[:, 1]
     # convert to datetime
     data['timestamp'] = pd.to_datetime(
@@ -116,4 +120,4 @@ for dataset in datasets:
     data = data[cols]
     
     # save as CSV
-    data.to_csv(path+'/'+dataset+'.csv', index=None)
+    data.to_csv(path + '/' + dataset + '.csv', index=None)
