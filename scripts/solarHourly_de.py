@@ -44,7 +44,7 @@ repourl = ('https://opendata.dwd.de/climate_environment/CDC/'
 # first, extract list of column names (separated by space(s))
 cols_stn = pd.read_csv(
     repourl + 'ST_Stundenwerte_Beschreibung_Stationen.txt',
-    sep=r'\s + ', nrows=1).columns.tolist()
+    sep=r'\s+', nrows=1).columns.tolist()
 
 # %%
 # then, extract the data

@@ -16,13 +16,13 @@ import os
 import errno
 
 # %%
-# import security token saved in a separate file (login.py)
-from login import token
-
-# %%
 # combine domain and bidding zone keys and values into the
 # DOMAIN_MAPPINGS dictionary
 DOMAIN_MAPPINGS.update(BIDDING_ZONES)
+
+# %%
+# request user to input security token in the command line
+token = input('Enter your ENTSO-E security token: ')
 
 # %%
 # use security token to access the API
@@ -70,16 +70,16 @@ for country_code in bz_ns:
     ts_gen = client.query_generation(
         country_code, start=start, end=end, psr_type=None)
     # save as CSV
-    ts_gen.to_csv('path/generation_' + country_code + '.csv')
+    ts_gen.to_csv(path + '/generation_' + country_code + '.csv')
     
     # load
     ts_load = client.query_load(country_code, start=start, end=end)
     # save as CSV
     ts_load.to_csv(
-        'path/load_' + country_code + '.csv', header=['Load'])
+        path + '/load_' + country_code + '.csv', header=['Load'])
     
     # installed generation capacity per unit
     ts_cap = client.query_installed_generation_capacity_per_unit(
         country_code, start=start, end=end, psr_type=None)
     ts_cap.to_csv(
-        'path/installed_capacity_' + country_code + '.csv')
+        path + '/installed_capacity_' + country_code + '.csv')

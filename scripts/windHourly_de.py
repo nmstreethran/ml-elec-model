@@ -46,12 +46,12 @@ if start < yr or end < yr:
     # historical data (not current year)
     cols_stn = pd.read_csv(
         repourl + 'historical/FF_Stundenwerte_Beschreibung_Stationen.txt',
-        sep=r'\s + ', nrows=1).columns.tolist()
+        sep=r'\s+', nrows=1).columns.tolist()
 else:
     # recent data (current year)
     cols_stn = pd.read_csv(
         repourl + 'recent/FF_Stundenwerte_Beschreibung_Stationen.txt',
-        sep=r'\s + ', nrows=1).columns.tolist()
+        sep=r'\s+', nrows=1).columns.tolist()
 
 # %%
 # then, extract the data,
