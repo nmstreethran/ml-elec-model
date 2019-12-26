@@ -1,11 +1,8 @@
 # elec-sys-data <!-- omit in toc -->
 
 <!-- start licence badges -->
-<p align=center>
-<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/Code%20License-MIT-yellow.svg?style=flat-square" title="Code License: MIT" alt="Code License: MIT"></a>
-&nbsp;&nbsp;
-<a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://img.shields.io/badge/Content%20License-CC%20BY%204.0-blue.svg?style=flat-square" title="Content License: CC BY 4.0" alt="Content License: CC BY 4.0"></a>
-</p>
+[![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Content License: CC BY 4.0](https://img.shields.io/badge/Content%20License-CC%20BY%204.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 <!-- end license badges -->
 
 by nmstreethran at gmail dot com
