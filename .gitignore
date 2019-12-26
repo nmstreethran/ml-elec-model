@@ -144,4 +144,4 @@ archive/*
 draft/*
 
 # credentials
-login.py
+credentials.txt

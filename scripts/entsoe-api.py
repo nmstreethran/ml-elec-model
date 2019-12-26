@@ -14,6 +14,7 @@ from entsoe.mappings import DOMAIN_MAPPINGS, BIDDING_ZONES
 import pandas as pd
 import os
 import errno
+import configparser
 
 # %%
 # combine domain and bidding zone keys and values into the
@@ -30,25 +31,25 @@ token = input('Enter your ENTSO-E security token: ')
 client = EntsoePandasClient(api_key=token)
 
 # %%
-# define attributes for the data to be extracted
-# timestamps for the first half of 2019
-start = pd.Timestamp('20190101', tz='Europe/Brussels')
-end = pd.Timestamp('20190601', tz='Europe/Brussels')
+# import user-defined configurations
+config = configparser.ConfigParser()
+config.read('config.ini')
 
 # %%
-# list of bidding zones in the North Sea region
+# define attributes for the data to be extracted
+start = pd.Timestamp(
+    config['start']['year'] + config['start']['month'] +
+    config['start']['day'], tz='Europe/Brussels')
+end = pd.Timestamp(
+    config['end']['year'] + config['end']['month'] +
+    config['end']['day'], tz='Europe/Brussels')
+
+# %%
+# list of bidding zones
 bz_ns = [
-    # Belgium, Germany + Luxembourg
-    'BE', 'DE-LU',
-    # Denmark, France, Great Britain
-    'DK-1', 'DK-2', 'FR', 'GB',
-    # Irish Single Electricity Market, Netherlands
-    'IE-SEM', 'NL',
-    # Norway
-    'NO-1', 'NO-2', 'NO-3', 'NO-4', 'NO-5',
-    # Sweden
-    'SE-1', 'SE-2', 'SE-3', 'SE-4'
-    ]
+    z.strip() for z in config.get('countries', 'countries').split('\n')]
+# remove empty strings
+bz_ns = list(filter(None, bz_ns))
 
 # %%
 # create a directory to store files if it does not exist

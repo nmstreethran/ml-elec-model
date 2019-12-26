@@ -18,12 +18,19 @@ import os
 import errno
 from datetime import datetime
 from itertools import cycle, islice
+import configparser
 
 # %%
-# define start and end dates of data (must be from the same year)
-# YYYYMMDD
-start = 20190101
-end = 20190601
+# import user-defined configurations
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# %%
+# define start and end dates of data
+start = config['start']['year'] + config['start']['month'] + \
+    config['start']['day']
+end = config['end']['year'] + config['end']['month'] + \
+    config['end']['day']
 
 # %%
 # convert times to datetime

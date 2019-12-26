@@ -17,12 +17,19 @@ import glob
 import zipfile
 import io
 from datetime import datetime, timedelta
+import configparser
 
 # %%
-# define start and end dates of data (must be from the same year)
-# YYYYMMDDHH
-start = 2019010100
-end = 2019060123
+# import user-defined configurations
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+# %%
+# define start and end dates of data
+start = config['start']['year'] + config['start']['month'] + \
+    config['start']['day'] + config['start']['hour']
+end = config['end']['year'] + config['end']['month'] + \
+    config['end']['day'] + config['end']['hour']
 
 # %%
 # current year; translates to YYYY-01-01 00:00:00
