@@ -6,7 +6,7 @@ Thank you for stopping by and considering contributing to this repository!
 
 ## Contact me
 
-Please send me (Nithiya Streethran) an email (nmstreethran at gmail dot com) or [tweet](https://twitter.com/nmstreethran), or open an [issue](https://github.com/nmstreethran/elec-sys-data/issues). Feedback and suggestions are always welcome.
+Please open an [issue](https://github.com/nmstreethran/elec-sys-data/issues). Feedback and suggestions are always welcome.
 
 ## Reporting issues
 
