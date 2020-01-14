@@ -6,7 +6,7 @@ Thank you for stopping by and considering contributing to this repository!
 
 ## Contact me
 
-Please open an [issue](https://github.com/nmstreethran/elec-sys-data/issues). Feedback and suggestions are always welcome.
+Please open an [issue](https://github.com/nmstreethran/elec-sys-data/issues). Feedback and suggestions are always welcome. Please send me an email (nmstreethran at gmail dot com) if you have any enquiries.
 
 ## Reporting issues
 
