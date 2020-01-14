@@ -33,7 +33,7 @@ client = EntsoePandasClient(api_key=token)
 # %%
 # import user-defined configurations
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('config/entsoe-api.conf')
 
 # %%
 # define attributes for the data to be extracted
@@ -46,10 +46,10 @@ end = pd.Timestamp(
 
 # %%
 # list of bidding zones
-bz_ns = [
-    z.strip() for z in config.get('countries', 'countries').split('\n')]
+biddingZones = [
+    z.strip() for z in config.get('biddingZones', 'biddingZones').split('\n')]
 # remove empty strings
-bz_ns = list(filter(None, bz_ns))
+biddingZones = list(filter(None, biddingZones))
 
 # %%
 # create a directory to store files if it does not exist
@@ -64,7 +64,7 @@ except OSError as exception:
 
 # %%
 # extracting data for each bidding zone in a loop
-for country_code in bz_ns:
+for country_code in biddingZones:
     # create a dataframe for the generation data
     # with the above attributes
     # generation per production type
