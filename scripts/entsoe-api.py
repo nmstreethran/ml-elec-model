@@ -51,6 +51,20 @@ biddingZones = [
 # remove empty strings
 biddingZones = list(filter(None, biddingZones))
 
+#%%
+# list of bidding zones for crossborder flows
+crossborderZones = [
+    z.strip() for z in config.get('crossborderFlows', 'zones').split('\n')]
+# remove empty strings
+crossborderZones = list(filter(None, crossborderZones))
+
+# %%
+# list of datasets to download
+datasets = [
+    z.strip() for z in config.get('datasets', 'datasets').split('\n')]
+# remove empty strings
+datasets = list(filter(None, datasets))
+
 # %%
 # create a directory to store files if it does not exist
 path = 'data/entsoe_api'
@@ -63,24 +77,74 @@ except OSError as exception:
         print ('\nBE CAREFUL! Directory %s already exists.' % path)
 
 # %%
-# extracting data for each bidding zone in a loop
-for country_code in biddingZones:
-    # create a dataframe for the generation data
-    # with the above attributes
-    # generation per production type
-    ts_gen = client.query_generation(
-        country_code, start=start, end=end, psr_type=None)
-    # save as CSV
-    ts_gen.to_csv(path + '/generation_' + country_code + '.csv')
-    
-    # load
-    ts_load = client.query_load(country_code, start=start, end=end)
-    # save as CSV
-    ts_load.to_csv(
-        path + '/load_' + country_code + '.csv', header=['Load'])
-    
-    # installed generation capacity per unit
-    ts_cap = client.query_installed_generation_capacity_per_unit(
-        country_code, start=start, end=end, psr_type=None)
-    ts_cap.to_csv(
-        path + '/installed_capacity_' + country_code + '.csv')
+for dataset in datasets:
+    if biddingZones != []:
+        # extracting data for each bidding zone in a loop
+        # for country_code in biddingZones:
+        if dataset == 'day_ahead_prices':
+            for country_code in biddingZones:
+                ts = client.query_day_ahead_prices(
+                    country_code, start=start, end=end)
+                ts.to_csv(
+                    path + '/day_ahead_prices_' + country_code + '.csv')
+        elif dataset == 'load':
+            for country_code in biddingZones:
+                ts = client.query_load(country_code, start=start, end=end)
+                ts.to_csv(path + '/load_' + country_code + '.csv')
+        elif dataset == 'load_forecast':
+            for country_code in biddingZones:
+                ts = client.query_load_forecast(
+                    country_code, start=start, end=end)
+                ts.to_csv(path + '/load_forecast_' + country_code + '.csv')
+        elif dataset == 'generation_forecast':
+            for country_code in biddingZones:
+                ts = client.query_generation_forecast(
+                    country_code, start=start, end=end)
+                ts.to_csv(
+                    path + '/generation_forecast_' + country_code + '.csv')
+        elif dataset == 'withdrawn_unavailability_of_generation_units':
+            for country_code in biddingZones:
+                ts = client.query_withdrawn_unavailability_of_generation_units(
+                    country_code, start=start, end=end)
+                ts.to_csv(
+                    path + '/withdrawn_unavailability_of_generation_units_' +
+                    country_code + '.csv')
+        elif dataset == 'wind_and_solar_forecast':
+            for country_code in biddingZones:
+                ts = client.query_wind_and_solar_forecast(
+                    country_code, start=start,end=end, psr_type=None)
+                ts.to_csv(
+                    path + '/wind_and_solar_forecast_' +
+                    country_code + '.csv')
+        elif dataset == 'generation':
+            for country_code in biddingZones:
+                ts = client.query_generation(
+                    country_code, start=start,end=end, psr_type=None)
+                ts.to_csv(path + '/generation_' + country_code + '.csv')
+        elif dataset = 'installed_generation_capacity':
+            for country_code in biddingZones:
+                ts = client.query_installed_generation_capacity(
+                    country_code, start=start,end=end, psr_type=None)
+                ts.to_csv(
+                    path + '/installed_generation_capacity_' +
+                    country_code + '.csv')
+        elif dataset = 'imbalance_prices':
+            for country_code in biddingZones:
+                ts = client.query_imbalance_prices(
+                    country_code, start=start,end=end, psr_type=None)
+                ts.to_csv(
+                    path + '/imbalance_prices_' + country_code + '.csv')
+        elif dataset == 'unavailability_of_generation_units':
+            for country_code in biddingZones:
+                ts = client.query_unavailability_of_generation_units(
+                    country_code, start=start,end=end, docstatus=None)
+                ts.to_csv(
+                    path + '/unavailability_of_generation_units_' +
+                    country_code + '.csv')
+    if crossborderZones != []:
+        for zones in crossborderZones:
+            zones = zones.split(', ')
+            z = str(zones)[1:-1]
+            ts = client.query_crossborder_flows(z, start=start,end=end)
+            zones = '_'.join(zones)
+            ts.to_csv(path + '/crossborder_flows_' + zones + '.csv')
