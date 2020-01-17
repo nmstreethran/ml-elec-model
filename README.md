@@ -1,5 +1,7 @@
 # elec-sys-data <!-- omit in toc -->
 
+[![Build Status](https://travis-ci.com/nmstreethran/elec-sys-data.svg?branch=master)](https://travis-ci.com/nmstreethran/elec-sys-data)
+
 <!-- start licence badges -->
 [![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Content License: CC BY 4.0](https://img.shields.io/badge/Content%20License-CC%20BY%204.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
