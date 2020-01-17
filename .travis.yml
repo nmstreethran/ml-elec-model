@@ -4,6 +4,15 @@ sudo: required
 services:
   - docker
 
+# Handle git submodules yourself
+# Source: https://stackoverflow.com/a/24600210/4573584
+git:
+    submodules: false
+# Use sed to replace the SSH URL with the public URL, then initialize submodules
+before_install:
+    - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+    - git submodule update --init --recursive
+
 script:
-  # Link Checks
+  # Link checks
   - docker run -ti --rm -v $PWD:/mnt:ro dkhamsing/awesome_bot --allow-dupe --allow-redirect --skip-save-results `find . -name "*.md"`
