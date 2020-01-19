@@ -1,11 +1,10 @@
 # elec-sys-data <!-- omit in toc -->
 
-[![Build Status](https://travis-ci.com/nmstreethran/elec-sys-data.svg?branch=master)](https://travis-ci.com/nmstreethran/elec-sys-data)
-
 <!-- start licence badges -->
-[![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Content License: CC BY 4.0](https://img.shields.io/badge/Content%20License-CC%20BY%204.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
-[![GitHub Wiki](https://img.shields.io/badge/-GitHub%20Wiki-green.svg?style=flat-square&logo=github&labelColor=black)](https://github.com/nmstreethran/elec-sys-data/wiki)
+[![Build Status](https://github.com/nmstreethran/elec-sys-data/workflows/Check%20markdown%20links/badge.svg)](https://github.com/nmstreethran/elec-sys-data/actions)
+[![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Content License: CC BY 4.0](https://img.shields.io/badge/Content%20License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![GitHub Wiki](https://img.shields.io/badge/-GitHub%20Wiki-purple.svg?logo=github&labelColor=black)](https://github.com/nmstreethran/elec-sys-data/wiki)
 <!-- end license badges -->
 
 by nmstreethran at gmail dot com
