@@ -29,7 +29,7 @@ Automated extraction of open electricity system data from meteorological service
 
 ## Documentation
 
-Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/elec-sys-data/wiki).
+Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/elec-sys-data/wiki). The files can also be found in the [docs](docs/) folder.
 
 ## Cloning the repository
 

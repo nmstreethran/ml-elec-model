@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# change directory to docs/
-cd docs
+# change directory to wiki
+cd wiki
 
 # convert wiki to pdf via latex using pandoc
 pandoc \
@@ -29,3 +29,10 @@ pandoc \
 
 # change directory back to the previous level
 cd ..
+
+# copy wiki files to docs folder
+cp -a wiki/* docs/
+
+# remove copies of footer and sidebar
+rm docs/_Footer.md
+rm docs/_Sidebar.md
