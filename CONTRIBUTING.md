@@ -30,7 +30,7 @@ Please refer to each project's style guidelines and guidelines for submitting pa
 - Try to share how your code has been tested before submitting a pull request.
 - If your pull request resolves an issue, include **closes #ISSUE_NUMBER** in your commit message (or a [synonym](https://help.github.com/articles/closing-issues-via-commit-messages)).
 - Review
-    - If your pull request is ready for review, another contributor will be assigned to review your pull request.
-    - The reviewer will accept or comment on the pull request.
-    - If needed address the comments left by the reviewer. Once you're ready to continue the review, ping the reviewer in a comment.
-    - Once accepted your code will be merged to `master`.
+  - If your pull request is ready for review, another contributor will be assigned to review your pull request.
+  - The reviewer will accept or comment on the pull request.
+  - If needed address the comments left by the reviewer. Once you're ready to continue the review, ping the reviewer in a comment.
+  - Once accepted your code will be merged to `master`.

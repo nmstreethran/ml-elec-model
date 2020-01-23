@@ -14,6 +14,7 @@ by nmstreethran at gmail dot com
 Automated extraction of open electricity system data from meteorological services, electricity system operators and electricity market operators.
 
 ## Table of contents <!-- omit in toc -->
+
 - [Requirements](#requirements)
 - [Documentation](#documentation)
 - [Cloning the repository](#cloning-the-repository)
@@ -22,9 +23,9 @@ Automated extraction of open electricity system data from meteorological service
 
 ## Requirements
 
-* Python 3
-* Git
-* [ENTSO-E API Python client](https://github.com/EnergieID/entsoe-py)
+- Python 3
+- Git
+- [ENTSO-E API Python client](https://github.com/EnergieID/entsoe-py)
 
 ## Documentation
 
@@ -34,13 +35,13 @@ Documentation is written in the repository's [GitHub Wiki](https://github.com/nm
 
 To clone the latest version of this repository, including the contents of the submodule:
 
-**Using HTTPS**
+#### Using HTTPS
 
 ```sh
 git clone --recurse-submodules https://github.com/nmstreethran/elec-sys-data.git
 ```
 
-**Using SSH**
+#### Using SSH
 
 ```sh
 git clone --recurse-submodules git@github.com:nmstreethran/elec-sys-data.git
@@ -59,5 +60,4 @@ Unless otherwise stated:
 
 This repository is a continuation and improvement of the work done by [nmstreethran](https://github.com/nmstreethran) in [ENSYSTRA/short-term-forecasting](https://github.com/ENSYSTRA/short-term-forecasting).
 
-Contributing guidelines is adapted from the [Open Science MOOC](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source).
-The contents of the MOOC are licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
+Contributing guidelines is adapted from the [Open Science MOOC](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source). The contents of the MOOC are licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).

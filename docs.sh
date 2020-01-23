@@ -5,7 +5,7 @@ cd wiki
 
 # convert wiki to pdf via latex using pandoc
 pandoc \
-    --template=pandoc.tex \
+    --template=pandoc.latex \
     --pdf-engine=xelatex \
     --metadata title="elec-sys-data" \
     --metadata author="Nithiya Streethran" \
@@ -16,6 +16,7 @@ pandoc \
     --variable geometry:margin=2.5cm \
     --variable mainfont="EB Garamond" \
     --variable sansfont="Lato" \
+    --variable monofont="Code New Roman" \
     --variable papersize="a4" \
     --variable classoption="twoside" \
     --from markdown+backtick_code_blocks-markdown_in_html_blocks-native_divs \
