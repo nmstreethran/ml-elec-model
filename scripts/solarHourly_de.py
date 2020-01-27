@@ -22,7 +22,7 @@ import configparser
 # %%
 # import user-defined configurations
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('config/dwd.ini')
 
 # %%
 # define start and end dates of data

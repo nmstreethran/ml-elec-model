@@ -128,12 +128,12 @@ Greece | GR | 10YGR-HTSO-----Y
 Croatia | HR | 10YHR-HEP------M
 Hungary | HU | 10YHU-MAVIR----U
 Ireland (Single Electricity Market) | IE-SEM | 10Y1001A1001A59C
-Centre-North, Italy | IT-CNOR | 
-Centre-South, Italy | IT-CSUD | 
-North, Italy | IT-NORTH | 
-Sardinia, Italy | IT-Sardinia | 
-Sicily, Italy | IT-Sicily | 
-South, Italy | IT-SUD | 
+Centre-North, Italy | IT-CNOR | 10Y1001A1001A70O
+Centre-South, Italy | IT-CSUD | 10Y1001A1001A71M
+North, Italy | IT-NORTH | 10Y1001A1001A73I
+Sardinia, Italy | IT-Sardinia | 10Y1001A1001A74G
+Sicily, Italy | IT-Sicily | 10Y1001A1001A75E
+South, Italy | IT-SUD | 10Y1001A1001A788
 Lithuania | LT | 10YLT-1001A0008Q
 Latvia | LV | 10YLV-1001A00074
 Moldova | MD | 
@@ -155,7 +155,7 @@ Stockholm, Sweden | SE-3 | 10Y1001A1001A46L
 Malmö, Sweden | SE-4 | 10Y1001A1001A47
 Slovenia | SI | 10YSI-ELES-----O
 Slovakia | SK | 10YSK-SEPS-----K
-Ukraine | UA | 
+Ukraine | UA | 10YUA-WEPS-----0
 
 ## Terms of use
 

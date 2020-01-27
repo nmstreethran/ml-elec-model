@@ -180,7 +180,7 @@ $endif$
 %%% code formatting
 \usepackage{xcolor}
 % overwrite shade colour defined in template
-\definecolor{shadecolor}{HTML}{ebdef0}
+\definecolor{shadecolor}{HTML}{f2f3f4}
 % set background colour of inline code
 \let\oldtexttt\texttt
 \renewcommand{\texttt}[1]{
