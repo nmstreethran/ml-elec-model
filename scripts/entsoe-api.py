@@ -78,73 +78,85 @@ except OSError as exception:
 
 # %%
 for dataset in datasets:
+
     if biddingZones != []:
         # extracting data for each bidding zone in a loop
         # for country_code in biddingZones:
+
         if dataset == 'day_ahead_prices':
             for country_code in biddingZones:
                 ts = client.query_day_ahead_prices(
                     country_code, start=start, end=end)
                 ts.to_csv(
-                    path + '/day_ahead_prices_' + country_code + '.csv')
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset == 'load':
             for country_code in biddingZones:
                 ts = client.query_load(country_code, start=start, end=end)
-                ts.to_csv(path + '/load_' + country_code + '.csv')
+                ts.to_csv(
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset == 'load_forecast':
             for country_code in biddingZones:
                 ts = client.query_load_forecast(
                     country_code, start=start, end=end)
-                ts.to_csv(path + '/load_forecast_' + country_code + '.csv')
+                ts.to_csv(
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset == 'generation_forecast':
             for country_code in biddingZones:
                 ts = client.query_generation_forecast(
                     country_code, start=start, end=end)
                 ts.to_csv(
-                    path + '/generation_forecast_' + country_code + '.csv')
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset == 'withdrawn_unavailability_of_generation_units':
             for country_code in biddingZones:
                 ts = client.query_withdrawn_unavailability_of_generation_units(
                     country_code, start=start, end=end)
                 ts.to_csv(
-                    path + '/withdrawn_unavailability_of_generation_units_' +
-                    country_code + '.csv')
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset == 'wind_and_solar_forecast':
             for country_code in biddingZones:
                 ts = client.query_wind_and_solar_forecast(
                     country_code, start=start,end=end, psr_type=None)
                 ts.to_csv(
-                    path + '/wind_and_solar_forecast_' +
-                    country_code + '.csv')
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset == 'generation':
             for country_code in biddingZones:
                 ts = client.query_generation(
                     country_code, start=start,end=end, psr_type=None)
-                ts.to_csv(path + '/generation_' + country_code + '.csv')
+                ts.to_csv(
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset = 'installed_generation_capacity':
             for country_code in biddingZones:
                 ts = client.query_installed_generation_capacity(
                     country_code, start=start,end=end, psr_type=None)
                 ts.to_csv(
-                    path + '/installed_generation_capacity_' +
-                    country_code + '.csv')
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset = 'imbalance_prices':
             for country_code in biddingZones:
                 ts = client.query_imbalance_prices(
                     country_code, start=start,end=end, psr_type=None)
                 ts.to_csv(
-                    path + '/imbalance_prices_' + country_code + '.csv')
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
         elif dataset == 'unavailability_of_generation_units':
             for country_code in biddingZones:
                 ts = client.query_unavailability_of_generation_units(
                     country_code, start=start,end=end, docstatus=None)
                 ts.to_csv(
-                    path + '/unavailability_of_generation_units_' +
-                    country_code + '.csv')
+                    path + '/' + dataset + '_' + country_code + '.csv')
+
     if crossborderZones != []:
         for zones in crossborderZones:
             zones = zones.split(', ')
             z = str(zones)[1:-1]
             ts = client.query_crossborder_flows(z, start=start,end=end)
             zones = '_'.join(zones)
-            ts.to_csv(path + '/crossborder_flows_' + zones + '.csv')
+            ts.to_csv(
+                path + '/crossborder_flows_' + zones + '.csv')

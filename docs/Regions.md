@@ -11,8 +11,7 @@ The nomenclature of territorial units for statistics (NUTS) classifies territori
 
 ## Bidding zones
 
-A bidding zone is the largest geographical area within which market participants are able to exchange energy without capacity allocation.
-There are three types of bidding zones:
+A bidding zone is the largest geographical area within which market participants are able to exchange energy without capacity allocation. There are three types of bidding zones:
 
 1. national borders (e.g., France or the Netherlands) - majority of bidding zones in Europe
 2. larger than national borders (e.g., Germany and Luxembourg or the Single Electricity Market for the island of Ireland)
@@ -26,22 +25,48 @@ The bidding zones in European electricity markets and surrounding regions are il
 
 The table below below lists bidding zones in Europe by country and market operator.
 
-*Bidding zones and market operators in Europe.*
+*Bidding zones and market operators in Europe. Country codes in brackets are according to ISO_3166-1 alpha-2.*
 
 **Country** | **Markets** | **Zones**
 --- | --- | ---
+Albania (AL) | | AL
+Bosnia and Herzegovina (BA) | | BA
 Belgium (BE) | Belpex | BE
+Bulgaria (BG) | | BG
+Switzerland (CH) | | CH
+Cyprus (CY) | | CY
+Czech Republic (CZ) | | CZ
 Germany (DE) | EEX, EPEX | DE-LU
 Denmark (DK) | EEX, Nord Pool | DK1, DK2
+Estonia (EE) | | EE
+Spain (ES) | | ES
+Finland (FI) | | FI
 France (FR) | EEX, EPEX | FR
+Georgia (GE) | | GE
+Greece (GR) | | GR
+Croatia (HR) | | HR
+Hungary (HU) | | HU
+Republic of Ireland (IE) | | IE-SEM
+Italy (IT) | | IT-CNOR, IT-CSUD, IT-NORTH, IT-Sardinia, IT-Sicily, IT-SUD
+Lithuania (LT) | | LT
+Luxembourg (LU) | | DE-LU
+Latvia (LV) | | LV
+Moldova (MD) | | MD
+Montenegro (ME) | | ME
+North Macedonia (MK) | | MK
 Netherlands (NL) | APX | NL
 Norway (NO) | EEX, Nord Pool | NO1, NO2, NO3, NO4, NO5
+Poland (PL) | | PL
+Portugal (PT) | | PT
+Romania (RO) | | RO
+Serbia (RS) | | RS
 Sweden (SE) | EEX, Nord Pool | SE1, SE2, SE3, SE4
+Slovenia (SI) | | SI
+Slovakia (SK) | | SK
+Ukraine (UA) | |
 United Kingdom (UK) | APX, N2EX | GB, IE-SEM
 
-The United Kingdom is comprised of Great Britain (GB) and Northern Ireland.
-Northern Ireland is part of the Single Electricity Market of the island of Ireland (IE-SEM), which it shares with the Republic of Ireland (IE).
-Prior to 01/10/2018, Germany was part of the DE-AT-LU bidding zone, together with Austria (AT) and Luxembourg (LU), which had split into the DE-LU and AT bidding zones, as reported by European Network of Transmission Systems Operators for Electricity (ENTSO-E) below:
+The United Kingdom is comprised of Great Britain (GB) and Northern Ireland. Northern Ireland is part of the Single Electricity Market of the island of Ireland (IE-SEM), which it shares with the Republic of Ireland (IE). Prior to 01/10/2018, Germany was part of the DE-AT-LU bidding zone, together with Austria (AT) and Luxembourg (LU), which had split into the DE-LU and AT bidding zones, as reported by European Network of Transmission Systems Operators for Electricity (ENTSO-E) below:
 
 >*[...] DE-AT-LU bidding zone split on the 23rd of August. BZN|DE-AT-LU will be separated into 2 new bidding zones BZN|DE-LU and BZN|AT.*
 >
@@ -51,9 +76,7 @@ Prior to 01/10/2018, Germany was part of the DE-AT-LU bidding zone, together wit
 
 Mapping bidding zones to NUTS 3 territories is straightforward for Belgium, Germany, France and Netherlands (bidding zone type 1 or 2) -- all NUTS 3 territories in these countries have the same bidding zone.
 
-Denmark and United Kingdom are both conveniently separated into two zones that are easily distinguishable.
-For Denmark, these are Western Denmark (NUTS IDs containing DK03-DK05) and Southern Denmark (NUTS IDs containing DK01-DK02).
-For United Kingdom, these are Great Britain (NUTS IDs containing UKC-UKM) and Northern Ireland (NUTS IDs containing UKN).
+Denmark and United Kingdom are both conveniently separated into two zones that are easily distinguishable. For Denmark, these are Western Denmark (NUTS IDs containing DK03-DK05) and Southern Denmark (NUTS IDs containing DK01-DK02). For United Kingdom, these are Great Britain (NUTS IDs containing UKC-UKM) and Northern Ireland (NUTS IDs containing UKN).
 
 There is no clear indication of the bidding zone boundaries for Norway and Sweden, so some assumptions were made. Both countries have multiple smaller bidding zones (type 3) with flexible borders. This was done to optimise allocation of resources and reduce the overall price of electricity. Norway has five zones and Sweden has four zones. By cross-referencing Nord Pool market data, NUTS 3 data and county maps of Norway and Sweden, the territories are split into the bidding zones as shown in the table below. Nord Pool associates each bidding zone with a major reference city in that zone. However, there were six cities for Norway instead of the expected five. Historical Nord Pool market data for Norway suggests that two cities, Trondheim and Molde, have had the same system price since 2003. The ELSPOT area change log also confirms that Trondheim and Molde are city references for the NO3 bidding zone. Therefore, these two cities are grouped into the same bidding zone, which also satisfies what the maps suggest.
 
@@ -77,7 +100,7 @@ Europe has multiple TSOs and cross-border interconnections. These are listed, al
 
 *TSOs and cross-border interconnections in Europe. Data: European Network of Transmission System Operators for Electricity.*
 
-**Country**<sup>[^4]</sup> | **TSOs** | **Cross-border interconnections** | **Bidding zones**
+**Country** | **TSOs** | **Cross-border interconnections** | **Bidding zones**
 -|-----|---|---
 BE | Elia System Operator | FR, LU, NL, UK | BE
 DK | Energinet | DE, NO, SE | DK1, DK2
@@ -87,8 +110,6 @@ NL | TenneT TSO | BE, DE, NO, UK | NL
 NO | Statnett | DK, FI, NL, SE | NO1, NO2, NO3, NO4, NO5
 SE | Svenska Kraftnät | DK, FI, DE, LT, NO, PL | SE1, SE2, SE3, SE4
 UK | National Grid Electricity Transmission, System Operator for Northern Ireland, Scottish Hydro Electric Transmission, ScottishPower Transmission | BE, FR, IE, NL | GB, IE-SEM
-
-[^4]: *CH - Switzerland; CZ - Czech Republic; ES - Spain; FI - Finland; IT - Italy; LT - Lithuania; PL - Poland; SK - Slovakia.*
 
 ## References
 

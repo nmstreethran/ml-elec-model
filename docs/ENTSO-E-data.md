@@ -1,4 +1,4 @@
-# Data
+# ENTSO-E data
 
 ## Generation and load data
 
@@ -70,23 +70,7 @@ Actual total load (including losses without stored energy)
 
 For these calculations, the net generation is preferred. However, gross generation may be used if it is available with the better precision. The TSOs responsible for each area decide whether to use gross or net generation, but they are required to keep their choice consistent per bidding zone. Absorbed energy is also provided as separate information with the aggregated generation output of the hydro pumped storage. The physical flow on the tie line is measured as agreed by neighbouring TSOs or bidding zones, where applicable. This dataset is published on ENTSO-E TP no later than one hour after the end of the operating period.
 
-## Market data
-
-[Nord Pool](https://www.nordpoolgroup.com/historical-market-data/)
-
-Historical market data from Nord Pool is stored as `.xls` files can be accessed in their [historical market data site](https://www.nordpoolgroup.com/historical-market-data/).
-
-- [Membership list - Nord Pool](https://www.nordpoolgroup.com/trading/join-our-markets/membership/)
-
-## Meteorological data
-
-#### Germany
-
-Weather data for Germany is extracted from [Deutscher Wetterdienst's Climate Data Center (CDC) OpenData](https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html). `windHourly_de.py` and `solarHourly_de.py` are the scripts used to extract hourly wind and solar data respectively.
-
 ## Automating the data extraction process
-
-### ENTSO-E Transparency Platform's Restful API
 
 The [ENTSO-E TP](https://transparency.entsoe.eu/dashboard/show) has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's [terms and conditions](https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf) and [privacy policy](https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Privacy_Policy.pdf) before gaining access to the dashboard. However, in order to export datasets in various formats (such as `.csv` and `.xml`), as well as gain additional functionalities, it is required to [register for a free account on ENTSO-E TP](https://transparency.entsoe.eu/usrm/user/createPublicUser). ENTSO-E TP's Restful application programming interface (API) can then be used to automate the data extraction process (see the API [implementation](https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf) and [user guides](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html) for more info). Once a free account has been created, request for a security token to access the API by sending an email to the [ENTSO-E TP Helpdesk](mailto:transparency@entsoe.eu), stating 'Restful API access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via [account settings](https://transparency.entsoe.eu/usrm/user/myAccountSettings).
 
@@ -159,25 +143,14 @@ Ukraine | UA | 10YUA-WEPS-----0
 
 ## Terms of use
 
-#### Deutscher Wetterdienst
-
-- [Terms of use for data on the CDC ftp server](https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.pdf)
-
-#### NordPool
-
-- [Terms and conditions for use](https://www.nordpoolgroup.com/About-us/Terms-and-conditions-for-use/)
-
-#### ENTSO-E Transparency Platform
-
 - [GENERAL TERMS AND CONDITIONS FOR THE USE OF THE ENTSO-E TRANSPARENCY PLATFORM](https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf)
 - [LIST OF DATA AVAILABLE FOR FREE RE-USE](https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/List_of_Data_available_for_reuse.pdf)
 
 ## References
 
 1. "[Help Page - ENTSO-E Transparency Platform](https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html)."
-2. "[Wetter und Klima - Deutscher Wetterdienst - CDC (Climate Data Center)](https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html)."
-3. "[ENTSO-E Transparency Platform Data Extraction Process Implementation Guide](https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf)," ENTSO-E AISBL, Brussels, Belgium, July 2016.
-4. "[Transparency Platform restful API - user guide](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html)."
-5. [EnergieID/entsoe-py](https://github.com/EnergieID/entsoe-py). EnergieID cvba-so, 2019.
-6. "[ENTSO-E Transparency Platform](https://transparency.entsoe.eu/)."
-7. "[Energy Identification Codes (EICs)](https://www.entsoe.eu/data/energy-identification-codes-eic/)."
+2. "[ENTSO-E Transparency Platform Data Extraction Process Implementation Guide](https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf)," ENTSO-E AISBL, Brussels, Belgium, July 2016.
+3. "[Transparency Platform restful API - user guide](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html)."
+4. [EnergieID/entsoe-py](https://github.com/EnergieID/entsoe-py). EnergieID cvba-so, 2019.
+5. "[ENTSO-E Transparency Platform](https://transparency.entsoe.eu/)."
+6. "[Energy Identification Codes (EICs)](https://www.entsoe.eu/data/energy-identification-codes-eic/)."

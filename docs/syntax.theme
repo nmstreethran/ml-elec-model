@@ -190,7 +190,7 @@
             "text-color": "#0095ff",
             "background-color": null,
             "bold": false,
-            "italic": false,
+            "italic": true,
             "underline": false
         },
         "Constant": {

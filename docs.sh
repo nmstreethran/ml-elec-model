@@ -16,7 +16,7 @@ pandoc \
     --variable geometry:margin=2.5cm \
     --variable mainfont="EB Garamond" \
     --variable sansfont="Lato" \
-    --variable monofont="Code New Roman" \
+    --variable monofont="Fira Code Retina" \
     --variable papersize="a4" \
     --variable classoption="twoside" \
     --from markdown+backtick_code_blocks-markdown_in_html_blocks-native_divs \
@@ -25,7 +25,9 @@ pandoc \
     --variable toc-title="Table of Contents" \
     Home.md \
     Regions.md \
-    Data.md \
+    ENTSO-E-data.md \
+    Nord-Pool-data.md \
+    German-meteorological-data.md \
     --output docs.pdf
 
 # change directory back to the previous level
