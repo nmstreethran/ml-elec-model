@@ -24,6 +24,7 @@ pandoc \
     --toc \
     --variable toc-title="Table of Contents" \
     Home.md \
+    Background.md \
     Regions.md \
     ENTSO-E-data.md \
     Nord-Pool-data.md \

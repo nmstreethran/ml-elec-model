@@ -1,17 +1,18 @@
-# elec-sys-data <!-- omit in toc -->
+# ml-elec-model <!-- omit in toc -->
 
 <!-- start licence badges -->
-[![Markdown link checker GitHub issues](https://img.shields.io/github/issues/nmstreethran/elec-sys-data/link%20checker?color=limegreen&label=Link%20checker%20issues&labelColor=darkslategray)](https://github.com/nmstreethran/elec-sys-data/issues?q=is%3Aissue+is%3Aopen+label%3A%22link+checker%22)
+[![Build Status](https://travis-ci.org/nmstreethran/ml-elec-model.svg?branch=master)](https://travis-ci.org/nmstreethran/ml-elec-model)
+[![Markdown link checker GitHub issues](https://img.shields.io/github/issues/nmstreethran/ml-elec-model/link%20checker?color=limegreen&label=Link%20checker%20issues&labelColor=darkslategray)](https://github.com/nmstreethran/ml-elec-model/issues?q=is%3Aissue+is%3Aopen+label%3A%22link+checker%22)
 [![Code license: MIT](https://img.shields.io/badge/Code%20license-MIT-yellow.svg?labelColor=darkslategray)](https://opensource.org/licenses/MIT)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/Content%20license-CC%20BY%204.0-blue.svg?labelColor=darkslategray)](https://creativecommons.org/licenses/by/4.0/)
-[![GitHub Wiki](https://img.shields.io/badge/-GitHub%20Wiki-purple.svg?logo=github&labelColor=black)](https://github.com/nmstreethran/elec-sys-data/wiki)
+[![GitHub Wiki](https://img.shields.io/badge/-GitHub%20Wiki-purple.svg?logo=github&labelColor=black)](https://github.com/nmstreethran/ml-elec-model/wiki)
 <!-- end license badges -->
 
 by nmstreethran at gmail dot com
 
 **This project is a work-in-progress. Feedback and suggestions are always welcome. Please refer to the [contributing guidelines](CONTRIBUTING.md) if you would like to contribute.**
 
-Automated extraction of open electricity system data from meteorological services, electricity system operators and electricity market operators.
+Machine learning-based electricity system model.
 
 ## Table of contents <!-- omit in toc -->
 
@@ -31,7 +32,7 @@ Automated extraction of open electricity system data from meteorological service
 
 ## Documentation
 
-Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/elec-sys-data/wiki). The files can also be found in the [docs](docs/) folder.
+Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki). The files can also be found in the [docs](docs/) folder.
 
 ## Cloning the repository
 
@@ -40,13 +41,13 @@ To clone the latest version of this repository, including the contents of the su
 ### Using HTTPS
 
 ```sh
-git clone --recurse-submodules https://github.com/nmstreethran/elec-sys-data.git
+git clone --recurse-submodules https://github.com/nmstreethran/ml-elec-model.git
 ```
 
 ### Using SSH
 
 ```sh
-git clone --recurse-submodules git@github.com:nmstreethran/elec-sys-data.git
+git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 ```
 
 The GitHub wiki has been included in this repository as a submodule. Once changes to the wiki within the submodule are made (e.g., new markdown files, images), these changes are first committed and pushed to the wiki's branch, before committing and pushing to the main repository's branch.

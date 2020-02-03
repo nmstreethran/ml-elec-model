@@ -1,12 +1,12 @@
 # README
 
-Welcome to the elec-sys-data wiki!
+Welcome to the ml-elec-model wiki!
 
 by nmstreethran at gmail dot com
 
 **This project is a work-in-progress. Feedback and suggestions are always welcome. Please open an issue or refer to the contributing guidelines in the main repository if you would like to contribute.**
 
-Automated extraction of open electricity system data from meteorological services, electricity system operators and electricity market operators.
+Machine learning-based electricity system model.
 
 ## Requirements
 
@@ -16,7 +16,7 @@ Automated extraction of open electricity system data from meteorological service
 
 ## Documentation
 
-Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/elec-sys-data/wiki). The files can also be found in the folder.
+Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki). The files can also be found in the folder.
 
 ## Cloning the repository
 
@@ -25,13 +25,13 @@ To clone the latest version of this repository, including the contents of the su
 #### Using HTTPS
 
 ```sh
-git clone --recurse-submodules https://github.com/nmstreethran/elec-sys-data.git
+git clone --recurse-submodules https://github.com/nmstreethran/ml-elec-model.git
 ```
 
 #### Using SSH
 
 ```sh
-git clone --recurse-submodules git@github.com:nmstreethran/elec-sys-data.git
+git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 ```
 
 The GitHub wiki has been included in this repository as a submodule. Once changes to the wiki within the submodule are made (e.g., new markdown files, images), these changes are first committed and pushed to the wiki's branch, before committing and pushing to the main repository's branch.

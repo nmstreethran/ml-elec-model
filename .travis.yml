@@ -1,0 +1,12 @@
+# https://github.com/dkhamsing/awesome_bot
+sudo: required
+
+services:
+    - docker
+
+git:
+    submodules: false
+
+script:
+    # link checks
+    - docker run -ti --rm -v $PWD:/mnt:ro dkhamsing/awesome_bot --allow-dupe --allow-redirect --skip-save-results --base-url https://github.com/nmstreethran/ml-elec-model/blob/master/ `find . -name "*.md"`
