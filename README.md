@@ -2,7 +2,6 @@
 
 <!-- start licence badges -->
 [![Build Status](https://travis-ci.org/nmstreethran/ml-elec-model.svg?branch=master)](https://travis-ci.org/nmstreethran/ml-elec-model)
-[![Markdown link checker GitHub issues](https://img.shields.io/github/issues/nmstreethran/ml-elec-model/link%20checker?color=limegreen&label=Link%20checker%20issues&labelColor=darkslategray)](https://github.com/nmstreethran/ml-elec-model/issues?q=is%3Aissue+is%3Aopen+label%3A%22link+checker%22)
 [![Code license: MIT](https://img.shields.io/badge/Code%20license-MIT-yellow.svg?labelColor=darkslategray)](https://opensource.org/licenses/MIT)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/Content%20license-CC%20BY%204.0-blue.svg?labelColor=darkslategray)](https://creativecommons.org/licenses/by/4.0/)
 [![GitHub Wiki](https://img.shields.io/badge/-GitHub%20Wiki-purple.svg?logo=github&labelColor=black)](https://github.com/nmstreethran/ml-elec-model/wiki)

@@ -72,7 +72,7 @@ For these calculations, the net generation is preferred. However, gross generati
 
 ## Automating the data extraction process
 
-The [ENTSO-E TP](https://transparency.entsoe.eu/dashboard/show) has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's [terms and conditions](https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf) and [privacy policy](https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Privacy_Policy.pdf) before gaining access to the dashboard. However, in order to export datasets in various formats (such as `.csv` and `.xml`), as well as gain additional functionalities, it is required to [register for a free account on ENTSO-E TP](https://transparency.entsoe.eu/usrm/user/createPublicUser). ENTSO-E TP's Restful application programming interface (API) can then be used to automate the data extraction process (see the API [implementation](https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf) and [user guides](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html) for more info). Once a free account has been created, request for a security token to access the API by sending an email to the [ENTSO-E TP Helpdesk](mailto:transparency@entsoe.eu), stating 'Restful API access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via [account settings](https://transparency.entsoe.eu/usrm/user/myAccountSettings).
+The [ENTSO-E TP](https://transparency.entsoe.eu/dashboard/show) has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's [terms and conditions](https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf) and [privacy policy](https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Privacy_Policy.pdf) before gaining access to the dashboard. However, in order to export datasets in various formats (such as `.csv` and `.xml`), as well as gain additional functionalities, it is required to [register for a free account on ENTSO-E TP](https://transparency.entsoe.eu/usrm/user/createPublicUser). ENTSO-E TP's Restful application programming interface (API) can then be used to automate the data extraction process (see the API [implementation](https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf) and [user guides](https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html) for more info). Once a free account has been created, request for a security token to access the API by sending an email to the ENTSO-E TP Helpdesk (transparency at entsoe dot eu), stating 'Restful API access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via [account settings](https://transparency.entsoe.eu/usrm/user/myAccountSettings).
 
 The [ENTSO-E API Python client](https://github.com/EnergieID/entsoe-py) is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
 `entsoe-api.py` is the script used to perform this.
@@ -106,7 +106,7 @@ Estonia | EE | 10Y1001A1001A39I
 Spain | ES | 10YES-REE------0
 Finland | FI | 10YFI-1--------U
 France | FR | 10YFR-RTE------C
-Georgia | GE | 
+Georgia | GE |
 Great Britain | GB | 10YGB----------A
 Greece | GR | 10YGR-HTSO-----Y
 Croatia | HR | 10YHR-HEP------M
@@ -120,7 +120,7 @@ Sicily, Italy | IT-Sicily | 10Y1001A1001A75E
 South, Italy | IT-SUD | 10Y1001A1001A788
 Lithuania | LT | 10YLT-1001A0008Q
 Latvia | LV | 10YLV-1001A00074
-Moldova | MD | 
+Moldova | MD |
 Montenegro | ME | 10YCS-CG-TSO---S
 North Macedonia | MK | 10YMK-MEPSO----8
 Netherlands | NL | 10YNL----------L

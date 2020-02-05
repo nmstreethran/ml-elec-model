@@ -37,6 +37,12 @@ cd ..
 # copy wiki files to docs folder
 cp -a wiki/* docs/
 
+# copy images to images folder
+cp -a wiki/images/* images/
+
 # remove copies of footer and sidebar
 rm docs/_Footer.md
 rm docs/_Sidebar.md
+
+# remove images folder within docs folder
+rm docs/images/*

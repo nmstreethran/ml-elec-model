@@ -126,4 +126,4 @@ UK | National Grid Electricity Transmission, System Operator for Northern Irelan
 11. "[Counties of Sweden](https://en.wikipedia.org/w/index.php?title=Counties_of_Sweden&oldid=882806371)," Wikipedia. 11 February 2019.
 12. "[ENTSO-E Transparency Platform](https://transparency.entsoe.eu/)."
 13. "[Regional Security Coordinators FAQ](https://www.entsoe.eu/major-projects/rscis/)."
-14. "[Overview of European Electricity Markets](https://ec.europa.eu/energy/sites/ener/files/documents/overview_of_european_electricity_markets.pdf)," European Union, Brussels, Belgium, February 2016.
+14. "[Overview of European Electricity Markets](https://ec.europa.eu/energy/en/data-analysis/energy-modelling/metis)," European Union, Brussels, Belgium, February 2016.
