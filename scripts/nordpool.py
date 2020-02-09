@@ -19,6 +19,7 @@ import errno
 from datetime import datetime
 from itertools import cycle, islice
 import configparser
+from urllib.error import HTTPError
 
 # %%
 # import user-defined configurations
@@ -63,36 +64,77 @@ except OSError as exception:
 # %%
 # list of datasets to download
 datasets = [
-    # Elspot
-    'elspot-prices_' + yr + '_hourly_eur',
-    'elspot-volumes_' + yr + '_hourly',
-    'elspot-flow-dk_' + yr + '_hourly',
-    'elspot-flow-no_' + yr + '_hourly',
-    'elspot-flow-se_' + yr + '_hourly',
-    'elspot-capacities-dk_' + yr + '_hourly',
-    'elspot-capacities-no_' + yr + '_hourly',
-    'elspot-capacities-se_' + yr + '_hourly',
-    # N2EX
-    'n2ex-day-ahead-auction-prices_' + yr + '_hourly_eur',
-    'n2ex-market-coupling-capacities_' + yr + '_hourly',
-    'n2ex-day-ahead-auction-volumes_' + yr + '_hourly',
-    # other
-    'market-coupling-capacities_' + yr + '_hourly',
-    'market-coupling-flow_' + yr + '_hourly'
-    ]
+    z.strip() for z in config.get('NordPool', 'datasets').split('\n')]
+# remove empty strings
+datasets = list(filter(None, datasets))
 
 # %%
 # read and parse data
 for dataset in datasets:
     # different header level for N2EX volume dataset
     if 'n2ex-day-ahead-auction-volumes' in dataset:
-        data = pd.read_html(
-            repourl + dataset + '.xls', header=[3], thousands=None,
-            decimal=',', encoding='utf-8')[0]
+        try:
+            data = pd.read_html(
+                repourl + dataset + '_' + yr + '_' +
+                config['NordPool']['resolution'] + '.xls', header=[3],
+                thousands=None, decimal=',', encoding='utf-8')[0]
+        except HTTPError as exception:
+            if exception.code != 404:
+                raise
+            else:
+                print ('\nSorry! This dataset does not exist: ' + dataset
+                    + '_' + yr + '_' + config['NordPool']['resolution'])
+                continue
+    elif 'n2ex' in dataset and 'prices' in dataset:
+        try:
+            data = pd.read_html(
+                repourl + dataset + '_' + yr + '_' +
+                config['NordPool']['resolution'] + '_' +
+                config['NordPool']['N2EXcurrency'] + '.xls', header=[2],
+                thousands=None, decimal=',', encoding='utf-8')[0]
+        except HTTPError as exception:
+            if exception.code != 404:
+                raise
+            else:
+                print ('\nSorry! This dataset does not exist: ' + dataset
+                    + '_' + yr + '_' + config['NordPool']['resolution'] +
+                    '_' + config['NordPool']['N2EXcurrency'])
+                continue
+    elif 'prices' in dataset or 'regulating-power' in dataset:
+        try:
+            data = pd.read_html(
+                repourl + dataset + '_' + yr + '_' +
+                config['NordPool']['resolution'] + '_' +
+                config['NordPool']['currency'] + '.xls', header=[2],
+                thousands=None, decimal=',', encoding='utf-8')[0]
+        except HTTPError as exception:
+            if exception.code != 404:
+                raise
+            else:
+                print ('\nSorry! This dataset does not exist: ' + dataset
+                    + '_' + yr + '_' + config['NordPool']['resolution'] +
+                    '_' + config['NordPool']['currency'])
+                continue
+    # elif 'elspot-capacities' or 'elspot-flow' in dataset:
+    #     for country in countries:
+    #         data = pd.read_html(
+    #             repourl + dataset + '-' + country + '_' + yr + '_' +
+    #             config['NordPool']['resolution'] + '.xls',
+    #             header=[2], thousands=None, decimal=',',
+    #             encoding='utf-8')[0]
     else:
-        data = pd.read_html(
-            repourl + dataset + '.xls', header=[2], thousands=None,
-            decimal=',', encoding='utf-8')[0]
+        try:
+            data = pd.read_html(
+                repourl + dataset + '_' + yr + '_' +
+                config['NordPool']['resolution'] + '.xls', header=[2],
+                thousands=None, decimal=',', encoding='utf-8')[0]
+        except HTTPError as exception:
+            if exception.code != 404:
+                raise
+            else:
+                print ('\nSorry! This dataset does not exist: ' + dataset
+                    + '_' + yr + '_' + config['NordPool']['resolution'])
+                continue
     
     # iterate list of hours over dataset
     it = cycle(hours)
@@ -127,4 +169,14 @@ for dataset in datasets:
     data = data[cols]
     
     # save as CSV
-    data.to_csv(path + '/' + dataset + '.csv', index=None)
+    if 'n2ex' in dataset and 'prices' in dataset:
+        data.to_csv(path + '/' + dataset + '_' + yr + '_' +
+            config['NordPool']['resolution'] + '_' +
+            config['NordPool']['N2EXcurrency'] + '.csv', index=None)
+    elif 'prices' in dataset:
+        data.to_csv(path + '/' + dataset + '_' + yr + '_' +
+            config['NordPool']['resolution'] + '_' +
+            config['NordPool']['currency'] + '.csv', index=None)
+    else:
+        data.to_csv(path + '/' + dataset + '_' + yr + '_' +
+            config['NordPool']['resolution'] + '.csv', index=None)
