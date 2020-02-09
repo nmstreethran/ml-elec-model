@@ -7,7 +7,7 @@
 [![GitHub Wiki](https://img.shields.io/badge/-GitHub%20Wiki-purple.svg?logo=github&labelColor=black)](https://github.com/nmstreethran/ml-elec-model/wiki)
 <!-- end license badges -->
 
-by nmstreethran at gmail dot com
+by Nithiya Streethran (nmstreethran at gmail dot com)
 
 **This project is a work-in-progress. Feedback and suggestions are always welcome. Please refer to the [contributing guidelines](CONTRIBUTING.md) if you would like to contribute.**
 

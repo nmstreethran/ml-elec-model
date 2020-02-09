@@ -1,12 +1,9 @@
+# Link checking
 # https://github.com/dkhamsing/awesome_bot
-sudo: required
+image: ruby:latest
 
-services:
-    - docker
-
-git:
-    submodules: false
+before_script:
+    - gem install awesome_bot
 
 script:
-    # link checks
-    - docker run -ti --rm -v $PWD:/mnt:ro dkhamsing/awesome_bot --allow-dupe --allow-redirect --skip-save-results --base-url https://github.com/nmstreethran/ml-elec-model/blob/master/ `find . -name "*.md"`
+    - awesome_bot --allow-dupe --allow-redirect --skip-save-results `find . -name "*.md"` ; awesome_bot --allow-dupe --allow-redirect --skip-save-results --base-url https://github.com/nmstreethran/ml-elec-model/blob/master/ `find . -name README.md
