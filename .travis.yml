@@ -1,9 +1,17 @@
 # Link checking
 # https://github.com/dkhamsing/awesome_bot
-image: ruby:latest
+
+os: linux
+
+language: ruby
+
+rvm: 2.7.0
 
 before_script:
     - gem install awesome_bot
+
+git:
+    submodules: false
 
 script:
     - awesome_bot --allow-dupe --allow-redirect --skip-save-results `find . -name "*.md"` ; awesome_bot --allow-dupe --allow-redirect --skip-save-results --base-url https://github.com/nmstreethran/ml-elec-model/blob/master/ `find . -name README.md
