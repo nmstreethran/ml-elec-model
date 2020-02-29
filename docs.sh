@@ -29,6 +29,7 @@ pandoc \
     ENTSO-E-data.md \
     Nord-Pool-data.md \
     German-meteorological-data.md \
+    Glossary.md \
     --output docs.pdf
 
 # change directory back to the previous level

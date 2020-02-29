@@ -22,13 +22,13 @@ Documentation is written in the repository's [GitHub Wiki](https://github.com/nm
 
 To clone the latest version of this repository, including the contents of the submodule:
 
-#### Using HTTPS
+**Using HTTPS.**
 
 ```sh
 git clone --recurse-submodules https://github.com/nmstreethran/ml-elec-model.git
 ```
 
-#### Using SSH
+**Using SSH.**
 
 ```sh
 git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
