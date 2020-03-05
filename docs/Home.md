@@ -10,31 +10,85 @@ Machine learning-based electricity system model.
 
 ## Requirements
 
-- Python 3
-- Git
+### Packages
+
 - [ENTSO-E API Python client](https://github.com/EnergieID/entsoe-py)
 
-## Documentation
+### Installation
 
-Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki). The files can also be found in the folder.
+1. (Recommended) Create a virtual environment:
+
+```sh
+python3 -m venv env
+```
+
+1. Install dependencies:
+
+```sh
+python3 -m pip install entsoe-py
+
+# or (recommended) using virtual environment created in the previous step
+env/bin/python3 -m pip install entsoe-py
+```
+
+**Using Anaconda:**
+
+1. (Recommended) Create a virtual environment and activate:
+
+```sh
+conda create --name ml-elec-model python=3
+conda activate ml-elec-model
+```
+
+2. Install required packages:
+
+```sh
+pip install entsoe-py
+```
 
 ## Cloning the repository
 
 To clone the latest version of this repository, including the contents of the submodule:
 
-**Using HTTPS.**
+**Using HTTPS:**
 
 ```sh
 git clone --recurse-submodules https://github.com/nmstreethran/ml-elec-model.git
 ```
 
-**Using SSH.**
+**Using SSH:**
 
 ```sh
 git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 ```
 
+## Cloning the repository
+
+To clone the latest version of this repository, including the contents of the submodule:
+
+**Using HTTPS:**
+
+```sh
+git clone --recurse-submodules https://github.com/nmstreethran/ml-elec-model.git
+```
+
+**Using SSH:**
+
+```sh
+git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
+```
+
+## Documentation
+
+Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki). The files can also be found in the [docs](docs/) folder.
+
 The GitHub wiki has been included in this repository as a submodule. Once changes to the wiki within the submodule are made (e.g., new markdown files, images), these changes are first committed and pushed to the wiki's branch, before committing and pushing to the main repository's branch.
+
+To compile the documentation, run the following bash script:
+
+```sh
+bash docs.sh
+```
 
 ## License
 

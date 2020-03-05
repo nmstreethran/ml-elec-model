@@ -131,14 +131,14 @@ for dataset in datasets:
                 ts.to_csv(
                     path + '/' + dataset + '_' + country_code + '.csv')
 
-        elif dataset = 'installed_generation_capacity':
+        elif dataset == 'installed_generation_capacity':
             for country_code in biddingZones:
                 ts = client.query_installed_generation_capacity(
                     country_code, start=start,end=end, psr_type=None)
                 ts.to_csv(
                     path + '/' + dataset + '_' + country_code + '.csv')
 
-        elif dataset = 'imbalance_prices':
+        elif dataset == 'imbalance_prices':
             for country_code in biddingZones:
                 ts = client.query_imbalance_prices(
                     country_code, start=start,end=end, psr_type=None)
