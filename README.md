@@ -27,39 +27,39 @@ Machine learning-based electricity system model.
 
 ### Packages
 
-- [ENTSO-E API Python client](https://github.com/EnergieID/entsoe-py)
+- [entsoe-py](https://pypi.org/project/entsoe-py/)
+- [GeoPandas](https://geopandas.org/)
 
 ### Installation
 
-1. (Recommended) Create a virtual environment:
+1. (Recommended) Create and activate a virtual environment:
 
-```sh
-python3 -m venv env
-```
+    ```sh
+    python3 -m venv env
+    source env/bin/activate
+    ```
 
-1. Install dependencies:
+2. Install dependencies:
 
-```sh
-python3 -m pip install entsoe-py
-
-# or (recommended) using virtual environment created in the previous step
-env/bin/python3 -m pip install entsoe-py
-```
+    ```sh
+    python3 -m pip install entsoe-py geopandas
+    ```
 
 **Using Anaconda:**
 
-1. (Recommended) Create a virtual environment and activate:
+1. (Recommended) Create and activate a virtual environment:
 
-```sh
-conda create --name ml-elec-model python=3
-conda activate ml-elec-model
-```
+    ```sh
+    conda create --name ml-elec-model python=3
+    conda activate ml-elec-model
+    ```
 
 2. Install required packages:
 
-```sh
-pip install entsoe-py
-```
+    ```sh
+    conda install --channel conda-forge geopandas
+    pip install entsoe-py
+    ```
 
 ## Cloning the repository
 
@@ -79,11 +79,11 @@ git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 
 ## Documentation
 
-Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki). The files can also be found in the [docs](docs/) folder.
+Documentation is written in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki). The files can also be found in the [`docs`](docs/) folder.
 
 The GitHub wiki has been included in this repository as a submodule. Once changes to the wiki within the submodule are made (e.g., new markdown files, images), these changes are first committed and pushed to the wiki's branch, before committing and pushing to the main repository's branch.
 
-To compile the documentation, run the following bash script:
+To compile the documentation after cloning the repository, run the following bash script:
 
 ```sh
 bash docs.sh
@@ -98,12 +98,29 @@ Unless otherwise stated:
 
 ## Credits
 
+The documentation is compiled using Pandoc.
+Pandoc is Copyright (c) 2006-2019 John MacFarlane (jgm at berkeley dot edu), released under the [GNU General Public License version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) or later.
+
+[`pandoc.latex`](docs/pandoc.latex), a LaTeX template for formatting PDFs generated using Pandoc and a LaTeX PDF engine, originally downloaded from the [Pandoc repository](https://github.com/jgm/pandoc/blob/master/data/templates/default.latex), and modified by Nithiya Streethran.
+
+[`syntax.theme`](docs/syntax.theme), a Syntax highlighting theme for Pandoc, originally downloaded from the [skylighting repository](https://github.com/jgm/skylighting/blob/master/skylighting-core/test/default.theme), and modified by Nithiya Streethran.
+skylighting is is Copyright (c) John MacFarlane (jgm at berkeley dot edu), released under the [GNU General Public License version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) or later, and skylighting-core is released under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause).
+
 The documentation in PDF format incorporates the following fonts:
 
-- [EB Garamond by Georg Duffner](https://fonts.google.com/specimen/EB+Garamond), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web)
-- [Lato by Łukasz Dziedzic](https://fonts.google.com/specimen/Lato), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web)
-- [Fira Code by Nikita Prokopov](https://github.com/tonsky/FiraCode), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web)
+- [EB Garamond by Georg Duffner](https://fonts.google.com/specimen/EB+Garamond), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web).
+- [Lato by Łukasz Dziedzic](https://fonts.google.com/specimen/Lato), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web).
+- [Fira Code by Nikita Prokopov](https://github.com/tonsky/FiraCode), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web).
 
-This repository is a continuation and improvement of the work done by [nmstreethran](https://github.com/nmstreethran) in [ENSYSTRA/short-term-forecasting](https://github.com/ENSYSTRA/short-term-forecasting).
+Badges are generated using [Shields.io](https://shields.io).
+Shields.io is licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
 
-Contributing guidelines is adapted from the [Open Science MOOC](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source). The contents of the MOOC are licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
+Icons used within badges are from [Simple Icons](https://simpleicons.org/).
+Simple Icons is licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
+
+The Creative Commons license in markdown format is imported from [idleberg/Creative-Commons-Markdown](https://github.com/idleberg/Creative-Commons-Markdown).
+
+This repository is a continuation and improvement of the work done by Nithiya Streethran in [ENSYSTRA/short-term-forecasting](https://github.com/ENSYSTRA/short-term-forecasting).
+ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No: 765515.
+
+Contributing guidelines are adapted from the [Open Science MOOC](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source). The contents of the MOOC are licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).

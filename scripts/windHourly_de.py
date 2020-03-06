@@ -42,8 +42,7 @@ end = pd.to_datetime(end, format='%Y%m%d%H')
 
 # %% 
 # hourly wind data repo url
-repourl = ('https://opendata.dwd.de/climate_environment/CDC/'
-    'observations_germany/climate/hourly/wind/')
+repourl = ('https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/wind/')
 
 # %% 
 # read fixed width formatted text file

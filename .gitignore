@@ -142,6 +142,7 @@ dmypy.json
 data/*
 archive/*
 draft/*
+temp/
 
 # credentials
 credentials.txt
