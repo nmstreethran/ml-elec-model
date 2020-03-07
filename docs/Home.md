@@ -14,6 +14,7 @@ Machine learning-based electricity system model.
 
 - [entsoe-py](https://pypi.org/project/entsoe-py/)
 - [GeoPandas](https://geopandas.org/)
+- [Bokeh](https://bokeh.org/)
 
 ### Installation
 
@@ -27,7 +28,7 @@ Machine learning-based electricity system model.
 2. Install dependencies:
 
     ```sh
-    python3 -m pip install entsoe-py geopandas
+    python3 -m pip install entsoe-py geopandas bokeh
     ```
 
 **Using Anaconda:**
@@ -42,7 +43,7 @@ Machine learning-based electricity system model.
 2. Install required packages:
 
     ```sh
-    conda install --channel conda-forge geopandas
+    conda install --channel conda-forge geopandas bokeh
     pip install entsoe-py
     ```
 

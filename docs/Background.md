@@ -16,11 +16,11 @@ The table below shows the characteristics of the main energy generation technolo
 
 *Characteristics of the main energy generation technologies, adapted from Erbach 2016 and Tidball, et al. 2010.*
 
-**Type**<sup>[^1]</sup> | **Variable** | **Fuel type** | **Flexibility** | **Low carbon** | **CAPEX** | **OPEX** | **LCOE**<sup>[^2]</sup>
+**Type**[^1] | **Variable** | **Fuel type** | **Flexibility** | **Low carbon** | **CAPEX** | **OPEX** | **LCOE**[^2]
 --|--|--|---|---|--|--|--
 Coal | no | fossil | medium | no | low | high | very low
 Natural gas | no | fossil | high | no | very low | very high | low
-Biomass | no | renewable | medium | yes<sup>[^3]</sup> | low | very high | very high
+Biomass | no | renewable | medium | yes[^3] | low | very high | very high
 Nuclear | no | nuclear | low | zero-emission | medium | medium | medium
 Hydro | no | renewable | very high | zero-emission | | |
 Solar | yes | renewable | very low | zero-emission | very high | very low | very high

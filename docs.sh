@@ -7,7 +7,7 @@ cd wiki
 pandoc \
     --template=pandoc.latex \
     --pdf-engine=xelatex \
-    --metadata title="elec-sys-data" \
+    --metadata title="ml-elec-model" \
     --metadata author="Nithiya Streethran" \
     --variable date="`date '+%-d %B %Y'`" \
     --variable keywords="electricity system data, open source" \
@@ -27,7 +27,6 @@ pandoc \
     Background.md \
     Regions.md \
     ENTSO-E-data.md \
-    Nord-Pool-data.md \
     German-meteorological-data.md \
     Glossary.md \
     --output docs.pdf

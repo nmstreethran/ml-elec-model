@@ -8,6 +8,7 @@ CAPEX - capital expenditure \
 CO~2~ - carbon dioxide \
 DNO - distribution network operator \
 DSM - demand-side management \
+DWD - Deutscher Wetterdienst (Germany's meteorological service) \
 EIC - Energy Identification Code \
 ENTSO-E - European Network of Transmission Systems Operators for Electricity \
 ENTSO-E TP - ENTSO-E Transparency Platform \
