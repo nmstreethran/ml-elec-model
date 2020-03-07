@@ -143,6 +143,11 @@ data/*
 archive/*
 draft/*
 temp/
+plots/
 
-# credentials
+# Credentials
 credentials.txt
+
+# Pages
+Gemfile.lock
+_site/

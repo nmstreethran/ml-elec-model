@@ -3,7 +3,7 @@
 
 Weather data from Deutscher Wetterdienst (DWD)
 Nomenclature of territorial units for statistics (NUTS) data
-at level 3
+at level 3 from Eurostat
 """
 
 # %%
