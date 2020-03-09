@@ -69,9 +69,10 @@ latex_elements = {
     'pointsize': '11pt',
 
     'fontpkg': r'''
-\setmainfont{EB Garamond}
-\setsansfont{Lato}
-\setmonofont{DejaVu Sans Mono}
+        \setmainfont{EB Garamond}
+        \setsansfont{Lato}
+        \setmonofont{DejaVu Sans Mono}
+    ''',
 
 # # Additional stuff for the LaTeX preamble.
 #     'preamble': r'''

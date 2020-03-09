@@ -4,7 +4,7 @@
 cd wiki
 
 # create Home.rst from index.rst
-cp -n index.rst Home.rst
+cp index.rst Home.rst
 
 # change directory back to the previous level
 cd ..

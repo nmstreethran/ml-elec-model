@@ -17,7 +17,10 @@ background regions entso-e-data german-meteorological-data glossary
 license
 :::
 
-by nmstreethran at gmail dot com
+About
+=====
+
+by Nithiya Streethran (nmstreethran at gmail dot com)
 
 **This project is a work-in-progress. Feedback and suggestions are
 always welcome. Please open an issue or refer to the contributing
@@ -26,10 +29,9 @@ guidelines in the main repository if you would like to contribute.**
 Machine learning-based electricity system model.
 
 Requirements
-============
+------------
 
-Packages
---------
+**Packages:**
 
 -   [Bokeh](https://bokeh.org/)
 -   [entsoe-py](https://pypi.org/project/entsoe-py/)
@@ -40,8 +42,7 @@ Packages
 -   [requests](https://pypi.org/project/requests/)
 -   [Shapely](https://pypi.org/project/Shapely/)
 
-Installation
-------------
+**Installation:**
 
 1.  (Recommended) Create and activate a virtual environment:
 
@@ -56,7 +57,7 @@ Installation
     > pip install entsoe-py geopandas bokeh
     > ```
 
-**Using Anaconda:**
+*Using Anaconda:*
 
 1.  (Recommended) Create and activate a virtual environment:
 
@@ -73,7 +74,7 @@ Installation
     > ```
 
 Cloning the repository
-======================
+----------------------
 
 To clone the latest version of this repository, including the contents
 of the submodule:
@@ -91,7 +92,7 @@ git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 ```
 
 Documentation
-=============
+-------------
 
 The documentation is maintained in in the repository\'s [GitHub
 Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built
@@ -134,7 +135,7 @@ bash docs.sh
 ```
 
 License
-=======
+-------
 
 Unless otherwise stated:
 
@@ -146,7 +147,7 @@ Unless otherwise stated:
     License](https://creativecommons.org/licenses/by/4.0/).
 
 Credits
-=======
+-------
 
 Badges are generated using [Shields.io](https://shields.io). Shields.io
 is licensed under a [Creative Commons Zero v1.0 Universal
