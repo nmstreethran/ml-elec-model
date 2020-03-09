@@ -4,235 +4,163 @@ ENTSO-E data
 Generation and load data
 ------------------------
 
-Generation and load data for each bidding zone are downloaded from the
-`ENTSO-E Transparency Platform (ENTSO-E
-TP) <https://transparency.entsoe.eu/>`__. The descriptions of the data
-are adapted from `ENTSO-E Transparency Platform’s Knowledge
-Base <https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html>`__.
-ENTSO-E TP aggregates data by following electricity production types:
+Generation and load data for each bidding zone are downloaded from the `ENTSO-E Transparency Platform (ENTSO-E TP) <https://transparency.entsoe.eu/>`__. The descriptions of the data are adapted from `ENTSO-E Transparency Platform's Knowledge Base <https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html>`__. ENTSO-E TP aggregates data by following electricity production types:
 
--  Biomass
--  Fossil brown coal/lignite
--  Fossil gas
--  Fossil hard coal
--  Fossil oil
--  Geothermal
--  Hydro pumped storage
--  Hydro run-of-river and poundage
--  Hydro water reservoir
--  Nuclear
--  Other
--  Other renewable
--  Solar
--  Waste
--  Wind offshore
--  Wind onshore
+- Biomass
+- Fossil brown coal/lignite
+- Fossil gas
+- Fossil hard coal
+- Fossil oil
+- Geothermal
+- Hydro pumped storage
+- Hydro run-of-river and poundage
+- Hydro water reservoir
+- Nuclear
+- Other
+- Other renewable
+- Solar
+- Waste
+- Wind offshore
+- Wind onshore
 
 Actual generation per production type
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This dataset is the actual net electricity generation output in MW,
-aggregated by production type for each bidding zone per market time
-unit. These are available at different resolutions depending on the
-country, which is summarised below.
+This dataset is the actual net electricity generation output in MW, aggregated by production type for each bidding zone per market time unit. These are available at different resolutions depending on the country, which is summarised below.
 
-Temporal resolution of actual generation per production type dataset by
-country:
+Temporal resolution of actual generation per production type dataset by country:
 
--  15 minutes: AT, DE, HU, LU, NL
--  30 minutes: CY, IE, UK
--  1 hour: BA, BE, BG, CH, CZ, DK, EE, ES, FI, FR, GE, GR, HR, IT, LT,
-   LV, ME, MK, NO, PL, PT, RO, RS, SE, SI, SK
+- 15 minutes: AT, DE, HU, LU, NL
+- 30 minutes: CY, IE, UK
+- 1 hour: BA, BE, BG, CH, CZ, DK, EE, ES, FI, FR, GE, GR, HR, IT, LT, LV, ME, MK, NO, PL, PT, RO, RS, SE, SI, SK
 
-Each data point represents the average of all available instantaneous
-net generation output values on each market time unit. The values are
-estimated if unknown. The actual outputs of small-scale generating units
-may be estimated if there are no real-time measurements from these
-units. The data are published on ENTSO-E TP no later than one hour after
-the operational period.
+Each data point represents the average of all available instantaneous net generation output values on each market time unit. The values are estimated if unknown. The actual outputs of small-scale generating units may be estimated if there are no real-time measurements from these units. The data are published on ENTSO-E TP no later than one hour after the operational period.
 
 Installed capacity per production unit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This dataset contains information about production units (existing and
-planned) with an installed generation capacity of at least 100 MW, which
-includes the following:
+This dataset contains information about production units (existing and planned) with an installed generation capacity of at least 100 MW, which includes the following:
 
--  unit name
--  code
--  installed net generation capacity (MW)
--  voltage connection level (kV)
--  bidding zone (denoted using Energy Identification Codes (EICs))
--  production type (e.g., fossil gas, wind offshore)
+- unit name
+- code
+- installed net generation capacity (MW)
+- voltage connection level (kV)
+- bidding zone (denoted using Energy Identification Codes (EICs))
+- production type (e.g., fossil gas, wind offshore)
 
-This information is published annually on ENTSO-E TP at the start of the
-year and is valid for the three following years.
+This information is published annually on ENTSO-E TP at the start of the year and is valid for the three following years.
 
 Load
 ~~~~
 
-This dataset represents the actual total load in MW per bidding zone per
-market time unit. These are available at different resolutions depending
-on the country, which is summarised in below.
+This dataset represents the actual total load in MW per bidding zone per market time unit. These are available at different resolutions depending on the country, which is summarised in below.
 
 Temporal resolution of electricity load dataset by country:
 
--  15 minutes: AL, BE, DE, HU, LU, NL
--  30 minutes: CY, IE, UK
--  1 hour: AT, BA, BG, CH, CZ, DK, EE, ES, FI, FR, GE, GR, HR, IT, LT,
-   LV, MD, ME, MK, NO, PL, PT, RO, RS, SI, SK, SE, UA
+- 15 minutes: AL, BE, DE, HU, LU, NL
+- 30 minutes: CY, IE, UK
+- 1 hour: AT, BA, BG, CH, CZ, DK, EE, ES, FI, FR, GE, GR, HR, IT, LT, LV, MD, ME, MK, NO, PL, PT, RO, RS, SI, SK, SE, UA
 
-The total load is defined as equal to the sum of power generated by
-plants on both TSO and DNO networks, from which the following are
-deduced:
+The total load is defined as equal to the sum of power generated by plants on both TSO and DNO networks, from which the following are deduced:
 
--  the balance (export-import) of exchanges on interconnections between
-   neighbouring bidding zones
--  the power absorbed by energy storage resources
+- the balance (export-import) of exchanges on interconnections between neighbouring bidding zones
+- the power absorbed by energy storage resources
 
-The load is calculated using the average of real-time load values per
-bidding zone per market time unit.
+The load is calculated using the average of real-time load values per bidding zone per market time unit.
 
 .. code:: md
 
-   Actual total load (including losses without stored energy)
-   = Net generation – Exports + Imports – Absorbed energy
+    Actual total load (including losses without stored energy)
+    = Net generation – Exports + Imports – Absorbed energy
 
-For these calculations, the net generation is preferred. However, gross
-generation may be used if it is available with the better precision. The
-TSOs responsible for each area decide whether to use gross or net
-generation, but they are required to keep their choice consistent per
-bidding zone. Absorbed energy is also provided as separate information
-with the aggregated generation output of the hydro pumped storage. The
-physical flow on the tie line is measured as agreed by neighbouring TSOs
-or bidding zones, where applicable. This dataset is published on ENTSO-E
-TP no later than one hour after the end of the operating period.
+For these calculations, the net generation is preferred. However, gross generation may be used if it is available with the better precision. The TSOs responsible for each area decide whether to use gross or net generation, but they are required to keep their choice consistent per bidding zone. Absorbed energy is also provided as separate information with the aggregated generation output of the hydro pumped storage. The physical flow on the tie line is measured as agreed by neighbouring TSOs or bidding zones, where applicable. This dataset is published on ENTSO-E TP no later than one hour after the end of the operating period.
 
 Automating the data extraction process
 --------------------------------------
 
-The `ENTSO-E TP <https://transparency.entsoe.eu/dashboard/show>`__ has a
-dashboard with various electricity system data tables and visualisations
-available to the public. All users must first accept the platform’s
-`terms and
-conditions <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf>`__
-and `privacy
-policy <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Privacy_Policy.pdf>`__
-before gaining access to the dashboard. However, in order to export
-datasets in various formats (such as ``.csv`` and ``.xml``), as well as
-gain additional functionalities, it is required to `register for a free
-account on ENTSO-E
-TP <https://transparency.entsoe.eu/usrm/user/createPublicUser>`__.
-ENTSO-E TP’s Restful application programming interface (API) can then be
-used to automate the data extraction process (see the API
-`implementation <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf>`__
-and `user
-guides <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html>`__
-for more info). Once a free account has been created, request for a
-security token to access the API by sending an email to the ENTSO-E TP
-Helpdesk (transparency at entsoe dot eu), stating ‘Restful API access’
-in the subject and the email address used to register for the account.
-Once granted, the security token can be viewed via `account
-settings <https://transparency.entsoe.eu/usrm/user/myAccountSettings>`__.
+The `ENTSO-E TP <https://transparency.entsoe.eu/dashboard/show>`__ has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's `terms and conditions <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf>`__ and `privacy policy <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Privacy_Policy.pdf>`__ before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to `register for a free account on ENTSO-E TP <https://transparency.entsoe.eu/usrm/user/createPublicUser>`__. ENTSO-E TP's Restful application programming interface (API) can then be used to automate the data extraction process (see the API `implementation <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf>`__ and `user guides <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html>`__ for more info). Once a free account has been created, request for a security token to access the API by sending an email to the ENTSO-E TP Helpdesk (transparency at entsoe dot eu), stating 'Restful API access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via `account settings <https://transparency.entsoe.eu/usrm/user/myAccountSettings>`__.
 
-The `ENTSO-E API Python
-client <https://github.com/EnergieID/entsoe-py>`__ is used to easily
-query the required data and return them as Pandas dataframes or series.
-The queries for generation and installed generation capacity per unit
-return dataframes, while the query for load returns a series.
+The `ENTSO-E API Python client <https://github.com/EnergieID/entsoe-py>`__ is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
 ``scripts/entsoe-api.py`` is the script used to perform this.
 
 .. code:: py
 
-   import pandas as pd
-   from entsoe import EntsoePandasClient
-   from entsoe.mappings import DOMAIN_MAPPINGS, BIDDING_ZONES
-   # combine domain and bidding zone keys and values into the
-   # DOMAIN_MAPPINGS dictionary
-   DOMAIN_MAPPINGS.update(BIDDING_ZONES)
+    import pandas as pd
+    from entsoe import EntsoePandasClient
+    from entsoe.mappings import DOMAIN_MAPPINGS, BIDDING_ZONES
+    # combine domain and bidding zone keys and values into the
+    # DOMAIN_MAPPINGS dictionary
+    DOMAIN_MAPPINGS.update(BIDDING_ZONES)
 
-The bidding zones in Europe, mapped to their corresponding EICs as shown
-in the table below, are used when querying using the Pandas client. Note
-that ``DE-LU`` only works for timestamps starting 01/10/2018. Use
-``DE-AT-LU`` for timestamps prior to this date.
+The bidding zones in Europe, mapped to their corresponding EICs as shown in the table below, are used when querying using the Pandas client. Note that ``DE-LU`` only works for timestamps starting 01/10/2018. Use ``DE-AT-LU`` for timestamps prior to this date.
 
-*Bidding zones in Europe and their corresponding EICs.*
+.. table:: Bidding zones in Europe and their corresponding EICs.
 
-=================================== ================ ================
-**Zone name**                       **Bidding zone** **EIC**
-=================================== ================ ================
-Albania                             AL               10YAL-KESH—–5
-Belgium                             BE               10YBE———-2
-Bosnia and Herzegovina              BA               10YBA-JPCC—–D
-Bulgaria                            BG               10YCA-BULGARIA-R
-Switzerland                         CH               10YCH-SWISSGRIDZ
-Cyprus                              CY               10YCY-1001A0003J
-Czech Republic                      CZ               10YCZ-CEPS—–N
-Germany and Luxembourg              DE-LU            10Y1001A1001A82H
-Western Denmark                     DK-1             10YDK-1——–W
-Eastern Denmark                     DK-2             10YDK-2——–M
-Estonia                             EE               10Y1001A1001A39I
-Spain                               ES               10YES-REE——0
-Finland                             FI               10YFI-1——–U
-France                              FR               10YFR-RTE——C
-Georgia                             GE              
-Great Britain                       GB               10YGB———-A
-Greece                              GR               10YGR-HTSO—–Y
-Croatia                             HR               10YHR-HEP——M
-Hungary                             HU               10YHU-MAVIR—-U
-Ireland (Single Electricity Market) IE-SEM           10Y1001A1001A59C
-Centre-North, Italy                 IT-CNOR          10Y1001A1001A70O
-Centre-South, Italy                 IT-CSUD          10Y1001A1001A71M
-North, Italy                        IT-NORTH         10Y1001A1001A73I
-Sardinia, Italy                     IT-Sardinia      10Y1001A1001A74G
-Sicily, Italy                       IT-Sicily        10Y1001A1001A75E
-South, Italy                        IT-SUD           10Y1001A1001A788
-Lithuania                           LT               10YLT-1001A0008Q
-Latvia                              LV               10YLV-1001A00074
-Moldova                             MD              
-Montenegro                          ME               10YCS-CG-TSO—S
-North Macedonia                     MK               10YMK-MEPSO—-8
-Netherlands                         NL               10YNL———-L
-Oslo, Norway                        NO-1             10YNO-1——–2
-Kristiansand, Norway                NO-2             10YNO-2——–T
-Trondheim and Molde, Norway         NO-3             10YNO-3——–J
-Tromsø, Norway                      NO-4             10YNO-4——–9
-Bergen, Norway                      NO-5             10Y1001A1001A48H
-Poland                              PL               10YPL-AREA—–S
-Portugal                            PT               10YPT-REN——W
-Romania                             RO               10YRO-TEL——P
-Serbia                              RS               10YCS-SERBIATSOV
-Luleå, Sweden                       SE-1             10Y1001A1001A44P
-Sundsvall, Sweden                   SE-2             10Y1001A1001A45N
-Stockholm, Sweden                   SE-3             10Y1001A1001A46L
-Malmö, Sweden                       SE-4             10Y1001A1001A47
-Slovenia                            SI               10YSI-ELES—–O
-Slovakia                            SK               10YSK-SEPS—–K
-Ukraine                             UA               10YUA-WEPS—–0
-=================================== ================ ================
+    =================================== ================ ================
+    **Zone name**                       **Bidding zone** **EIC**
+    =================================== ================ ================
+    Albania                             AL               10YAL-KESH—–5
+    Belgium                             BE               10YBE———-2
+    Bosnia and Herzegovina              BA               10YBA-JPCC—–D
+    Bulgaria                            BG               10YCA-BULGARIA-R
+    Switzerland                         CH               10YCH-SWISSGRIDZ
+    Cyprus                              CY               10YCY-1001A0003J
+    Czech Republic                      CZ               10YCZ-CEPS—–N
+    Germany and Luxembourg              DE-LU            10Y1001A1001A82H
+    Western Denmark                     DK-1             10YDK-1——–W
+    Eastern Denmark                     DK-2             10YDK-2——–M
+    Estonia                             EE               10Y1001A1001A39I
+    Spain                               ES               10YES-REE——0
+    Finland                             FI               10YFI-1——–U
+    France                              FR               10YFR-RTE——C
+    Georgia                             GE              
+    Great Britain                       GB               10YGB———-A
+    Greece                              GR               10YGR-HTSO—–Y
+    Croatia                             HR               10YHR-HEP——M
+    Hungary                             HU               10YHU-MAVIR—-U
+    Ireland (Single Electricity Market) IE-SEM           10Y1001A1001A59C
+    Centre-North, Italy                 IT-CNOR          10Y1001A1001A70O
+    Centre-South, Italy                 IT-CSUD          10Y1001A1001A71M
+    North, Italy                        IT-NORTH         10Y1001A1001A73I
+    Sardinia, Italy                     IT-Sardinia      10Y1001A1001A74G
+    Sicily, Italy                       IT-Sicily        10Y1001A1001A75E
+    South, Italy                        IT-SUD           10Y1001A1001A788
+    Lithuania                           LT               10YLT-1001A0008Q
+    Latvia                              LV               10YLV-1001A00074
+    Moldova                             MD              
+    Montenegro                          ME               10YCS-CG-TSO—S
+    North Macedonia                     MK               10YMK-MEPSO—-8
+    Netherlands                         NL               10YNL———-L
+    Oslo, Norway                        NO-1             10YNO-1——–2
+    Kristiansand, Norway                NO-2             10YNO-2——–T
+    Trondheim and Molde, Norway         NO-3             10YNO-3——–J
+    Tromsø, Norway                      NO-4             10YNO-4——–9
+    Bergen, Norway                      NO-5             10Y1001A1001A48H
+    Poland                              PL               10YPL-AREA—–S
+    Portugal                            PT               10YPT-REN——W
+    Romania                             RO               10YRO-TEL——P
+    Serbia                              RS               10YCS-SERBIATSOV
+    Luleå, Sweden                       SE-1             10Y1001A1001A44P
+    Sundsvall, Sweden                   SE-2             10Y1001A1001A45N
+    Stockholm, Sweden                   SE-3             10Y1001A1001A46L
+    Malmö, Sweden                       SE-4             10Y1001A1001A47
+    Slovenia                            SI               10YSI-ELES—–O
+    Slovakia                            SK               10YSK-SEPS—–K
+    Ukraine                             UA               10YUA-WEPS—–0
+    =================================== ================ ================
 
 Terms of use
 ------------
 
--  `GENERAL TERMS AND CONDITIONS FOR THE USE OF THE ENTSO-E TRANSPARENCY
-   PLATFORM <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf>`__
--  `LIST OF DATA AVAILABLE FOR FREE
-   RE-USE <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/List_of_Data_available_for_reuse.pdf>`__
+- `GENERAL TERMS AND CONDITIONS FOR THE USE OF THE ENTSO-E TRANSPARENCY PLATFORM <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf>`__
+- `LIST OF DATA AVAILABLE FOR FREE RE-USE <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/List_of_Data_available_for_reuse.pdf>`__
 
 References
 ----------
 
-1. “`Help Page - ENTSO-E Transparency
-   Platform <https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html>`__.”
-2. “`ENTSO-E Transparency Platform Data Extraction Process
-   Implementation
-   Guide <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf>`__,”
-   ENTSO-E AISBL, Brussels, Belgium, July 2016.
-3. “`Transparency Platform restful API - user
-   guide <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html>`__.”
-4. `EnergieID/entsoe-py <https://github.com/EnergieID/entsoe-py>`__.
-   EnergieID cvba-so, 2019.
-5. “`ENTSO-E Transparency
-   Platform <https://transparency.entsoe.eu/>`__.”
-6. “`Energy Identification Codes
-   (EICs) <https://www.entsoe.eu/data/energy-identification-codes-eic/>`__.”
+1. "`Help Page - ENTSO-E Transparency Platform <https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html>`__."
+2. "`ENTSO-E Transparency Platform Data Extraction Process Implementation Guide <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf>`__," ENTSO-E AISBL, Brussels, Belgium, July 2016.
+3. "`Transparency Platform restful API - user guide <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html>`__."
+4. `EnergieID/entsoe-py <https://github.com/EnergieID/entsoe-py>`__. EnergieID cvba-so, 2019.
+5. "`ENTSO-E Transparency Platform <https://transparency.entsoe.eu/>`__."
+6. "`Energy Identification Codes (EICs) <https://www.entsoe.eu/data/energy-identification-codes-eic/>`__."

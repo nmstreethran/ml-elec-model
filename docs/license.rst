@@ -1,11 +1,7 @@
 License
 =======
 
-creative commons
-----------------
-
-Attribution 4.0 International
------------------------------
+**Creative Commons Attribution 4.0 International**
 
 Creative Commons Corporation (“Creative Commons”) is not a law firm and
 does not provide legal services or legal advice. Distribution of
@@ -18,7 +14,7 @@ disclaims all liability for damages resulting from their use to the
 fullest extent possible.
 
 Using Creative Commons Public Licenses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 
 Creative Commons public licenses provide a standard set of terms and
 conditions that creators and other rights holders may use to share

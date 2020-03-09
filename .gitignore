@@ -147,7 +147,3 @@ plots/
 
 # Credentials
 credentials.txt
-
-# Pages
-Gemfile.lock
-_site/

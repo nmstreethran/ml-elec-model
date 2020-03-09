@@ -74,7 +74,7 @@ p.circle(source=geo_source, x='mercator_x', y='mercator_y',
 
 # %%
 # output the geomap
-output_file('plots/dwd_stations.html')
+output_file('docs/_static/dwd_stations.html')
 save(p)
 
 # %%
