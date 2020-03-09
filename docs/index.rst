@@ -7,13 +7,9 @@ Welcome to ml-elec-model's documentation!
 =========================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-.. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :hidden:
-   :caption: Getting started
+   :caption: Contents
 
    home
    background
@@ -22,12 +18,3 @@ Welcome to ml-elec-model's documentation!
    german-meteorological-data
    glossary
    license
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
