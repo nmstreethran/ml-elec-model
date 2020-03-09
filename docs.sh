@@ -40,3 +40,12 @@ cp -a wiki/* docs/
 # remove copies of footer and sidebar
 rm docs/_Footer.md
 rm docs/_Sidebar.md
+
+# convert md to rst
+pandoc --standalone --to rst docs/Home.md --output docs/home.rst
+pandoc --standalone --to rst docs/Background.md --output docs/background.rst
+pandoc --standalone --to rst docs/Regions.md --output docs/regions.rst
+pandoc --standalone --to rst docs/ENTSO-E-data.md --output docs/entso-e-data.rst
+pandoc --standalone --to rst docs/German-meteorological-data.md --output docs/german-meteorological-data.rst
+pandoc --standalone --to rst docs/Glossary.md --output docs/glossary.rst
+pandoc --standalone --to rst docs/LICENSE.md --output docs/license.rst

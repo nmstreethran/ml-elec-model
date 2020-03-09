@@ -2,9 +2,11 @@
 
 Weather data for Germany is extracted from [Deutscher Wetterdienst's Climate Data Center (CDC) OpenData](https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html).
 
-<script async src="//jsfiddle.net/nithiya/h3mnt20c/5/embed/result/"></script>
+![](images/dwd_stations.png)
 
-https://jsfiddle.net/nithiya/h3mnt20c/
+*A map of German metorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat[^4].*
+
+[^4]: *An interactive version of this map can be viewed on JSFiddle: <https://jsfiddle.net/nithiya/h3mnt20c/>.*
 
 ## Automating the data extraction process
 
