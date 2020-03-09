@@ -88,27 +88,19 @@ git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 
 The documentation is maintained in in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built using Sphinx and Read the Docs. The files can also be found in the [`docs`](docs/) folder.
 
-The GitHub wiki has been included in this repository as a submodule. Once changes to the wiki within the submodule are made (e.g., new markdown files, images), these changes are first committed and pushed to the wiki's branch, before committing and pushing to the main repository's branch.
-
-The documentation in PDF format incorporates the following fonts:
-
-- [EB Garamond by Georg Duffner](https://fonts.google.com/specimen/EB+Garamond), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web).
-- [Lato by Łukasz Dziedzic](https://fonts.google.com/specimen/Lato), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web).
-- [Fira Code by Nikita Prokopov](https://github.com/tonsky/FiraCode), licensed under the [SIL Open Font License](http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web).
-
-To compile the documentation locally, Pandoc and Sphinx are required.
-Pandoc is Copyright (c) 2006-2019 John MacFarlane (jgm at berkeley dot edu), released under the [GNU General Public License version 2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) or later.
-Install the required Sphinx Python packages as follows:
+To build the documentation locally, clone the repository (including submodules) and install the required Sphinx Python packages as follows:
 
 ```sh
 pip install sphinx, sphinx-rtd-theme
 ```
 
-Run the following bash script to compile:
+The GitHub wiki has been included in this repository as a submodule. All changes must be made to the files within this submodule (i.e., the `wiki` directory). Once changes are made, the following bash script must be executed to compile the documentation:
 
 ```sh
 bash docs.sh
 ```
+
+Then, commit and push all changes to the wiki's branch. Finally, commit and push to the main repository's branch.
 
 ## License
 
@@ -119,15 +111,9 @@ Unless otherwise stated:
 
 ## Credits
 
-Badges are generated using [Shields.io](https://shields.io).
-Shields.io is licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
-
-Icons used within badges are from [Simple Icons](https://simpleicons.org/).
-Simple Icons is licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
-
-The Creative Commons license in markdown format is imported from [idleberg/Creative-Commons-Markdown](https://github.com/idleberg/Creative-Commons-Markdown).
-
 This repository is a continuation and improvement of the work done by Nithiya Streethran in [ENSYSTRA/short-term-forecasting](https://github.com/ENSYSTRA/short-term-forecasting).
 ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No: 765515.
 
 Contributing guidelines are adapted from the [Open Science MOOC](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source). The contents of the MOOC are licensed under a [Creative Commons Zero v1.0 Universal License](https://creativecommons.org/publicdomain/zero/1.0/).
+
+The Creative Commons license in markdown format is imported from [idleberg/Creative-Commons-Markdown](https://github.com/idleberg/Creative-Commons-Markdown).

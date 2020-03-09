@@ -144,6 +144,7 @@ archive/*
 draft/*
 temp/
 plots/
+_site/
 
 # Credentials
 credentials.txt
