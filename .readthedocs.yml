@@ -9,8 +9,8 @@ version: 2
 sphinx:
   configuration: docs/conf.py
 
-git:
-  submodules: false
+submodules:
+  exclude: all
 
 # Build documentation with MkDocs
 #mkdocs:
