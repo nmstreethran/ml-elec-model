@@ -72,16 +72,14 @@ latex_elements = {
 # preamble
     'preamble': r'''
         % hyperlinks
-        \hypersetup{hidelinks,colorlinks=false}
+        \hypersetup{linkcolor=blue,urlcolor=blue}
         %% fonts and encoding
         \usepackage{ebgaramond}
         \usepackage[defaultsans]{lato}
         \usepackage{inconsolata}
-        %% sections
-        \setcounter{secnumdepth}{0}
         %% tables
         % table fonts
-        \renewcommand{\sphinxstyletheadfamily}{\rmfamily}
+        \renewcommand{\sphinxstyletheadfamily}{\rmfamily\bfseries}
         \renewcommand{\sphinxtablecontinued}{\rmfamily}
         \let\oldlongtable\longtable
         \renewcommand{\longtable}{\footnotesize\oldlongtable}
@@ -97,5 +95,11 @@ latex_elements = {
         \makeatletter
         \def\fps@figure{!htb}
         \makeatother
+        %% numbering
+        % reset footnote numbering
+        \setcounter{secnumdepth}{0}
+        \counterwithout{footnote}{chapter}
+        \counterwithout{figure}{chapter}
+        \counterwithout{table}{chapter}
     ''',
 }

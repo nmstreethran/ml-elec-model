@@ -10,7 +10,7 @@
 
 by Nithiya Streethran (nmstreethran at gmail dot com)
 
-**This project is a work-in-progress. Feedback and suggestions are always welcome. Please refer to the [contributing guidelines](CONTRIBUTING.md) if you would like to contribute.**
+**This project is a work-in-progress. Feedback and suggestions are always welcome. Please refer to the contributing guidelines if you would like to contribute.**
 
 Machine learning-based electricity system model.
 
@@ -86,9 +86,9 @@ git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 
 ## Documentation
 
-The documentation is maintained in in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built using Sphinx and Read the Docs. The files can also be found in the [`docs`](docs/) folder.
+The documentation is maintained in in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built using [Sphinx](http://sphinx-doc.org/) and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io/>. The files can be found in the `docs` folder.
 
-To build the documentation locally, clone the repository (including submodules) and install the required Sphinx Python packages as follows:
+To build the documentation locally, clone the repository (including submodules) and install a TeX distribution (such as [TeX Live](http://tug.org/texlive/)) and the required Sphinx Python packages as follows:
 
 ```sh
 pip install sphinx, sphinx-rtd-theme

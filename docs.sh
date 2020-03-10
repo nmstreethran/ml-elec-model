@@ -20,8 +20,9 @@ rm _Footer.md
 rm _Sidebar.md
 rm Home.rst
 
-# build readthedocs html
+# build readthedocs html and pdf via latex
 make html
+make latexpdf LATEXMKOPTS="-silent"
 
 # change directory back to the previous level
 cd ..
