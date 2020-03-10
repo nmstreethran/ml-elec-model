@@ -78,7 +78,7 @@ For these calculations, the net generation is preferred. However, gross generati
 Automating the data extraction process
 --------------------------------------
 
-The `ENTSO-E TP <https://transparency.entsoe.eu/dashboard/show>`__ has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's `terms and conditions <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf>`__ and `privacy policy <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Privacy_Policy.pdf>`__ before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to `register for a free account on ENTSO-E TP <https://transparency.entsoe.eu/usrm/user/createPublicUser>`__. ENTSO-E TP's Restful application programming interface (API) can then be used to automate the data extraction process (see the API `implementation <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf>`__ and `user guides <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html>`__ for more info). Once a free account has been created, request for a security token to access the API by sending an email to the ENTSO-E TP Helpdesk (transparency at entsoe dot eu), stating 'Restful API access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via `account settings <https://transparency.entsoe.eu/usrm/user/myAccountSettings>`__.
+The `ENTSO-E TP <https://transparency.entsoe.eu/dashboard/show>`__ has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's `terms and conditions and privacy policy <https://transparency.entsoe.eu/content/static_content/Static%20content/terms%20and%20conditions/terms%20and%20conditions.html>`__ before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to `register for a free account on ENTSO-E TP <https://transparency.entsoe.eu/usrm/user/createPublicUser>`__. ENTSO-E TP's Restful application programming interface (API) can then be used to automate the data extraction process (see the API `implementation <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf>`__ and `user guides <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html>`__ for more info). Once a free account has been created, request for a security token to access the API by sending an email to the ENTSO-E TP Helpdesk (transparency at entsoe dot eu), stating 'Restful API access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via `account settings <https://transparency.entsoe.eu/usrm/user/myAccountSettings>`__.
 
 The `ENTSO-E API Python client <https://github.com/EnergieID/entsoe-py>`__ is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
 ``scripts/entsoe-api.py`` is the script used to perform this.
@@ -148,12 +148,6 @@ The bidding zones in Europe, mapped to their corresponding EICs as shown in the 
     Slovakia                            SK               10YSK-SEPS—–K
     Ukraine                             UA               10YUA-WEPS—–0
     =================================== ================ ================
-
-Terms of use
-------------
-
-- `GENERAL TERMS AND CONDITIONS FOR THE USE OF THE ENTSO-E TRANSPARENCY PLATFORM <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/ENTSOE_Transparency_Terms_Conditions.pdf>`__
-- `LIST OF DATA AVAILABLE FOR FREE RE-USE <https://docstore.entsoe.eu/Documents/MC%20documents/Transparency%20Platform/List_of_Data_available_for_reuse.pdf>`__
 
 References
 ----------

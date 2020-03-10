@@ -66,4 +66,4 @@ References
 6. Tidball, R., Bluestein, J., Rodriguez, N., Knoke, S., and Macknick, J., "`Cost and Performance Assumptions for Modeling Electricity Generation Technologies <https://www.nrel.gov/docs/fy11osti/48595>`__," National Renewable Energy Laboratory, Subcontract Report NREL/SR-6A20-48595, 2010.
 7. Pinson, P., "Renewables in Electricity Markets."
 8. "`The current electricity market design in Europe <https://set.kuleuven.be/ei/factsheets>`__," KU Leuven Energy Institute, Heverlee, Belgium, January 2015.
-9. "`Overview of European Electricity Markets <https://ec.europa.eu/energy/en/data-analysis/energy-modelling/metis>`__," European Union, Brussels, Belgium, February 2016.
+9. "`Overview of European Electricity Markets <https://ec.europa.eu/energy/sites/ener/files/documents/overview_of_european_electricity_markets.pdf>`__," European Union, Brussels, Belgium, February 2016.

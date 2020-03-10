@@ -68,8 +68,9 @@ latex_elements = {
 
     'sphinxsetup':
         'verbatimwithframe=false, TitleColor={rgb}{0,0,0}, VerbatimColor={rgb}{242,243,244}',
+    
+    'extraclassoptions': 'openany',
 
-# preamble
     'preamble': r'''
         % hyperlinks
         \hypersetup{linkcolor=blue,urlcolor=blue}
@@ -96,8 +97,9 @@ latex_elements = {
         \def\fps@figure{!htb}
         \makeatother
         %% numbering
-        % reset footnote numbering
         \setcounter{secnumdepth}{0}
+        % reset numbering
+        \usepackage{chngcntr}
         \counterwithout{footnote}{chapter}
         \counterwithout{figure}{chapter}
         \counterwithout{table}{chapter}
