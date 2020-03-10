@@ -61,45 +61,41 @@ html_static_path = ['_static']
 
 # -- LaTeX options -----------------------------------------------------------
 
-latex_engine = 'xelatex'
-
 latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
     'papersize': 'a4paper',
 
-# The font size ('10pt', '11pt' or '12pt').
     'pointsize': '11pt',
+
+    'sphinxsetup':
+        'verbatimwithframe=false, TitleColor={rgb}{0,0,0}, VerbatimColor={rgb}{242,243,244}',
 
 # preamble
     'preamble': r'''
+        % hyperlinks
+        \hypersetup{hidelinks,colorlinks=false}
         %% fonts and encoding
-        \usepackage[utf8]{inputenc}
-        \usepackage[T1]{fontenc}
-        \usepackage{CormorantGaramond}
+        \usepackage{ebgaramond}
         \usepackage[defaultsans]{lato}
-        \usepackage{FiraMono}
+        \usepackage{inconsolata}
         %% sections
         \setcounter{secnumdepth}{0}
-        %% graphics
-        \usepackage{graphicx,grffile,tikz,tikzpagenodes}
-        \usetikzlibrary{positioning}
-        \makeatletter
-        \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-        \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-        \makeatother
-        % Scale images if necessary, so that they will not overflow the page
-        % margins by default, and it is still possible to overwrite the defaults
-        % using explicit options in \includegraphics[width, height, ...]{}
-        \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-        % set default figure placement to htbp
-        \makeatletter
-        \def\fps@figure{!htb} %%% modified
-        \makeatother
         %% tables
-        \usepackage{longtable,booktabs}
-        % table font size
-        \let\oldtabular\longtable
-        \renewcommand{\longtable}{\footnotesize\oldtabular}
+        % table fonts
+        \renewcommand{\sphinxstyletheadfamily}{\rmfamily}
+        \renewcommand{\sphinxtablecontinued}{\rmfamily}
+        \let\oldlongtable\longtable
+        \renewcommand{\longtable}{\footnotesize\oldlongtable}
+        \let\oldtabulary\tabulary
+        \renewcommand{\tabulary}{\footnotesize\oldtabulary}
+        % captions
         \usepackage[font=small,labelfont=bf]{caption}
+        % table rules
+        \usepackage{booktabs}
+        \setlength{\arrayrulewidth}{0pt}
+        %% graphics
+        % set default figure placement to htb
+        \makeatletter
+        \def\fps@figure{!htb}
+        \makeatother
     ''',
 }

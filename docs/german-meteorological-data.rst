@@ -5,14 +5,13 @@ Weather data for Germany is extracted from `Deutscher Wetterdienst's Climate Dat
 
 A map of German meteorological stations is shown below\  [1]_.
 
-.. raw:: html
-    :file: _static/dwd_stations.html
-
 .. figure:: images/dwd_stations.png
-    :scale: 0 %
     :alt: A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat.
 
     A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat.
+
+.. raw:: html
+    :file: _static/dwd_stations.html
 
 .. [1] The interactive map can be viewed on `JSFiddle <https://jsfiddle.net/nithiya/h3mnt20c/>`__.
 

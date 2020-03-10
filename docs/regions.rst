@@ -196,46 +196,45 @@ Europe has multiple TSOs and cross-border interconnections. These are listed, al
 
 .. table:: TSOs and cross-border interconnections in Europe. Data: European Network of Transmission System Operators for Electricity.
 
-    +-----------------+-----------------+-----------------+-----------------+
-    | **Country**     | **TSOs**        | **Cross-border  | **Bidding       |
-    |                 |                 | interconnection | zones**         |
-    |                 |                 | s**             |                 |
-    +=================+=================+=================+=================+
-    | BE              | Elia System     | FR, LU, NL, UK  | BE              |
-    |                 | Operator        |                 |                 |
-    +-----------------+-----------------+-----------------+-----------------+
-    | DK              | Energinet       | DE, NO, SE      | DK1, DK2        |
-    +-----------------+-----------------+-----------------+-----------------+
-    | DE              | TransnetBW,     | AT, CH, CZ, DK, | DE-LU           |
-    |                 | TenneT TSO,     | FR, LU, NL, PL, |                 |
-    |                 | Amprion,        | SE              |                 |
-    |                 | 50Hertz         |                 |                 |
-    |                 | Transmission    |                 |                 |
-    +-----------------+-----------------+-----------------+-----------------+
-    | FR              | Réseau de       | BE, CH, DE, ES, | FR              |
-    |                 | Transport       | IT, UK          |                 |
-    |                 | d’Electricité   |                 |                 |
-    +-----------------+-----------------+-----------------+-----------------+
-    | NL              | TenneT TSO      | BE, DE, NO, UK  | NL              |
-    +-----------------+-----------------+-----------------+-----------------+
-    | NO              | Statnett        | DK, FI, NL, SE  | NO1, NO2, NO3,  |
-    |                 |                 |                 | NO4, NO5        |
-    +-----------------+-----------------+-----------------+-----------------+
-    | SE              | Svenska         | DK, FI, DE, LT, | SE1, SE2, SE3,  |
-    |                 | Kraftnät        | NO, PL          | SE4             |
-    +-----------------+-----------------+-----------------+-----------------+
-    | UK              | National Grid   | BE, FR, IE, NL  | GB, IE-SEM      |
-    |                 | Electricity     |                 |                 |
-    |                 | Transmission,   |                 |                 |
-    |                 | System Operator |                 |                 |
-    |                 | for Northern    |                 |                 |
-    |                 | Ireland,        |                 |                 |
-    |                 | Scottish Hydro  |                 |                 |
-    |                 | Electric        |                 |                 |
-    |                 | Transmission,   |                 |                 |
-    |                 | ScottishPower   |                 |                 |
-    |                 | Transmission    |                 |                 |
-    +-----------------+-----------------+-----------------+-----------------+
+    +--------------------+--------------------+--------------------+--------------------+
+    | **Country**        | **TSOs**           | **Cross-border     | **Bidding          |
+    |                    |                    | interconnections** | zones**            |
+    +====================+====================+====================+====================+
+    | BE                 | Elia System        | FR, LU, NL, UK     | BE                 |
+    |                    | Operator           |                    |                    |
+    +--------------------+--------------------+--------------------+--------------------+
+    | DK                 | Energinet          | DE, NO, SE         | DK1, DK2           |
+    +--------------------+--------------------+--------------------+--------------------+
+    | DE                 | TransnetBW,        | AT, CH, CZ, DK,    | DE-LU              |
+    |                    | TenneT TSO,        | FR, LU, NL, PL,    |                    |
+    |                    | Amprion,           | SE                 |                    |
+    |                    | 50Hertz            |                    |                    |
+    |                    | Transmission       |                    |                    |
+    +--------------------+--------------------+--------------------+--------------------+
+    | FR                 | Réseau de          | BE, CH, DE, ES,    | FR                 |
+    |                    | Transport          | IT, UK             |                    |
+    |                    | d’Electricité      |                    |                    |
+    +--------------------+--------------------+--------------------+--------------------+
+    | NL                 | TenneT TSO         | BE, DE, NO, UK     | NL                 |
+    +--------------------+--------------------+--------------------+--------------------+
+    | NO                 | Statnett           | DK, FI, NL, SE     | NO1, NO2, NO3,     |
+    |                    |                    |                    | NO4, NO5           |
+    +--------------------+--------------------+--------------------+--------------------+
+    | SE                 | Svenska            | DK, FI, DE, LT,    | SE1, SE2, SE3,     |
+    |                    | Kraftnät           | NO, PL             | SE4                |
+    +--------------------+--------------------+--------------------+--------------------+
+    | UK                 | National Grid      | BE, FR, IE, NL     | GB, IE-SEM         |
+    |                    | Electricity        |                    |                    |
+    |                    | Transmission,      |                    |                    |
+    |                    | System Operator    |                    |                    |
+    |                    | for Northern       |                    |                    |
+    |                    | Ireland,           |                    |                    |
+    |                    | Scottish Hydro     |                    |                    |
+    |                    | Electric           |                    |                    |
+    |                    | Transmission,      |                    |                    |
+    |                    | ScottishPower      |                    |                    |
+    |                    | Transmission       |                    |                    |
+    +--------------------+--------------------+--------------------+--------------------+
 
 References
 ----------
