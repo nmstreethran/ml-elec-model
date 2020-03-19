@@ -64,7 +64,7 @@ Machine learning-based electricity system model.
 2. Install required packages:
 
     ```sh
-    conda install --channel conda-forge geopandas bokeh
+    conda install geopandas bokeh
     pip install entsoe-py
     ```
 
@@ -86,12 +86,12 @@ git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 
 ## Documentation
 
-The documentation is maintained in in the repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built using [Sphinx](http://sphinx-doc.org/) and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io/>. The files can be found in the `docs` folder.
+The documentation is maintained in this repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built using [Sphinx](http://sphinx-doc.org/) and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io/>. The files can be found in the `docs` folder.
 
-To build the documentation locally, clone the repository (including submodules) and install a TeX distribution (such as [TeX Live](http://tug.org/texlive/)) and the required Sphinx Python packages as follows:
+To build the documentation locally, clone this repository (including submodules) and install a TeX distribution (such as [TeX Live](http://tug.org/texlive/)). Then, install the required Sphinx Python packages as follows:
 
 ```sh
-pip install sphinx, sphinx-rtd-theme
+pip install sphinx sphinx-rtd-theme
 ```
 
 The GitHub wiki has been included in this repository as a submodule. All changes must be made to the files within this submodule (i.e., the `wiki` directory). Once changes are made, the following bash script must be executed to compile the documentation:
@@ -101,6 +101,8 @@ bash docs.sh
 ```
 
 Then, commit and push all changes to the wiki's branch. Finally, commit and push to the main repository's branch.
+
+Local builds of the documentation in HTML and PDF formats can be viewed after running the above bash script by opening `docs/_build/html/index.html` and `docs/_build/latex/ml-elec-model.pdf` respectively.
 
 ## License
 

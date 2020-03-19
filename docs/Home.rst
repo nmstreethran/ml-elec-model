@@ -17,17 +17,6 @@ Welcome to ml-elec-model's documentation!
     :target: https://github.com/nmstreethran/ml-elec-model
     :alt: GitHub Repository
 
-.. toctree::
-    :maxdepth: 3
-    :hidden:
-    :caption: Contents
-
-    background
-    regions
-    entso-e-data
-    german-meteorological-data
-    glossary
-
 About
 -----
 
@@ -79,7 +68,7 @@ Requirements
 
     .. code:: sh
 
-        conda install --channel conda-forge geopandas bokeh
+        conda install geopandas bokeh
         pip install entsoe-py
 
 Cloning the repository
@@ -102,13 +91,13 @@ To clone the latest version of this repository, including the contents of the su
 Documentation
 ~~~~~~~~~~~~~
 
-The documentation is maintained in in the repository's `GitHub Wiki <https://github.com/nmstreethran/ml-elec-model/wiki>`__ and built using `Sphinx <http://sphinx-doc.org/>`__ and `Read the Docs <https://readthedocs.org>`__. It is available at `<https://ml-elec-model.rtfd.io/>`__. The files can be found in the ``docs`` folder.
+The documentation is maintained in this repository's `GitHub Wiki <https://github.com/nmstreethran/ml-elec-model/wiki>`__ and built using `Sphinx <http://sphinx-doc.org/>`__ and `Read the Docs <https://readthedocs.org>`__. It is available at `<https://ml-elec-model.rtfd.io/>`__. The files can be found in the ``docs`` folder.
 
-To build the documentation locally, clone the repository (including submodules) and install a TeX distribution (such as `TeX Live <http://tug.org/texlive/>`__) and the required Sphinx Python packages as follows:
+To build the documentation locally, clone this repository (including submodules) and install a TeX distribution (such as `TeX Live <http://tug.org/texlive/>`__). Then, install the required Sphinx Python packages as follows:
 
 .. code:: sh
 
-    pip install sphinx, sphinx-rtd-theme
+    pip install sphinx sphinx-rtd-theme
 
 The GitHub wiki has been included in this repository as a submodule. All changes must be made to the files within this submodule (i.e., the ``wiki`` directory). Once changes are made, the following bash script must be executed to compile the documentation:
 
@@ -117,6 +106,8 @@ The GitHub wiki has been included in this repository as a submodule. All changes
     bash docs.sh
 
 Then, commit and push all changes to the wiki's branch. Finally, commit and push to the main repository's branch.
+
+Local builds of the documentation in HTML and PDF formats can be viewed after running the above bash script by opening ``docs/_build/html/index.html`` and ``docs/_build/latex/ml-elec-model.pdf`` respectively.
 
 License
 ~~~~~~~
@@ -135,3 +126,14 @@ ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation 
 Contributing guidelines is adapted from the `Open Science MOOC <https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source>`__. The contents of the MOOC are licensed under a `Creative Commons Zero v1.0 Universal License <https://creativecommons.org/publicdomain/zero/1.0/>`__.
 
 The Creative Commons license in markdown format is imported from `idleberg/Creative-Commons-Markdown <https://github.com/idleberg/Creative-Commons-Markdown>`__.
+
+.. toctree::
+    :maxdepth: 3
+    :hidden:
+    :caption: Contents
+
+    background
+    regions
+    entso-e-data
+    german-meteorological-data
+    glossary
