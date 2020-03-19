@@ -17,6 +17,17 @@ Welcome to ml-elec-model's documentation!
     :target: https://github.com/nmstreethran/ml-elec-model
     :alt: GitHub Repository
 
+.. toctree::
+    :maxdepth: 3
+    :hidden:
+    :caption: Contents
+
+    background
+    regions
+    entso-e-data
+    german-meteorological-data
+    glossary
+
 About
 -----
 
@@ -126,14 +137,3 @@ ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation 
 Contributing guidelines is adapted from the `Open Science MOOC <https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source>`__. The contents of the MOOC are licensed under a `Creative Commons Zero v1.0 Universal License <https://creativecommons.org/publicdomain/zero/1.0/>`__.
 
 The Creative Commons license in markdown format is imported from `idleberg/Creative-Commons-Markdown <https://github.com/idleberg/Creative-Commons-Markdown>`__.
-
-.. toctree::
-    :maxdepth: 3
-    :hidden:
-    :caption: Contents
-
-    background
-    regions
-    entso-e-data
-    german-meteorological-data
-    glossary

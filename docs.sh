@@ -6,9 +6,13 @@ cp -a wiki/* docs/
 # change directory to docs
 cd docs
 
-# remove copies of footer and sidebar
+# create index.rst from Home.rst
+cp Home.rst index.rst
+
+# remove copies of home, footer and sidebar
 rm _Footer.md
 rm _Sidebar.md
+rm Home.rst
 
 # build readthedocs html and pdf via latex
 make html

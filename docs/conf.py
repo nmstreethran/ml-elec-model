@@ -28,7 +28,7 @@ author = 'Nithiya Streethran'
 import sphinx_rtd_theme
 
 # override default master doc from contents
-master_doc = 'Home'
+master_doc = 'index'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
