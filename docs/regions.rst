@@ -243,10 +243,10 @@ References
 2. "`Bidding Zones Literature Review <https://www.ofgem.gov.uk/sites/default/files/docs/2014/10/fta_bidding_zone_configuration_literature_review_1.pdf>`__," Ofgem, July 2014.
 3. "`Data view - Cross-Border Physical Flow - ENTSO-E Transparency Platform <https://transparency.entsoe.eu/transmission-domain/physicalFlow/show?name=&defaultValue=true&viewType=MAP&areaType=BORDER_BZN>`__."
 4. "`Power | Statkraft <https://www.statkraft.com/market-operations/standard-energy-products/power-electricity/>`__."
-5. "`See market data for all areas | Nord Pool <http://www.nordpoolspot.com/Market-data1/>`__."
-6. "`EPEX SPOT SE: About EPEX SPOT <http://www.epexspot.com/en/companyinfo/about_epex_spot>`__."
+5. "`Market data - Nord Pool <https://www.nordpoolgroup.com/Market-data1/#/nordic/table>`__."
+6. "`EPEX SPOT SE: About EPEX SPOT <https://www.epexspot.com/en/about>`__."
 7. "`DE-AT-LU Bidding zone split - News - ENTSO-E Transparency Platform <https://transparency.entsoe.eu/news/widget?id=5b7c1e9b5092e75a10bab903>`__."
-8. "`European Commission - PRESS RELEASES - Press release - Antitrust: Commission increaseselectricity trading capacity on the Swedish borders <http://europa.eu/rapid/press-release_IP-10-425_en.htm?locale=en>`__," 14 April 2010.
+8. "`European Commission - PRESS RELEASES - Press release - Antitrust: Commission increaseselectricity trading capacity on the Swedish borders <https://ec.europa.eu/commission/presscorner/detail/en/IP_10_425>`__," 14 April 2010.
 9. "`List of changes in day-ahead and intraday areas <https://www.nordpoolspot.com/globalassets/download-center/day-ahead/elspot-area-change-log.pdf>`__," Nord Pool.
 10. "`Counties of Norway <https://en.wikipedia.org/w/index.php?title=Counties_of_Norway&oldid=890663009>`__," Wikipedia. 2 April 2019.
 11. "`Counties of Sweden <https://en.wikipedia.org/w/index.php?title=Counties_of_Sweden&oldid=882806371>`__," Wikipedia. 11 February 2019.

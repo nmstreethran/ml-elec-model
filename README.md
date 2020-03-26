@@ -86,7 +86,7 @@ git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 
 ## Documentation
 
-The documentation is maintained in this repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built using [Sphinx](http://sphinx-doc.org/) and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io/>. The files can be found in the `docs` folder.
+The documentation is maintained in this repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built using [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io/>. The files can be found in the `docs` folder.
 
 To build the documentation locally, clone this repository (including submodules) and install a TeX distribution (such as [TeX Live](http://tug.org/texlive/)). Then, install the required Sphinx Python packages as follows:
 

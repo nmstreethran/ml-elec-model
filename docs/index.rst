@@ -102,7 +102,7 @@ To clone the latest version of this repository, including the contents of the su
 Documentation
 ~~~~~~~~~~~~~
 
-The documentation is maintained in this repository's `GitHub Wiki <https://github.com/nmstreethran/ml-elec-model/wiki>`__ and built using `Sphinx <http://sphinx-doc.org/>`__ and `Read the Docs <https://readthedocs.org>`__. It is available at `<https://ml-elec-model.rtfd.io/>`__. The files can be found in the ``docs`` folder.
+The documentation is maintained in this repository's `GitHub Wiki <https://github.com/nmstreethran/ml-elec-model/wiki>`__ and built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and `Read the Docs <https://readthedocs.org>`__. It is available at `<https://ml-elec-model.rtfd.io/>`__. The files can be found in the ``docs`` folder.
 
 To build the documentation locally, clone this repository (including submodules) and install a TeX distribution (such as `TeX Live <http://tug.org/texlive/>`__). Then, install the required Sphinx Python packages as follows:
 

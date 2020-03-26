@@ -2,15 +2,15 @@
 
 Thank you for stopping by and considering contributing to this repository!
 
-**New to Git and GitHub?** See [these learning resources](https://help.github.com/articles/git-and-github-learning-resources/) and this [10 min. Git tutorial](https://try.github.io/levels/1/challenges/1).
+**New to Git and GitHub?** See [these learning resources](https://help.github.com/en/github/getting-started-with-github/git-and-github-learning-resources) and this [10 min. Git tutorial](https://try.github.io/levels/1/challenges/1/).
 
 ## Contact me
 
-Please open an [issue](https://github.com/nmstreethran/elec-sys-data/issues). Feedback and suggestions are always welcome. Please send me an email (nmstreethran at gmail dot com) if you have any enquiries.
+Please open an [issue](https://github.com/nmstreethran/ml-elec-model/issues). Feedback and suggestions are always welcome. Please send me an email (nmstreethran at gmail dot com) if you have any enquiries.
 
 ## Reporting issues
 
-- **Search for existing issues.** Please check to see if someone else has reported the same [issue](https://github.com/nmstreethran/elec-sys-data/issues).
+- **Search for existing issues.** Please check to see if someone else has reported the same [issue](https://github.com/nmstreethran/ml-elec-model/issues).
 
 - **Share as much information as possible.** Include operating system and version, browser and version. Also, include steps to reproduce the bug.
 
@@ -28,7 +28,7 @@ Please refer to each project's style guidelines and guidelines for submitting pa
 
 - Try not to pollute your pull request with unintended changes and keep them simple and small. If possible, squash your commits.
 - Try to share how your code has been tested before submitting a pull request.
-- If your pull request resolves an issue, include **closes #ISSUE_NUMBER** in your commit message (or a [synonym](https://help.github.com/articles/closing-issues-via-commit-messages)).
+- If your pull request resolves an issue, include **closes #ISSUE_NUMBER** in your commit message (or a [synonym](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue)).
 - Review
   - If your pull request is ready for review, another contributor will be assigned to review your pull request.
   - The reviewer will accept or comment on the pull request.
