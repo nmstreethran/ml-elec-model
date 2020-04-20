@@ -14,4 +14,4 @@ git:
     submodules: false
 
 script:
-    - awesome_bot --allow-dupe --skip-save-results --white-list doi.org,travis-ci.org,github.com/nmstreethran/ml-elec-model.git,ml-elec-model.rtfd.io `find . -name "*.md"` `find . -name "*.rst"`
+    - awesome_bot --allow-dupe --skip-save-results --white-list doi.org,travis-ci.org,github.com/nmstreethran/ml-elec-model.git,ml-elec-model.rtfd.io,img.shields.io `find . -name "*.md"` `find . -name "*.rst"`

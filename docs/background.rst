@@ -82,11 +82,11 @@ References
 
 1. "`Paris Agreement <https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement>`__." United Nations Framework Convention on Climate Change, 2015.
 2. "`Energy roadmap 2050 <https://doi.org/10.2833/10759>`__," Publications Office of the European Union, Luxembourg, 2012.
-3. "`Global Energy Transformation: A Roadmap to 2050 <http://www.irena.org/publications/2018/Apr/Global-Energy-Transition-A-Roadmap-to-2050>`__," International Renewable Energy Agency, 2018.
-4. "`Renewable energy - Energy - European Commission <https://ec.europa.eu/energy/en/topics/renewable-energy>`__."
-5. "`World Energy Outlook 2017 <https://www.iea.org/weo2017/>`__," International Energy Agency, Paris, France, 2017.
+3. "`Global Energy Transformation: A Roadmap to 2050 <https://www.irena.org/publications/2018/Apr/Global-Energy-Transition-A-Roadmap-to-2050>`__," International Renewable Energy Agency, 2018.
+4. "`Renewable energy - Energy - European Commission <https://ec.europa.eu/energy/topics/renewable-energy_en>`__."
+5. "`World Energy Outlook 2017 <https://www.iea.org/weo2017>`__," International Energy Agency, Paris, France, 2017.
 6. Lund, H., Østergaard, P. A., Connolly, D, and Mathiesen, B. V., "`Smart energy and smart energy systems <https://doi.org/10.1016/j.energy.2017.05.123>`__," Energy, vol. 137, pp. 556–565, October 2017.
-7. "`Towards a consumer-centric system <http://www.elia.be/~/media/files/Elia/StakeholderDay/Elia-Vision-paper-2018_Front-Spreads-Back.pdf>`__," Elia Group, Brussels, Belgium, 2018.
+7. "`Towards a consumer-centric system <https://www.elia.be/~/media/files/Elia/StakeholderDay/Elia-Vision-paper-2018_Front-Spreads-Back.pdf>`__," Elia Group, Brussels, Belgium, 2018.
 8. Erbach, G., "`Understanding electricity markets in the EU <https://www.europarl.europa.eu/thinktank/en/document.html?reference=EPRS_BRI%282016%29593519>`__," European Union, Briefing, November 2016.
 9. Glismann, S., "Modelling from a TSO Perspective - TenneT NL," 6 September 2018.
 10. Pfenninger, S., Hawkes, A., and Keirstead, J., "`Energy systems modeling for twenty-first century energy challenges <https://doi.org/10.1016/j.rser.2014.02.003>`__," Renewable and Sustainable Energy Reviews, vol. 33, pp. 74–86, May 2014.
@@ -97,5 +97,5 @@ References
 15. "`The current electricity market design in Europe <https://set.kuleuven.be/ei/factsheets>`__," KU Leuven Energy Institute, Heverlee, Belgium, January 2015.
 16. "`Overview of European Electricity Markets <https://ec.europa.eu/energy/data-analysis/energy-modelling/metis_en>`__," European Union, Brussels, Belgium, February 2016.
 17. Herbst, A., Toro, F., Reitze, F., and Jochem, E., "`Introduction to Energy Systems Modelling <https://doi.org/10.1007/BF03399363>`__," Swiss Journal of Economics and Statistics, vol. 148, no. 2, pp. 111–135, April 2012.
-18. Krook-Riekkola, A., "`National Energy System Modelling for Supporting Energy and Climate Policy Decision-making: The Case of Sweden <http://urn.kb.se/resolve?urn=urn:nbn:se:ltu:diva-17594>`__," Chalmers University of Technology, Göteborg, Sweden, 2015.
-19. "`Managing big data for smart grids and smart meters <http://www.ibmbigdatahub.com/whitepaper/managing-big-data-smart-grids-and-smart-meters>`__," IBM Corporation, Somers, NY, USA, 2012.
+18. Krook-Riekkola, A., "`National Energy System Modelling for Supporting Energy and Climate Policy Decision-making: The Case of Sweden <http://ltu.diva-portal.org/smash/record.jsf?pid=diva2:990599>`__," Chalmers University of Technology, Göteborg, Sweden, 2015.
+19. "`Managing big data for smart grids and smart meters <https://www.ibmbigdatahub.com/whitepaper/managing-big-data-smart-grids-and-smart-meters>`__," IBM Corporation, Somers, NY, USA, 2012.
