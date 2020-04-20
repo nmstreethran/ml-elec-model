@@ -236,6 +236,11 @@ Europe has multiple TSOs and cross-border interconnections. These are listed, al
     |                    | Transmission       |                    |                    |
     +--------------------+--------------------+--------------------+--------------------+
 
+Project focus
+-------------
+
+For now, this project will focus on the German electricity system. High resolution open data for Germany is available through the German meteorological service, i.e., Deutscher Wetterdienst (DWD) and the ENTSO-E Transparency Platform (TP). The analysis will focus on the year 2019.
+
 References
 ----------
 
@@ -253,3 +258,5 @@ References
 12. "`ENTSO-E Transparency Platform <https://transparency.entsoe.eu/>`__."
 13. "`Regional Security Coordinators FAQ <https://www.entsoe.eu/major-projects/rscis/>`__."
 14. "`Overview of European Electricity Markets <https://ec.europa.eu/energy/sites/ener/files/documents/overview_of_european_electricity_markets.pdf>`__," European Union, Brussels, Belgium, February 2016.
+15. `Terms of use for data on the CDC ftp server - Deutscher Wetterdienst <https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.pdf>`__.
+16. `ENTSO-E Transparency Platform - Terms and conditions and privacy policy <https://transparency.entsoe.eu/content/static_content/Static%20content/terms%20and%20conditions/terms%20and%20conditions.html>`__.

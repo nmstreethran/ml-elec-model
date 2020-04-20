@@ -25,8 +25,6 @@ Welcome to ml-elec-model's documentation!
     background
     regions
     data-extraction
-    entso-e-data
-    german-meteorological-data
     glossary
 
 About
@@ -127,7 +125,7 @@ License
 Unless otherwise stated:
 
 - Python scripts, Jupyter notebooks and any other form of code or snippets (e.g., shell scripts) in this repository are licensed under the `MIT License <https://opensource.org/licenses/MIT>`__.
-- content, images and documentation are licensed under the `Creative Commons Attribution 4.0 International (CC BY 4.0) License <https://creativecommons.org/licenses/by/4.0/>`__.
+- content, images and documentation are licensed under a `Creative Commons Attribution 4.0 International (CC BY 4.0) License <https://creativecommons.org/licenses/by/4.0/>`__.
 
 Credits
 ~~~~~~~

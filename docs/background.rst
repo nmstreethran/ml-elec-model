@@ -41,11 +41,11 @@ The table below shows the characteristics of the main energy generation technolo
 .. table:: Characteristics of the main energy generation technologies, adapted from Erbach 2016 and Tidball, et al. 2010.
 
     =============== ============ ============= =============== ============== ========= ========= ===============
-    **Type**\  [1]_ **Variable** **Fuel type** **Flexibility** **Low carbon** **CAPEX** **OPEX**  **LCOE**\  [2]_
+    **Type**\  [a]_ **Variable** **Fuel type** **Flexibility** **Low carbon** **CAPEX** **OPEX**  **LCOE**\  [b]_
     =============== ============ ============= =============== ============== ========= ========= ===============
     Coal            no           fossil        medium          no             low       high      very low
     Natural gas     no           fossil        high            no             very low  very high low
-    Biomass         no           renewable     medium          yes [3]_       low       very high very high
+    Biomass         no           renewable     medium          yes [c]_       low       very high very high
     Nuclear         no           nuclear       low             zero-emission  medium    medium    medium
     Hydro           no           renewable     very high       zero-emission                     
     Solar           yes          renewable     very low        zero-emission  very high very low  very high
@@ -55,9 +55,9 @@ The table below shows the characteristics of the main energy generation technolo
     Geothermal      no           renewable     high            zero-emission  high      medium    high
     =============== ============ ============= =============== ============== ========= ========= ===============
 
-.. [1] Costs for natural gas, biomass, solar and geothermal are that of advanced combustion turbine, biomass gasification plant, utility-scale photovoltaic and hydrothermal plant respectively.
-.. [2] LCOE - levelised cost of electricity.
-.. [3] Regrowth of biomass compensates emissions.
+.. [a] Costs for natural gas, biomass, solar and geothermal are that of advanced combustion turbine, biomass gasification plant, utility-scale photovoltaic and hydrothermal plant respectively.
+.. [b] LCOE - levelised cost of electricity.
+.. [c] Regrowth of biomass compensates emissions.
 
 The actors in the electricity market include generators, retailers, large and small consumers, transmission system operators (TSOs), distribution network operators (DNOs), balance responsible parties (BRPs), aggregators, regulators, and market operators.
 
@@ -75,7 +75,7 @@ In the case of generating companies, the OPEX of their generators determine the 
 Project objective
 -----------------
 
-The focus of this project will be on the operational planning resolution of the electricity system. This is due to the potential of renewable energy and electrification using renewable energy in decarbonising the energy and transport industries, as well as to better analyse and include short-term fluctuations of renewable energy generation in energy models. Variable renewable energy resources are also mainly used to generate electricity directly, i.e., wind and solar are converted into electrical energy from kinetic and light or heat energy respectively. This also provides the opportunity to utilise high resolution electricity system data and machine learning methods for forecasting and optimisation of the electricity system. The ultimate aim of this short-term decision making model is to help participants in short-term electricity (i.e., day-ahead) markets to develop operational and bidding strategies to maximise their revenue under uncertainty of variable renewable energy generation. Inputs used by the machine learning model for the day-ahead forecasts include, but are not limited to, recent historical measurements of electricity generation, demand, and market prices.
+The focus of this project will be on the operational planning resolution of the electricity system in Europe. This is due to the potential of renewable energy and electrification using renewable energy in decarbonising the energy and transport industries, as well as to better analyse and include short-term fluctuations of renewable energy generation in energy models. Variable renewable energy resources are also mainly used to generate electricity directly, i.e., wind and solar are converted into electrical energy from kinetic and light or heat energy respectively. This also provides the opportunity to utilise high resolution electricity system data and machine learning methods for forecasting and optimisation of the electricity system. The ultimate aim of this short-term decision making model is to help participants in short-term electricity (i.e., day-ahead) markets to develop operational and bidding strategies to maximise their revenue under uncertainty of variable renewable energy generation. Inputs used by the machine learning model for the day-ahead forecasts include, but are not limited to, recent historical measurements of electricity generation, demand, and market prices.
 
 References
 ----------

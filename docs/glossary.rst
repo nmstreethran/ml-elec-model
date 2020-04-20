@@ -37,13 +37,14 @@ Countries and regions
 | ES - Spain
 | FI - Finland
 | FR - France
-| GB - Great Britain
+| GB - Great Britain (England, Scotland, and Wales)
 | IE - Republic of Ireland
 | IE-SEM - Single electricity market for the island of Ireland (Republic
-  of Ireland and Northern Ireland (United Kingdom))
+  of Ireland + Northern Ireland)
 | IT - Italy
 | LT - Lithuania
 | LU - Luxembourg
+| NI - Northern Ireland
 | NL - Netherlands
 | NO - Norway
 | PL - Poland
