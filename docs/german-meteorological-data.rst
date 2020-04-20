@@ -12,9 +12,6 @@ A map of German meteorological stations is shown below\  [4]_.
 
 .. [4] The interactive map can be viewed on `JSFiddle <https://jsfiddle.net/nithiya/h3mnt20c/>`__.
 
-.. raw:: html
-    :file: _static/dwd_stations.html
-
 Automating the data extraction process
 --------------------------------------
 

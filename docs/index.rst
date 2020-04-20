@@ -24,6 +24,7 @@ Welcome to ml-elec-model's documentation!
 
     background
     regions
+    data-extraction
     entso-e-data
     german-meteorological-data
     glossary
