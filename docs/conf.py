@@ -103,5 +103,5 @@ latex_elements = {
         \counterwithout{footnote}{chapter}
         \counterwithout{figure}{chapter}
         \counterwithout{table}{chapter}
-    ''',
+    '''
 }

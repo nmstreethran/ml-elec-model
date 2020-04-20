@@ -132,19 +132,15 @@ dmypy.json
 
 ##################################################################
 
-## Other files and folders
+## User files and folders
 
-# Visual Studio Code
 *.code-workspace
 .vscode/
-
-# Folders
 data/*
 archive/*
 draft/*
 temp/
 plots/
 _site/
-
-# Credentials
 credentials.txt
+todo.md
