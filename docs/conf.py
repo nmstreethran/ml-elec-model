@@ -73,7 +73,11 @@ latex_elements = {
 
     'preamble': r'''
         % hyperlinks
-        \hypersetup{linkcolor=blue,urlcolor=blue}
+        \hypersetup{
+            linkcolor=blue,
+            urlcolor=blue,
+            pdfkeywords={machine learning, electricity system model, open source},
+            pdfsubject={ml-elec-model documentation (CC BY 4.0)}}
         %% fonts and encoding
         \usepackage{ebgaramond}
         \usepackage[defaultsans]{lato}

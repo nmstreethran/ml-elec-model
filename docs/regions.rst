@@ -239,7 +239,7 @@ Europe has multiple TSOs and cross-border interconnections. These are listed, al
 Project focus
 -------------
 
-For now, this project will focus on the German electricity system. High resolution open data for Germany is available through the German meteorological service, i.e., Deutscher Wetterdienst (DWD) and the ENTSO-E Transparency Platform (TP). The analysis will focus on the year 2019.
+For now, this project will focus on the German electricity system. High resolution open data for Germany is available through the German meteorological service, i.e., Deutscher Wetterdienst (DWD) and the ENTSO-E Transparency Platform (TP). Additonally, based on the EU reference scenario 2016, Germany is expected to consistently be the EU member state with the highest VRE share in generating electricity in the EU, contributing almost 27 % in 2015 and 20 % in 2050. This makes Germany a good case study for analysing VRE generation. The analysis will focus on the year 2019 due to the complete availablility of data on both platforms.
 
 References
 ----------
@@ -260,3 +260,4 @@ References
 14. "`Overview of European Electricity Markets <https://ec.europa.eu/energy/sites/ener/files/documents/overview_of_european_electricity_markets.pdf>`__," European Union, Brussels, Belgium, February 2016.
 15. `Terms of use for data on the CDC ftp server - Deutscher Wetterdienst <https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.pdf>`__.
 16. `ENTSO-E Transparency Platform - Terms and conditions and privacy policy <https://transparency.entsoe.eu/content/static_content/Static%20content/terms%20and%20conditions/terms%20and%20conditions.html>`__.
+17. "`Energy modelling - EU Reference Scenario 2016 <https://data.europa.eu/euodp/data/dataset/energy-modelling>`__."

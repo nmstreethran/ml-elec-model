@@ -156,14 +156,14 @@ German meteorological data from Deutscher Wetterdienst
 
 Weather data for Germany is extracted from `DWD's Climate Data Center (CDC) OpenData <https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html>`__.
 
-A map of German meteorological stations is shown below\  [d]_.
+A map of German meteorological stations is shown below\  [4]_.
 
 .. figure:: images/dwd_stations.png
     :alt: A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat.
 
     A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat.
 
-.. [d] The interactive map can be viewed on `JSFiddle <https://jsfiddle.net/nithiya/h3mnt20c/>`__.
+.. [4] The interactive map can be viewed on `JSFiddle <https://jsfiddle.net/nithiya/h3mnt20c/>`__.
 
 ``scripts/windHourly_de.py`` and ``scripts/solarHourly_de.py`` are the scripts used to extract hourly wind and solar data respectively.
 
