@@ -93,13 +93,6 @@ In short-term electricity market auctions, such as the day-ahead market auction,
 
 In the case of generating companies, the OPEX of their generators determine the price at which it is bid. For conventional power plants, this OPEX includes fuel costs and carbon costs (except nuclear power plants). For solar and wind power plants, the OPEX is close to zero, as they do not require fuel to run. The revenue received by generating companies in the day-ahead market for each power plant contributes towards their CAPEX. Since conventional power plants have relatively low CAPEX, and fuel costs are high, the main decision generating companies have to make in short-term electricity markets is whether it is economical to run these power plants. For solar and wind power plants, which have relatively high CAPEX, companies are interested in getting as many bids accepted and as much of the electricity generated sold as possible.
 
-Project objective
------------------
-
-The focus of this project will be on the operational planning resolution of the electricity system in Europe. This is due to the potential of renewable energy and electrification using renewable energy in decarbonising the energy and transport industries, as well as to better analyse and include short-term fluctuations of renewable energy generation in energy models. VRE resources are also mainly used to generate electricity directly, i.e., wind and solar are converted into electrical energy from kinetic and light or heat energy respectively. This also provides the opportunity to utilise high resolution electricity system data and machine learning methods for forecasting and optimisation of the electricity system. The ultimate aim of this short-term decision making model is to help participants in short-term electricity (i.e., day-ahead) markets to develop operational and bidding strategies to maximise their revenue under uncertainty of VRE generation. Inputs used by the machine learning model for the day-ahead forecasts include, but are not limited to, recent historical measurements of electricity generation, demand, and market prices.
-
-There is a need for open-source energy systems models, as most widely-used models are coded in GAMS, which has a proprietary license. According to the Open Energy Modelling (Openmod) Initiative, an active community advocating the use of open energy modelling in Europe, developing an energy system model is a lengthy process. With new technologies and intermittent renewables replacing conventional energy sources, these models play an important role in simulating such systems and developing new models would be a challenge. Being open-source allows for scientific collaboration, which makes this process more efficient, as there would be overlapping areas in the research and development of energy systems models. Although open-source models generate less rewards due to, for example, not being patented, the models would be subject to full scientific scrutiny, which results in the output being of higher quality in the long run and makes the model accessible to the wider scientific community. Therefore, this model will be fully open source, well-documented, and utilise open data to ensure full transparency and reproducibility.
-
 References
 ----------
 
@@ -107,9 +100,9 @@ References
 2. "`Energy roadmap 2050 <https://doi.org/10.2833/10759>`__," Publications Office of the European Union, Luxembourg, 2012.
 3. "`Global Energy Transformation: A Roadmap to 2050 <https://www.irena.org/publications/2018/Apr/Global-Energy-Transition-A-Roadmap-to-2050>`__," International Renewable Energy Agency, 2018.
 4. "`Renewable energy - Energy - European Commission <https://ec.europa.eu/energy/topics/renewable-energy_en>`__."
-5. "`World Energy Outlook 2017 <https://www.iea.org/weo2017>`__," International Energy Agency, Paris, France, 2017.
+5. "`World Energy Outlook 2017 <https://www.iea.org/reports/world-energy-outlook-2017>`__," International Energy Agency, Paris, France, 2017.
 6. Lund, H., Østergaard, P. A., Connolly, D, and Mathiesen, B. V., "`Smart energy and smart energy systems <https://doi.org/10.1016/j.energy.2017.05.123>`__," Energy, vol. 137, pp. 556–565, October 2017.
-7. "`Towards a consumer-centric system <https://www.elia.be/~/media/files/Elia/StakeholderDay/Elia-Vision-paper-2018_Front-Spreads-Back.pdf>`__," Elia Group, Brussels, Belgium, 2018.
+7. "`Towards a consumer-centric system <https://www.elia.be/-/media/project/elia/elia-site/company/publication/studies-and-reports/studies/elia-vision-paper-2018_front-spreads-back.pdf>`__," Elia Group, Brussels, Belgium, 2018.
 8. Erbach, G., "`Understanding electricity markets in the EU <https://www.europarl.europa.eu/thinktank/en/document.html?reference=EPRS_BRI%282016%29593519>`__," European Union, Briefing, November 2016.
 9. Glismann, S., "Modelling from a TSO Perspective - TenneT NL," 6 September 2018.
 10. Pfenninger, S., Hawkes, A., and Keirstead, J., "`Energy systems modeling for twenty-first century energy challenges <https://doi.org/10.1016/j.rser.2014.02.003>`__," Renewable and Sustainable Energy Reviews, vol. 33, pp. 74–86, May 2014.
@@ -123,7 +116,7 @@ References
 18. Krook-Riekkola, A., "`National Energy System Modelling for Supporting Energy and Climate Policy Decision-making: The Case of Sweden <http://ltu.diva-portal.org/smash/record.jsf?pid=diva2:990599>`__," Chalmers University of Technology, Göteborg, Sweden, 2015.
 19. "`Managing big data for smart grids and smart meters <https://www.ibmbigdatahub.com/whitepaper/managing-big-data-smart-grids-and-smart-meters>`__," IBM Corporation, Somers, NY, USA, 2012.
 20. Ringkjøb, H.-K., Haugan, P. M. and Solbrekke, I. M., '`A review of modelling tools for energy and electricity systems with large shares of variable renewables <https://doi.org/10.1016/j.rser.2018.08.002>`__', Renewable and Sustainable Energy Reviews, vol. 96, pp. 440–459, 1st Nov. 2018.
-21. Hay, S. and Ferguson, A., '`A Review of Power System Modelling Platforms and Capabilities <https://www.theiet.org/sectors/energy/resources/modelling-reports/papers.cfm>`__, The Institution of Engineering and Technology, Mar. 2015.
+21. Hay, S. and Ferguson, A., '`A Review of Power System Modelling Platforms and Capabilities <https://www.theiet.org/media/1291/pnjv-3-15.pdf>`__, The Institution of Engineering and Technology, Mar. 2015.
 22. `Software Archive - UL | Renewables <https://aws-dewi.ul.com/software/>`__.
 23. `Short-term forecasting - DNV-GL <https://www.dnvgl.com/services/forecaster-introduction-3848>`__.
 24. `Project Case Studies | Element Energy <http://www.element-energy.co.uk/sectors/energy-networks/project-case-studies/>`__.

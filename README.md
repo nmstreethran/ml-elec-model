@@ -31,6 +31,7 @@ Machine learning-based electricity system model.
 - [Bokeh](https://bokeh.org/)
 - [entsoe-py](https://pypi.org/project/entsoe-py/)
 - [GeoPandas](https://geopandas.org/)
+- [Matplotlib](https://matplotlib.org/)
 - [NumPy](https://numpy.org/)
 - [Pandas](https://pandas.pydata.org/)
 - [pyproj](https://pypi.org/project/pyproj/)
@@ -49,7 +50,7 @@ Machine learning-based electricity system model.
 2. Install dependencies:
 
     ```sh
-    pip install entsoe-py geopandas bokeh
+    pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh entsoe-py
     ```
 
 **Using Anaconda:**
@@ -64,7 +65,7 @@ Machine learning-based electricity system model.
 2. Install required packages:
 
     ```sh
-    conda install geopandas bokeh
+    conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh
     pip install entsoe-py
     ```
 
@@ -104,14 +105,14 @@ Then, commit and push all changes to the wiki's branch. Finally, commit and push
 
 Local builds of the documentation in HTML and PDF formats can be viewed after running the above bash script by opening `docs/_build/html/index.html` and `docs/_build/latex/ml-elec-model.pdf` respectively.
 
-A list of references used is available on [Zotero](https://www.zotero.org/groups/2327899/nmstreethrans_library/collections/TXZSMUFP).
+A list of references used is available on [Zotero](https://www.zotero.org/groups/2327899/ml-elec-model/library).
 
 ## License
 
 Unless otherwise stated:
 
-- Python scripts, Jupyter notebooks and any other form of code or snippets (e.g., shell scripts) in this repository are licensed under the [MIT License](https://opensource.org/licenses/MIT).
-- content, images and documentation are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/).
+- Python scripts, Jupyter notebooks, and any other form of code or snippets (e.g., shell scripts) in this repository are licensed under the [MIT License](https://opensource.org/licenses/MIT).
+- content, images, and documentation are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/).
 
 ## Credits
 

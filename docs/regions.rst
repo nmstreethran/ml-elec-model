@@ -236,11 +236,6 @@ Europe has multiple TSOs and cross-border interconnections. These are listed, al
     |                    | Transmission       |                    |                    |
     +--------------------+--------------------+--------------------+--------------------+
 
-Project focus
--------------
-
-For now, this project will focus on the German electricity system. High resolution open data for Germany is available through the German meteorological service, i.e., Deutscher Wetterdienst (DWD) and the ENTSO-E Transparency Platform (TP). Additonally, based on the EU reference scenario 2016, Germany is expected to consistently be the EU member state with the highest VRE share in generating electricity in the EU, contributing almost 27 % in 2015 and 20 % in 2050. This makes Germany a good case study for analysing VRE generation. The analysis will focus on the year 2019 due to the complete availablility of data on both platforms.
-
 References
 ----------
 

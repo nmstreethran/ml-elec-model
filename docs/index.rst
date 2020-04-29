@@ -24,6 +24,7 @@ Welcome to ml-elec-model's documentation!
 
     background
     regions
+    project-focus
     data-extraction
     glossary
 
@@ -44,6 +45,7 @@ Requirements
 - `Bokeh <https://bokeh.org/>`__
 - `entsoe-py <https://pypi.org/project/entsoe-py/>`__
 - `GeoPandas <https://geopandas.org/>`__
+- `Matplotlib <https://matplotlib.org/>`__
 - `NumPy <https://numpy.org/>`__
 - `Pandas <https://pandas.pydata.org/>`__
 - `pyproj <https://pypi.org/project/pyproj/>`__
@@ -63,7 +65,7 @@ Requirements
 
     .. code:: sh
 
-        pip install entsoe-py geopandas bokeh
+        pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh entsoe-py
 
 *Using Anaconda:*
 
@@ -78,7 +80,7 @@ Requirements
 
     .. code:: sh
 
-        conda install geopandas bokeh
+        conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh
         pip install entsoe-py
 
 Cloning the repository
@@ -119,15 +121,15 @@ Then, commit and push all changes to the wiki's branch. Finally, commit and push
 
 Local builds of the documentation in HTML and PDF formats can be viewed after running the above bash script by opening ``docs/_build/html/index.html`` and ``docs/_build/latex/ml-elec-model.pdf`` respectively.
 
-A list of references used is available on `Zotero <https://www.zotero.org/groups/2327899/nmstreethrans_library/collections/TXZSMUFP>`__.
+A list of references used is available on `Zotero <https://www.zotero.org/groups/2327899/ml-elec-model/library>`__.
 
 License
 ~~~~~~~
 
 Unless otherwise stated:
 
-- Python scripts, Jupyter notebooks and any other form of code or snippets (e.g., shell scripts) in this repository are licensed under the `MIT License <https://opensource.org/licenses/MIT>`__.
-- content, images and documentation are licensed under a `Creative Commons Attribution 4.0 International (CC BY 4.0) License <https://creativecommons.org/licenses/by/4.0/>`__.
+- Python scripts, Jupyter notebooks, and any other form of code or snippets (e.g., shell scripts) in this repository are licensed under the `MIT License <https://opensource.org/licenses/MIT>`__.
+- content, images, and documentation are licensed under a `Creative Commons Attribution 4.0 International (CC BY 4.0) License <https://creativecommons.org/licenses/by/4.0/>`__.
 
 Credits
 ~~~~~~~
