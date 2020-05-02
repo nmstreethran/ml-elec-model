@@ -79,9 +79,11 @@ latex_elements = {
             pdfkeywords={machine learning, electricity system model, open source},
             pdfsubject={ml-elec-model documentation (CC BY 4.0)}}
         %% fonts and encoding
-        \usepackage{ebgaramond}
-        \usepackage[defaultsans]{lato}
-        \usepackage{inconsolata}
+        \usepackage{amsmath}
+        \usepackage{amssymb}
+        \usepackage{newpxtext}
+        \usepackage{newpxmath}
+        \usepackage[zerostyle=c]{newtxtt}
         %% tables
         % table fonts
         \renewcommand{\sphinxstyletheadfamily}{\rmfamily\bfseries}
