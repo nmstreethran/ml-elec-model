@@ -42,9 +42,6 @@ Abbreviations
    ETSAP
       Energy Technology Systems Analysis Program
 
-   EU
-      European Union
-
    GAMS
       General Algebraic Modeling System
 
@@ -95,5 +92,20 @@ Countries and regions
 
 .. glossary::
 
+   DE
+      Germany
+
+   EU
+      European Union
+
    FR
       France
+
+   IE-SEM
+      Single Electricity Market for the island of Ireland
+
+   LU
+      Luxembourg
+
+   NL
+      Netherlands

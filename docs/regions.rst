@@ -16,8 +16,8 @@ Bidding zones
 
 A bidding zone is the largest geographical area within which market participants are able to exchange energy without capacity allocation. There are three types of bidding zones:
 
-1. national borders (e.g., France (:term:`FR`\) or the Netherlands) - majority of bidding zones in Europe
-2. larger than national borders (e.g., Germany and Luxembourg or the Single Electricity Market for the island of Ireland)
+1. national borders (e.g., France (:term:`FR`\) or the Netherlands (:term:`NL`\)) - majority of bidding zones in Europe
+2. larger than national borders (e.g., Germany (:term:`DE`\) and Luxembourg (:term:`LU`\) or the Single Electricity Market for the island of Ireland (:term:`IE-SEM`\))
 3. smaller zones within individual countries (e.g., Italy, Norway or Sweden)
 
 The bidding zones in European electricity markets and surrounding regions are illustrated in the map below.

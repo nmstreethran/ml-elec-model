@@ -3,7 +3,6 @@ Welcome to ml-elec-model's documentation!
 
 .. toctree::
     :maxdepth: 3
-    :hidden:
     :caption: Contents
 
     about

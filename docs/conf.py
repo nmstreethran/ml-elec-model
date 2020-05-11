@@ -74,14 +74,21 @@ latex_elements = {
     'fncychap': '',
     'printindex': '',
     'figure_align': '!htb',
+    'maketitle': 
+        '\\makeatletter \
+            \\begin{center} \
+                \\Huge\sffamily\\textbf{\@title}~docs \\vskip2pt \
+                \LARGE\\textit{\py@release} release \\vskip8pt \
+                \Large\@author \\vskip4pt \
+                \large\\today \\vskip8pt \
+                \href{https://ml-elec-model.rtfd.io/}{\color{purple}ml-elec-model.rtfd.io} \
+            \\end{center} \
+            \hypersetup{linkcolor=purple,urlcolor=purple,citecolor=purple, \
+            pdfauthor={\@author},pdftitle={\@title~docs}, \
+            pdfkeywords={machine learning, electricity system model, open source}, \
+            pdfsubject={License: CC BY 4.0}} \
+        \\makeatother',
     'preamble': r'''
-        %% hyperlinks and metadata
-        \hypersetup{
-            linkcolor=purple,
-            urlcolor=purple,
-            citecolor=purple,
-            pdfkeywords={machine learning, electricity system model, open source},
-            pdfsubject={ml-elec-model documentation (CC BY 4.0)}}
         % remove emphasis from glossary references
         \protected\def\sphinxtermref#1{#1}
         %% fonts
@@ -92,24 +99,26 @@ latex_elements = {
         \usepackage[defaultsans]{lato}
         \usepackage[zerostyle=c,straightquotes]{newtxtt}
         %% tables
-        % table fonts
+        % change table heading style
         \renewcommand{\sphinxstyletheadfamily}{\rmfamily\bfseries}
+        % change longtable continuation style and font size
         \renewcommand{\sphinxtablecontinued}{\rmfamily}
         \let\oldlongtable\longtable
         \renewcommand{\longtable}{\footnotesize\oldlongtable}
+        % change tabulary font size
         \let\oldtabulary\tabulary
         \renewcommand{\tabulary}{\footnotesize\oldtabulary}
-        % captions
+        % table captions
         \usepackage[font=small,labelfont=bf]{caption}
-        % table rules
+        % use booktabs and remove all table rules
         \usepackage{booktabs}
         \setlength{\arrayrulewidth}{0pt}
-        %% toc font
+        %% change toc title font
         \usepackage{tocloft}
         \renewcommand{\cfttoctitlefont}{\Huge\bfseries\sffamily}
-        %% numbering
+        %% remove section numbering
         \setcounter{secnumdepth}{0}
-        % reset numbering
+        % reset numbering for figures, tables, and footnotes
         \usepackage{chngcntr}
         \counterwithout{footnote}{chapter}
         \counterwithout{figure}{chapter}
@@ -117,19 +126,27 @@ latex_elements = {
         % remove chapter numbers and labels
         \titleformat{\chapter}[display]{\bfseries\sffamily}{}{-40pt}{\Huge}
         \renewcommand{\thechapter}{}
+        % adjust chapter alignments in toc
         \setlength{\cftchapnumwidth}{0em}
         %% header and footer
         \makeatletter
+            % for all pages
             \fancypagestyle{normal}{
                 \fancyhf{}
-                \fancyfoot[LO,RE]{{\py@HeaderFamily\thepage}}
-                \fancyhead[LE,RO]{{\py@HeaderFamily \@title, \textit{\py@release}}}
-                \renewcommand{\headrulewidth}{0.4pt}
-                \renewcommand{\footrulewidth}{0.4pt}
+                \fancyfoot[LO,RE]{{\sffamily\thepage}}
+                \fancyhead[LE,RO]{{\sffamily\@title, \textit{\py@release}}}
+                \renewcommand{\headrulewidth}{0pt}
+            }
+            % for the first page of the chapter
+            \fancypagestyle{plain}{
+                \fancyhf{}
+                \fancyfoot[C]{{\sffamily\thepage}}
+                \renewcommand{\headrulewidth}{0pt}
             }
         \makeatother
         %% bibliography
-        \renewenvironment{sphinxthebibliography}[1]{%
+        \renewenvironment{sphinxthebibliography}[1]{
+            % remove the bibliography title and page break
             \renewcommand{\chapter}[2]{}
             \begin{thebibliography}{#1}%
             }{\end{thebibliography}
