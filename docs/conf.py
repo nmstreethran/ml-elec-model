@@ -67,15 +67,16 @@ latex_elements = {
     'pointsize': '11pt',
 
     'sphinxsetup':
-        'verbatimwithframe=false, TitleColor={rgb}{0,0,0}, VerbatimColor={rgb}{242,243,244}',
+        'verbatimwithframe=false, TitleColor={rgb}{0,0,0}, VerbatimColor={rgb}{255,255,240}',
     
     'extraclassoptions': 'openany',
 
     'preamble': r'''
         % hyperlinks
         \hypersetup{
-            linkcolor=blue,
-            urlcolor=blue,
+            linkcolor=purple,
+            urlcolor=purple,
+            citecolor=purple,
             pdfkeywords={machine learning, electricity system model, open source},
             pdfsubject={ml-elec-model documentation (CC BY 4.0)}}
         %% fonts and encoding
@@ -83,7 +84,8 @@ latex_elements = {
         \usepackage{amssymb}
         \usepackage{newpxtext}
         \usepackage{newpxmath}
-        \usepackage[zerostyle=c]{newtxtt}
+        \usepackage[defaultsans]{lato}
+        \usepackage[zerostyle=c,straightquotes]{newtxtt}
         %% tables
         % table fonts
         \renewcommand{\sphinxstyletheadfamily}{\rmfamily\bfseries}
@@ -98,9 +100,9 @@ latex_elements = {
         \usepackage{booktabs}
         \setlength{\arrayrulewidth}{0pt}
         %% graphics
-        % set default figure placement to htb
+        % set default figure placement to !htb
         \makeatletter
-        \def\fps@figure{!htb}
+            \def\fps@figure{!htb}
         \makeatother
         %% numbering
         \setcounter{secnumdepth}{0}
@@ -109,5 +111,15 @@ latex_elements = {
         \counterwithout{footnote}{chapter}
         \counterwithout{figure}{chapter}
         \counterwithout{table}{chapter}
+        %% header and footer
+        \makeatletter
+            \fancypagestyle{normal}{
+                \fancyhf{}
+                \fancyfoot[LO,RE]{{\py@HeaderFamily\thepage}}
+                \fancyhead[LE,RO]{{\py@HeaderFamily \@title, \py@release}}
+                \renewcommand{\headrulewidth}{0.4pt}
+                \renewcommand{\footrulewidth}{0.4pt}
+            }
+        \makeatother
     '''
 }

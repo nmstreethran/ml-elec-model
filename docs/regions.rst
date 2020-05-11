@@ -4,7 +4,7 @@ Regions
 Territories
 -----------
 
-The nomenclature of territorial units for statistics (NUTS) classifies territorial units in Europe in different levels:
+The nomenclature of territorial units for statistics (NUTS) classifies territorial units in Europe in different levels [Ofgem2014]_:
 
 - NUTS 0: country-level
 - NUTS 1: major socio-economic regions
@@ -235,24 +235,3 @@ Europe has multiple TSOs and cross-border interconnections. These are listed, al
     |                    | ScottishPower      |                    |                    |
     |                    | Transmission       |                    |                    |
     +--------------------+--------------------+--------------------+--------------------+
-
-References
-----------
-
-1. "`NUTS - Nomenclature of territorial units for statistics - Eurostat <https://ec.europa.eu/eurostat/web/nuts/background>`__."
-2. "`Bidding Zones Literature Review <https://www.ofgem.gov.uk/sites/default/files/docs/2014/10/fta_bidding_zone_configuration_literature_review_1.pdf>`__," Ofgem, July 2014.
-3. "`Data view - Cross-Border Physical Flow - ENTSO-E Transparency Platform <https://transparency.entsoe.eu/transmission-domain/physicalFlow/show?name=&defaultValue=true&viewType=MAP&areaType=BORDER_BZN>`__."
-4. "`Power | Statkraft <https://www.statkraft.com/market-operations/standard-energy-products/power-electricity/>`__."
-5. "`Market data - Nord Pool <https://www.nordpoolgroup.com/Market-data1/#/nordic/table>`__."
-6. "`EPEX SPOT SE: About EPEX SPOT <https://www.epexspot.com/en/about>`__."
-7. "`DE-AT-LU Bidding zone split - News - ENTSO-E Transparency Platform <https://transparency.entsoe.eu/news/widget?id=5b7c1e9b5092e75a10bab903>`__."
-8. "`European Commission - PRESS RELEASES - Press release - Antitrust: Commission increaseselectricity trading capacity on the Swedish borders <https://ec.europa.eu/commission/presscorner/detail/en/IP_10_425>`__," 14 April 2010.
-9. "`List of changes in day-ahead and intraday areas <https://www.nordpoolspot.com/globalassets/download-center/day-ahead/elspot-area-change-log.pdf>`__," Nord Pool.
-10. "`Counties of Norway <https://en.wikipedia.org/w/index.php?title=Counties_of_Norway&oldid=890663009>`__," Wikipedia. 2 April 2019.
-11. "`Counties of Sweden <https://en.wikipedia.org/w/index.php?title=Counties_of_Sweden&oldid=882806371>`__," Wikipedia. 11 February 2019.
-12. "`ENTSO-E Transparency Platform <https://transparency.entsoe.eu/>`__."
-13. "`Regional Security Coordinators FAQ <https://www.entsoe.eu/major-projects/rscis/>`__."
-14. "`Overview of European Electricity Markets <https://ec.europa.eu/energy/sites/ener/files/documents/overview_of_european_electricity_markets.pdf>`__," European Union, Brussels, Belgium, February 2016.
-15. `Terms of use for data on the CDC ftp server - Deutscher Wetterdienst <https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.pdf>`__.
-16. `ENTSO-E Transparency Platform - Terms and conditions and privacy policy <https://transparency.entsoe.eu/content/static_content/Static%20content/terms%20and%20conditions/terms%20and%20conditions.html>`__.
-17. "`Energy modelling - EU Reference Scenario 2016 <https://data.europa.eu/euodp/data/dataset/energy-modelling>`__."

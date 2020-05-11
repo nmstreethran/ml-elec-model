@@ -6,8 +6,8 @@ cp -a wiki/* docs/
 # change directory to docs
 cd docs
 
-# create index.rst from Home.rst
-cp Home.rst index.rst
+# create about.rst from Home.rst
+cp Home.rst about.rst
 
 # remove copies of home, footer and sidebar
 rm _Footer.md

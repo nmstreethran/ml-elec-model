@@ -163,19 +163,6 @@ A map of German meteorological stations is shown below\  [4]_.
 
     A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat.
 
-.. [4] The interactive map can be viewed on `JSFiddle <https://jsfiddle.net/nithiya/h3mnt20c/>`__.
+.. [4] The interactive map can be viewed on JSFiddle <https://jsfiddle.net/nithiya/h3mnt20c/>.
 
 ``scripts/windHourly_de.py`` and ``scripts/solarHourly_de.py`` are the scripts used to extract hourly wind and solar data respectively.
-
-References
-----------
-
-1. "`Help Page - ENTSO-E Transparency Platform <https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html>`__."
-2. "`ENTSO-E Transparency Platform Data Extraction Process Implementation Guide <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf>`__," ENTSO-E AISBL, Brussels, Belgium, July 2016.
-3. "`Transparency Platform restful API - user guide <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html>`__."
-4. `EnergieID/entsoe-py <https://github.com/EnergieID/entsoe-py>`__. EnergieID cvba-so, 2019.
-5. "`ENTSO-E Transparency Platform <https://transparency.entsoe.eu/>`__."
-6. "`Energy Identification Codes (EICs) <https://www.entsoe.eu/data/energy-identification-codes-eic/>`__."
-7. `ENTSO-E Transparency Platform - Knowledge Base <https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html>`__.
-8. "`Wetter und Klima - Deutscher Wetterdienst - CDC (Climate Data Center) <https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html>`__."
-9. "`Mapping geo data using Bokeh - Nithiya Streethran <https://nithiya.gitlab.io/visualisations/mapping-geo-data-bokeh/>`__." 2 February 2020.
