@@ -4,19 +4,19 @@ Regions
 Territories
 -----------
 
-The nomenclature of territorial units for statistics (NUTS) classifies territorial units in Europe in different levels [Ofgem2014]_:
+The nomenclature of territorial units for statistics (:term:`NUTS`\) classifies territorial units in Europe in different levels [Ofgem2014]_:
 
-- NUTS 0: country-level
-- NUTS 1: major socio-economic regions
-- NUTS 2: basic regions for the application of regional policies
-- NUTS 3: small regions for specific diagnoses
+- :term:`NUTS`\  0: country-level
+- :term:`NUTS`\  1: major socio-economic regions
+- :term:`NUTS`\  2: basic regions for the application of regional policies
+- :term:`NUTS`\  3: small regions for specific diagnoses
 
 Bidding zones
 -------------
 
 A bidding zone is the largest geographical area within which market participants are able to exchange energy without capacity allocation. There are three types of bidding zones:
 
-1. national borders (e.g., France or the Netherlands) - majority of bidding zones in Europe
+1. national borders (e.g., France (:term:`FR`\) or the Netherlands) - majority of bidding zones in Europe
 2. larger than national borders (e.g., Germany and Luxembourg or the Single Electricity Market for the island of Ireland)
 3. smaller zones within individual countries (e.g., Italy, Norway or Sweden)
 
@@ -122,7 +122,7 @@ The table below below lists bidding zones in Europe by country and market operat
     | (UK)            |                 |                 |
     +-----------------+-----------------+-----------------+
 
-The United Kingdom is comprised of Great Britain (GB) and Northern Ireland. Northern Ireland is part of the Single Electricity Market of the island of Ireland (IE-SEM), which it shares with the Republic of Ireland (IE). Prior to 01/10/2018, Germany was part of the DE-AT-LU bidding zone, together with Austria (AT) and Luxembourg (LU), which had split into the DE-LU and AT bidding zones, as reported by European Network of Transmission Systems Operators for Electricity (ENTSO-E) below:
+The United Kingdom is comprised of Great Britain (GB) and Northern Ireland. Northern Ireland is part of the Single Electricity Market of the island of Ireland (IE-SEM), which it shares with the Republic of Ireland (IE). Prior to 01/10/2018, Germany was part of the DE-AT-LU bidding zone, together with Austria (AT) and Luxembourg (LU), which had split into the DE-LU and AT bidding zones, as reported by European Network of Transmission Systems Operators for Electricity (:term:`ENTSO-E`\) below:
 
     *[...] DE-AT-LU bidding zone split on the 23rd of August. BZN|DE-AT-LU will be separated into 2 new bidding zones BZN|DE-LU and BZN|AT.*
 
@@ -130,11 +130,11 @@ The United Kingdom is comprised of Great Britain (GB) and Northern Ireland. Nort
 
     *Validity end date for BZN|DE-AT-LU is the end of September 2018. [...]*
 
-Mapping bidding zones to NUTS 3 territories is straightforward for Belgium, Germany, France and Netherlands (bidding zone type 1 or 2) -- all NUTS 3 territories in these countries have the same bidding zone.
+Mapping bidding zones to :term:`NUTS`\  3 territories is straightforward for Belgium, Germany, France and Netherlands (bidding zone type 1 or 2) -- all :term:`NUTS`\  3 territories in these countries have the same bidding zone.
 
-Denmark and United Kingdom are both conveniently separated into two zones that are easily distinguishable. For Denmark, these are Western Denmark (NUTS IDs containing DK03-DK05) and Southern Denmark (NUTS IDs containing DK01-DK02). For United Kingdom, these are Great Britain (NUTS IDs containing UKC-UKM) and Northern Ireland (NUTS IDs containing UKN).
+Denmark and United Kingdom are both conveniently separated into two zones that are easily distinguishable. For Denmark, these are Western Denmark (:term:`NUTS`\  IDs with prefixes DK03-DK05) and Southern Denmark (:term:`NUTS`\  IDs with prefixes DK01-DK02). For United Kingdom, these are Great Britain (:term:`NUTS`\ IDs with prefixes UKC-UKM) and Northern Ireland (:term:`NUTS`\  IDs with prefixes UKN).
 
-There is no clear indication of the bidding zone boundaries for Norway and Sweden, so some assumptions were made. Both countries have multiple smaller bidding zones (type 3) with flexible borders. This was done to optimise allocation of resources and reduce the overall price of electricity. Norway has five zones and Sweden has four zones. By cross-referencing Nord Pool market data, NUTS 3 data and county maps of Norway and Sweden, the territories are split into the bidding zones as shown in the table below. Nord Pool associates each bidding zone with a major reference city in that zone. However, there were six cities for Norway instead of the expected five. Historical Nord Pool market data for Norway suggests that two cities, Trondheim and Molde, have had the same system price since 2003. The ELSPOT area change log also confirms that Trondheim and Molde are city references for the NO3 bidding zone. Therefore, these two cities are grouped into the same bidding zone, which also satisfies what the maps suggest.
+There is no clear indication of the bidding zone boundaries for Norway and Sweden, so some assumptions were made. Both countries have multiple smaller bidding zones (type 3) with flexible borders. This was done to optimise allocation of resources and reduce the overall price of electricity. Norway has five zones and Sweden has four zones. By cross-referencing Nord Pool market data, :term:`NUTS`\  3 data and county maps of Norway and Sweden, the territories are split into the bidding zones as shown in the table below. Nord Pool associates each bidding zone with a major reference city in that zone. However, there were six cities for Norway instead of the expected five. Historical Nord Pool market data for Norway suggests that two cities, Trondheim and Molde, have had the same system price since 2003. The ELSPOT area change log also confirms that Trondheim and Molde are city references for the NO3 bidding zone. Therefore, these two cities are grouped into the same bidding zone, which also satisfies what the maps suggest.
 
 .. table:: Bidding zones and their territories for Norway and Sweden, approximated based on Nord Pool market data, NUTS 3 data and county maps of Norway and Sweden.
 
@@ -192,7 +192,7 @@ There is no clear indication of the bidding zone boundaries for Norway and Swede
 Transmission system operators and interconnections
 --------------------------------------------------
 
-Europe has multiple TSOs and cross-border interconnections. These are listed, along with the bidding zones, in the table below.
+Europe has multiple :term:`TSO`\s and cross-border interconnections. These are listed, along with the bidding zones, in the table below.
 
 .. table:: TSOs and cross-border interconnections in Europe. Data: European Network of Transmission System Operators for Electricity.
 

@@ -4,50 +4,96 @@ Glossary
 Abbreviations
 -------------
 
-| API - application programming interface
-| BRP - balance responsible party
-| CAPEX - capital expenditure
-| CO\ :sub:`2` - carbon dioxide
-| DNO - distribution network operator
-| DSM - demand-side management
-| DWD - Deutscher Wetterdienst (Germany’s meteorological service)
-| EIC - Energy Identification Code
-| ENTSO-E - European Network of Transmission Systems Operators for
-  Electricity
-| ENTSO-E TP - ENTSO-E Transparency Platform
-| EU - European Union
-| GHG - greenhouse gas
-| LCOE - levelised cost of electricity
-| NUTS - Nomenclature of territorial units for statistics
-| O&M - operation and maintenance
-| OPEX - operational expenditure
-| PCR - Price Coupling of Regions
-| TSO - transmission system operator
-| VRE - variable renewable energy
+.. glossary::
+
+   API
+      application programming interface
+
+   BRP
+      balance responsible party
+
+   CAPEX
+      capital expenditure
+
+   DNO
+      distribution network operator (same as :term:`DSO`\)
+
+   DSO
+      distribution system operator (same as :term:`DNO`\)
+      
+   DSM
+      demand-side management
+
+   DWD
+      Deutscher Wetterdienst (German meteorological service)
+
+   DWD CDC
+      :term:`DWD`\'s Climate Data Center
+
+   EIC
+      Energy Identification Code
+
+   ENTSO-E
+      European Network of Transmission Systems Operators for Electricity
+
+   ENTSO-E TP
+      :term:`ENTSO-E`\  Transparency Platform
+
+   ETSAP
+      Energy Technology Systems Analysis Program
+
+   EU
+      European Union
+
+   GAMS
+      General Algebraic Modeling System
+
+   GHG
+      greenhouse gas
+
+   GNU GPL
+      GNU General Public License
+
+   IEA
+      International Energy Agency
+
+   IRENA
+      International Renewable Energy Agency
+
+   LCOE
+      levelised cost of electricity
+
+   MARKAL
+      MARKet ALlocation
+
+   NREL
+      National Renewable Energy Laboratory
+
+   NUTS
+      Nomenclature of territorial units for statistics
+
+   O&M
+      operation and maintenance
+
+   openmod
+      Open Energy Modelling Initiative
+
+   OPEX
+      operational expenditure
+
+   TIMES
+      The Integrated MARKAL-EFOM System
+
+   TSO
+      transmission system operator
+
+   VRE
+      variable renewable energy
 
 Countries and regions
 ---------------------
 
-| AT - Austria
-| BE - Belgium
-| CH - Switzerland
-| CZ - Czech Republic
-| DE - Germany
-| DK - Denmark
-| ES - Spain
-| FI - Finland
-| FR - France
-| GB - Great Britain (England, Scotland, and Wales)
-| IE - Republic of Ireland
-| IE-SEM - Single electricity market for the island of Ireland (Republic
-  of Ireland + Northern Ireland)
-| IT - Italy
-| LT - Lithuania
-| LU - Luxembourg
-| NI - Northern Ireland
-| NL - Netherlands
-| NO - Norway
-| PL - Poland
-| SE - Sweden
-| SK - Slovakia
-| UK - United Kingdom
+.. glossary::
+
+   FR
+      France

@@ -58,28 +58,33 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_theme_options = {
+     'style_external_links': True
+}
 
 # -- LaTeX options -----------------------------------------------------------
 
 latex_elements = {
+    'releasename': 'latest',
     'papersize': 'a4paper',
-
     'pointsize': '11pt',
-
     'sphinxsetup':
-        'verbatimwithframe=false, TitleColor={rgb}{0,0,0}, VerbatimColor={rgb}{255,255,240}',
-    
+        'verbatimwithframe=false, TitleColor={rgb}{0,0,0}, VerbatimColor={rgb}{255,255,240}', 
     'extraclassoptions': 'openany',
-
+    'fncychap': '',
+    'printindex': '',
+    'figure_align': '!htb',
     'preamble': r'''
-        % hyperlinks
+        %% hyperlinks and metadata
         \hypersetup{
             linkcolor=purple,
             urlcolor=purple,
             citecolor=purple,
             pdfkeywords={machine learning, electricity system model, open source},
             pdfsubject={ml-elec-model documentation (CC BY 4.0)}}
-        %% fonts and encoding
+        % remove emphasis from glossary references
+        \protected\def\sphinxtermref#1{#1}
+        %% fonts
         \usepackage{amsmath}
         \usepackage{amssymb}
         \usepackage{newpxtext}
@@ -99,11 +104,9 @@ latex_elements = {
         % table rules
         \usepackage{booktabs}
         \setlength{\arrayrulewidth}{0pt}
-        %% graphics
-        % set default figure placement to !htb
-        \makeatletter
-            \def\fps@figure{!htb}
-        \makeatother
+        %% toc font
+        \usepackage{tocloft}
+        \renewcommand{\cfttoctitlefont}{\Huge\bfseries\sffamily}
         %% numbering
         \setcounter{secnumdepth}{0}
         % reset numbering
@@ -111,15 +114,25 @@ latex_elements = {
         \counterwithout{footnote}{chapter}
         \counterwithout{figure}{chapter}
         \counterwithout{table}{chapter}
+        % remove chapter numbers and labels
+        \titleformat{\chapter}[display]{\bfseries\sffamily}{}{-40pt}{\Huge}
+        \renewcommand{\thechapter}{}
+        \setlength{\cftchapnumwidth}{0em}
         %% header and footer
         \makeatletter
             \fancypagestyle{normal}{
                 \fancyhf{}
                 \fancyfoot[LO,RE]{{\py@HeaderFamily\thepage}}
-                \fancyhead[LE,RO]{{\py@HeaderFamily \@title, \py@release}}
+                \fancyhead[LE,RO]{{\py@HeaderFamily \@title, \textit{\py@release}}}
                 \renewcommand{\headrulewidth}{0.4pt}
                 \renewcommand{\footrulewidth}{0.4pt}
             }
         \makeatother
+        %% bibliography
+        \renewenvironment{sphinxthebibliography}[1]{%
+            \renewcommand{\chapter}[2]{}
+            \begin{thebibliography}{#1}%
+            }{\end{thebibliography}
+        }
     '''
 }

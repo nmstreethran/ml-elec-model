@@ -4,9 +4,9 @@ Data extraction
 Electricity system data from the ENTSO-E Transparency Platform
 --------------------------------------------------------------
 
-The ENTSO-E TP has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's `terms and conditions and privacy policy <https://transparency.entsoe.eu/content/static_content/Static%20content/terms%20and%20conditions/terms%20and%20conditions.html>`__ before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to `register for a free account on ENTSO-E TP <https://transparency.entsoe.eu/usrm/user/createPublicUser>`__. ENTSO-E TP's Restful application programming interface (API) can then be used to automate the data extraction process (see the API `implementation <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf>`__ and `user guides <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html>`__ for more info). Once a free account has been created, request for a security token to access the API by sending an email to the ENTSO-E TP Helpdesk (transparency at entsoe dot eu), stating 'Restful API access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via account settings.
+The :term:`ENTSO-E TP`\  has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's terms and conditions and privacy policy <https://transparency.entsoe.eu/content/static_content/Static%20content/terms%20and%20conditions/terms%20and%20conditions.html> before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to register for a free account on :term:`ENTSO-E TP`\  <https://transparency.entsoe.eu/usrm/user/createPublicUser>. :term:`ENTSO-E TP`\'s Restful application programming interface (:term:`API`\) can then be used to automate the data extraction process (see the :term:`API`\  implementation <https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf> and user guides <https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html> for more info). Once a free account has been created, request for a security token to access the :term:`API`\  by sending an email to the :term:`ENTSO-E TP`\  Helpdesk (transparency at entsoe dot eu), stating 'Restful :term:`API`\  access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via account settings.
 
-The `ENTSO-E API Python client <https://github.com/EnergieID/entsoe-py>`__ is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
+The :term:`ENTSO-E`\  :term:`API`\  Python client <https://github.com/EnergieID/entsoe-py> is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
 ``scripts/entsoe-api.py`` is the script used to perform this.
 
 .. code:: py
@@ -18,7 +18,7 @@ The `ENTSO-E API Python client <https://github.com/EnergieID/entsoe-py>`__ is us
     # DOMAIN_MAPPINGS dictionary
     DOMAIN_MAPPINGS.update(BIDDING_ZONES)
 
-The bidding zones in Europe, mapped to their corresponding EICs as shown in the table below, are used when querying using the Pandas client. Note that ``DE-LU`` only works for timestamps starting 01/10/2018. Use ``DE-AT-LU`` for timestamps prior to this date.
+The bidding zones in Europe, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) as shown in the table below, are used when querying using the Pandas client. Note that ``DE-LU`` only works for timestamps starting 01/10/2018. Use ``DE-AT-LU`` for timestamps prior to this date.
 
 .. table:: Bidding zones in Europe and their corresponding EICs.
 
@@ -78,7 +78,7 @@ The bidding zones in Europe, mapped to their corresponding EICs as shown in the 
 Generation data
 ~~~~~~~~~~~~~~~
 
-ENTSO-E TP aggregates data by following electricity production types:
+:term:`ENTSO-E TP`\  aggregates data by following electricity production types:
 
 - Biomass
 - Fossil brown coal/lignite
@@ -105,7 +105,7 @@ Temporal resolution of actual generation per production type dataset by country:
 - 30 minutes: CY, IE, UK
 - 1 hour: BA, BE, BG, CH, CZ, DK, EE, ES, FI, FR, GE, GR, HR, IT, LT, LV, ME, MK, NO, PL, PT, RO, RS, SE, SI, SK
 
-Each data point represents the average of all available instantaneous net generation output values on each market time unit. The values are estimated if unknown. The actual outputs of small-scale generating units may be estimated if there are no real-time measurements from these units. The data are published on ENTSO-E TP no later than one hour after the operational period.
+Each data point represents the average of all available instantaneous net generation output values on each market time unit. The values are estimated if unknown. The actual outputs of small-scale generating units may be estimated if there are no real-time measurements from these units. The data are published on :term:`ENTSO-E TP`\  no later than one hour after the operational period.
 
 The installed capacity per production unit dataset contains information about production units (existing and planned) with an installed generation capacity of at least 100 MW, which includes the following:
 
@@ -113,10 +113,10 @@ The installed capacity per production unit dataset contains information about pr
 - code
 - installed net generation capacity (MW)
 - voltage connection level (kV)
-- bidding zone (denoted using Energy Identification Codes (EICs))
+- bidding zone (denoted using :term:`EIC`\s)
 - production type (e.g., fossil gas, wind offshore)
 
-This information is published annually on ENTSO-E TP at the start of the year and is valid for the three following years.
+This information is published annually on :term:`ENTSO-E TP`\  at the start of the year and is valid for the three following years.
 
 Load data
 ~~~~~~~~~
@@ -129,7 +129,7 @@ Temporal resolution of electricity load dataset by country:
 - 30 minutes: CY, IE, UK
 - 1 hour: AT, BA, BG, CH, CZ, DK, EE, ES, FI, FR, GE, GR, HR, IT, LT, LV, MD, ME, MK, NO, PL, PT, RO, RS, SI, SK, SE, UA
 
-The total load is defined as equal to the sum of power generated by plants on both TSO and DNO networks, from which the following are deduced:
+The total load is defined as equal to the sum of power generated by plants on both :term:`TSO`\  and :term:`DNO`\  networks, from which the following are deduced:
 
 - the balance (export-import) of exchanges on interconnections between neighbouring bidding zones
 - the power absorbed by energy storage resources
@@ -141,12 +141,12 @@ The load is calculated using the average of real-time load values per bidding zo
     Actual total load (including losses without stored energy)
     = Net generation – Exports + Imports – Absorbed energy
 
-For these calculations, the net generation is preferred. However, gross generation may be used if it is available with the better precision. The TSOs responsible for each area decide whether to use gross or net generation, but they are required to keep their choice consistent per bidding zone. Absorbed energy is also provided as separate information with the aggregated generation output of the hydro pumped storage. The physical flow on the tie line is measured as agreed by neighbouring TSOs or bidding zones, where applicable. This dataset is published on ENTSO-E TP no later than one hour after the end of the operating period.
+For these calculations, the net generation is preferred. However, gross generation may be used if it is available with the better precision. The :term:`TSO`\s responsible for each area decide whether to use gross or net generation, but they are required to keep their choice consistent per bidding zone. Absorbed energy is also provided as separate information with the aggregated generation output of the hydro pumped storage. The physical flow on the tie line is measured as agreed by neighbouring :term:`TSO`\s or bidding zones, where applicable. This dataset is published on :term:`ENTSO-E TP`\  no later than one hour after the end of the operating period.
 
 Day-ahead market prices data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The day-ahead prices are published for each bidding zone at every market time unit, in the relevant currency per MWh. It is published no later than an hour after gate closure. In case of implicit allocation, the gate closure time is interpreted as the output time of the matching algorithms. The data is primarily owned and provided to the ENTSO-E TP by power exchanges or TSOs. This dataset is available at hourly resolution.
+The day-ahead prices are published for each bidding zone at every market time unit, in the relevant currency per MWh. It is published no later than an hour after gate closure. In case of implicit allocation, the gate closure time is interpreted as the output time of the matching algorithms. The data is primarily owned and provided to the :term:`ENTSO-E TP`\  by power exchanges or :term:`TSO`\s. This dataset is available at hourly resolution.
 
 Meteorological data
 -------------------
@@ -154,7 +154,7 @@ Meteorological data
 German meteorological data from Deutscher Wetterdienst
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Weather data for Germany is extracted from `DWD's Climate Data Center (CDC) OpenData <https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html>`__.
+Weather data for Germany is extracted from :term:`DWD`\'s Climate Data Center (:term:`DWD CDC`\) OpenData <https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html>.
 
 A map of German meteorological stations is shown below\  [4]_.
 
@@ -163,6 +163,6 @@ A map of German meteorological stations is shown below\  [4]_.
 
     A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat.
 
-.. [4] The interactive map can be viewed on JSFiddle <https://jsfiddle.net/nithiya/h3mnt20c/>.
+.. [4] The interactive map can be viewed on JSFiddle: https://jsfiddle.net/nithiya/h3mnt20c/.
 
 ``scripts/windHourly_de.py`` and ``scripts/solarHourly_de.py`` are the scripts used to extract hourly wind and solar data respectively.
