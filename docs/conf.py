@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ml-elec-model'
-copyright = '2020, Nithiya Streethran'
+copyright = '2020, Nithiya Streethran.'
 author = 'Nithiya Streethran'
 
 
@@ -69,28 +69,15 @@ latex_elements = {
     'papersize': 'a4paper',
     'pointsize': '11pt',
     'sphinxsetup':
-        'verbatimwithframe=false, TitleColor={rgb}{0,0,0}, VerbatimColor={rgb}{255,255,240}', 
-    'extraclassoptions': 'openany',
+        'verbatimwithframe=false, \
+        TitleColor={rgb}{0,0,0}, \
+        VerbatimColor={rgb}{1,.98,.98}, \
+        InnerLinkColor={rgb}{.86,.08,.24}, \
+        OuterLinkColor={rgb}{1,.49,0}',
     'fncychap': '',
     'printindex': '',
     'figure_align': '!htb',
-    'maketitle': 
-        '\\makeatletter \
-            \\begin{center} \
-                \\Huge\sffamily\\textbf{\@title}~docs \\vskip2pt \
-                \LARGE\\textit{\py@release} release \\vskip8pt \
-                \Large\@author \\vskip4pt \
-                \large\\today \\vskip8pt \
-                \href{https://ml-elec-model.rtfd.io/}{\color{purple}ml-elec-model.rtfd.io} \
-            \\end{center} \
-            \hypersetup{linkcolor=purple,urlcolor=purple,citecolor=purple, \
-            pdfauthor={\@author},pdftitle={\@title~docs}, \
-            pdfkeywords={machine learning, electricity system model, open source}, \
-            pdfsubject={License: CC BY 4.0}} \
-        \\makeatother',
     'preamble': r'''
-        % remove emphasis from glossary references
-        \protected\def\sphinxtermref#1{#1}
         %% fonts
         \usepackage{amsmath}
         \usepackage{amssymb}
@@ -98,6 +85,35 @@ latex_elements = {
         \usepackage{newpxmath}
         \usepackage[defaultsans]{lato}
         \usepackage[zerostyle=c,straightquotes]{newtxtt}
+        \usepackage{fontawesome5}
+        % remove emphasis from glossary references
+        \protected\def\sphinxtermref#1{#1}
+        % change toc title font
+        \usepackage{tocloft}
+        \renewcommand{\cfttoctitlefont}{\Huge\bfseries\sffamily}
+
+        %% titlepage and metadata
+        \makeatletter
+        \renewcommand{\sphinxmaketitle}{
+            \hypersetup{
+                pdftitle={\@title~docs, \py@release release},
+                pdfauthor={\@author},
+                pdfkeywords={machine learning, electricity system model, open source},
+                pdfsubject={License: CC BY 4.0}
+            }
+            \hspace{0pt}\vfill
+            {\sffamily
+            \Huge\textbf{\@title}~docs \vskip2pt
+            \LARGE\textit{\py@release}release \vskip20pt
+            \Large\@author \vskip4pt
+            \large\today \vskip20pt
+            \faBook~\href{https://ml-elec-model.rtfd.io/}{ml-elec-model.rtfd.io} \vskip2pt
+            \faGithub~\href{https://github.com/nmstreethran/ml-elec-model}{nmstreethran/ml-elec-model}
+            }
+            \vfill\hspace{0pt}
+        }
+        \makeatother
+
         %% tables
         % change table heading style
         \renewcommand{\sphinxstyletheadfamily}{\rmfamily\bfseries}
@@ -113,9 +129,7 @@ latex_elements = {
         % use booktabs and remove all table rules
         \usepackage{booktabs}
         \setlength{\arrayrulewidth}{0pt}
-        %% change toc title font
-        \usepackage{tocloft}
-        \renewcommand{\cfttoctitlefont}{\Huge\bfseries\sffamily}
+
         %% remove section numbering
         \setcounter{secnumdepth}{0}
         % reset numbering for figures, tables, and footnotes
@@ -128,27 +142,29 @@ latex_elements = {
         \renewcommand{\thechapter}{}
         % adjust chapter alignments in toc
         \setlength{\cftchapnumwidth}{0em}
+
         %% header and footer
+        % for all pages
         \makeatletter
-            % for all pages
             \fancypagestyle{normal}{
                 \fancyhf{}
-                \fancyfoot[LO,RE]{{\sffamily\thepage}}
-                \fancyhead[LE,RO]{{\sffamily\@title, \textit{\py@release}}}
+                \fancyfoot[C]{\sffamily\thepage}
+                \fancyhead[LE,RO]{\sffamily\@title, \textit{\py@release}}
                 \renewcommand{\headrulewidth}{0pt}
             }
             % for the first page of the chapter
             \fancypagestyle{plain}{
                 \fancyhf{}
-                \fancyfoot[C]{{\sffamily\thepage}}
+                \fancyfoot[C]{\sffamily\thepage}
                 \renewcommand{\headrulewidth}{0pt}
             }
         \makeatother
+
         %% bibliography
         \renewenvironment{sphinxthebibliography}[1]{
             % remove the bibliography title and page break
             \renewcommand{\chapter}[2]{}
-            \begin{thebibliography}{#1}%
+            \begin{thebibliography}{#1}
             }{\end{thebibliography}
         }
     '''
