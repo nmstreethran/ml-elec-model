@@ -85,7 +85,6 @@ latex_elements = {
         \usepackage{newpxmath}
         \usepackage[defaultsans]{lato}
         \usepackage[zerostyle=c,straightquotes]{newtxtt}
-        \usepackage{fontawesome5}
         % remove emphasis from glossary references
         \protected\def\sphinxtermref#1{#1}
         % change toc title font
@@ -107,8 +106,8 @@ latex_elements = {
             \LARGE\textit{\py@release}release \vskip20pt
             \Large\@author \vskip4pt
             \large\today \vskip20pt
-            \faBook~\href{https://ml-elec-model.rtfd.io/}{ml-elec-model.rtfd.io} \vskip2pt
-            \faGithub~\href{https://github.com/nmstreethran/ml-elec-model}{nmstreethran/ml-elec-model}
+            Documentation: \href{https://ml-elec-model.rtfd.io/}{ml-elec-model.rtfd.io} \vskip2pt
+            GitHub: \href{https://github.com/nmstreethran/ml-elec-model}{nmstreethran/ml-elec-model}
             }
             \vfill\hspace{0pt}
         }
