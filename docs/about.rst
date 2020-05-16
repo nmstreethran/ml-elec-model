@@ -1,6 +1,10 @@
 About
 =====
 
+**Documentation:** `ml-elec-model.rtfd.io <https://ml-elec-model.rtfd.io/>`__
+
+**Git repository:** `github.com/nmstreethran/ml-elec-model <https://github.com/nmstreethran/ml-elec-model>`__
+
 by Nithiya Streethran (nmstreethran at gmail dot com)
 
 **This project is a work-in-progress. Feedback and suggestions are always welcome. Please open an issue or refer to the contributing guidelines in the main repository if you would like to contribute.**
@@ -13,6 +17,7 @@ Requirements
 **Packages:**
 
 - `Bokeh <https://bokeh.org/>`__
+- `dwdweather2 <https://pypi.org/project/dwdweather2/>`__
 - `entsoe-py <https://pypi.org/project/entsoe-py/>`__
 - `GeoPandas <https://geopandas.org/>`__
 - `Matplotlib <https://matplotlib.org/>`__
@@ -35,7 +40,7 @@ Requirements
 
     .. code:: sh
 
-        pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh entsoe-py
+        pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh entsoe-py dwdweather2
 
 *Using Anaconda:*
 
@@ -51,7 +56,7 @@ Requirements
     .. code:: sh
 
         conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh
-        pip install entsoe-py
+        pip install entsoe-py dwdweather2
 
 Cloning the repository
 ----------------------
@@ -73,7 +78,7 @@ To clone the latest version of this repository, including the contents of the su
 Documentation
 -------------
 
-The documentation is maintained in this repository's `GitHub Wiki <https://github.com/nmstreethran/ml-elec-model/wiki>`__ and built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and `Read the Docs <https://readthedocs.org>`__. It is available at https://ml-elec-model.rtfd.io. The files can be found in the ``docs`` folder.
+The documentation is maintained in this repository's `GitHub Wiki <https://github.com/nmstreethran/ml-elec-model/wiki>`__, built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__, and hosted using `Read the Docs <https://readthedocs.org>`__. It is available at https://ml-elec-model.rtfd.io. The files can be found in the ``docs`` folder.
 
 To build the documentation locally, clone this repository (including submodules) and install a TeX distribution (such as `TeX Live <http://tug.org/texlive/>`__). Then, install the required Sphinx Python packages as follows:
 

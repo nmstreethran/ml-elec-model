@@ -18,8 +18,10 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ml-elec-model'
-copyright = '2020, Nithiya Streethran.'
+copyright = '2018-2020, Nithiya Streethran. Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license.'
 author = 'Nithiya Streethran'
+# version = '0.1.0'
+# release = '0.1.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -65,7 +67,6 @@ html_theme_options = {
 # -- LaTeX options -----------------------------------------------------------
 
 latex_elements = {
-    'releasename': 'latest',
     'papersize': 'a4paper',
     'pointsize': '11pt',
     'sphinxsetup':
@@ -78,6 +79,9 @@ latex_elements = {
     'printindex': '',
     'figure_align': '!htb',
     'preamble': r'''
+        %% fix headheight issue
+        \geometry{headheight=13.6pt}
+
         %% fonts
         \usepackage{amsmath}
         \usepackage{amssymb}
@@ -92,26 +96,26 @@ latex_elements = {
         \renewcommand{\cfttoctitlefont}{\Huge\bfseries\sffamily}
 
         %% titlepage and metadata
-        \makeatletter
-        \renewcommand{\sphinxmaketitle}{
+        % \makeatletter
+        % \renewcommand{\sphinxmaketitle}{
             \hypersetup{
-                pdftitle={\@title~docs, \py@release release},
-                pdfauthor={\@author},
+                % pdftitle={\@title~docs, \py@release},
+                % pdfauthor={\@author},
                 pdfkeywords={machine learning, electricity system model, open source},
                 pdfsubject={License: CC BY 4.0}
             }
-            \hspace{0pt}\vfill
-            {\sffamily
-            \Huge\textbf{\@title}~docs \vskip2pt
-            \LARGE\textit{\py@release}release \vskip20pt
-            \Large\@author \vskip4pt
-            \large\today \vskip20pt
-            Documentation: \href{https://ml-elec-model.rtfd.io/}{ml-elec-model.rtfd.io} \vskip2pt
-            GitHub: \href{https://github.com/nmstreethran/ml-elec-model}{nmstreethran/ml-elec-model}
-            }
-            \vfill\hspace{0pt}
-        }
-        \makeatother
+            % \hspace{0pt}\vfill
+            % {\sffamily
+            % \Huge\textbf{\@title}~docs \vskip2pt
+            % \LARGE\textit{\py@release} \vskip20pt
+            % \Large\@author \vskip4pt
+            % \large\today \vskip20pt
+            % Documentation: \href{https://ml-elec-model.rtfd.io/}{ml-elec-model.rtfd.io} \vskip2pt
+            % GitHub: \href{https://github.com/nmstreethran/ml-elec-model}{nmstreethran/ml-elec-model}
+            % }
+            % \vfill\hspace{0pt}
+        % }
+        % \makeatother
 
         %% tables
         % change table heading style
@@ -148,8 +152,9 @@ latex_elements = {
             \fancypagestyle{normal}{
                 \fancyhf{}
                 \fancyfoot[C]{\sffamily\thepage}
-                \fancyhead[LE,RO]{\sffamily\@title, \textit{\py@release}}
-                \renewcommand{\headrulewidth}{0pt}
+                \fancyhead[LE,RO]{\sffamily\@title}
+                % \fancyhead[LE,RO]{\sffamily\@title, \textit{\py@release}}
+                \renewcommand{\headrulewidth}{1pt}
             }
             % for the first page of the chapter
             \fancypagestyle{plain}{

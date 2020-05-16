@@ -4,28 +4,16 @@ Data extraction
 Electricity system data from the ENTSO-E Transparency Platform
 --------------------------------------------------------------
 
-The :term:`ENTSO-E TP`\  [ENTSO-Ef]_ has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's terms and conditions and privacy policy [ENTSO-Eg]_ before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to register for a free account\  [4]_ on :term:`ENTSO-E TP`\. :term:`ENTSO-E TP`\'s Restful application programming interface (:term:`API`\) can then be used to automate the data extraction process (see the :term:`API`\  implementation [ENTSO-E2016]_ and user guides [ENTSO-E]_ for more info). Once a free account has been created, request for a security token to access the :term:`API`\  by sending an email to the :term:`ENTSO-E TP`\  Helpdesk (transparency at entsoe dot eu), stating 'Restful :term:`API`\  access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via account settings.
+The :term:`ENTSO-E TP`\  [ENTSO-Ef]_ has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's terms and conditions and privacy policy [ENTSO-Eg]_ before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to register for a free account\  [#f4]_ on :term:`ENTSO-E TP`\. :term:`ENTSO-E TP`\'s Restful application programming interface (:term:`API`\) can then be used to automate the data extraction process (see the :term:`API`\  implementation [ENTSO-E2016]_ and user guides [ENTSO-E]_ for more info). Once a free account has been created, request for a security token to access the :term:`API`\  by sending an email to the :term:`ENTSO-E TP`\  Helpdesk (transparency at entsoe dot eu), stating 'Restful :term:`API`\  access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via account settings.
 
-.. [4] https://transparency.entsoe.eu/usrm/user/createPublicUser
-
-The :term:`ENTSO-E`\  :term:`API`\  Python client [EnergieID2019]_ is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
-``scripts/entsoe-api.py`` is the script used to perform this.
-
-.. code:: py
-
-    import pandas as pd
-    from entsoe import EntsoePandasClient
-    from entsoe.mappings import DOMAIN_MAPPINGS, BIDDING_ZONES
-    # combine domain and bidding zone keys and values into the
-    # DOMAIN_MAPPINGS dictionary
-    DOMAIN_MAPPINGS.update(BIDDING_ZONES)
+The :term:`ENTSO-E`\  :term:`API`\  Python client (entsoe-py) [EnergieID2019]_ is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
 
 The bidding zones in Europe, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the Pandas client. Note that ``DE-LU`` only works for timestamps starting 01/10/2018 [ENTSO-Ee]_. Use ``DE-AT-LU`` for timestamps prior to this date.
 
 .. table:: Bidding zones in Europe and their corresponding EICs.
 
     =================================== ================ ================
-    **Zone name**                       **Bidding zone** **EIC**
+    Zone name                           Bidding zone     EIC
     =================================== ================ ================
     Albania                             AL               10YAL-KESH—–5
     Belgium                             BE               10YBE———-2
@@ -158,13 +146,16 @@ German meteorological data from Deutscher Wetterdienst
 
 Weather data for Germany is extracted from :term:`DWD`\'s Climate Data Center (:term:`DWD CDC`\) OpenData [DWD]_. The data is subject to the server's terms of use [DWD18]_.
 
-A map of German meteorological stations is shown below\  [5]_.
+A map of German meteorological stations is shown below\  [#f5]_.
 
 .. figure:: images/dwd_stations.png
     :alt: A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
 
     A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
 
-.. [5] The interactive map can be viewed on JSFiddle: https://jsfiddle.net/nithiya/h3mnt20c/. See also the following link for a guide on how to plot the map using Bokeh: https://nithiya.gitlab.io/visualisations/mapping-geo-data-bokeh/.
+The dwdweather2 Python package [panodata2020]_ is used to access German weather data.
 
-``scripts/windHourly_de.py`` and ``scripts/solarHourly_de.py`` are the scripts used to extract hourly wind and solar data respectively.
+.. rubric:: Footnotes
+
+.. [#f4] https://transparency.entsoe.eu/usrm/user/createPublicUser
+.. [#f5] The interactive map can be viewed on JSFiddle: https://jsfiddle.net/nithiya/h3mnt20c/. See also the following link for a guide on how to plot the map using Bokeh: https://nithiya.gitlab.io/visualisations/mapping-geo-data-bokeh/.

@@ -24,7 +24,7 @@ Energy systems models are tools used to project the future energy supply of a co
 
     The system analysis approach applied on the energy system modelling process, adapted from Krook-Riekkola 2015.
 
-The figure below represents the different scales of energy systems, mainly in terms of temporal resolution, but also uncertainty and spatial resolution [Glismann2018]_, [Pfenninger2014]_. Temporally, "real-time" is referred to as the time of dispatch. It can be observed that the operational planning scale has high spatial and temporal resolution, and relatively low uncertainty. Operational planning includes dispatch planning and plant scheduling , which ranges from a few minutes to a week before dispatch. Maintenance planning can take a few weeks to years, as it involves upgrade and maintenance work which may require shut-down of units or assets, in turn affecting the availability of generation units and grid infrastructure. Adequacy assessments, which takes years, involve assessing the existing generation and storage capacities and planning for new installations based on demand projections, to ensure this demand will be met in the future. Finally, grid investment decisions, including planning transmission and distribution grid networks, cross-border and regional interconnections, and grid capacity expansions, take many years to decades and have very high uncertainty as a result.
+The figure below represents the different scales of energy systems, mainly in terms of temporal resolution, but also uncertainty and spatial resolution [Glismann2018]_, [Pfenninger2014]_. Temporally, "real-time" is referred to as the time of dispatch. It can be observed that the operational planning scale has high spatial and temporal resolution, and relatively low uncertainty. Operational planning includes dispatch planning and plant scheduling, which ranges from a few minutes to a week before dispatch. Maintenance planning can take a few weeks to years, as it involves upgrade and maintenance work which may require shut-down of units or assets, in turn affecting the availability of generation units and grid infrastructure. Adequacy assessments, which takes years, involve assessing the existing generation and storage capacities and planning for new installations based on demand projections, to ensure this demand will be met in the future. Finally, grid investment decisions, including planning transmission and distribution grid networks, cross-border and regional interconnections, and grid capacity expansions, take many years to decades and have very high uncertainty as a result.
 
 .. figure:: images/resolution.png
     :alt: The various scales of energy systems in terms of their approximate temporal resolution, as well as spatial resolution and uncertainty, adapted from Glismann 2018 and Pfenninger, et al. 2014.
@@ -57,14 +57,14 @@ The electricity system can be seen as having two components; the physical grid c
 
 The table below shows the characteristics of the main energy generation technologies, including their costs. These generation sources have different variabilities, fuel types, flexibilities, costs and carbon emissions. The costs listed in this table are derived based on National Renewable Energy Laboratory (:term:`NREL`\)'s NREL-SEAC 2008 Data Set [Tidball2010]_. :term:`VRE`\  generation technologies have high capital expenditure (:term:`CAPEX`\) compared to conventional fossil-powered and biomass generation. Conversely, the operational expenditure (:term:`OPEX`\), which includes fuel and fixed operational and maintenance (:term:`O&M`\) costs, is low for :term:`VRE`\  generation technologies, as they have no fuel costs unlike conventional generators [Joskow2011]_.
 
-.. table:: Characteristics of the main energy generation technologies, adapted from Erbach 2016 and Tidball, et al. 2010.
+.. table:: Characteristics of the main energy generation technologies, adapted from Erbach 2016 and Tidball, et al. 2010. Costs for natural gas, biomass, solar and geothermal are that of advanced combustion turbine, biomass gasification plant, utility-scale photovoltaic and hydrothermal plant respectively. :term:`LCOE`\  refers to levelised cost of electricity. Biomass is considered low carbon as regrowth of biomass compensates emissions.
 
     =============== ============ ============= =============== ============== ========= ========= ===============
-    **Type**\  [1]_ **Variable** **Fuel type** **Flexibility** **Low carbon** **CAPEX** **OPEX**  **LCOE**\  [2]_
+    Type            Variable     Fuel type     Flexibility     Low carbon     CAPEX     OPEX      LCOE
     =============== ============ ============= =============== ============== ========= ========= ===============
     Coal            no           fossil        medium          no             low       high      very low
     Natural gas     no           fossil        high            no             very low  very high low
-    Biomass         no           renewable     medium          yes [3]_       low       very high very high
+    Biomass         no           renewable     medium          yes            low       very high very high
     Nuclear         no           nuclear       low             zero-emission  medium    medium    medium
     Hydro           no           renewable     very high       zero-emission                     
     Solar           yes          renewable     very low        zero-emission  very high very low  very high
@@ -73,10 +73,6 @@ The table below shows the characteristics of the main energy generation technolo
     *Offshore wind*                                                           very high low       high
     Geothermal      no           renewable     high            zero-emission  high      medium    high
     =============== ============ ============= =============== ============== ========= ========= ===============
-
-.. [1] Costs for natural gas, biomass, solar and geothermal are that of advanced combustion turbine, biomass gasification plant, utility-scale photovoltaic and hydrothermal plant respectively.
-.. [2] :term:`LCOE`\  - levelised cost of electricity.
-.. [3] Regrowth of biomass compensates emissions.
 
 Actors in the electricity market include generators, retailers, large and small consumers, :term:`TSO`\s, :term:`DNO`\s, balance responsible parties (:term:`BRP`\s), aggregators, regulators, and market operators [KULeuven2015]_, [Pinson]_.
 

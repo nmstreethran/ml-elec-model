@@ -32,7 +32,7 @@ The table below below lists bidding zones in Europe by country and market operat
 .. table:: Bidding zones and market operators in Europe. Country codes in brackets are according to ISO_3166-1 alpha-2.
 
     +-----------------+-----------------+-----------------+
-    | **Country**     | **Markets**     | **Zones**       |
+    | Country         | Markets         | Zones           |
     +=================+=================+=================+
     | Albania (AL)    |                 | AL              |
     +-----------------+-----------------+-----------------+
@@ -139,8 +139,8 @@ There is no clear indication of the bidding zone boundaries for Norway and Swede
 .. table:: Bidding zones and their territories for Norway and Sweden, approximated based on Nord Pool market data, NUTS 3 data and county maps of Norway and Sweden.
 
     +-----------------+-----------------+-----------------+-----------------+
-    | **Bidding       | **Reference     | **Counties**    | **NUTS 3 IDs**  |
-    | zone**          | cities**        |                 |                 |
+    | Bidding         | Reference       | Counties        | NUTS 3 IDs      |
+    | zone            | cities          |                 |                 |
     +=================+=================+=================+=================+
     | NO1             | Oslo            | Oslo, Akershus, | NO011-034       |
     |                 |                 | Hedmark,        |                 |
@@ -197,8 +197,8 @@ Europe has multiple :term:`TSO`\s [ENTSO-Ea]_ and cross-border interconnections.
 .. table:: TSOs and cross-border interconnections in Europe. Data: European Network of Transmission System Operators for Electricity.
 
     +--------------------+--------------------+--------------------+--------------------+
-    | **Country**        | **TSOs**           | **Cross-border     | **Bidding          |
-    |                    |                    | interconnections** | zones**            |
+    | Country            | TSOs               | Cross-border       | Bidding            |
+    |                    |                    | interconnections   | zones              |
     +====================+====================+====================+====================+
     | BE                 | Elia System        | FR, LU, NL, UK     | BE                 |
     |                    | Operator           |                    |                    |

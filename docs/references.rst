@@ -42,6 +42,7 @@ References
 .. [NordPoola] List of changes in day-ahead and intraday areas. (n.d.). Nord Pool. https://www.nordpoolspot.com/globalassets/download-center/day-ahead/elspot-area-change-log.pdf.
 .. [Ofgem2014] Bidding Zones Literature Review (p. 14). (2014). Ofgem. https://www.ofgem.gov.uk/sites/default/files/docs/2014/10/fta_bidding_zone_configuration_literature_review_1.pdf.
 .. [openmod] openmod — Open Energy Modelling Initiative. (n.d.). http://www.openmod-initiative.org.
+.. [panodata2020] panodata/dwdweather2. (2020). [Python]. panodata. https://github.com/panodata/dwdweather2 (Original work published 2018).
 .. [Pfenninger2014] Pfenninger, S., Hawkes, A., & Keirstead, J. (2014). Energy systems modeling for twenty-first century energy challenges. Renewable and Sustainable Energy Reviews, 33, 74–86. https://doi.org/10.1016/j.rser.2014.02.003.
 .. [Pinson] Pinson, P. (n.d.). Renewables in Electricity Markets - Pierre Pinson. https://pierrepinson.com/index.php/teaching/.
 .. [Ringkjob2018] Ringkjøb, H.-K., Haugan, P. M., & Solbrekke, I. M. (2018). A review of modelling tools for energy and electricity systems with large shares of variable renewables. Renewable and Sustainable Energy Reviews, 96, 440–459. https://doi.org/10.1016/j.rser.2018.08.002.

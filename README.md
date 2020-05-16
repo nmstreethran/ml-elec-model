@@ -1,11 +1,12 @@
 # ml-elec-model <!-- omit in toc -->
 
 <!-- start badges -->
-[![Build Status](https://travis-ci.org/nmstreethran/ml-elec-model.svg?branch=master)](https://travis-ci.org/nmstreethran/ml-elec-model)
-[![Documentation Status](https://readthedocs.org/projects/ml-elec-model/badge/?version=latest)](https://ml-elec-model.rtfd.io)
+[![Travis CI build status](https://travis-ci.org/nmstreethran/ml-elec-model.svg?branch=master)](https://travis-ci.org/nmstreethran/ml-elec-model)
+[![Documentation build status](https://readthedocs.org/projects/ml-elec-model/badge/?version=latest)](https://ml-elec-model.rtfd.io)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-yellow?labelColor=darkslategray)](https://opensource.org/licenses/MIT)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/content%20license-CC%20BY%204.0-blue?labelColor=darkslategray)](https://creativecommons.org/licenses/by/4.0/)
-[![GitHub Repository](https://img.shields.io/badge/-repository-purple?logo=github&labelColor=black)](https://github.com/nmstreethran/ml-elec-model)
+[![GitHub repository](https://img.shields.io/badge/-repository-purple?logo=github&labelColor=black)](https://github.com/nmstreethran/ml-elec-model)
+[![Download docs PDF](https://img.shields.io/badge/-docs%20pdf-darkslategray?logo=adobe-acrobat-reader&labelColor=red&logoColor=white)](https://ml-elec-model.readthedocs.io/_/downloads/en/latest/pdf/)
 <!-- end badges -->
 
 by Nithiya Streethran (nmstreethran at gmail dot com)
@@ -29,6 +30,7 @@ Machine learning-based electricity system model.
 ### Packages
 
 - [Bokeh](https://bokeh.org/)
+- [dwdweather2](https://pypi.org/project/dwdweather2/)
 - [entsoe-py](https://pypi.org/project/entsoe-py/)
 - [GeoPandas](https://geopandas.org/)
 - [Matplotlib](https://matplotlib.org/)
@@ -50,7 +52,7 @@ Machine learning-based electricity system model.
 2. Install dependencies:
 
     ```sh
-    pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh entsoe-py
+    pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh entsoe-py dwdweather2
     ```
 
 **Using Anaconda:**
@@ -66,7 +68,7 @@ Machine learning-based electricity system model.
 
     ```sh
     conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh
-    pip install entsoe-py
+    pip install entsoe-py dwdweather2
     ```
 
 ## Cloning the repository
@@ -87,7 +89,7 @@ git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
 
 ## Documentation
 
-The documentation is maintained in this repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki) and built using [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io>. The files can be found in the `docs` folder.
+The documentation is maintained in this repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki), built using [Sphinx](https://www.sphinx-doc.org/en/master/), and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io>. The files can be found in the `docs` folder.
 
 To build the documentation locally, clone this repository (including submodules) and install a TeX distribution (such as [TeX Live](http://tug.org/texlive/)). Then, install the required Sphinx Python packages as follows:
 

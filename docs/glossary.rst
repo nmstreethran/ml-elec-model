@@ -1,9 +1,6 @@
 Glossary
 ========
 
-Abbreviations
--------------
-
 .. glossary::
 
    API
