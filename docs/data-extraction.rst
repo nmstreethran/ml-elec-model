@@ -8,7 +8,10 @@ The :term:`ENTSO-E TP`\  [ENTSO-Ef]_ has a dashboard with various electricity sy
 
 The :term:`ENTSO-E`\  :term:`API`\  Python client (entsoe-py) [EnergieID2019]_ is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
 
-The bidding zones in Europe, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the Pandas client. Note that ``DE-LU`` only works for timestamps starting 01/10/2018 [ENTSO-Ee]_. Use ``DE-AT-LU`` for timestamps prior to this date.
+The bidding zones in Europe, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the Pandas client.
+
+.. IMPORTANT::
+   Note that ``DE-LU`` only works for timestamps starting 01/10/2018 [ENTSO-Ee]_. Use ``DE-AT-LU`` for timestamps prior to this date.
 
 .. table:: Bidding zones in Europe and their corresponding EICs.
 
@@ -154,6 +157,9 @@ A map of German meteorological stations is shown below\  [#f5]_.
     A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
 
 The dwdweather2 Python package [panodata2020]_ is used to access German weather data.
+
+.. CAUTION::
+   The dwdweather2 Python client is a Python 2.7 library. The library's README states the following: *"This piece of software is in a very early stage. No test cases yet. Only tested with Python 3.6. Use at your own risk."*
 
 .. rubric:: Footnotes
 

@@ -1,9 +1,7 @@
 About
 =====
 
-**Documentation:** `ml-elec-model.rtfd.io <https://ml-elec-model.rtfd.io/>`__
-
-**Git repository:** `github.com/nmstreethran/ml-elec-model <https://github.com/nmstreethran/ml-elec-model>`__
+`Documentation <https://ml-elec-model.rtfd.io/>`__ // `Git repository <https://github.com/nmstreethran/ml-elec-model>`__
 
 by Nithiya Streethran (nmstreethran at gmail dot com)
 
@@ -97,6 +95,11 @@ Then, commit and push all changes to the wiki's branch. Finally, commit and push
 Local builds of the documentation in HTML and PDF formats can be viewed after running the above bash script by opening ``docs/_build/html/index.html`` and ``docs/_build/latex/ml-elec-model.pdf`` respectively.
 
 A list of references used is available on `Zotero <https://www.zotero.org/groups/2327899/ml-elec-model/library>`__.
+
+Charts
+------
+
+Charts generated are kept in the `charts` directory, which is another `submodule <https://github.com/nmstreethran/charts/tree/ml-elec-model>`__.
 
 License
 -------

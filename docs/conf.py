@@ -65,6 +65,8 @@ html_theme_options = {
 }
 
 # -- LaTeX options -----------------------------------------------------------
+latex_documents = [('index', 'ml-elec-model.tex', 'ml-elec-model docs',
+    'Nithiya Streethran', 'manual', True)]
 
 latex_elements = {
     'papersize': 'a4paper',
@@ -99,6 +101,7 @@ latex_elements = {
         % \makeatletter
         % \renewcommand{\sphinxmaketitle}{
             \hypersetup{
+                % pdftitle={\@title~docs},
                 % pdftitle={\@title~docs, \py@release},
                 % pdfauthor={\@author},
                 pdfkeywords={machine learning, electricity system model, open source},

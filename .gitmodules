@@ -1,3 +1,7 @@
 [submodule "docs"]
 	path = wiki
 	url = git@github.com:nmstreethran/elec-sys-data.wiki.git
+[submodule "charts"]
+	path = charts
+	url = git@github.com:nmstreethran/charts.git
+	branch = ml-elec-model

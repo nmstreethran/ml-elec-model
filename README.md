@@ -22,6 +22,7 @@ Machine learning-based electricity system model.
   - [Installation](#installation)
 - [Cloning the repository](#cloning-the-repository)
 - [Documentation](#documentation)
+- [Charts](#charts)
 - [License](#license)
 - [Credits](#credits)
 
@@ -108,6 +109,10 @@ Then, commit and push all changes to the wiki's branch. Finally, commit and push
 Local builds of the documentation in HTML and PDF formats can be viewed after running the above bash script by opening `docs/_build/html/index.html` and `docs/_build/latex/ml-elec-model.pdf` respectively.
 
 A list of references used is available on [Zotero](https://www.zotero.org/groups/2327899/ml-elec-model/library).
+
+## Charts
+
+[Charts](https://github.com/nmstreethran/charts/tree/ml-elec-model) generated are kept in the `charts` directory, which is another submodule.
 
 ## License
 
