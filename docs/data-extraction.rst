@@ -15,58 +15,124 @@ The bidding zones in Europe, mapped to their corresponding Energy Identification
 
 .. table:: Bidding zones in Europe and their corresponding EICs.
 
-    =================================== ================ ================
-    Zone name                           Bidding zone     EIC
-    =================================== ================ ================
-    Albania                             AL               10YAL-KESH—–5
-    Belgium                             BE               10YBE———-2
-    Bosnia and Herzegovina              BA               10YBA-JPCC—–D
-    Bulgaria                            BG               10YCA-BULGARIA-R
-    Switzerland                         CH               10YCH-SWISSGRIDZ
-    Cyprus                              CY               10YCY-1001A0003J
-    Czech Republic                      CZ               10YCZ-CEPS—–N
-    Germany and Luxembourg              DE-LU            10Y1001A1001A82H
-    Western Denmark                     DK-1             10YDK-1——–W
-    Eastern Denmark                     DK-2             10YDK-2——–M
-    Estonia                             EE               10Y1001A1001A39I
-    Spain                               ES               10YES-REE——0
-    Finland                             FI               10YFI-1——–U
-    France                              FR               10YFR-RTE——C
-    Georgia                             GE              
-    Great Britain                       GB               10YGB———-A
-    Greece                              GR               10YGR-HTSO—–Y
-    Croatia                             HR               10YHR-HEP——M
-    Hungary                             HU               10YHU-MAVIR—-U
-    Ireland (Single Electricity Market) IE-SEM           10Y1001A1001A59C
-    Centre-North, Italy                 IT-CNOR          10Y1001A1001A70O
-    Centre-South, Italy                 IT-CSUD          10Y1001A1001A71M
-    North, Italy                        IT-NORTH         10Y1001A1001A73I
-    Sardinia, Italy                     IT-Sardinia      10Y1001A1001A74G
-    Sicily, Italy                       IT-Sicily        10Y1001A1001A75E
-    South, Italy                        IT-SUD           10Y1001A1001A788
-    Lithuania                           LT               10YLT-1001A0008Q
-    Latvia                              LV               10YLV-1001A00074
-    Moldova                             MD              
-    Montenegro                          ME               10YCS-CG-TSO—S
-    North Macedonia                     MK               10YMK-MEPSO—-8
-    Netherlands                         NL               10YNL———-L
-    Oslo, Norway                        NO-1             10YNO-1——–2
-    Kristiansand, Norway                NO-2             10YNO-2——–T
-    Trondheim and Molde, Norway         NO-3             10YNO-3——–J
-    Tromsø, Norway                      NO-4             10YNO-4——–9
-    Bergen, Norway                      NO-5             10Y1001A1001A48H
-    Poland                              PL               10YPL-AREA—–S
-    Portugal                            PT               10YPT-REN——W
-    Romania                             RO               10YRO-TEL——P
-    Serbia                              RS               10YCS-SERBIATSOV
-    Luleå, Sweden                       SE-1             10Y1001A1001A44P
-    Sundsvall, Sweden                   SE-2             10Y1001A1001A45N
-    Stockholm, Sweden                   SE-3             10Y1001A1001A46L
-    Malmö, Sweden                       SE-4             10Y1001A1001A47
-    Slovenia                            SI               10YSI-ELES—–O
-    Slovakia                            SK               10YSK-SEPS—–K
-    Ukraine                             UA               10YUA-WEPS—–0
-    =================================== ================ ================
+   +---------------+-------------+----------------------+
+   | Zone name     | Bidding     | EIC                  |
+   |               | zone        |                      |
+   +===============+=============+======================+
+   | Albania       | AL          | ``10YAL-KESH--5``    |
+   +---------------+-------------+----------------------+
+   | Belgium       | BE          | ``10YBE----2``       |
+   +---------------+-------------+----------------------+
+   | Bosnia and    | BA          | ``10YBA-JPCC--D``    |
+   | Herzegovina   |             |                      |
+   +---------------+-------------+----------------------+
+   | Bulgaria      | BG          | ``10YCA-BULGARIA-R`` |
+   +---------------+-------------+----------------------+
+   | Switzerland   | CH          | ``10YCH-SWISSGRIDZ`` |
+   +---------------+-------------+----------------------+
+   | Cyprus        | CY          | ``10YCY-1001A0003J`` |
+   +---------------+-------------+----------------------+
+   | Czech         | CZ          | ``10YCZ-CEPS--N``    |
+   | Republic      |             |                      |
+   +---------------+-------------+----------------------+
+   | Germany and   | DE-LU       | ``10Y1001A1001A82H`` |
+   | Luxembourg    |             |                      |
+   +---------------+-------------+----------------------+
+   | Western       | DK-1        | ``10YDK-1---W``      |
+   | Denmark       |             |                      |
+   +---------------+-------------+----------------------+
+   | Eastern       | DK-2        | ``10YDK-2---M``      |
+   | Denmark       |             |                      |
+   +---------------+-------------+----------------------+
+   | Estonia       | EE          | ``10Y1001A1001A39I`` |
+   +---------------+-------------+----------------------+
+   | Spain         | ES          | ``10YES-REE--0``     |
+   +---------------+-------------+----------------------+
+   | Finland       | FI          | ``10YFI-1---U``      |
+   +---------------+-------------+----------------------+
+   | France        | FR          | ``10YFR-RTE--C``     |
+   +---------------+-------------+----------------------+
+   | Georgia       | GE          |                      |
+   +---------------+-------------+----------------------+
+   | Great Britain | GB          | ``10YGB----A``       |
+   +---------------+-------------+----------------------+
+   | Greece        | GR          | ``10YGR-HTSO--Y``    |
+   +---------------+-------------+----------------------+
+   | Croatia       | HR          | ``10YHR-HEP--M``     |
+   +---------------+-------------+----------------------+
+   | Hungary       | HU          | ``10YHU-MAVIR--U``   |
+   +---------------+-------------+----------------------+
+   | Ireland       | IE-SEM      | ``10Y1001A1001A59C`` |
+   | (Single       |             |                      |
+   | Electricity   |             |                      |
+   | Market)       |             |                      |
+   +---------------+-------------+----------------------+
+   | Centre-North, | IT-CNOR     | ``10Y1001A1001A70O`` |
+   | Italy         |             |                      |
+   +---------------+-------------+----------------------+
+   | Centre-South, | IT-CSUD     | ``10Y1001A1001A71M`` |
+   | Italy         |             |                      |
+   +---------------+-------------+----------------------+
+   | North, Italy  | IT-NORTH    | ``10Y1001A1001A73I`` |
+   +---------------+-------------+----------------------+
+   | Sardinia,     | IT-Sardinia | ``10Y1001A1001A74G`` |
+   | Italy         |             |                      |
+   +---------------+-------------+----------------------+
+   | Sicily, Italy | IT-Sicily   | ``10Y1001A1001A75E`` |
+   +---------------+-------------+----------------------+
+   | South, Italy  | IT-SUD      | ``10Y1001A1001A788`` |
+   +---------------+-------------+----------------------+
+   | Lithuania     | LT          | ``10YLT-1001A0008Q`` |
+   +---------------+-------------+----------------------+
+   | Latvia        | LV          | ``10YLV-1001A00074`` |
+   +---------------+-------------+----------------------+
+   | Moldova       | MD          |                      |
+   +---------------+-------------+----------------------+
+   | Montenegro    | ME          | ``10YCS-CG-TSO-S``   |
+   +---------------+-------------+----------------------+
+   | North         | MK          | ``10YMK-MEPSO--8``   |
+   | Macedonia     |             |                      |
+   +---------------+-------------+----------------------+
+   | Netherlands   | NL          | ``10YNL----L``       |
+   +---------------+-------------+----------------------+
+   | Oslo, Norway  | NO-1        | ``10YNO-1---2``      |
+   +---------------+-------------+----------------------+
+   | Kristiansand, | NO-2        | ``10YNO-2---T``      |
+   | Norway        |             |                      |
+   +---------------+-------------+----------------------+
+   | Trondheim and | NO-3        | ``10YNO-3---J``      |
+   | Molde, Norway |             |                      |
+   +---------------+-------------+----------------------+
+   | Tromsø,       | NO-4        | ``10YNO-4---9``      |
+   | Norway        |             |                      |
+   +---------------+-------------+----------------------+
+   | Bergen,       | NO-5        | ``10Y1001A1001A48H`` |
+   | Norway        |             |                      |
+   +---------------+-------------+----------------------+
+   | Poland        | PL          | ``10YPL-AREA--S``    |
+   +---------------+-------------+----------------------+
+   | Portugal      | PT          | ``10YPT-REN--W``     |
+   +---------------+-------------+----------------------+
+   | Romania       | RO          | ``10YRO-TEL--P``     |
+   +---------------+-------------+----------------------+
+   | Serbia        | RS          | ``10YCS-SERBIATSOV`` |
+   +---------------+-------------+----------------------+
+   | Luleå, Sweden | SE-1        | ``10Y1001A1001A44P`` |
+   +---------------+-------------+----------------------+
+   | Sundsvall,    | SE-2        | ``10Y1001A1001A45N`` |
+   | Sweden        |             |                      |
+   +---------------+-------------+----------------------+
+   | Stockholm,    | SE-3        | ``10Y1001A1001A46L`` |
+   | Sweden        |             |                      |
+   +---------------+-------------+----------------------+
+   | Malmö, Sweden | SE-4        | ``10Y1001A1001A47``  |
+   +---------------+-------------+----------------------+
+   | Slovenia      | SI          | ``10YSI-ELES--O``    |
+   +---------------+-------------+----------------------+
+   | Slovakia      | SK          | ``10YSK-SEPS--K``    |
+   +---------------+-------------+----------------------+
+   | Ukraine       | UA          | ``10YUA-WEPS--0``    |
+   +---------------+-------------+----------------------+
 
 Generation data
 ~~~~~~~~~~~~~~~
@@ -131,8 +197,8 @@ The load is calculated using the average of real-time load values per bidding zo
 
 .. code:: md
 
-    Actual total load (including losses without stored energy)
-    = Net generation – Exports + Imports – Absorbed energy
+   Actual total load (including losses without stored energy)
+   = Net generation – Exports + Imports – Absorbed energy
 
 For these calculations, the net generation is preferred. However, gross generation may be used if it is available with the better precision. The :term:`TSO`\s responsible for each area decide whether to use gross or net generation, but they are required to keep their choice consistent per bidding zone. Absorbed energy is also provided as separate information with the aggregated generation output of the hydro pumped storage. The physical flow on the tie line is measured as agreed by neighbouring :term:`TSO`\s or bidding zones, where applicable. This dataset is published on :term:`ENTSO-E TP`\  no later than one hour after the end of the operating period.
 
@@ -152,9 +218,9 @@ Weather data for Germany is extracted from :term:`DWD`\'s Climate Data Center (:
 A map of German meteorological stations is shown below\  [#f5]_.
 
 .. figure:: images/dwd_stations.png
-    :alt: A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
+   :alt: A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
 
-    A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
+   A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
 
 The dwdweather2 Python package [panodata2020]_ is used to access German weather data.
 

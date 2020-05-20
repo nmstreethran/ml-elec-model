@@ -74,30 +74,31 @@ Machine learning-based electricity system model.
 
 ## Cloning the repository
 
-To clone the latest version of this repository, including the contents of the submodule:
+To clone the latest version of this repository:
 
 **Using HTTPS:**
 
 ```sh
-git clone --recurse-submodules https://github.com/nmstreethran/ml-elec-model.git
+git clone https://github.com/nmstreethran/ml-elec-model.git
 ```
 
 **Using SSH:**
 
 ```sh
-git clone --recurse-submodules git@github.com:nmstreethran/ml-elec-model.git
+git clone git@github.com:nmstreethran/ml-elec-model.git
 ```
 
 ## Documentation
 
 The documentation is maintained in this repository's [GitHub Wiki](https://github.com/nmstreethran/ml-elec-model/wiki), built using [Sphinx](https://www.sphinx-doc.org/en/master/), and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io>. The files can be found in the `docs` folder.
 
-To build the documentation locally, clone this repository (including submodules) and install a TeX distribution (such as [TeX Live](http://tug.org/texlive/)). Then, install the required Sphinx Python packages as follows:
+To build the documentation locally, clone this repository and install a TeX distribution (such as [TeX Live](http://tug.org/texlive/)). Then, install the required Sphinx Python package and Read the Docs theme as follows:
 
 ```sh
 pip install sphinx sphinx-rtd-theme
 ```
 
+<!-- 
 The GitHub wiki has been included in this repository as a submodule. All changes must be made to the files within this submodule (i.e., the `wiki` directory). Once changes are made, the following bash script must be executed to compile the documentation:
 
 ```sh
@@ -105,14 +106,18 @@ bash docs.sh
 ```
 
 Then, commit and push all changes to the wiki's branch. Finally, commit and push to the main repository's branch.
+ -->
+Local builds of the documentation in HTML and PDF formats can be viewed after running the following bash script by opening `docs/_build/html/index.html` and `docs/_build/latex/ml-elec-model.pdf` respectively:
 
-Local builds of the documentation in HTML and PDF formats can be viewed after running the above bash script by opening `docs/_build/html/index.html` and `docs/_build/latex/ml-elec-model.pdf` respectively.
+```sh
+bash docs.sh
+```
 
 A list of references used is available on [Zotero](https://www.zotero.org/groups/2327899/ml-elec-model/library).
 
 ## Charts
 
-[Charts](https://github.com/nmstreethran/charts/tree/ml-elec-model) generated are kept in the `charts` directory, which is another submodule.
+Charts generated are available at <https://github.com/nmstreethran/charts/tree/ml-elec-model>.
 
 ## License
 
@@ -120,6 +125,7 @@ Unless otherwise stated:
 
 - Python scripts, Jupyter notebooks, and any other form of code or snippets (e.g., shell scripts) in this repository are licensed under the [MIT License](https://opensource.org/licenses/MIT).
 - content, images, and documentation are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/).
+- charts are licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0.html).
 
 ## Credits
 

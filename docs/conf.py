@@ -18,7 +18,9 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ml-elec-model'
-copyright = '2018-2020, Nithiya Streethran. Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license.'
+copyright = '2018-2020, Nithiya Streethran. Except where otherwise noted, \
+content on this site is licensed under a Creative Commons Attribution 4.0 \
+International (CC BY 4.0) license.'
 author = 'Nithiya Streethran'
 # version = '0.1.0'
 # release = '0.1.0'
@@ -64,6 +66,7 @@ html_theme_options = {
      'style_external_links': True
 }
 
+
 # -- LaTeX options -----------------------------------------------------------
 latex_documents = [('index', 'ml-elec-model.tex', 'ml-elec-model docs',
     'Nithiya Streethran', 'manual', True)]
@@ -98,27 +101,11 @@ latex_elements = {
         \renewcommand{\cfttoctitlefont}{\Huge\bfseries\sffamily}
 
         %% titlepage and metadata
-        % \makeatletter
-        % \renewcommand{\sphinxmaketitle}{
-            \hypersetup{
-                % pdftitle={\@title~docs},
-                % pdftitle={\@title~docs, \py@release},
-                % pdfauthor={\@author},
-                pdfkeywords={machine learning, electricity system model, open source},
-                pdfsubject={License: CC BY 4.0}
-            }
-            % \hspace{0pt}\vfill
-            % {\sffamily
-            % \Huge\textbf{\@title}~docs \vskip2pt
-            % \LARGE\textit{\py@release} \vskip20pt
-            % \Large\@author \vskip4pt
-            % \large\today \vskip20pt
-            % Documentation: \href{https://ml-elec-model.rtfd.io/}{ml-elec-model.rtfd.io} \vskip2pt
-            % GitHub: \href{https://github.com/nmstreethran/ml-elec-model}{nmstreethran/ml-elec-model}
-            % }
-            % \vfill\hspace{0pt}
-        % }
-        % \makeatother
+        \hypersetup{
+            pdfkeywords={machine learning, electricity system model,
+            open source},
+            pdfsubject={License: CC BY 4.0}
+        }
 
         %% tables
         % change table heading style
@@ -155,8 +142,7 @@ latex_elements = {
             \fancypagestyle{normal}{
                 \fancyhf{}
                 \fancyfoot[C]{\sffamily\thepage}
-                \fancyhead[LE,RO]{\sffamily\@title}
-                % \fancyhead[LE,RO]{\sffamily\@title, \textit{\py@release}}
+                \fancyhead[LE,RO]{\sffamily\textit{\@title}}
                 \renewcommand{\headrulewidth}{1pt}
             }
             % for the first page of the chapter
@@ -169,7 +155,8 @@ latex_elements = {
 
         %% bibliography
         \renewenvironment{sphinxthebibliography}[1]{
-            % remove the bibliography title and page break
+            % remove automatically-generated bibliography title
+            % and page break
             \renewcommand{\chapter}[2]{}
             \begin{thebibliography}{#1}
             }{\end{thebibliography}

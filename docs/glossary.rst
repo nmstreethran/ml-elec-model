@@ -17,7 +17,7 @@ Glossary
 
    DSO
       distribution system operator (same as :term:`DNO`\)
-      
+
    DSM
       demand-side management
 

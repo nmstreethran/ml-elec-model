@@ -20,16 +20,16 @@ Energy system modelling and decision making in various resolutions
 Energy systems models are tools used to project the future energy supply of a country or region [Herbst2012]_. The figure below explains the energy systems modelling process using a system analysis approach [Krook-Riekkola2015]_. This process starts with creating a model of the actual energy system by simplifying and conceptualising the present system. This conceptualised system with all assumptions is then mathematically solved to produce numerical results. These results can then be interpreted and conclusions can be drawn regarding the future energy system. Such conclusions form the evidence-base for decision makers, resulting in policy implications that help achieve these climate targets. This same approach can be used to explain various decision making processes for an energy system at various scales, other than policy making, as energy systems exist in different resolutions and levels of uncertainty.
 
 .. figure:: images/system-analysis.png
-    :alt: The system analysis approach applied on the energy system modelling process, adapted from Krook-Riekkola 2015.
+   :alt: The system analysis approach applied on the energy system modelling process, adapted from Krook-Riekkola 2015.
 
-    The system analysis approach applied on the energy system modelling process, adapted from Krook-Riekkola 2015.
+   The system analysis approach applied on the energy system modelling process, adapted from Krook-Riekkola 2015.
 
 The figure below represents the different scales of energy systems, mainly in terms of temporal resolution, but also uncertainty and spatial resolution [Glismann2018]_, [Pfenninger2014]_. Temporally, "real-time" is referred to as the time of dispatch. It can be observed that the operational planning scale has high spatial and temporal resolution, and relatively low uncertainty. Operational planning includes dispatch planning and plant scheduling, which ranges from a few minutes to a week before dispatch. Maintenance planning can take a few weeks to years, as it involves upgrade and maintenance work which may require shut-down of units or assets, in turn affecting the availability of generation units and grid infrastructure. Adequacy assessments, which takes years, involve assessing the existing generation and storage capacities and planning for new installations based on demand projections, to ensure this demand will be met in the future. Finally, grid investment decisions, including planning transmission and distribution grid networks, cross-border and regional interconnections, and grid capacity expansions, take many years to decades and have very high uncertainty as a result.
 
 .. figure:: images/resolution.png
-    :alt: The various scales of energy systems in terms of their approximate temporal resolution, as well as spatial resolution and uncertainty, adapted from Glismann 2018 and Pfenninger, et al. 2014.
+   :alt: The various scales of energy systems in terms of their approximate temporal resolution, as well as spatial resolution and uncertainty, adapted from Glismann 2018 and Pfenninger, et al. 2014.
 
-    The various scales of energy systems in terms of their approximate temporal resolution, as well as spatial resolution and uncertainty, adapted from Glismann 2018 and Pfenninger, et al. 2014.
+   The various scales of energy systems in terms of their approximate temporal resolution, as well as spatial resolution and uncertainty, adapted from Glismann 2018 and Pfenninger, et al. 2014.
 
 Existing models and tools
 -------------------------
@@ -59,29 +59,43 @@ The table below shows the characteristics of the main energy generation technolo
 
 .. table:: Characteristics of the main energy generation technologies, adapted from Erbach 2016 and Tidball, et al. 2010. Costs for natural gas, biomass, solar and geothermal are that of advanced combustion turbine, biomass gasification plant, utility-scale photovoltaic and hydrothermal plant respectively. :term:`LCOE`\  refers to levelised cost of electricity. Biomass is considered low carbon as regrowth of biomass compensates emissions.
 
-    =============== ============ ============= =============== ============== ========= ========= ===============
-    Type            Variable     Fuel type     Flexibility     Low carbon     CAPEX     OPEX      LCOE
-    =============== ============ ============= =============== ============== ========= ========= ===============
-    Coal            no           fossil        medium          no             low       high      very low
-    Natural gas     no           fossil        high            no             very low  very high low
-    Biomass         no           renewable     medium          yes            low       very high very high
-    Nuclear         no           nuclear       low             zero-emission  medium    medium    medium
-    Hydro           no           renewable     very high       zero-emission                     
-    Solar           yes          renewable     very low        zero-emission  very high very low  very high
-    Wind            yes          renewable     very low        zero-emission                     
-    *Onshore wind*                                                            high      very low  very low
-    *Offshore wind*                                                           very high low       high
-    Geothermal      no           renewable     high            zero-emission  high      medium    high
-    =============== ============ ============= =============== ============== ========= ========= ===============
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Type       | Variability | Fuel type | Flexibility | Emission  | CAPEX  | OPEX   | LCOE   |
+   |            |             |           |             | intensity |        |        |        |
+   +============+=============+===========+=============+===========+========+========+========+
+   | Coal       | none        | fossil    | medium      | very high | low    | high   | very   |
+   |            |             |           |             |           |        |        | low    |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Natural    | none        | fossil    | high        | high      | very   | very   | low    |
+   | gas        |             |           |             |           | low    | high   |        |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Biomass    | none        | renewable | medium      | low       | low    | very   | very   |
+   |            |             |           |             |           |        | high   | high   |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Nuclear    | none        | nuclear   | low         | zero      | medium | medium | medium |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Hydro      | none        | renewable | very high   | zero      |        |        |        |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Solar      | variable    | renewable | very low    | zero      | very   | very   | very   |
+   |            |             |           |             |           | high   | low    | high,  |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Onshore    | variable    | renewable | very low    | zero      | high   | very   | very   |
+   | wind       |             |           |             |           |        | low    | low    |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Offshore   | variable    | renewable | very low    | zero      | very   | low    | high   |
+   | wind       |             |           |             |           | high   |        |        |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
+   | Geothermal | none        | renewable | high        | zero      | high   | medium | high   |
+   +------------+-------------+-----------+-------------+-----------+--------+--------+--------+
 
 Actors in the electricity market include generators, retailers, large and small consumers, :term:`TSO`\s, :term:`DNO`\s, balance responsible parties (:term:`BRP`\s), aggregators, regulators, and market operators [KULeuven2015]_, [Pinson]_.
 
 There are two types of electricity markets; the retail market and the wholesale market. The retail market involves the retailers buying electricity from generators and selling it to consumers. The wholesale market involves generators, retailers and (large) consumers, who buy and sell electricity. Energy-only transactions in the wholesale market have different temporal resolutions and take place before dispatch, shown in green in the figure below. Balancing markets, shown in pink in the figure, which involve both energy and services, operate both before and after dispatch. The energy-only markets are operated by the market operator or power exchanges, while the balancing market is operated by the system operator. The day-ahead and intra-day markets can be considered short-term electricity markets, as the former takes place 24 hours in advance of dispatch, while the latter takes place continuously after the day-ahead market, up to minutes before dispatch [EuropeanCommission2016]_.
 
 .. figure:: images/market-resolution.png
-    :alt: The various electricity markets in terms of operator and temporal resolution, before and after dispatch, adapted from KU Leuven Energy Institute 2015 and Pinson 2018.
+   :alt: The various electricity markets in terms of operator and temporal resolution, before and after dispatch, adapted from KU Leuven Energy Institute 2015 and Pinson 2018.
 
-    The various electricity markets in terms of operator and temporal resolution, before and after dispatch, adapted from KU Leuven Energy Institute 2015 and Pinson 2018.
+   The various electricity markets in terms of operator and temporal resolution, before and after dispatch, adapted from KU Leuven Energy Institute 2015 and Pinson 2018.
 
 In short-term electricity market auctions, such as the day-ahead market auction, generating companies have the incentive to bid as low as possible, as the supply bids are ranked in ascending order of price. Conversely, on the demand side, consumers have the incentive to bid as high as possible, as the demand bids are ranked in descending order of price. These two curves form a so called merit order, and the intersection between these two curves is the equilibrium point. The price at this equilibrium point is the market clearing price, which is what all accepted bids will receive, regardless of their initial bid. All supply and demand bids to the left of the equilibrium point will be accepted, and those to the right are rejected.
 
