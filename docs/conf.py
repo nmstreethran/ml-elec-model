@@ -68,8 +68,8 @@ html_theme_options = {
 
 
 # -- LaTeX options -----------------------------------------------------------
-latex_documents = [('index', 'ml-elec-model.tex', 'ml-elec-model docs',
-    'Nithiya Streethran', 'manual', True)]
+latex_documents = [('index', project + '.tex', project + ' docs',
+    author, 'manual', True)]
 
 latex_elements = {
     'papersize': 'a4paper',
@@ -88,8 +88,7 @@ latex_elements = {
         \geometry{headheight=13.6pt}
 
         %% fonts
-        \usepackage{amsmath}
-        \usepackage{amssymb}
+        \usepackage{mathtools}
         \usepackage{newpxtext}
         \usepackage{newpxmath}
         \usepackage[defaultsans]{lato}

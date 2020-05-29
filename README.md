@@ -2,6 +2,7 @@
 
 <!-- start badges -->
 [![Travis CI build status](https://travis-ci.org/nmstreethran/ml-elec-model.svg?branch=master)](https://travis-ci.org/nmstreethran/ml-elec-model)
+[![Action: links](https://github.com/nmstreethran/ml-elec-model/workflows/links/badge.svg)](https://github.com/nmstreethran/ml-elec-model/actions?query=workflow%3Alinks)
 [![Documentation build status](https://readthedocs.org/projects/ml-elec-model/badge/?version=latest)](https://ml-elec-model.rtfd.io)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-yellow?labelColor=darkslategray)](https://opensource.org/licenses/MIT)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/content%20license-CC%20BY%204.0-blue?labelColor=darkslategray)](https://creativecommons.org/licenses/by/4.0/)
@@ -31,15 +32,17 @@ Machine learning-based electricity system model.
 ### Packages
 
 - [Bokeh](https://bokeh.org/)
-- [dwdweather2](https://pypi.org/project/dwdweather2/)
-- [entsoe-py](https://pypi.org/project/entsoe-py/)
+- [dwdweather2](https://github.com/KartikTalwar/Duolingo)
+- [entsoe-py](https://github.com/EnergieID/entsoe-py)
 - [GeoPandas](https://geopandas.org/)
 - [Matplotlib](https://matplotlib.org/)
 - [NumPy](https://numpy.org/)
 - [Pandas](https://pandas.pydata.org/)
-- [pyproj](https://pypi.org/project/pyproj/)
-- [requests](https://pypi.org/project/requests/)
-- [Shapely](https://pypi.org/project/Shapely/)
+- [pyproj](https://pyproj4.github.io/pyproj/stable/)
+- [requests](https://requests.readthedocs.io/en/master/)
+- [Shapely](https://shapely.readthedocs.io/en/latest/)
+- [pytz](https://pythonhosted.org/pytz/)
+- [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/)
 
 ### Installation
 
@@ -53,7 +56,7 @@ Machine learning-based electricity system model.
 2. Install dependencies:
 
     ```sh
-    pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh entsoe-py dwdweather2
+    pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh pytz beautifulsoup4 entsoe-py dwdweather2
     ```
 
 **Using Anaconda:**
@@ -68,7 +71,7 @@ Machine learning-based electricity system model.
 2. Install required packages:
 
     ```sh
-    conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh
+    conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh pytz beautifulsoup4
     pip install entsoe-py dwdweather2
     ```
 

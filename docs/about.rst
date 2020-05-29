@@ -15,15 +15,17 @@ Requirements
 **Packages:**
 
 - `Bokeh <https://bokeh.org/>`__
-- `dwdweather2 <https://pypi.org/project/dwdweather2/>`__
-- `entsoe-py <https://pypi.org/project/entsoe-py/>`__
+- `dwdweather2 <https://github.com/KartikTalwar/Duolingo>`__
+- `entsoe-py <https://github.com/EnergieID/entsoe-py>`__
 - `GeoPandas <https://geopandas.org/>`__
 - `Matplotlib <https://matplotlib.org/>`__
 - `NumPy <https://numpy.org/>`__
 - `Pandas <https://pandas.pydata.org/>`__
-- `pyproj <https://pypi.org/project/pyproj/>`__
-- `requests <https://pypi.org/project/requests/>`__
-- `Shapely <https://pypi.org/project/Shapely/>`__
+- `pyproj <https://pyproj4.github.io/pyproj/stable/>`__
+- `requests <https://requests.readthedocs.io/en/master/>`__
+- `Shapely <https://shapely.readthedocs.io/en/latest/>`__
+- `pytz <https://pythonhosted.org/pytz/>`__
+- `beautifulsoup4 <https://www.crummy.com/software/BeautifulSoup/>`__
 
 **Installation:**
 
@@ -38,7 +40,7 @@ Requirements
 
    .. code:: sh
 
-      pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh entsoe-py dwdweather2
+      pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh pytz beautifulsoup4 entsoe-py dwdweather2
 
 *Using Anaconda:*
 
@@ -53,7 +55,7 @@ Requirements
 
    .. code:: sh
 
-      conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh
+      conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh pytz beautifulsoup4
       pip install entsoe-py dwdweather2
 
 Cloning the repository

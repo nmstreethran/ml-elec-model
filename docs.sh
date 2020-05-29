@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # change directory to docs
 cd docs
 
