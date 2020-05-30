@@ -9,82 +9,45 @@ by Nithiya Streethran (nmstreethran at gmail dot com)
 
 Machine learning-based electricity system model.
 
-Requirements
-------------
+Installing dependencies
+-----------------------
 
-**Packages:**
+Running scripts and building the documentation locally require `Python 3 <https://www.python.org/>`__.
 
-- `Bokeh <https://bokeh.org/>`__
-- `dwdweather2 <https://github.com/KartikTalwar/Duolingo>`__
-- `entsoe-py <https://github.com/EnergieID/entsoe-py>`__
-- `GeoPandas <https://geopandas.org/>`__
-- `Matplotlib <https://matplotlib.org/>`__
-- `NumPy <https://numpy.org/>`__
-- `Pandas <https://pandas.pydata.org/>`__
-- `pyproj <https://pyproj4.github.io/pyproj/stable/>`__
-- `requests <https://requests.readthedocs.io/en/master/>`__
-- `Shapely <https://shapely.readthedocs.io/en/latest/>`__
-- `pytz <https://pythonhosted.org/pytz/>`__
-- `beautifulsoup4 <https://www.crummy.com/software/BeautifulSoup/>`__
-
-**Installation:**
-
-1. (Recommended) Create and activate a virtual environment:
-
-   .. code:: sh
-
-      python3 -m venv env
-      source env/bin/activate
-
-2. Install dependencies:
-
-   .. code:: sh
-
-      pip install pandas numpy requests matplotlib pyproj shapely geopandas bokeh pytz beautifulsoup4 entsoe-py dwdweather2
-
-*Using Anaconda:*
-
-1. (Recommended) Create and activate a virtual environment:
-
-   .. code:: sh
-
-      conda create --name ml-elec-model python=3
-      conda activate ml-elec-model
-
-2. Install required packages:
-
-   .. code:: sh
-
-      conda install pandas numpy requests matplotlib pyproj shapely geopandas bokeh pytz beautifulsoup4
-      pip install entsoe-py dwdweather2
-
-Cloning the repository
-----------------------
-
-To clone the latest version of this repository:
-
-**Using HTTPS:**
+First, create and activate a virtual environment (recommended):
 
 .. code:: sh
 
-   git clone https://github.com/nmstreethran/ml-elec-model.git
+   python3 -m venv env
+   source env/bin/activate
 
-**Using SSH:**
+Alternatively, if using `Anaconda <https://www.anaconda.com/products/individual>`__:
 
 .. code:: sh
 
-   git clone git@github.com:nmstreethran/ml-elec-model.git
+   conda create --name ml-elec-model python=3
+   conda activate ml-elec-model
+
+Then, install the dependencies:
+
+.. code:: sh
+
+   pip install -r requirements.txt
+
+If using Anaconda, the required packages can be installed via `conda-forge <https://conda-forge.org/>`__ instead of ``pip install``:
+
+.. code:: sh
+
+   conda config --add channels conda-forge
+   conda config --set channel_priority strict
+   conda install bokeh geopandas sphinx_rtd_theme
 
 Documentation
 -------------
 
 The documentation is maintained in this repository's `GitHub Wiki <https://github.com/nmstreethran/ml-elec-model/wiki>`__, built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__, and hosted using `Read the Docs <https://readthedocs.org>`__. It is available at https://ml-elec-model.rtfd.io. The files can be found in the ``docs`` folder.
 
-To build the documentation locally, clone this repository and install a TeX distribution (such as `TeX Live <http://tug.org/texlive/>`__). Then, install the required Sphinx Python package and Read the Docs theme as follows:
-
-.. code:: sh
-
-   pip install sphinx sphinx-rtd-theme
+To build the documentation locally, clone this repository and install a TeX distribution (such as `TeX Live <http://tug.org/texlive/>`__).
 
 Local builds of the documentation in HTML and PDF formats can be viewed after running the following bash script by opening ``docs/_build/html/index.html`` and ``docs/_build/latex/ml-elec-model.pdf`` respectively:
 

@@ -222,11 +222,6 @@ A map of German meteorological stations is shown below\  [#f5]_.
 
    A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
 
-The dwdweather2 Python package [panodata2020]_ is used to access German weather data.
-
-.. CAUTION::
-   The dwdweather2 Python client is a Python 2.7 library. The library's README states the following: *"This piece of software is in a very early stage. No test cases yet. Only tested with Python 3.6. Use at your own risk."*
-
 .. rubric:: Footnotes
 
 .. [#f4] https://transparency.entsoe.eu/usrm/user/createPublicUser

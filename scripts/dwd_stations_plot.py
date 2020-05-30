@@ -17,6 +17,7 @@ import pandas as pd
 from os import path, system
 
 # check if weather station data exists
+# if not, run a script to generate the data
 if path.exists('data/dwd_stations_geo.csv') == False:
     system('python scripts/nuts_de.py')
 
