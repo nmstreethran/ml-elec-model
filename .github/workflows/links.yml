@@ -29,4 +29,4 @@ jobs:
     # https://github.com/dkhamsing/awesome_bot
       run: gem install awesome_bot
     - name: Check links
-      run: awesome_bot --allow-dupe --skip-save-results --white-list doi.org,github.com/nmstreethran/ml-elec-model.git,ml-elec-model.rtfd.io,img.shields.io,www.dnvgl.com/services/forecaster-94823 `find . -name "*.md"` `find . -name "*.rst"`
+      run: awesome_bot --allow-dupe --skip-save-results --white-list doi.org,github.com/nmstreethran/ml-elec-model.git,ml-elec-model.rtfd.io,img.shields.io,www.dnvgl.com/services/forecaster-94823,gridscientific.com/about-us `find . -name "*.md"` `find . -name "*.rst"`

@@ -145,3 +145,4 @@ _site/
 credentials.txt
 todo.md
 compile.sh
+requirements_tmp.txt
