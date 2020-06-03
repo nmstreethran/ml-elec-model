@@ -136,13 +136,14 @@ dmypy.json
 
 *.code-workspace
 .vscode/
-data/*
-old/*
-draft/*
+data/
+old/
+draft/
 temp/
 plots/
 _site/
 credentials.txt
 todo.md
 compile.sh
-requirements_tmp.txt
+requirements_tmp*
+requirements.sh

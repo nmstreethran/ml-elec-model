@@ -22,7 +22,7 @@ A bidding zone is the largest geographical area within which market participants
 
 The bidding zones in European electricity markets and surrounding regions are illustrated in the map below, which was made using the :term:`ENTSO-E TP`\'s cross-border physical flow map as the base [ENTSO-Ec]_.
 
-.. figure:: images/market-map-entsoe.png
+.. figure:: ../images/market-map-entsoe.png
    :alt: Bidding zones in Europe. This map is created using the base map with bidding zone borders from ENTSO-E Transparency Platform's cross-border physical flow map as a guide.
 
    Bidding zones in Europe. This map is created using the base map with bidding zone borders from ENTSO-E Transparency Platform's cross-border physical flow map as a guide.

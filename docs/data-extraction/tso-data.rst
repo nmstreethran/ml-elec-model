@@ -1,8 +1,5 @@
-Data extraction
-===============
-
-Electricity system data from the ENTSO-E Transparency Platform
---------------------------------------------------------------
+Electricity system data
+=======================
 
 The :term:`ENTSO-E TP`\  [ENTSO-Ef]_ has a dashboard with various electricity system data tables and visualisations available to the public. All users must first accept the platform's terms and conditions and privacy policy [ENTSO-Eg]_ before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to register for a free account\  [#f4]_ on :term:`ENTSO-E TP`\. :term:`ENTSO-E TP`\'s Restful application programming interface (:term:`API`\) can then be used to automate the data extraction process (see the :term:`API`\  implementation [ENTSO-E2016]_ and user guides [ENTSO-E]_ for more info). Once a free account has been created, request for a security token to access the :term:`API`\  by sending an email to the :term:`ENTSO-E TP`\  Helpdesk (transparency at entsoe dot eu), stating 'Restful :term:`API`\  access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via account settings.
 
@@ -134,8 +131,8 @@ The bidding zones in Europe, mapped to their corresponding Energy Identification
    | Ukraine       | UA          | ``10YUA-WEPS--0``    |
    +---------------+-------------+----------------------+
 
-Generation data
-~~~~~~~~~~~~~~~
+Generation
+----------
 
 :term:`ENTSO-E TP`\  aggregates data by following electricity production types [ENTSO-Eb]_:
 
@@ -177,8 +174,8 @@ The installed capacity per production unit dataset contains information about pr
 
 This information is published annually on :term:`ENTSO-E TP`\  at the start of the year and is valid for the three following years.
 
-Load data
-~~~~~~~~~
+Load
+----
 
 This dataset represents the actual total load in MW per bidding zone per market time unit. These are available at different resolutions depending on the country, which is summarised in below.
 
@@ -202,30 +199,11 @@ The load is calculated using the average of real-time load values per bidding zo
 
 For these calculations, the net generation is preferred. However, gross generation may be used if it is available with the better precision. The :term:`TSO`\s responsible for each area decide whether to use gross or net generation, but they are required to keep their choice consistent per bidding zone. Absorbed energy is also provided as separate information with the aggregated generation output of the hydro pumped storage. The physical flow on the tie line is measured as agreed by neighbouring :term:`TSO`\s or bidding zones, where applicable. This dataset is published on :term:`ENTSO-E TP`\  no later than one hour after the end of the operating period.
 
-Day-ahead market prices data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Day-ahead market prices
+-----------------------
 
 The day-ahead prices are published for each bidding zone at every market time unit, in the relevant currency per MWh. It is published no later than an hour after gate closure. In case of implicit allocation, the gate closure time is interpreted as the output time of the matching algorithms. The data is primarily owned and provided to the :term:`ENTSO-E TP`\  by power exchanges or :term:`TSO`\s. This dataset is available at hourly resolution.
-
-Meteorological data
--------------------
-
-German meteorological data from Deutscher Wetterdienst
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Weather data for Germany is extracted from :term:`DWD`\'s Climate Data Center (:term:`DWD CDC`\) OpenData [DWD]_. The data is subject to the server's terms of use [DWD18]_.
-
-A map of German meteorological stations is shown below\  [#f5]_.
-
-.. figure:: images/dwd_stations.png
-   :alt: A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
-
-   A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat, and map tiles from OpenStreetMap.
-
-.. CAUTION::
-   The dwdweather2 Python package [panodata2020]_ can be used to access German weather data. However, it is a Python 2.7 library. The library's README states the following: *"This piece of software is in a very early stage. No test cases yet. Only tested with Python 3.6. Use at your own risk."* To avoid dependency issues, create a new virtual environment to install dwdweather2; **DO NOT** install it in the same environment used in this project. Install dwdweather2 using ``pip``.
 
 .. rubric:: Footnotes
 
 .. [#f4] https://transparency.entsoe.eu/usrm/user/createPublicUser
-.. [#f5] The interactive map can be viewed on JSFiddle: https://jsfiddle.net/nithiya/h3mnt20c/. See also the following link for a guide on how to plot the map using Bokeh: https://nithiya.gitlab.io/visualisations/mapping-geo-data-bokeh/.

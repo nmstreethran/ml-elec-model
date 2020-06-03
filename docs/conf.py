@@ -20,7 +20,7 @@
 project = 'ml-elec-model'
 copyright = '2018-2020, Nithiya Streethran. Except where otherwise noted, \
 content on this site is licensed under a Creative Commons Attribution 4.0 \
-International (CC BY 4.0) license.'
+International (CC BY 4.0) license'
 author = 'Nithiya Streethran'
 # version = '0.1.0'
 # release = '0.1.0'
@@ -29,7 +29,6 @@ author = 'Nithiya Streethran'
 # -- General configuration ---------------------------------------------------
 
 # import libraries
-import sphinx_rtd_theme
 
 # override default master doc from contents
 master_doc = 'index'
@@ -37,9 +36,7 @@ master_doc = 'index'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx_rtd_theme',
-]
+# extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -52,10 +49,12 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
+# The theme to use for HTML and HTML Help pages. See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'pydata_sphinx_theme'
+
+html_logo = "_static/home.svg"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -63,7 +62,8 @@ html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
 html_theme_options = {
-     'style_external_links': True
+    # 'external_links': [],
+    'github_url': 'https://github.com/nmstreethran/ml-elec-model'
 }
 
 

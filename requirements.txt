@@ -1,14 +1,14 @@
 bokeh
 entsoe-py
 geopandas
-sphinx_rtd_theme
+pydata-sphinx-theme
 # alabaster # Installed as dependency for sphinx
 # attrs # Installed as dependency for fiona
 # babel # Installed as dependency for sphinx
 # beautifulsoup4 # Installed as dependency for entsoe-py
 # certifi # Installed as dependency for requests
 # chardet # Installed as dependency for requests
-# click # Installed as dependency for fiona, cligj, click-plugins
+# click # Installed as dependency for fiona, click-plugins, cligj
 # click-plugins # Installed as dependency for fiona
 # cligj # Installed as dependency for fiona
 # docutils # Installed as dependency for sphinx
@@ -20,20 +20,20 @@ sphinx_rtd_theme
 # munch # Installed as dependency for fiona
 # numpy # Installed as dependency for bokeh, pandas
 # packaging # Installed as dependency for bokeh, sphinx
-# pandas # Installed as dependency for entsoe-py, geopandas
+# pandas # Installed as dependency for geopandas, entsoe-py
 # pillow # Installed as dependency for bokeh
 # pygments # Installed as dependency for sphinx
 # pyparsing # Installed as dependency for packaging
 # pyproj # Installed as dependency for geopandas
 # python-dateutil # Installed as dependency for bokeh, pandas
-# pytz # Installed as dependency for entsoe-py, pandas, babel
+# pytz # Installed as dependency for babel, entsoe-py, pandas
 # pyyaml # Installed as dependency for bokeh
 # requests # Installed as dependency for entsoe-py, sphinx
 # shapely # Installed as dependency for geopandas
-# six # Installed as dependency for fiona, munch, packaging, python-dateutil
+# six # Installed as dependency for fiona, packaging, python-dateutil, munch
 # snowballstemmer # Installed as dependency for sphinx
 # soupsieve # Installed as dependency for beautifulsoup4
-# sphinx # Installed as dependency for sphinx_rtd_theme
+# sphinx # Installed as dependency for pydata-sphinx-theme
 # sphinxcontrib-applehelp # Installed as dependency for sphinx
 # sphinxcontrib-devhelp # Installed as dependency for sphinx
 # sphinxcontrib-htmlhelp # Installed as dependency for sphinx
