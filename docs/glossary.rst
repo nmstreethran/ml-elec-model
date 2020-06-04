@@ -13,10 +13,10 @@ Glossary
       capital expenditure
 
    DNO
-      distribution network operator (same as :term:`DSO`\)
+      distribution network operator (same as :term:`DSO`)
 
    DSO
-      distribution system operator (same as :term:`DNO`\)
+      distribution system operator (same as :term:`DNO`)
 
    DSM
       demand-side management
@@ -25,7 +25,7 @@ Glossary
       Deutscher Wetterdienst (German meteorological service)
 
    DWD CDC
-      :term:`DWD`\'s Climate Data Center
+      :term:`DWD`'s Climate Data Center
 
    EIC
       Energy Identification Code
@@ -34,7 +34,7 @@ Glossary
       European Network of Transmission Systems Operators for Electricity
 
    ENTSO-E TP
-      :term:`ENTSO-E`\  Transparency Platform
+      :term:`ENTSO-E` Transparency Platform
 
    ETSAP
       Energy Technology Systems Analysis Program

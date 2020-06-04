@@ -20,7 +20,7 @@
 project = 'ml-elec-model'
 copyright = '2018-2020, Nithiya Streethran. Except where otherwise noted, \
 content on this site is licensed under a Creative Commons Attribution 4.0 \
-International (CC BY 4.0) license'
+International License (CC BY 4.0)'
 author = 'Nithiya Streethran'
 # version = '0.1.0'
 # release = '0.1.0'

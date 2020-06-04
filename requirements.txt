@@ -1,4 +1,5 @@
 bokeh
+descartes
 entsoe-py
 geopandas
 pydata-sphinx-theme
@@ -8,29 +9,32 @@ pydata-sphinx-theme
 # beautifulsoup4 # Installed as dependency for entsoe-py
 # certifi # Installed as dependency for requests
 # chardet # Installed as dependency for requests
-# click # Installed as dependency for fiona, click-plugins, cligj
+# click # Installed as dependency for cligj, click-plugins, fiona
 # click-plugins # Installed as dependency for fiona
 # cligj # Installed as dependency for fiona
+# cycler # Installed as dependency for matplotlib
 # docutils # Installed as dependency for sphinx
 # fiona # Installed as dependency for geopandas
 # idna # Installed as dependency for requests
 # imagesize # Installed as dependency for sphinx
 # jinja2 # Installed as dependency for bokeh, sphinx
+# kiwisolver # Installed as dependency for matplotlib
 # markupsafe # Installed as dependency for jinja2
+# matplotlib # Installed as dependency for descartes
 # munch # Installed as dependency for fiona
-# numpy # Installed as dependency for bokeh, pandas
+# numpy # Installed as dependency for bokeh, matplotlib, pandas
 # packaging # Installed as dependency for bokeh, sphinx
-# pandas # Installed as dependency for geopandas, entsoe-py
+# pandas # Installed as dependency for entsoe-py, geopandas
 # pillow # Installed as dependency for bokeh
 # pygments # Installed as dependency for sphinx
-# pyparsing # Installed as dependency for packaging
+# pyparsing # Installed as dependency for matplotlib, packaging
 # pyproj # Installed as dependency for geopandas
-# python-dateutil # Installed as dependency for bokeh, pandas
-# pytz # Installed as dependency for babel, entsoe-py, pandas
+# python-dateutil # Installed as dependency for bokeh, matplotlib, pandas
+# pytz # Installed as dependency for babel, pandas, entsoe-py
 # pyyaml # Installed as dependency for bokeh
-# requests # Installed as dependency for entsoe-py, sphinx
+# requests # Installed as dependency for sphinx, entsoe-py
 # shapely # Installed as dependency for geopandas
-# six # Installed as dependency for fiona, packaging, python-dateutil, munch
+# six # Installed as dependency for fiona, python-dateutil, cycler, munch, packaging
 # snowballstemmer # Installed as dependency for sphinx
 # soupsieve # Installed as dependency for beautifulsoup4
 # sphinx # Installed as dependency for pydata-sphinx-theme
