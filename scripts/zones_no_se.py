@@ -1,14 +1,28 @@
+"""Bidding zones in Norway and Sweden
+
+This script obtains approximate Norwegian and Swedish electricity market
+bidding zones from tmrowco/electricitymap-contrib.
+"""
+
 # import libraries
-import geopandas
-import matplotlib.pyplot as plt
+import geopandas as gpd
 import pandas as pd
 
-# root url for NO and SE bidding zone polygons from tmrowco
+# root url for approximate NO and SE bidding zone polygons from tmrowco
 url = 'https://raw.githubusercontent.com/tmrowco/electricitymap-contrib/master/web/third_party_maps/'
 
-# list of zones
-urlList = ['NO-NO1', 'NO-NO2', 'NO-NO3', 'NO-NO4', 'NO-NO5',
-    'SE-SE1', 'SE-SE2', 'SE-SE3', 'SE-SE4']
+# create empty lists to store a list of bidding zones
+# and a list of files to obtain from the url
+zoneList = []
+urlList = []
+# NO has 5 bidding zones
+for num in range(1, 6):
+    zoneList.append('NO' + str(num))
+    urlList.append('NO-NO' + str(num) + '.json')
+# SE has 4 bidding zones
+for num in range(1, 5):
+    zoneList.append('SE' + str(num))
+    urlList.append('SE-SE' + str(num) + '.json')
 
 # create an empty list and dictionary to store geo dataframes
 dfList = []
@@ -16,14 +30,12 @@ urlDict = {}
 
 # read geojson files for each zone and store them in the list
 for zone in urlList:
-    urlDict[zone] = geopandas.read_file(url + zone + '.json')
+    urlDict[zone] = gpd.read_file(url + zone)
     dfList.append(urlDict[zone])
 
 # concatenate the geo dataframes
-rdf = geopandas.GeoDataFrame(pd.concat(dfList, ignore_index=True),
+bzn = gpd.GeoDataFrame(pd.concat(dfList, ignore_index=True),
     crs=dfList[0].crs)
-print(rdf)
 
-# plot the zones
-rdf.plot()
-plt.show()
+# assign bidding zone list to dataframe
+bzn['zone'] = zoneList

@@ -26,6 +26,6 @@ Machine learning-based electricity system model.
 
    about
    literature/index
-   data/index
+   data_used/index
    glossary
    references

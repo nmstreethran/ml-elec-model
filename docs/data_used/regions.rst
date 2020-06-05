@@ -191,10 +191,17 @@ There is no clear indication of the bidding zone boundaries for Norway and Swede
    |                 |                 | Halland, Skåne  |                 |
    +-----------------+-----------------+-----------------+-----------------+
 
+Approximate bidding zone polygons are available from the tmrowco/electricitymap-contrib repository [tmrowco2020]_. These polygons produce the following output:
+
+.. figure:: ../images/bzn_no-se.png
+   :alt: Approximate bidding zones of Norway and Sweden, made using polygons by tmrowco data and map tiles from Stamen Design and OpenStreetMap.
+
+   Approximate bidding zones of Norway and Sweden, made using polygons by tmrowco data and map tiles from Stamen Design and OpenStreetMap.
+
 Transmission system operators and interconnections
 --------------------------------------------------
 
-Europe has multiple :term:`TSO`s [ENTSO-Ea]_ and cross-border interconnections. These are listed, along with the bidding zones, in the table below.
+Europe has multiple :term:`TSO`\s [ENTSO-Ea]_ and cross-border interconnections. These are listed, along with the bidding zones, in the table below.
 
 .. table:: TSOs and cross-border interconnections in Europe. Data: European Network of Transmission System Operators for Electricity.
 

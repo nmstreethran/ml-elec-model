@@ -1,36 +1,36 @@
-"""Plotting German weather station data using Bokeh
+"""Plotting German weather station data
 
-Weather data from Deutscher Wetterdienst (DWD).
-Nomenclature of territorial units for statistics (NUTS) data
-at level 3 from Eurostat.
+This script executes dwd_stations.py and nuts_de.py to obtain data of
+weather stations in Germany from Deutscher Wetterdienst (DWD), Germany's
+meteorological service, and nomenclature of territorial units for
+statistics (NUTS) data at level 3 from Eurostat, respectively. nuts_de.py
+combines these two datasets. This script then plots the data to produce
+an interactive map of weather stations in Germany with tooltips that
+contain metadata.
 """
 
 # import libraries
 from bokeh.models import ColumnDataSource, CategoricalColorMapper
 from bokeh.plotting import figure
 from bokeh.tile_providers import get_provider, Vendors
-from bokeh.io import output_file, save
+from bokeh.io import output_file, save, show
 from bokeh.embed import components
 from bokeh.palettes import viridis
-from pyproj import Proj, transform
+from pyproj import Transformer
 import pandas as pd
-from os import path, system
 
-# check if weather station data exists
-# if not, run a script to generate the data
-if path.exists('data/dwd_stations_geo.csv') == False:
-    system('python scripts/nuts_de.py')
+# import variables from nuts_de.py
+from nuts_de import dwd_de as data
 
-# load the data
-data = pd.read_csv('data/dwd_stations_geo.csv')
+# drop geometry columns
+data = data.drop(columns=['geometry', 'point'])
 
 # transform latitudes and longitudes from wgs84 to web mercator projection
 lons = tuple(data['longitude'])
 lats = tuple(data['latitude'])
-wgs84 = Proj(init='epsg:5243')
-web = Proj(init='epsg:3857')
-lons, lats = wgs84(lons, lats)
-xm, ym = transform(wgs84, web, lons, lats)
+transformer = Transformer.from_crs(
+    'epsg:4326', 'epsg:3857', always_xy=True)
+xm, ym = transformer.transform(lons, lats)
 data['mercator_x'] = xm
 data['mercator_y'] = ym
 
@@ -64,22 +64,24 @@ p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
 p.circle(source=geo_source, x='mercator_x', y='mercator_y',
     color={'field': 'state', 'transform': color_map})
 
-# output the geomap
-output_file('charts/dwd_stations/dwd_stations_plot.html')
-save(p)
+# # output the geomap and save to a custom path
+# output_file('charts/dwd_stations/dwd_stations_plot.html')
+# save(p)
+# # open the map
+# show(p)
 
-# to export script and div components
-script, div = components(p)
-# remove script html tags to save as js file
-script = script.replace('<script type=\"text/javascript\">', '')
-script = script.replace('</script>', '')
+# # to export script and div components
+# script, div = components(p)
+# # remove script html tags to save as js file
+# script = script.replace('<script type=\"text/javascript\">', '')
+# script = script.replace('</script>', '')
 
-# export script as js file
-with open('charts/dwd_stations/dwd_stations.js', 'w') as f:
-    print(script, file=f)
-# export div as html file
-with open('charts/dwd_stations/dwd_stations-div.html', 'w') as f:
-    print(div, file=f)
-# export div as js file (so that it can be read by dwd_stations.html)
-with open('charts/dwd_stations/dwd_stations-div.js', 'w') as f:
-    print('document.write(`' + div + '\n`);', file=f)
+# # export script as js file
+# with open('charts/dwd_stations/dwd_stations.js', 'w') as f:
+#     print(script, file=f)
+# # export div as html file
+# with open('charts/dwd_stations/dwd_stations-div.html', 'w') as f:
+#     print(div, file=f)
+# # export div as js file (so that it can be read by dwd_stations.html)
+# with open('charts/dwd_stations/dwd_stations-div.js', 'w') as f:
+#     print('document.write(`' + div + '\n`);', file=f)

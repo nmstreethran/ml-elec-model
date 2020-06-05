@@ -1,41 +1,49 @@
 bokeh
+contextily
 descartes
 entsoe-py
 geopandas
 pydata-sphinx-theme
+# affine # Installed as dependency for rasterio
 # alabaster # Installed as dependency for sphinx
-# attrs # Installed as dependency for fiona
+# attrs # Installed as dependency for rasterio, fiona
 # babel # Installed as dependency for sphinx
 # beautifulsoup4 # Installed as dependency for entsoe-py
 # certifi # Installed as dependency for requests
 # chardet # Installed as dependency for requests
-# click # Installed as dependency for cligj, click-plugins, fiona
-# click-plugins # Installed as dependency for fiona
-# cligj # Installed as dependency for fiona
+# click # Installed as dependency for mercantile, fiona, cligj, click-plugins, rasterio
+# click-plugins # Installed as dependency for rasterio, fiona
+# cligj # Installed as dependency for rasterio, fiona
 # cycler # Installed as dependency for matplotlib
 # docutils # Installed as dependency for sphinx
 # fiona # Installed as dependency for geopandas
+# geographiclib # Installed as dependency for geopy
+# geopy # Installed as dependency for contextily
 # idna # Installed as dependency for requests
 # imagesize # Installed as dependency for sphinx
 # jinja2 # Installed as dependency for bokeh, sphinx
+# joblib # Installed as dependency for contextily
 # kiwisolver # Installed as dependency for matplotlib
 # markupsafe # Installed as dependency for jinja2
-# matplotlib # Installed as dependency for descartes
+# matplotlib # Installed as dependency for descartes, contextily
+# mercantile # Installed as dependency for contextily
 # munch # Installed as dependency for fiona
-# numpy # Installed as dependency for bokeh, matplotlib, pandas
+# numpy # Installed as dependency for matplotlib, pandas, snuggs, bokeh, rasterio
 # packaging # Installed as dependency for bokeh, sphinx
-# pandas # Installed as dependency for entsoe-py, geopandas
-# pillow # Installed as dependency for bokeh
+# pandas # Installed as dependency for geopandas, entsoe-py
+# pillow # Installed as dependency for bokeh, contextily
 # pygments # Installed as dependency for sphinx
-# pyparsing # Installed as dependency for matplotlib, packaging
+# pyparsing # Installed as dependency for packaging, snuggs, matplotlib
 # pyproj # Installed as dependency for geopandas
-# python-dateutil # Installed as dependency for bokeh, matplotlib, pandas
+# python-dateutil # Installed as dependency for bokeh, pandas, matplotlib
 # pytz # Installed as dependency for babel, pandas, entsoe-py
 # pyyaml # Installed as dependency for bokeh
-# requests # Installed as dependency for sphinx, entsoe-py
+# rasterio # Installed as dependency for contextily
+# requests # Installed as dependency for contextily, sphinx, entsoe-py
 # shapely # Installed as dependency for geopandas
-# six # Installed as dependency for fiona, python-dateutil, cycler, munch, packaging
+# six # Installed as dependency for cycler, fiona, packaging, munch, python-dateutil
 # snowballstemmer # Installed as dependency for sphinx
+# snuggs # Installed as dependency for rasterio
 # soupsieve # Installed as dependency for beautifulsoup4
 # sphinx # Installed as dependency for pydata-sphinx-theme
 # sphinxcontrib-applehelp # Installed as dependency for sphinx

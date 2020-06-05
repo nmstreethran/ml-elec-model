@@ -1,6 +1,7 @@
-"""DWD weather station data
+"""German weather station data
 
-Weather stations in Germany from Deutscher Wetterdienst (DWD).
+This script obtains German weather station data from Deutscher
+Wetterdienst (DWD), Germany's meteorological service.
 """
 
 # import libraries
@@ -40,5 +41,8 @@ stn = stn.drop_duplicates(subset=['id'], keep='first')
 # sort values by station id
 stn = stn.sort_values(by=['id'])
 
-# save as file
-stn.to_csv('data/dwd_stations.csv', index=False)
+# reset index
+stn = stn.reset_index(drop=True)
+
+# # save as file
+# stn.to_csv('data/dwd_stations.csv', index=False)

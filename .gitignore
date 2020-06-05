@@ -140,10 +140,11 @@ data/
 old/
 draft/
 temp/
+test/
 plots/
 _site/
 credentials.txt
 todo.md
-compile.sh
+cpwiki.sh
 requirements_tmp*
 requirements.sh
