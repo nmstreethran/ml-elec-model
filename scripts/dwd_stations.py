@@ -7,7 +7,7 @@ Wetterdienst (DWD), Germany's meteorological service.
 # import libraries
 import pandas as pd
 
-# url of data
+# URL of data
 url = 'https://opendata.dwd.de/climate_environment/CDC/help/'
 
 # read fixed width formatted text file with
@@ -44,5 +44,5 @@ stn = stn.sort_values(by=['id'])
 # reset index
 stn = stn.reset_index(drop=True)
 
-# # save as file
+# # save as CSV file
 # stn.to_csv('data/dwd_stations.csv', index=False)

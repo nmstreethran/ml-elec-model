@@ -44,7 +44,7 @@ These sources have been used by tmrowco:
    - https://www.nve.no/map-services/
    - https://www.nve.no/karttjenester/
    - License:
-      - https://data.norge.no/nlod/en/2.0
+      - https://data.norge.no/nlod/en/2.0/
 - Sweden:
    - https://www.natomraden.se/
 
@@ -124,7 +124,10 @@ United Kingdom
 
 Met Office:
 
-- https://www.metoffice.gov.uk/datapoint
+- https://www.metoffice.gov.uk/services/data
+- https://metoffice.apiconnect.ibmcloud.com/metoffice/production/
+- Terms:
+   - https://www.metoffice.gov.uk/about-us/legal
 
 Electricity market data
 -----------------------

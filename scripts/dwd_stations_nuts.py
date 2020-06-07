@@ -14,8 +14,8 @@ import geopandas as gpd
 # import data from dwd_stations.py
 from dwd_stations import stn as dwd
 
-# geojson nuts data at level 3 with decimal coordinates and multipolygons
-url = 'https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/nuts/geojson/NUTS_RG_60M_2016_4326_LEVL_3.geojson'
+# GeoJSON NUTS data at level 3 with decimal coordinates and multipolygons
+url = 'https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/nuts/geojson/NUTS_RG_01M_2016_4326_LEVL_3.geojson'
 nuts = gpd.read_file(url)
 
 # filter for Germany (DE)
@@ -27,10 +27,11 @@ nuts = nuts.reset_index()
 # delete redundant columns
 nuts = nuts.drop(['index', 'id', 'LEVL_CODE', 'FID', 'CNTR_CODE'], axis=1)
 
-# create empty columns for nuts entries
+# create empty columns for NUTS entries
 # use gpd.Series to assign geometry dtype
 dwd['point'] = gpd.GeoSeries()
-dwd['NUTS_ID'] = ''
+# use 'none' to deal with missing data later
+dwd['NUTS_ID'] = 'none'
 
 # reset index
 dwd = dwd.reset_index(drop=True)
@@ -42,12 +43,15 @@ for idx in range(len(dwd)):
         dwd.loc[idx, 'longitude'], dwd.loc[idx, 'latitude'])
     for inx in range(len(nuts)):
         # if weather station is located within the polygon corresponding
-        # to the nuts entry, copy the nuts id
+        # to the NUTS entry, copy the NUTS ID
         if nuts.loc[inx, 'geometry'].contains(dwd.loc[idx, 'point']) == True:
             dwd.loc[idx, 'NUTS_ID'] = nuts.loc[inx, 'NUTS_ID']
 
 # merge the rest of the data together
-dwd_de = nuts.merge(dwd, on='NUTS_ID')
+dwd_de = nuts.merge(dwd, on='NUTS_ID', how='right')
 
-# # save as csv
+# deal with unavailable NUTS data
+dwd_de['NUTS_NAME'] = dwd_de['NUTS_NAME'].fillna('none')
+
+# # save as CSV
 # dwd_de.to_csv('data/dwd_stations_geo.csv', index=False)

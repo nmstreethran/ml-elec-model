@@ -11,7 +11,6 @@ References
 .. [ENTSO-E] Transparency Platform restful API - user guide. (n.d.). https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html.
 .. [ENTSO-Ea] Regional Security Coordinators FAQ. (n.d.). https://www.entsoe.eu/major-projects/rscis/.
 .. [ENTSO-Eb] Help Page — ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html.
-.. [ENTSO-Ec] Data view — Cross-Border Physical Flow — ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/transmission-domain/physicalFlow/show?name=&defaultValue=true&viewType=MAP&areaType=BORDER_BZN.
 .. [ENTSO-Ed] Energy Identification Codes (EICs). (n.d.). https://www.entsoe.eu/data/energy-identification-codes-eic/.
 .. [ENTSO-Ee] DE-AT-LU Bidding zone split — News — ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/news/widget?id=5b7c1e9b5092e75a10bab903.
 .. [ENTSO-Ef] ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/.

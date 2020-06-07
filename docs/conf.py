@@ -106,7 +106,7 @@ latex_elements = {
             pdfsubject={License: CC BY 4.0}
         }
 
-        %% tables
+        %% tables and captions
         % change table heading style
         \renewcommand{\sphinxstyletheadfamily}{\rmfamily\bfseries}
         % change longtable continuation style and font size
@@ -116,8 +116,8 @@ latex_elements = {
         % change tabulary font size
         \let\oldtabulary\tabulary
         \renewcommand{\tabulary}{\footnotesize\oldtabulary}
-        % table captions
-        \usepackage[font=small,labelfont=bf]{caption}
+        % captions
+        \usepackage[font=small,labelfont=bf,figurename=Figure~]{caption}
         % use booktabs and remove all table rules
         \usepackage{booktabs}
         \setlength{\arrayrulewidth}{0pt}

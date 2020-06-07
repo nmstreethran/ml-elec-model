@@ -1,6 +1,48 @@
 Regions
 =======
 
+In this section, the term 'focus countries' refers to seven European countries: Belgium, Germany, Denmark, the Netherlands, Norway, Sweden, and United Kingdom.
+
+The table below lists countries that will be referred in this document, together with their country codes. Country codes are according to ISO_3166-1 alpha-2.
+
+.. table:: Countries and country codes.
+
+   +--------------+---------------------+
+   | Country code | Country             |
+   +==============+=====================+
+   | AT           | Austria             |
+   +--------------+---------------------+
+   | BE           | Belgium             |
+   +--------------+---------------------+
+   | CH           | Switzerland         |
+   +--------------+---------------------+
+   | CZ           | Czech Republic      |
+   +--------------+---------------------+
+   | DE           | Germany             |
+   +--------------+---------------------+
+   | DK           | Denmark             |
+   +--------------+---------------------+
+   | FI           | Finland             |
+   +--------------+---------------------+
+   | FR           | France              |
+   +--------------+---------------------+
+   | IE           | Republic of Ireland |
+   +--------------+---------------------+
+   | LT           | Lithuania           |
+   +--------------+---------------------+
+   | LU           | Luxembourg          |
+   +--------------+---------------------+
+   | NL           | Netherlands         |
+   +--------------+---------------------+
+   | NO           | Norway              |
+   +--------------+---------------------+
+   | PL           | Poland              |
+   +--------------+---------------------+
+   | SE           | Sweden              |
+   +--------------+---------------------+
+   | UK           | United Kingdom      |
+   +--------------+---------------------+
+
 Territories
 -----------
 
@@ -11,118 +53,107 @@ The nomenclature of territorial units for statistics (:term:`NUTS`) [Eurostat]_ 
 - :term:`NUTS` 2: basic regions for the application of regional policies
 - :term:`NUTS` 3: small regions for specific diagnoses
 
+The map below illustrates NUTS 3 boundaries for the focus countries.
+
+.. figure:: ../images/nuts3.png
+   :alt: NUTS 3 boundaries for the focus countries. Data from Eurostat (© EuroGeographics for the administrative boundaries).
+
+   NUTS 3 boundaries for the focus countries. Data from Eurostat (© EuroGeographics for the administrative boundaries).
+
+Transmission system operators and interconnections
+--------------------------------------------------
+
+Europe has multiple :term:`TSO`\s [ENTSO-Ea]_ and cross-border interconnections. These are listed for the focus countries, along with bidding zones, in the table below.
+
+.. table:: TSOs and cross-border interconnections in the focus countries. Data: European Network of Transmission System Operators for Electricity.
+
+   +--------------------+--------------------+--------------------+--------------------+
+   | Country            | TSOs               | Cross-border       | Bidding            |
+   |                    |                    | interconnections   | zones              |
+   +====================+====================+====================+====================+
+   | BE                 | Elia System        | FR, LU, NL, UK     | BE                 |
+   |                    | Operator           |                    |                    |
+   +--------------------+--------------------+--------------------+--------------------+
+   | DK                 | Energinet          | DE, NO, SE         | DK1, DK2           |
+   +--------------------+--------------------+--------------------+--------------------+
+   | DE                 | TransnetBW,        | AT, CH, CZ, DK,    | DE-LU              |
+   |                    | TenneT TSO,        | FR, LU, NL, PL,    |                    |
+   |                    | Amprion,           | SE                 |                    |
+   |                    | 50Hertz            |                    |                    |
+   |                    | Transmission       |                    |                    |
+   +--------------------+--------------------+--------------------+--------------------+
+   | NL                 | TenneT TSO         | BE, DE, NO, UK     | NL                 |
+   +--------------------+--------------------+--------------------+--------------------+
+   | NO                 | Statnett           | DK, FI, NL, SE     | NO1, NO2, NO3,     |
+   |                    |                    |                    | NO4, NO5           |
+   +--------------------+--------------------+--------------------+--------------------+
+   | SE                 | Svenska            | DK, DE, FI, LT,    | SE1, SE2, SE3,     |
+   |                    | Kraftnät           | NO, PL             | SE4                |
+   +--------------------+--------------------+--------------------+--------------------+
+   | UK                 | National Grid      | BE, FR, IE, NL     | GB, IE-SEM         |
+   |                    | Electricity        |                    |                    |
+   |                    | Transmission,      |                    |                    |
+   |                    | System Operator    |                    |                    |
+   |                    | for Northern       |                    |                    |
+   |                    | Ireland,           |                    |                    |
+   |                    | Scottish Hydro     |                    |                    |
+   |                    | Electric           |                    |                    |
+   |                    | Transmission,      |                    |                    |
+   |                    | ScottishPower      |                    |                    |
+   |                    | Transmission       |                    |                    |
+   +--------------------+--------------------+--------------------+--------------------+
+
 Bidding zones
 -------------
 
 A bidding zone is the largest geographical area within which market participants are able to exchange energy without capacity allocation. There are three types of bidding zones:
 
-1. national borders (e.g., France or the Netherlands - majority of bidding zones in Europe
+1. national borders (e.g., Belgium or the Netherlands - majority of bidding zones in Europe
 2. larger than national borders (e.g., Germany and Luxembourg or the Single Electricity Market for the island of Ireland)
-3. smaller zones within individual countries (e.g., Italy, Norway or Sweden)
+3. smaller zones within individual countries (e.g.,Norway or Sweden)
 
-The bidding zones in European electricity markets and surrounding regions are illustrated in the map below, which was made using the :term:`ENTSO-E TP`'s cross-border physical flow map as the base [ENTSO-Ec]_.
+The table below lists bidding zones in Europe by country and market operator [NordPool]_, [EPEXSPOT]_.
 
-.. figure:: ../images/market-map-entsoe.png
-   :alt: Bidding zones in Europe. This map is created using the base map with bidding zone borders from ENTSO-E Transparency Platform's cross-border physical flow map as a guide.
+.. table:: Bidding zones and market operators in Europe.
 
-   Bidding zones in Europe. This map is created using the base map with bidding zone borders from ENTSO-E Transparency Platform's cross-border physical flow map as a guide.
-
-The table below below lists bidding zones in Europe by country and market operator [NordPool]_, [EPEXSPOT]_.
-
-.. table:: Bidding zones and market operators in Europe. Country codes in brackets are according to ISO_3166-1 alpha-2.
-
-   +-----------------+-----------------+-----------------+
-   | Country         | Markets         | Zones           |
-   +=================+=================+=================+
-   | Albania (AL)    |                 | AL              |
-   +-----------------+-----------------+-----------------+
-   | Austria (AT)    |                 |                 |
-   +-----------------+-----------------+-----------------+
-   | Bosnia and      |                 | BA              |
-   | Herzegovina     |                 |                 |
-   | (BA)            |                 |                 |
-   +-----------------+-----------------+-----------------+
-   | Belgium (BE)    | Belpex          | BE              |
-   +-----------------+-----------------+-----------------+
-   | Bulgaria (BG)   |                 | BG              |
-   +-----------------+-----------------+-----------------+
-   | Switzerland     |                 | CH              |
-   | (CH)            |                 |                 |
-   +-----------------+-----------------+-----------------+
-   | Cyprus (CY)     |                 | CY              |
-   +-----------------+-----------------+-----------------+
-   | Czech Republic  |                 | CZ              |
-   | (CZ)            |                 |                 |
-   +-----------------+-----------------+-----------------+
-   | Germany (DE)    | EEX, EPEX       | DE-LU           |
-   +-----------------+-----------------+-----------------+
-   | Denmark (DK)    | EEX, Nord Pool  | DK1, DK2        |
-   +-----------------+-----------------+-----------------+
-   | Estonia (EE)    |                 | EE              |
-   +-----------------+-----------------+-----------------+
-   | Spain (ES)      |                 | ES              |
-   +-----------------+-----------------+-----------------+
-   | Finland (FI)    |                 | FI              |
-   +-----------------+-----------------+-----------------+
-   | France (FR)     | EEX, EPEX       | FR              |
-   +-----------------+-----------------+-----------------+
-   | Georgia (GE)    |                 | GE              |
-   +-----------------+-----------------+-----------------+
-   | Greece (GR)     |                 | GR              |
-   +-----------------+-----------------+-----------------+
-   | Croatia (HR)    |                 | HR              |
-   +-----------------+-----------------+-----------------+
-   | Hungary (HU)    |                 | HU              |
-   +-----------------+-----------------+-----------------+
-   | Republic of     |                 | IE-SEM          |
-   | Ireland (IE)    |                 |                 |
-   +-----------------+-----------------+-----------------+
-   | Italy (IT)      |                 | IT-CNOR,        |
-   |                 |                 | IT-CSUD,        |
-   |                 |                 | IT-NORTH,       |
-   |                 |                 | IT-Sardinia,    |
-   |                 |                 | IT-Sicily,      |
-   |                 |                 | IT-SUD          |
-   +-----------------+-----------------+-----------------+
-   | Lithuania (LT)  |                 | LT              |
-   +-----------------+-----------------+-----------------+
-   | Luxembourg (LU) |                 | DE-LU           |
-   +-----------------+-----------------+-----------------+
-   | Latvia (LV)     |                 | LV              |
-   +-----------------+-----------------+-----------------+
-   | Moldova (MD)    |                 | MD              |
-   +-----------------+-----------------+-----------------+
-   | Montenegro (ME) |                 | ME              |
-   +-----------------+-----------------+-----------------+
-   | North Macedonia |                 | MK              |
-   | (MK)            |                 |                 |
-   +-----------------+-----------------+-----------------+
-   | Netherlands     | APX             | NL              |
-   | (NL)            |                 |                 |
-   +-----------------+-----------------+-----------------+
-   | Norway (NO)     | EEX, Nord Pool  | NO1, NO2, NO3,  |
-   |                 |                 | NO4, NO5        |
-   +-----------------+-----------------+-----------------+
-   | Poland (PL)     |                 | PL              |
-   +-----------------+-----------------+-----------------+
-   | Portugal (PT)   |                 | PT              |
-   +-----------------+-----------------+-----------------+
-   | Romania (RO)    |                 | RO              |
-   +-----------------+-----------------+-----------------+
-   | Serbia (RS)     |                 | RS              |
-   +-----------------+-----------------+-----------------+
-   | Sweden (SE)     | EEX, Nord Pool  | SE1, SE2, SE3,  |
-   |                 |                 | SE4             |
-   +-----------------+-----------------+-----------------+
-   | Slovenia (SI)   |                 | SI              |
-   +-----------------+-----------------+-----------------+
-   | Slovakia (SK)   |                 | SK              |
-   +-----------------+-----------------+-----------------+
-   | Ukraine (UA)    |                 |                 |
-   +-----------------+-----------------+-----------------+
-   | United Kingdom  | APX, N2EX       | GB, IE-SEM      |
-   | (UK)            |                 |                 |
-   +-----------------+-----------------+-----------------+
+   +---------+-----------------+-----------------+
+   | Country | Markets         | Zones           |
+   +=========+=================+=================+
+   | AT      |                 | AT              |
+   +---------+-----------------+-----------------+
+   | BE      | Belpex          | BE              |
+   +---------+-----------------+-----------------+
+   | CH      |                 | CH              |
+   +---------+-----------------+-----------------+
+   | CZ      |                 | CZ              |
+   +---------+-----------------+-----------------+
+   | DE      | EEX, EPEX       | DE-LU           |
+   +---------+-----------------+-----------------+
+   | DK      | EEX, Nord Pool  | DK1, DK2        |
+   +---------+-----------------+-----------------+
+   | FI      |                 | FI              |
+   +---------+-----------------+-----------------+
+   | FR      | EEX, EPEX       | FR              |
+   +---------+-----------------+-----------------+
+   | IE      |                 | IE-SEM          |
+   +---------+-----------------+-----------------+
+   | LT      |                 | LT              |
+   +---------+-----------------+-----------------+
+   | LU      |                 | DE-LU           |
+   +---------+-----------------+-----------------+
+   | NL      | APX             | NL              |
+   +---------+-----------------+-----------------+
+   | NO      | EEX, Nord Pool  | NO1, NO2, NO3,  |
+   |         |                 | NO4, NO5        |
+   +---------+-----------------+-----------------+
+   | PL      |                 | PL              |
+   +---------+-----------------+-----------------+
+   | SE      | EEX, Nord Pool  | SE1, SE2, SE3,  |
+   |         |                 | SE4             |
+   +---------+-----------------+-----------------+
+   | UK      | APX, N2EX       | GB, IE-SEM      |
+   |         |                 |                 |
+   +---------+-----------------+-----------------+
 
 The United Kingdom is comprised of Great Britain (GB) and Northern Ireland. Northern Ireland is part of the Single Electricity Market of the island of Ireland (IE-SEM), which it shares with the Republic of Ireland (IE). Prior to 01/10/2018, Germany was part of the DE-AT-LU bidding zone, together with Austria (AT) and Luxembourg (LU), which had split into the DE-LU and AT bidding zones, as reported by European Network of Transmission Systems Operators for Electricity (:term:`ENTSO-E`) below [ENTSO-Ee]_:
 
@@ -191,56 +222,9 @@ There is no clear indication of the bidding zone boundaries for Norway and Swede
    |                 |                 | Halland, Skåne  |                 |
    +-----------------+-----------------+-----------------+-----------------+
 
-Approximate bidding zone polygons are available from the tmrowco/electricitymap-contrib repository [tmrowco2020]_. These polygons produce the following output:
+Approximate bidding zone polygons are available from the tmrowco/electricitymap-contrib repository [tmrowco2020]_. These polygons produce the output shown in the map below.
 
 .. figure:: ../images/bzn_no-se.png
-   :alt: Approximate bidding zones of Norway and Sweden, made using polygons by tmrowco data and map tiles from Stamen Design and OpenStreetMap.
+   :alt: Approximate bidding zones of Norway and Sweden, made using polygons by tmrowco.
 
-   Approximate bidding zones of Norway and Sweden, made using polygons by tmrowco data and map tiles from Stamen Design and OpenStreetMap.
-
-Transmission system operators and interconnections
---------------------------------------------------
-
-Europe has multiple :term:`TSO`\s [ENTSO-Ea]_ and cross-border interconnections. These are listed, along with the bidding zones, in the table below.
-
-.. table:: TSOs and cross-border interconnections in Europe. Data: European Network of Transmission System Operators for Electricity.
-
-   +--------------------+--------------------+--------------------+--------------------+
-   | Country            | TSOs               | Cross-border       | Bidding            |
-   |                    |                    | interconnections   | zones              |
-   +====================+====================+====================+====================+
-   | BE                 | Elia System        | FR, LU, NL, UK     | BE                 |
-   |                    | Operator           |                    |                    |
-   +--------------------+--------------------+--------------------+--------------------+
-   | DK                 | Energinet          | DE, NO, SE         | DK1, DK2           |
-   +--------------------+--------------------+--------------------+--------------------+
-   | DE                 | TransnetBW,        | AT, CH, CZ, DK,    | DE-LU              |
-   |                    | TenneT TSO,        | FR, LU, NL, PL,    |                    |
-   |                    | Amprion,           | SE                 |                    |
-   |                    | 50Hertz            |                    |                    |
-   |                    | Transmission       |                    |                    |
-   +--------------------+--------------------+--------------------+--------------------+
-   | FR                 | Réseau de          | BE, CH, DE, ES,    | FR                 |
-   |                    | Transport          | IT, UK             |                    |
-   |                    | d’Electricité      |                    |                    |
-   +--------------------+--------------------+--------------------+--------------------+
-   | NL                 | TenneT TSO         | BE, DE, NO, UK     | NL                 |
-   +--------------------+--------------------+--------------------+--------------------+
-   | NO                 | Statnett           | DK, FI, NL, SE     | NO1, NO2, NO3,     |
-   |                    |                    |                    | NO4, NO5           |
-   +--------------------+--------------------+--------------------+--------------------+
-   | SE                 | Svenska            | DK, FI, DE, LT,    | SE1, SE2, SE3,     |
-   |                    | Kraftnät           | NO, PL             | SE4                |
-   +--------------------+--------------------+--------------------+--------------------+
-   | UK                 | National Grid      | BE, FR, IE, NL     | GB, IE-SEM         |
-   |                    | Electricity        |                    |                    |
-   |                    | Transmission,      |                    |                    |
-   |                    | System Operator    |                    |                    |
-   |                    | for Northern       |                    |                    |
-   |                    | Ireland,           |                    |                    |
-   |                    | Scottish Hydro     |                    |                    |
-   |                    | Electric           |                    |                    |
-   |                    | Transmission,      |                    |                    |
-   |                    | ScottishPower      |                    |                    |
-   |                    | Transmission       |                    |                    |
-   +--------------------+--------------------+--------------------+--------------------+
+   Approximate bidding zones of Norway and Sweden, made using polygons by tmrowco.
