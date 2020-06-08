@@ -36,7 +36,7 @@ master_doc = 'index'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-# extensions = []
+extensions = ['bokeh.sphinxext.bokeh_plot']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -54,7 +54,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 html_theme = 'pydata_sphinx_theme'
 
-html_logo = "_static/home.svg"
+html_logo = '_static/home.svg'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -65,6 +65,9 @@ html_theme_options = {
     # 'external_links': [],
     'github_url': 'https://github.com/nmstreethran/ml-elec-model'
 }
+
+# directories of .py files for bokeh plots
+bokeh_plot_pyfile_include_dirs = ['scripts']
 
 
 # -- LaTeX options -----------------------------------------------------------

@@ -5,8 +5,6 @@
 [![Documentation build status](https://readthedocs.org/projects/ml-elec-model/badge/?version=latest)](https://ml-elec-model.rtfd.io)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-yellow?labelColor=darkslategray)](https://opensource.org/licenses/MIT)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/content%20license-CC%20BY%204.0-blue?labelColor=darkslategray)](https://creativecommons.org/licenses/by/4.0/)
-[![GitHub repository](https://img.shields.io/badge/-repository-purple?logo=github&labelColor=black)](https://github.com/nmstreethran/ml-elec-model)
-[![Download docs PDF](https://img.shields.io/badge/-docs%20pdf-darkslategray?logo=adobe-acrobat-reader&labelColor=red&logoColor=white)](https://ml-elec-model.readthedocs.io/_/downloads/en/latest/pdf/)
 <!-- end badges -->
 
 by Nithiya Streethran (nmstreethran at gmail dot com)

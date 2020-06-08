@@ -145,6 +145,6 @@ plots/
 _site/
 credentials.txt
 todo.md
-cpwiki.sh
+copy.sh
 requirements_tmp*
 requirements.sh

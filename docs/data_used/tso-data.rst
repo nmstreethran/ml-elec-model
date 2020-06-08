@@ -5,29 +5,20 @@ The :term:`ENTSO-E TP` [ENTSO-Ef]_ has a dashboard with various electricity syst
 
 The :term:`ENTSO-E` :term:`API` Python client (entsoe-py) [EnergieID2019]_ is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
 
-The bidding zones in Europe, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the Pandas client.
+The bidding zones in the focus countries and their interconnections, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the Pandas client.
 
 .. IMPORTANT::
    Note that ``DE-LU`` only works for timestamps starting 01/10/2018 [ENTSO-Ee]_. Use ``DE-AT-LU`` for timestamps prior to this date.
 
-.. table:: Bidding zones in Europe and their corresponding EICs.
+.. table:: Bidding zones in focus countries and their interconnections, and their corresponding EICs.
 
    +---------------+-------------+----------------------+
    | Zone name     | Bidding     | EIC                  |
    |               | zone        |                      |
    +===============+=============+======================+
-   | Albania       | AL          | ``10YAL-KESH--5``    |
-   +---------------+-------------+----------------------+
-   | Belgium       | BE          | ``10YBE----2``       |
-   +---------------+-------------+----------------------+
-   | Bosnia and    | BA          | ``10YBA-JPCC--D``    |
-   | Herzegovina   |             |                      |
-   +---------------+-------------+----------------------+
-   | Bulgaria      | BG          | ``10YCA-BULGARIA-R`` |
+   | Austria       | AT          | ``10YAT-APG------L`` |
    +---------------+-------------+----------------------+
    | Switzerland   | CH          | ``10YCH-SWISSGRIDZ`` |
-   +---------------+-------------+----------------------+
-   | Cyprus        | CY          | ``10YCY-1001A0003J`` |
    +---------------+-------------+----------------------+
    | Czech         | CZ          | ``10YCZ-CEPS--N``    |
    | Republic      |             |                      |
@@ -41,54 +32,9 @@ The bidding zones in Europe, mapped to their corresponding Energy Identification
    | Eastern       | DK-2        | ``10YDK-2---M``      |
    | Denmark       |             |                      |
    +---------------+-------------+----------------------+
-   | Estonia       | EE          | ``10Y1001A1001A39I`` |
-   +---------------+-------------+----------------------+
-   | Spain         | ES          | ``10YES-REE--0``     |
-   +---------------+-------------+----------------------+
    | Finland       | FI          | ``10YFI-1---U``      |
    +---------------+-------------+----------------------+
-   | France        | FR          | ``10YFR-RTE--C``     |
-   +---------------+-------------+----------------------+
-   | Georgia       | GE          |                      |
-   +---------------+-------------+----------------------+
-   | Great Britain | GB          | ``10YGB----A``       |
-   +---------------+-------------+----------------------+
-   | Greece        | GR          | ``10YGR-HTSO--Y``    |
-   +---------------+-------------+----------------------+
-   | Croatia       | HR          | ``10YHR-HEP--M``     |
-   +---------------+-------------+----------------------+
-   | Hungary       | HU          | ``10YHU-MAVIR--U``   |
-   +---------------+-------------+----------------------+
-   | Ireland       | IE-SEM      | ``10Y1001A1001A59C`` |
-   | (Single       |             |                      |
-   | Electricity   |             |                      |
-   | Market)       |             |                      |
-   +---------------+-------------+----------------------+
-   | Centre-North, | IT-CNOR     | ``10Y1001A1001A70O`` |
-   | Italy         |             |                      |
-   +---------------+-------------+----------------------+
-   | Centre-South, | IT-CSUD     | ``10Y1001A1001A71M`` |
-   | Italy         |             |                      |
-   +---------------+-------------+----------------------+
-   | North, Italy  | IT-NORTH    | ``10Y1001A1001A73I`` |
-   +---------------+-------------+----------------------+
-   | Sardinia,     | IT-Sardinia | ``10Y1001A1001A74G`` |
-   | Italy         |             |                      |
-   +---------------+-------------+----------------------+
-   | Sicily, Italy | IT-Sicily   | ``10Y1001A1001A75E`` |
-   +---------------+-------------+----------------------+
-   | South, Italy  | IT-SUD      | ``10Y1001A1001A788`` |
-   +---------------+-------------+----------------------+
    | Lithuania     | LT          | ``10YLT-1001A0008Q`` |
-   +---------------+-------------+----------------------+
-   | Latvia        | LV          | ``10YLV-1001A00074`` |
-   +---------------+-------------+----------------------+
-   | Moldova       | MD          |                      |
-   +---------------+-------------+----------------------+
-   | Montenegro    | ME          | ``10YCS-CG-TSO-S``   |
-   +---------------+-------------+----------------------+
-   | North         | MK          | ``10YMK-MEPSO--8``   |
-   | Macedonia     |             |                      |
    +---------------+-------------+----------------------+
    | Netherlands   | NL          | ``10YNL----L``       |
    +---------------+-------------+----------------------+
@@ -108,12 +54,6 @@ The bidding zones in Europe, mapped to their corresponding Energy Identification
    +---------------+-------------+----------------------+
    | Poland        | PL          | ``10YPL-AREA--S``    |
    +---------------+-------------+----------------------+
-   | Portugal      | PT          | ``10YPT-REN--W``     |
-   +---------------+-------------+----------------------+
-   | Romania       | RO          | ``10YRO-TEL--P``     |
-   +---------------+-------------+----------------------+
-   | Serbia        | RS          | ``10YCS-SERBIATSOV`` |
-   +---------------+-------------+----------------------+
    | Luleå, Sweden | SE-1        | ``10Y1001A1001A44P`` |
    +---------------+-------------+----------------------+
    | Sundsvall,    | SE-2        | ``10Y1001A1001A45N`` |
@@ -123,12 +63,6 @@ The bidding zones in Europe, mapped to their corresponding Energy Identification
    | Sweden        |             |                      |
    +---------------+-------------+----------------------+
    | Malmö, Sweden | SE-4        | ``10Y1001A1001A47``  |
-   +---------------+-------------+----------------------+
-   | Slovenia      | SI          | ``10YSI-ELES--O``    |
-   +---------------+-------------+----------------------+
-   | Slovakia      | SK          | ``10YSK-SEPS--K``    |
-   +---------------+-------------+----------------------+
-   | Ukraine       | UA          | ``10YUA-WEPS--0``    |
    +---------------+-------------+----------------------+
 
 Generation
@@ -157,9 +91,8 @@ The actual generation per production type dataset is the actual net electricity 
 
 Temporal resolution of actual generation per production type dataset by country:
 
-- 15 minutes: AT, DE, HU, LU, NL
-- 30 minutes: CY, IE, UK
-- 1 hour: BA, BE, BG, CH, CZ, DK, EE, ES, FI, FR, GE, GR, HR, IT, LT, LV, ME, MK, NO, PL, PT, RO, RS, SE, SI, SK
+- 15 minutes: AT, DE, LU, NL
+- 1 hour: CH, CZ, DK, FI, LT, NO, PL, SE
 
 Each data point represents the average of all available instantaneous net generation output values on each market time unit. The values are estimated if unknown. The actual outputs of small-scale generating units may be estimated if there are no real-time measurements from these units. The data are published on :term:`ENTSO-E TP` no later than one hour after the operational period.
 
@@ -181,9 +114,8 @@ This dataset represents the actual total load in MW per bidding zone per market 
 
 Temporal resolution of electricity load dataset by country:
 
-- 15 minutes: AL, BE, DE, HU, LU, NL
-- 30 minutes: CY, IE, UK
-- 1 hour: AT, BA, BG, CH, CZ, DK, EE, ES, FI, FR, GE, GR, HR, IT, LT, LV, MD, ME, MK, NO, PL, PT, RO, RS, SI, SK, SE, UA
+- 15 minutes: DE, LU, NL
+- 1 hour: AT, CH, CZ, DK, FI, LT, NO, PL, SE
 
 The total load is defined as equal to the sum of power generated by plants on both :term:`TSO` and :term:`DNO` networks, from which the following are deduced:
 
