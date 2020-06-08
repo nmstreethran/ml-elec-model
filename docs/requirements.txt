@@ -1,2 +1,3 @@
 bokeh
+geopandas
 pydata-sphinx-theme
