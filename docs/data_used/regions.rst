@@ -192,7 +192,7 @@ Approximate bidding zone polygons are available from the tmrowco/electricitymap-
 
 Combining all of these produces the following map.
 
-.. bokeh-plot:: scripts/zones_plot.py
-   :source-position: none
+.. figure:: ../images/bidding_zones.png
+   :alt: Approximate bidding zones of focus countries and their interconnections, made using polygons by tmrowco and Eurostat (© EuroGeographics for the administrative boundaries), and map tiles from OpenStreetMap / CartoDB.
 
-Approximate bidding zones of focus countries and their interconnections, made using polygons by tmrowco and Eurostat (© EuroGeographics for the administrative boundaries), and map tiles from OpenStreetMap / CartoDB.
+   Approximate bidding zones of focus countries and their interconnections, made using polygons by tmrowco and Eurostat (© EuroGeographics for the administrative boundaries), and map tiles from OpenStreetMap / CartoDB.

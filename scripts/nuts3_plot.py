@@ -13,6 +13,8 @@ from bokeh.plotting import figure
 from bokeh.palettes import viridis
 from bokeh.tile_providers import get_provider, Vendors
 from bokeh.embed import components
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 
 # import data
 from nuts3 import nuts3
@@ -20,6 +22,7 @@ from nuts3 import nuts3
 # convert to Web Mercator projection
 nuts3 = nuts3.to_crs(crs='EPSG:3857')
 
+# ## Bokeh plot
 # load data source
 geo_source = GeoJSONDataSource(geojson=nuts3.to_json())
 
@@ -66,3 +69,11 @@ show(p)
 # # (so that it can be read by nuts.html)
 # with open('charts/nuts/nuts-div.js', 'w') as f:
 #     print('document.write(`' + div + '\n`);', file=f)
+
+# ## Matplotlib plot
+mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
+fig, ax = plt.subplots(1, figsize=(10, 10))
+nuts3.plot(column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
+    legend_kwds={'bbox_to_anchor': (0, 0, .99, .13)})
+plt.ylabel('Latitude (Web Mercator)')
+plt.xlabel('Longitude (Web Mercator)')
