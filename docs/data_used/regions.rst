@@ -47,10 +47,10 @@ The nomenclature of territorial units for statistics (:term:`NUTS`) [Eurostat]_ 
 
 The map below illustrates NUTS 3 boundaries for the focus countries.
 
-.. bokeh-plot:: scripts/nuts_plot.py
-   :source-position: none
+.. figure:: ../images/nuts3.png
+   :alt: NUTS 3 boundaries for the focus countries. Data from Eurostat (© EuroGeographics for the administrative boundaries).
 
-NUTS 3 boundaries for the focus countries. Data from Eurostat (© EuroGeographics for the administrative boundaries).
+   NUTS 3 boundaries for the focus countries. Data from Eurostat (© EuroGeographics for the administrative boundaries).
 
 Transmission system operators and interconnections
 --------------------------------------------------
@@ -85,7 +85,7 @@ A bidding zone is the largest geographical area within which market participants
 
 1. national borders (e.g., Belgium or the Netherlands - majority of bidding zones in Europe
 2. larger than national borders (e.g., Germany and Luxembourg)
-3. smaller zones within individual countries (e.g.,Norway or Sweden)
+3. smaller zones within individual countries (e.g., Norway or Sweden)
 
 The table below lists bidding zones in focus countries and their interconnections by country and market operator [NordPool]_, [EPEXSPOT]_.
 
