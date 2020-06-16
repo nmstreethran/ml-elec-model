@@ -8,6 +8,8 @@ European Network of Transmission Systems Operators for Electricity (:term:`ENTSO
 
 - Transparency Platform (:term:`ENTSO-E TP`):
    - https://transparency.entsoe.eu/
+- List of data available for free re-use:
+   - https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/terms%20and%20conditions/191025_List_of_Data_available_for_reuse_v2_cln.pdf
 - Regional security coordinators:
    - https://www.entsoe.eu/major-projects/rscis/
 - Energy identification codes (:term:`EIC`\s):
@@ -62,13 +64,6 @@ Press releases and reports:
 Meteorological data
 -------------------
 
-Belgium
-~~~~~~~
-
-The Royal Meteorological Institute of Belgium:
-
-- https://opendata.meteo.be/
-
 Germany
 ~~~~~~~
 
@@ -91,13 +86,6 @@ Danish Meteorological Institute:
 
 - http://research.dmi.dk/data/
 
-France
-~~~~~~
-
-Météo-France; France's meteorological service:
-
-- https://donneespubliques.meteofrance.fr/
-
 The Netherlands
 ~~~~~~~~~~~~~~~
 
@@ -118,16 +106,28 @@ Sweden
 Swedish Meteorological and Hydrological Institute:
 
 - https://www.smhi.se/en/services/professional-services/data-and-statistics
-
-United Kingdom
-~~~~~~~~~~~~~~
-
-Met Office:
-
-- https://www.metoffice.gov.uk/services/data
-- https://metoffice.apiconnect.ibmcloud.com/metoffice/production/
-- Terms:
-   - https://www.metoffice.gov.uk/about-us/legal
+- https://www.smhi.se/en/services/open-data/search-smhi-s-open-data-1.81004
+- https://www.smhi.se/data/utforskaren-oppna-data/
+- https://opendata.smhi.se/apidocs/
+- Meteorological observations:
+   - https://opendata.smhi.se/apidocs/metobs/index.html
+   - Open data :term:`API`:
+      - https://opendata-download-metobs.smhi.se/api
+      - https://opendata.smhi.se/apidocs/metobs/common.html
+      - https://opendata.smhi.se/apidocs/metobs/schemas.html
+      - https://opendata.smhi.se/apidocs/metobs/codeexamples.html
+- Meteorological forecasts:
+   - https://opendata.smhi.se/apidocs/metfcst/index.html
+   - https://opendata-download-metfcst.smhi.se/
+- Meteorological analysis:
+   - Weather:
+      - https://opendata.smhi.se/apidocs/metanalys/index.html
+   - Sunshine:
+      - https://opendata.smhi.se/apidocs/strang/index.html
+- License:
+   - https://www.smhi.se/data/oppna-data/information-om-oppna-data/villkor-for-anvandning-1.30622
+- Policy:
+   - https://www.smhi.se/omsmhi/policys/datapolicy/mer-och-mer-oppna-data-1.8138
 
 Electricity market data
 -----------------------

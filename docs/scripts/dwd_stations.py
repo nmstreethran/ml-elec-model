@@ -44,5 +44,8 @@ stn = stn.sort_values(by=['id'])
 # reset index
 stn = stn.reset_index(drop=True)
 
-# # save as CSV file
-# stn.to_csv('data/dwd_stations.csv', index=False)
+"""
+
+# save as CSV file
+stn.to_csv('data/dwd_stations.csv', index=False)
+"""

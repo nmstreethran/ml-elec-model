@@ -123,11 +123,11 @@ The table below lists bidding zones in focus countries and their interconnection
 
 Prior to 01/10/2018, Germany was part of the DE-AT-LU bidding zone, together with Austria (AT) and Luxembourg (LU), which had split into the DE-LU and AT bidding zones, as reported by European Network of Transmission Systems Operators for Electricity (:term:`ENTSO-E`) below [ENTSO-Ee]_:
 
-   *[...] DE-AT-LU bidding zone split on the 23rd of August. BZN|DE-AT-LU will be separated into 2 new bidding zones BZN|DE-LU and BZN|AT.*
+   [...] DE-AT-LU bidding zone split on the 23rd of August. BZN|DE-AT-LU will be separated into 2 new bidding zones BZN|DE-LU and BZN|AT.
 
-   *New bidding zones will be active from the 1st of October, however, first data submissions, like month ahead forecasts, are expected from the 1st of September.*
+   New bidding zones will be active from the 1st of October, however, first data submissions, like month ahead forecasts, are expected from the 1st of September.
 
-   *Validity end date for BZN|DE-AT-LU is the end of September 2018. [...]*
+   Validity end date for BZN|DE-AT-LU is the end of September 2018. [...]
 
 Mapping bidding zones to :term:`NUTS` 3 territories is straightforward for DE, AT, CH, CZ, FI, LT, LU, NL, and PL (bidding zone type 1 for all except DE, which is type 2) -- all :term:`NUTS` 3 territories in these countries are part of the same bidding zone.
 

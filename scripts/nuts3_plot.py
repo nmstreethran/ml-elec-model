@@ -48,27 +48,31 @@ p.patches('xs', 'ys',
     fill_color={'field': 'CNTR_CODE', 'transform': color_map},
     source=geo_source, line_color='white', line_width=.5)
 
-# # output the map and save to a custom path
-# output_file('charts/nuts/nuts_plot.html')
 # open the map
 show(p)
 
-# # to export script and div components
-# script, div = components(p)
-# # remove script HTML tags to save as JavaScript file
-# script = script.replace('<script type="text/javascript">', '')
-# script = script.replace('</script>', '')
+"""
 
-# # export script as JavaScript file
-# with open('charts/nuts/nuts.js', 'w') as f:
-#     print(script, file=f)
-# # export div as HTML file
-# with open('charts/nuts/nuts-div.html', 'w') as f:
-#     print(div, file=f)
-# # export div as JavaScript file
-# # (so that it can be read by nuts.html)
-# with open('charts/nuts/nuts-div.js', 'w') as f:
-#     print('document.write(`' + div + '\n`);', file=f)
+# output the map and save to a custom path
+output_file('charts/nuts/nuts_plot.html')
+
+# to export script and div components
+script, div = components(p)
+# remove script HTML tags to save as JavaScript file
+script = script.replace('<script type="text/javascript">', '')
+script = script.replace('</script>', '')
+
+# export script as JavaScript file
+with open('charts/nuts/nuts.js', 'w') as f:
+    print(script, file=f)
+# export div as HTML file
+with open('charts/nuts/nuts-div.html', 'w') as f:
+    print(div, file=f)
+# export div as JavaScript file
+# (so that it can be read by nuts.html)
+with open('charts/nuts/nuts-div.js', 'w') as f:
+    print('document.write(`' + div + '\n`);', file=f)
+"""
 
 # ## Matplotlib plot
 mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']

@@ -67,7 +67,7 @@ To view the full list of dependencies, see [`requirements.txt`](requirements.txt
 
 The documentation is built using [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io>. The files can be found in the `docs` folder.
 
-To build the documentation locally, clone this repository, install all requirements, and install a TeX distribution (such as [TeX Live](http://tug.org/texlive/)).
+To build the documentation locally, clone this repository, install all requirements, and install a TeX distribution (such as [TeX Live](https://tug.org/texlive/)).
 
 Local builds of the documentation in HTML and PDF formats can be viewed in `docs/_build/html/index.html` and `docs/_build/latex/ml-elec-model.pdf` respectively after running the following bash script:
 

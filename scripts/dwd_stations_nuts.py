@@ -53,5 +53,8 @@ dwd_de = nuts.merge(dwd, on='NUTS_ID', how='right')
 # deal with unavailable NUTS data
 dwd_de['NUTS_NAME'] = dwd_de['NUTS_NAME'].fillna('none')
 
-# # save as CSV
-# dwd_de.to_csv('data/dwd_stations_geo.csv', index=False)
+"""
+
+# save as CSV
+dwd_de.to_csv('data/dwd_stations_geo.csv', index=False)
+"""
