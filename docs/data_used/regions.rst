@@ -45,12 +45,12 @@ The nomenclature of territorial units for statistics (:term:`NUTS`) [Eurostat]_ 
 - :term:`NUTS` 2: basic regions for the application of regional policies
 - :term:`NUTS` 3: small regions for specific diagnoses
 
-The map below illustrates NUTS 3 boundaries for the focus countries.
+The map below illustrates the national borders of focus countries and their interconnections.
 
-.. figure:: ../images/nuts3.png
-   :alt: NUTS 3 boundaries for the focus countries. Data from Eurostat (© EuroGeographics for the administrative boundaries).
+.. jupyter-execute:: ../scripts/nuts0_plot.py
+   :hide-code:
 
-   NUTS 3 boundaries for the focus countries. Data from Eurostat (© EuroGeographics for the administrative boundaries).
+NUTS 0 boundaries (national borders) for the focus countries and their interconnections. Data from Eurostat (© EuroGeographics for the administrative boundaries).
 
 Transmission system operators and interconnections
 --------------------------------------------------
@@ -192,7 +192,7 @@ Approximate bidding zone polygons are available from the tmrowco/electricitymap-
 
 Combining all of these produces the following map.
 
-.. figure:: ../images/bidding_zones.png
-   :alt: Approximate bidding zones of focus countries and their interconnections, made using polygons by tmrowco and Eurostat (© EuroGeographics for the administrative boundaries), and map tiles from OpenStreetMap / CartoDB.
+.. jupyter-execute:: ../scripts/bidding_zones_plot.py
+   :hide-code:
 
-   Approximate bidding zones of focus countries and their interconnections, made using polygons by tmrowco and Eurostat (© EuroGeographics for the administrative boundaries), and map tiles from OpenStreetMap / CartoDB.
+Approximate bidding zones of focus countries and their interconnections, made using polygons by tmrowco and Eurostat (© EuroGeographics for the administrative boundaries), and map tiles from OpenStreetMap / CartoDB.

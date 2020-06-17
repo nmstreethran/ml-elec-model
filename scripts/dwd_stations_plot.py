@@ -2,11 +2,13 @@
 
 This script executes dwd_stations.py and dwd_stations_nuts.py to obtain
 German weather station data from Deutscher Wetterdienst (DWD), Germany's
-meteorological service, and nomenclature of territorial units for
-statistics (NUTS) data at level 3 from Eurostat, respectively. nuts_de.py
-combines these two datasets. This script then plots the data to produce
-an interactive map of weather stations in Germany with tooltips that
-contain metadata.
+meteorological service
+(https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html), and
+nomenclature of territorial units for statistics (NUTS) data at level 3
+from Eurostat (https://ec.europa.eu/eurostat/web/nuts/background),
+respectively. nuts_de.py combines these two datasets. This script then
+plots the data to produce an interactive map of weather stations in
+Germany with tooltips that contain metadata.
 """
 
 # import libraries
@@ -17,13 +19,13 @@ from bokeh.io import output_file, show
 from bokeh.embed import components
 from bokeh.palettes import viridis
 from pyproj import Transformer
-import pandas as pd
 
 # import variables from dwd_stations_nuts.py
 from dwd_stations_nuts import dwd_de as data
 
-# drop geometry columns
-data = data.drop(columns=['geometry', 'point'])
+# drop geometry columns and unnecessary data
+data = data.drop(
+    columns=['geometry', 'point', 'COAST_TYPE', 'MOUNT_TYPE', 'URBN_TYPE'])
 
 # transform latitudes and longitudes from WGS84 to Web Mercator projection
 lons = tuple(data['longitude'])

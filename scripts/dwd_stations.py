@@ -1,7 +1,8 @@
 """German weather station data
 
 This script obtains German weather station data from Deutscher
-Wetterdienst (DWD), Germany's meteorological service.
+Wetterdienst (DWD), Germany's meteorological service
+(https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html).
 """
 
 # import libraries

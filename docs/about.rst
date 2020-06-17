@@ -1,8 +1,6 @@
 About
 =====
 
-`Documentation <https://ml-elec-model.rtfd.io/>`__ // `Git repository <https://github.com/nmstreethran/ml-elec-model>`__
-
 by Nithiya Streethran (nmstreethran at gmail dot com)
 
 **This project is a work-in-progress. Feedback and suggestions are always welcome. Please open an issue or refer to the contributing guidelines in the main repository if you would like to contribute.**
@@ -57,13 +55,13 @@ Documentation
 
 The documentation is built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and hosted using `Read the Docs <https://readthedocs.org>`__. It is available at https://ml-elec-model.rtfd.io. The files can be found in the ``docs`` folder.
 
-To build the documentation locally, clone this repository, install all requirements, and install a TeX distribution (such as `TeX Live <https://tug.org/texlive/>`__).
+To build the documentation locally, clone this repository and install all requirements.
 
-Local builds of the documentation in HTML and PDF formats can be viewed in ``docs/_build/html/index.html`` and ``docs/_build/latex/ml-elec-model.pdf`` respectively after running the following bash script:
+Local builds of the documentation in HTML format can be viewed in ``docs/_build/html/index.html`` after running the following in the ``docs`` directory:
 
 .. code:: sh
 
-   bash docs.sh
+   make html
 
 A list of references used is available on `Zotero <https://www.zotero.org/groups/2327899/ml-elec-model/library>`__.
 

@@ -1,3 +1,5 @@
 bokeh
+descartes
 geopandas
+jupyter_sphinx
 pydata-sphinx-theme

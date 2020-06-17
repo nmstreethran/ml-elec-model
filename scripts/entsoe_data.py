@@ -1,8 +1,9 @@
 """Data extraction from ENTSO-E Transparency Platform"s Restful API
 
-Extracts and saves data for each bidding zone using the ENTSO-E API
-Python client (https://github.com/EnergieID/entsoe-py). Data are
-downloaded for a given date range within a particular year.
+Extracts and saves data from the ENTSO-E Transparency Platform
+(https://transparency.entsoe.eu/) for each bidding zone using the
+ENTSO-E API Python client (https://github.com/EnergieID/entsoe-py). Data
+are downloaded for a given date range within a particular year.
 """
 
 # import libraries
@@ -49,7 +50,8 @@ except OSError as exception:
 for bzn in bznList:
     try:
         df = client.query_day_ahead_prices(bzn, start=start, end=end)
-        df.to_csv(path + '/' + 'day_ahead_prices_' + bzn + '.csv')
+        df.to_csv(
+            path + '/' + 'day_ahead_prices_' + bzn + '.csv', index=False)
     except NoMatchingDataError:
         print('No matching data found for ' + bzn + ': day_ahead_prices')
     except RequestException as e:
@@ -57,7 +59,7 @@ for bzn in bznList:
 
     try:
         df = client.query_load(bzn, start=start, end=end)
-        df.to_csv(path + '/' + 'load__' + bzn + '.csv')
+        df.to_csv(path + '/' + 'load__' + bzn + '.csv', index=False)
     except NoMatchingDataError:
         print('No matching data found for ' + bzn + ': load')
     except RequestException as e:
@@ -65,7 +67,7 @@ for bzn in bznList:
 
     try:
         df = client.query_load_forecast(bzn, start=start, end=end)
-        df.to_csv(path + '/' + 'load_forecast_' + bzn + '.csv')
+        df.to_csv(path + '/' + 'load_forecast_' + bzn + '.csv', index=False)
     except NoMatchingDataError:
         print('No matching data found for ' + bzn + ': load_forecast')
     except RequestException as e:
@@ -73,7 +75,8 @@ for bzn in bznList:
 
     try:
         df = client.query_generation_forecast(bzn, start=start, end=end)
-        df.to_csv(path + '/' + 'generation_forecast_' + bzn + '.csv')
+        df.to_csv(
+            path + '/' + 'generation_forecast_' + bzn + '.csv', index=False)
     except NoMatchingDataError:
         print(
             'No matching data found for ' + bzn + ': generation_forecast')
@@ -83,7 +86,9 @@ for bzn in bznList:
     try:
         df = client.query_wind_and_solar_forecast(
             bzn, start=start, end=end, psr_type=None)
-        df.to_csv(path + '/' + 'wind_and_solar_forecast_' + bzn + '.csv')
+        df.to_csv(
+            path + '/' + 'wind_and_solar_forecast_' + bzn + '.csv',
+            index=False)
     except NoMatchingDataError:
         print(
             'No matching data found for ' + bzn +
@@ -94,7 +99,7 @@ for bzn in bznList:
     try:
         df = client.query_generation(
             bzn, start=start, end=end, psr_type=None)
-        df.to_csv(path + '/' + 'generation__' + bzn + '.csv')
+        df.to_csv(path + '/' + 'generation__' + bzn + '.csv', index=False)
     except NoMatchingDataError:
         print('No matching data found for ' + bzn + ': generation')
     except RequestException as e:
@@ -104,7 +109,8 @@ for bzn in bznList:
         df = client.query_installed_generation_capacity(
             bzn, start=start, end=end, psr_type=None)
         df.to_csv(
-            path + '/' + 'installed_generation_capacity__' + bzn + '.csv')
+            path + '/' + 'installed_generation_capacity__' + bzn + '.csv',
+            index=False)
     except NoMatchingDataError:
         print(
             'No matching data for ' + bzn +
@@ -117,7 +123,7 @@ for bzn in bznList:
             bzn, start=start, end=end, psr_type=None)
         df.to_csv(
             path + '/' + 'installed_generation_capacity_per_unit_' + bzn
-            + '.csv')
+            + '.csv', index=False)
     except NoMatchingDataError:
         print(
             'No matching data found for ' + bzn +
@@ -132,7 +138,7 @@ for bzn in bznList:
             bzn, start=start, end=end)
         df.to_csv(
             path + '/' + 'unavailability_of_production_units_' + bzn
-            + '.csv')
+            + '.csv', index=False)
     except NoMatchingDataError:
         print(
             'No matching data for ' + bzn +
@@ -145,7 +151,7 @@ for bzn in bznList:
             bzn, start=start, end=end, docstatus=None)
         df.to_csv(
             path + '/' + 'unavailability_of_generation_units_' + bzn +
-            '.csv')
+            '.csv', index=False)
     except NoMatchingDataError:
         print(
             'No matching data found for ' + bzn +
@@ -158,7 +164,7 @@ for bzn in bznList:
             bzn, start=start, end=end)
         df.to_csv(
             path + '/' + 'withdrawn_unavailability_of_generation_units_' +
-            bzn + '.csv')
+            bzn + '.csv', index=False)
     except NoMatchingDataError:
         print(
             'No matching data for ' + bzn +
@@ -171,7 +177,9 @@ for bzn in bznList:
     # try:
     #     df = client.query_generation_per_plant(
     #         bzn, start=start, end=end, lookup_bzones=True)
-    #     df.to_csv(path + '/' + 'generation_per_plant_' + bzn + '.csv')
+    #     df.to_csv(
+    #         path + '/' + 'generation_per_plant_' + bzn + '.csv',
+    #         index=False)
     # except NoMatchingDataError:
     #     print('No matching data for ' + bzn + ': generation_per_plant')
     # except RequestException as e:

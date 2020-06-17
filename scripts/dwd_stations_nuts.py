@@ -1,13 +1,14 @@
 """Weather station and NUTS data for Germany
 
 This script executes dwd_stations.py to obtain German weather station data
-from Deutscher Wetterdienst (DWD), Germany's meteorological service. This
-data is then combined with nomenclature of territorial units for statistics
-(NUTS) data at level 3 from Eurostat.
+from Deutscher Wetterdienst (DWD), Germany's meteorological service
+(https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html). This
+data is then combined with nomenclature of territorial units for
+statistics (NUTS) data at level 3 from Eurostat
+(https://ec.europa.eu/eurostat/web/nuts/background).
 """
 
 # import libraries
-import pandas as pd
 from shapely.geometry import Point
 import geopandas as gpd
 
@@ -56,5 +57,5 @@ dwd_de['NUTS_NAME'] = dwd_de['NUTS_NAME'].fillna('none')
 """
 
 # save as CSV
-dwd_de.to_csv('data/dwd_stations_geo.csv', index=False)
+dwd_de.to_csv('data/dwd_stations.csv', index=False)
 """

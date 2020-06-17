@@ -36,7 +36,7 @@ master_doc = 'index'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['bokeh.sphinxext.bokeh_plot']
+extensions = ['bokeh.sphinxext.bokeh_plot', 'jupyter_sphinx']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -62,106 +62,108 @@ html_logo = '_static/home.svg'
 html_static_path = ['_static']
 
 html_theme_options = {
-    # 'external_links': [],
+    'external_links': [
+        {'url': 'https://www.zotero.org/groups/2327899/ml-elec-model/library',
+        'name': 'Zotero'}
+    ],
     'github_url': 'https://github.com/nmstreethran/ml-elec-model'
 }
 
 # directories of .py files for bokeh plots
 bokeh_plot_pyfile_include_dirs = ['scripts']
 
+# # -- LaTeX options -----------------------------------------------------------
+# latex_documents = [('index', project + '.tex', project + ' docs',
+#     author, 'manual', True)]
 
-# -- LaTeX options -----------------------------------------------------------
-latex_documents = [('index', project + '.tex', project + ' docs',
-    author, 'manual', True)]
+# latex_elements = {
+#     'papersize': 'a4paper',
+#     'pointsize': '11pt',
+#     'sphinxsetup':
+#         'verbatimwithframe=false, \
+#         TitleColor={rgb}{0,0,0}, \
+#         VerbatimColor={rgb}{1,.98,.98}, \
+#         InnerLinkColor={rgb}{.86,.08,.24}, \
+#         OuterLinkColor={rgb}{1,.49,0}',
+#     'fncychap': '',
+#     'printindex': '',
+#     'figure_align': '!htb',
+#     'preamble': r'''
+#         % % fix headheight issue
+#         \geometry{headheight=13.6pt}
 
-latex_elements = {
-    'papersize': 'a4paper',
-    'pointsize': '11pt',
-    'sphinxsetup':
-        'verbatimwithframe=false, \
-        TitleColor={rgb}{0,0,0}, \
-        VerbatimColor={rgb}{1,.98,.98}, \
-        InnerLinkColor={rgb}{.86,.08,.24}, \
-        OuterLinkColor={rgb}{1,.49,0}',
-    'fncychap': '',
-    'printindex': '',
-    'figure_align': '!htb',
-    'preamble': r'''
-        %% fix headheight issue
-        \geometry{headheight=13.6pt}
+#         % % fonts
+#         \usepackage{mathtools}
+#         \usepackage{newpxtext}
+#         \usepackage{newpxmath}
+#         \usepackage[defaultsans]{lato}
+#         \usepackage[zerostyle=c,straightquotes]{newtxtt}
+#         % remove emphasis from glossary references
+#         \protected\def\sphinxtermref#1{#1}
+#         % change toc title font
+#         \usepackage{tocloft}
+#         \renewcommand{\cfttoctitlefont}{\Huge\bfseries\sffamily}
 
-        %% fonts
-        \usepackage{mathtools}
-        \usepackage{newpxtext}
-        \usepackage{newpxmath}
-        \usepackage[defaultsans]{lato}
-        \usepackage[zerostyle=c,straightquotes]{newtxtt}
-        % remove emphasis from glossary references
-        \protected\def\sphinxtermref#1{#1}
-        % change toc title font
-        \usepackage{tocloft}
-        \renewcommand{\cfttoctitlefont}{\Huge\bfseries\sffamily}
+#         % % titlepage and metadata
+#         \hypersetup{
+#             pdfkeywords={machine learning, electricity system model,
+#             open source},
+#             pdfsubject={License: CC BY 4.0}
+#         }
 
-        %% titlepage and metadata
-        \hypersetup{
-            pdfkeywords={machine learning, electricity system model,
-            open source},
-            pdfsubject={License: CC BY 4.0}
-        }
+#         % % tables and captions
+#         % change table heading style
+#         \renewcommand{\sphinxstyletheadfamily}{\rmfamily\bfseries}
+#         % change longtable continuation style and font size
+#         \renewcommand{\sphinxtablecontinued}{\rmfamily}
+#         \let\oldlongtable\longtable
+#         \renewcommand{\longtable}{\footnotesize\oldlongtable}
+#         % change tabulary font size
+#         \let\oldtabulary\tabulary
+#         \renewcommand{\tabulary}{\footnotesize\oldtabulary}
+#         % captions
+#         \usepackage[font=small,labelfont=bf,figurename=Figure~]{caption}
+#         % use booktabs and remove all table rules
+#         \usepackage{booktabs}
+#         \setlength{\arrayrulewidth}{0pt}
 
-        %% tables and captions
-        % change table heading style
-        \renewcommand{\sphinxstyletheadfamily}{\rmfamily\bfseries}
-        % change longtable continuation style and font size
-        \renewcommand{\sphinxtablecontinued}{\rmfamily}
-        \let\oldlongtable\longtable
-        \renewcommand{\longtable}{\footnotesize\oldlongtable}
-        % change tabulary font size
-        \let\oldtabulary\tabulary
-        \renewcommand{\tabulary}{\footnotesize\oldtabulary}
-        % captions
-        \usepackage[font=small,labelfont=bf,figurename=Figure~]{caption}
-        % use booktabs and remove all table rules
-        \usepackage{booktabs}
-        \setlength{\arrayrulewidth}{0pt}
+#         % % remove section numbering
+#         \setcounter{secnumdepth}{0}
+#         % reset numbering for figures, tables, and footnotes
+#         \usepackage{chngcntr}
+#         \counterwithout{footnote}{chapter}
+#         \counterwithout{figure}{chapter}
+#         \counterwithout{table}{chapter}
+#         % remove chapter numbers and labels
+#         \titleformat{\chapter}[display]{\bfseries\sffamily}{}{-40pt}{\Huge}
+#         \renewcommand{\thechapter}{}
+#         % adjust chapter alignments in toc
+#         \setlength{\cftchapnumwidth}{0em}
 
-        %% remove section numbering
-        \setcounter{secnumdepth}{0}
-        % reset numbering for figures, tables, and footnotes
-        \usepackage{chngcntr}
-        \counterwithout{footnote}{chapter}
-        \counterwithout{figure}{chapter}
-        \counterwithout{table}{chapter}
-        % remove chapter numbers and labels
-        \titleformat{\chapter}[display]{\bfseries\sffamily}{}{-40pt}{\Huge}
-        \renewcommand{\thechapter}{}
-        % adjust chapter alignments in toc
-        \setlength{\cftchapnumwidth}{0em}
+#         % % header and footer
+#         % for all pages
+#         \makeatletter
+#             \fancypagestyle{normal}{
+#                 \fancyhf{}
+#                 \fancyfoot[C]{\sffamily\thepage}
+#                 \fancyhead[LE,RO]{\sffamily\textit{\@title}}
+#                 \renewcommand{\headrulewidth}{1pt}
+#             }
+#             % for the first page of the chapter
+#             \fancypagestyle{plain}{
+#                 \fancyhf{}
+#                 \fancyfoot[C]{\sffamily\thepage}
+#                 \renewcommand{\headrulewidth}{0pt}
+#             }
+#         \makeatother
 
-        %% header and footer
-        % for all pages
-        \makeatletter
-            \fancypagestyle{normal}{
-                \fancyhf{}
-                \fancyfoot[C]{\sffamily\thepage}
-                \fancyhead[LE,RO]{\sffamily\textit{\@title}}
-                \renewcommand{\headrulewidth}{1pt}
-            }
-            % for the first page of the chapter
-            \fancypagestyle{plain}{
-                \fancyhf{}
-                \fancyfoot[C]{\sffamily\thepage}
-                \renewcommand{\headrulewidth}{0pt}
-            }
-        \makeatother
-
-        %% bibliography
-        \renewenvironment{sphinxthebibliography}[1]{
-            % remove automatically-generated bibliography title
-            % and page break
-            \renewcommand{\chapter}[2]{}
-            \begin{thebibliography}{#1}
-            }{\end{thebibliography}
-        }
-    '''
-}
+#         % % bibliography
+#         \renewenvironment{sphinxthebibliography}[1]{
+#             % remove automatically-generated bibliography title
+#             % and page break
+#             \renewcommand{\chapter}[2]{}
+#             \begin{thebibliography}{#1}
+#             }{\end{thebibliography}
+#         }
+#     '''
+# }

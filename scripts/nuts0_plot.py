@@ -1,10 +1,10 @@
-"""Plotting NUTS 3 boundaries for focus countries and interconnections
+"""Plotting NUTS 0 boundaries for focus countries and interconnections
 
-This script executes nuts3.py to obtain nomenclature of territorial units
-for statistics (NUTS) data at level 3 from Eurostat
+This script executes nuts0.py to obtain nomenclature of territorial units
+for statistics (NUTS) data at level 0 (national borders) from Eurostat
 (https://ec.europa.eu/eurostat/web/nuts/background) for the following
-countries: DE, DK, NO, and SE, AT, CH, CZ, FI, LT, LU, NL, PL. It then
-creates a plot of the these boundaries.
+countries: DE, DK, NO, and SE, AT, CH, CZ, FI, LT, LU, NL, PL.
+It then creates a plot of the these boundaries.
 """
 
 # import libraries
@@ -18,17 +18,17 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 # import data
-from nuts3 import nuts3
+from nuts0 import nuts0
 
 # convert to Web Mercator projection
-nuts3 = nuts3.to_crs(crs='EPSG:3857')
+nuts0 = nuts0.to_crs(crs='EPSG:3857')
 
 # ## Bokeh plot
 # load data source
-geo_source = GeoJSONDataSource(geojson=nuts3.to_json())
+geo_source = GeoJSONDataSource(geojson=nuts0.to_json())
 
 # generate unique colours for each country
-countries = list(set(nuts3['CNTR_CODE']))
+countries = list(set(nuts0['CNTR_CODE']))
 palette = viridis(len(countries))
 color_map = CategoricalColorMapper(factors=countries, palette=palette)
 
@@ -78,7 +78,7 @@ with open('charts/nuts/nuts-div.js', 'w') as f:
 # ## Matplotlib plot
 mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
 fig, ax = plt.subplots(1, figsize=(10, 10))
-nuts3.plot(column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
+nuts0.plot(column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
     legend_kwds={'bbox_to_anchor': (0, 0, .99, .13)})
 plt.ylabel('Latitude (Web Mercator)')
 plt.xlabel('Longitude (Web Mercator)')

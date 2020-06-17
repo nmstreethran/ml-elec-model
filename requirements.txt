@@ -3,55 +3,89 @@ contextily
 descartes
 entsoe-py
 geopandas
+jupyter_sphinx
 pydata-sphinx-theme
 # affine # Installed as dependency for rasterio
 # alabaster # Installed as dependency for sphinx
-# attrs # Installed as dependency for rasterio, fiona
+# attrs # Installed as dependency for rasterio, jsonschema, fiona
 # babel # Installed as dependency for sphinx
+# backcall # Installed as dependency for ipython
 # beautifulsoup4 # Installed as dependency for entsoe-py
+# bleach # Installed as dependency for nbconvert
 # certifi # Installed as dependency for requests
 # chardet # Installed as dependency for requests
-# click # Installed as dependency for mercantile, fiona, cligj, click-plugins, rasterio
+# click # Installed as dependency for fiona, rasterio, mercantile, click-plugins, cligj
 # click-plugins # Installed as dependency for rasterio, fiona
 # cligj # Installed as dependency for rasterio, fiona
 # cycler # Installed as dependency for matplotlib
+# decorator # Installed as dependency for traitlets, ipython
+# defusedxml # Installed as dependency for nbconvert
 # docutils # Installed as dependency for sphinx
+# entrypoints # Installed as dependency for nbconvert
 # fiona # Installed as dependency for geopandas
 # geographiclib # Installed as dependency for geopy
 # geopy # Installed as dependency for contextily
 # idna # Installed as dependency for requests
 # imagesize # Installed as dependency for sphinx
-# jinja2 # Installed as dependency for bokeh, sphinx
+# ipykernel # Installed as dependency for notebook, ipywidgets
+# ipython # Installed as dependency for ipykernel, ipywidgets, jupyter_sphinx
+# ipython-genutils # Installed as dependency for traitlets, notebook, nbformat
+# ipywidgets # Installed as dependency for jupyter_sphinx
+# jedi # Installed as dependency for ipython
+# jinja2 # Installed as dependency for nbconvert, notebook, sphinx, bokeh
 # joblib # Installed as dependency for contextily
+# jsonschema # Installed as dependency for nbformat
+# jupyter-client # Installed as dependency for ipykernel, notebook
+# jupyter-core # Installed as dependency for nbconvert, notebook, nbformat, jupyter-client
 # kiwisolver # Installed as dependency for matplotlib
 # markupsafe # Installed as dependency for jinja2
 # matplotlib # Installed as dependency for descartes, contextily
 # mercantile # Installed as dependency for contextily
+# mistune # Installed as dependency for nbconvert
 # munch # Installed as dependency for fiona
-# numpy # Installed as dependency for matplotlib, pandas, snuggs, bokeh, rasterio
-# packaging # Installed as dependency for bokeh, sphinx
+# nbconvert # Installed as dependency for notebook, jupyter_sphinx
+# nbformat # Installed as dependency for notebook, nbconvert, ipywidgets, jupyter_sphinx
+# notebook # Installed as dependency for widgetsnbextension
+# numpy # Installed as dependency for pandas, matplotlib, bokeh, snuggs, rasterio
+# packaging # Installed as dependency for sphinx, bleach, bokeh
 # pandas # Installed as dependency for geopandas, entsoe-py
+# pandocfilters # Installed as dependency for nbconvert
+# parso # Installed as dependency for jedi
+# pexpect # Installed as dependency for ipython
+# pickleshare # Installed as dependency for ipython
 # pillow # Installed as dependency for bokeh, contextily
-# pygments # Installed as dependency for sphinx
-# pyparsing # Installed as dependency for packaging, snuggs, matplotlib
+# prometheus-client # Installed as dependency for notebook
+# prompt-toolkit # Installed as dependency for ipython
+# ptyprocess # Installed as dependency for pexpect, terminado
+# pygments # Installed as dependency for nbconvert, sphinx, ipython
+# pyparsing # Installed as dependency for snuggs, packaging, matplotlib
 # pyproj # Installed as dependency for geopandas
-# python-dateutil # Installed as dependency for bokeh, pandas, matplotlib
-# pytz # Installed as dependency for babel, pandas, entsoe-py
+# pyrsistent # Installed as dependency for jsonschema
+# python-dateutil # Installed as dependency for pandas, jupyter-client, bokeh, matplotlib
+# pytz # Installed as dependency for pandas, entsoe-py, babel
 # pyyaml # Installed as dependency for bokeh
+# pyzmq # Installed as dependency for notebook, jupyter-client
 # rasterio # Installed as dependency for contextily
-# requests # Installed as dependency for contextily, sphinx, entsoe-py
+# requests # Installed as dependency for sphinx, entsoe-py, contextily
+# send2trash # Installed as dependency for notebook
 # shapely # Installed as dependency for geopandas
-# six # Installed as dependency for cycler, fiona, packaging, munch, python-dateutil
+# six # Installed as dependency for traitlets, pyrsistent, bleach, jsonschema, fiona, packaging, cycler, munch, python-dateutil
 # snowballstemmer # Installed as dependency for sphinx
 # snuggs # Installed as dependency for rasterio
 # soupsieve # Installed as dependency for beautifulsoup4
-# sphinx # Installed as dependency for pydata-sphinx-theme
+# sphinx # Installed as dependency for jupyter_sphinx, pydata-sphinx-theme
 # sphinxcontrib-applehelp # Installed as dependency for sphinx
 # sphinxcontrib-devhelp # Installed as dependency for sphinx
 # sphinxcontrib-htmlhelp # Installed as dependency for sphinx
 # sphinxcontrib-jsmath # Installed as dependency for sphinx
 # sphinxcontrib-qthelp # Installed as dependency for sphinx
 # sphinxcontrib-serializinghtml # Installed as dependency for sphinx
-# tornado # Installed as dependency for bokeh
+# terminado # Installed as dependency for notebook
+# testpath # Installed as dependency for nbconvert
+# tornado # Installed as dependency for jupyter-client, bokeh, ipykernel, terminado, notebook
+# traitlets # Installed as dependency for jupyter-client, nbformat, ipython, ipykernel, nbconvert, notebook, jupyter-core, ipywidgets
 # typing-extensions # Installed as dependency for bokeh
 # urllib3 # Installed as dependency for requests
+# wcwidth # Installed as dependency for prompt-toolkit
+# webencodings # Installed as dependency for bleach
+# widgetsnbextension # Installed as dependency for ipywidgets

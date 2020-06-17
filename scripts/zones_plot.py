@@ -1,10 +1,12 @@
 """Plotting bidding zones for the focus countries and interconnections
 
-This script executes zones_no_se.py to obtain approximate Norwegian and
-Swedish electricity market bidding zones from
-tmrowco/electricitymap-contrib, and zones.py to obtain all other bidding
-zones using nomenclature of territorial units for statistics (NUTS) data.
-It then creates a plot of the bidding zones.
+This script executes zones_no_se.py to obtain approximate NO and SE
+electricity market bidding zones from Electricity Map
+(https://github.com/tmrowco/electricitymap-contrib), and zones.py to
+obtain all other bidding zones using nomenclature of territorial units
+for statistics (NUTS) data from Eurostat
+(https://ec.europa.eu/eurostat/web/nuts/background). It then creates a
+plot of the bidding zones.
 """
 
 # import libraries
