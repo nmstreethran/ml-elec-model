@@ -17,8 +17,11 @@ nuts0 = gpd.read_file('scripts/nuts0.geojson')
 # convert to Web Mercator projection
 nuts0 = nuts0.to_crs(crs='EPSG:3857')
 
-# Matplotlib plot
+# plot styles
+plt.style.use('seaborn')
 mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
+
+# configure plot
 fig, ax = plt.subplots(1, figsize=(15, 15))
 nuts0.plot(column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
     legend_kwds={'loc': 'lower right'})

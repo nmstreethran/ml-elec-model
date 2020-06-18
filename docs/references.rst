@@ -34,6 +34,7 @@ References
 .. [IEA-ETSAP] IEA-ETSAP - Energy Systems Analysis Tools. (n.d.). https://iea-etsap.org/index.php/etsap-tools.
 .. [IEA-ETSAPa] IEA-ETSAP - Optimization Modeling Documentation. (n.d.). https://iea-etsap.org/index.php/documentation.
 .. [IRENA2018] Global Energy Transformation: A Roadmap to 2050. (2018). International Renewable Energy Agency. https://www.irena.org/publications/2018/Apr/Global-Energy-Transition-A-Roadmap-to-2050.
+.. [ISO] ISO - ISO 3166—Country Codes. (n.d.). ISO. https://www.iso.org/iso-3166-country-codes.html.
 .. [Joskow2011] Joskow, P. L. (2011). Comparing the Costs of Intermittent and Dispatchable Electricity Generating Technologies. American Economic Review, 101(3), 238–241. https://doi.org/10.1257/aer.101.3.238.
 .. [Krook-Riekkola2015] Krook-Riekkola, A. (2015). National Energy System Modelling for Supporting Energy and Climate Policy Decision-making: The Case of Sweden [Chalmers University of Technology]. http://ltu.diva-portal.org/smash/record.jsf?pid=diva2:990599.
 .. [KULeuven2015] The current electricity market design in Europe (EI Fact Sheet). (2015). KU Leuven Energy Institute. https://set.kuleuven.be/ei/factsheets.

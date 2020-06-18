@@ -76,9 +76,14 @@ with open('charts/nuts/nuts-div.js', 'w') as f:
 """
 
 # ## Matplotlib plot
+# plot styles
+plt.style.use('seaborn')
 mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
+
+# configure plot
 fig, ax = plt.subplots(1, figsize=(10, 10))
 nuts0.plot(column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
     legend_kwds={'bbox_to_anchor': (0, 0, .99, .13)})
 plt.ylabel('Latitude (Web Mercator)')
 plt.xlabel('Longitude (Web Mercator)')
+plt.show()

@@ -18,8 +18,11 @@ zones = gpd.read_file('scripts/bidding_zones.geojson')
 # convert to Web Mercator projection
 zones = zones.to_crs(crs='EPSG:3857')
 
-# Matplotlib plot
+# plot styles
+plt.style.use('seaborn')
 mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
+
+# configure plot
 fig, ax = plt.subplots(1, figsize=(15, 15))
 zones.plot(column='zone', ax=ax, legend=True, cmap='viridis',
     legend_kwds={'loc': 'lower right'})
