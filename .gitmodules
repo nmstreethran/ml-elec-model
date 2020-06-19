@@ -1,4 +1,3 @@
-[submodule "charts"]
-	path = charts
-	url = git@github.com:nmstreethran/charts.git
-	branch = ml-elec-model
+[submodule "docs/html"]
+	path = docs/html
+	url = git@gitlab.com:nithiya/ml-elec-model.git

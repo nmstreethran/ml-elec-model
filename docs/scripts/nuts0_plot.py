@@ -20,6 +20,8 @@ nuts0 = nuts0.to_crs(crs='EPSG:3857')
 # plot styles
 plt.style.use('seaborn')
 mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
+mpl.rcParams['text.color'] = 'black'
+mpl.rcParams['axes.labelcolor'] = 'black'
 
 # configure plot
 fig, ax = plt.subplots(1, figsize=(15, 15))

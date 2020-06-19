@@ -2,7 +2,7 @@
 
 <!-- start badges -->
 [![Action: links](https://github.com/nmstreethran/ml-elec-model/workflows/links/badge.svg)](https://github.com/nmstreethran/ml-elec-model/actions?query=workflow%3Alinks)
-[![Documentation build status](https://readthedocs.org/projects/ml-elec-model/badge/?version=latest)](https://ml-elec-model.rtfd.io)
+[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/nithiya/ml-elec-model?labelColor=darkslategray)](https://gitlab.com/nithiya/ml-elec-model/pipelines)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-yellow?labelColor=darkslategray)](https://opensource.org/licenses/MIT)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/content%20license-CC%20BY%204.0-blue?labelColor=darkslategray)](https://creativecommons.org/licenses/by/4.0/)
 <!-- end badges -->
@@ -17,7 +17,6 @@ Machine learning-based electricity system model.
 
 - [Installing dependencies](#installing-dependencies)
 - [Documentation](#documentation)
-- [Charts](#charts)
 - [License](#license)
 - [Credits](#credits)
 
@@ -65,7 +64,7 @@ To view the full list of dependencies, see [`requirements.txt`](requirements.txt
 
 ## Documentation
 
-The documentation is built using [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted using [Read the Docs](https://readthedocs.org). It is available at <https://ml-elec-model.rtfd.io>. The files can be found in the `docs` folder.
+The documentation is built using [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted using [GitLab Pages](https://gitlab.com/nithiya/ml-elec-model/). It is available at <https://nithiya.gitlab.io/ml-elec-model/>. The files can be found in the `docs` folder.
 
 To build the documentation locally, clone this repository and install all requirements. Local builds of the documentation in HTML format can be viewed in `docs/_build/html/index.html` after running the following in the `docs` directory:
 
@@ -75,17 +74,12 @@ make html
 
 A list of references used is available on [Zotero](https://www.zotero.org/groups/2327899/ml-elec-model/library).
 
-## Charts
-
-Charts generated are available at <https://github.com/nmstreethran/charts/tree/ml-elec-model>.
-
 ## License
 
 Unless otherwise stated:
 
 - Python scripts, Jupyter notebooks, and any other form of code or snippets (e.g., shell scripts) in this repository are licensed under the [MIT License (MIT)](https://opensource.org/licenses/MIT).
 - content, images, and documentation are licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0) license](https://creativecommons.org/licenses/by/4.0/).
-- charts are licensed under the [Apache 2.0 License (Apache-2.0)](https://www.apache.org/licenses/LICENSE-2.0.html).
 
 ## Credits
 
