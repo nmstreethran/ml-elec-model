@@ -54,8 +54,19 @@ dwd_de = nuts.merge(dwd, on='NUTS_ID', how='right')
 # deal with unavailable NUTS data
 dwd_de['NUTS_NAME'] = dwd_de['NUTS_NAME'].fillna('none')
 
-"""
+"""save as CSV
 
-# save as CSV
+# import libraries
+import os
+import errno
+
+# create directory to store data
+try:
+    os.makedirs('data/')
+except OSError as exception:
+    if exception.errno != errno.EEXIST:
+        raise
+
+# save dataframe
 dwd_de.to_csv('data/dwd_stations.csv', index=False)
 """

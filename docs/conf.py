@@ -66,11 +66,19 @@ html_theme_options = {
         {'url': 'https://www.zotero.org/groups/2327899/ml-elec-model/library',
         'name': 'Zotero'}
     ],
-    'github_url': 'https://github.com/nmstreethran/ml-elec-model'
+    'github_url': 'https://github.com/nmstreethran/ml-elec-model',
+    'use_edit_page_button': True
+}
+
+html_context = {
+    'github_user': 'nmstreethran',
+    'github_repo': 'ml-elec-model',
+    'github_version': 'master',
+    'doc_path': 'docs'
 }
 
 # directories of .py files for bokeh plots
-bokeh_plot_pyfile_include_dirs = ['scripts']
+bokeh_plot_pyfile_include_dirs = ['../scripts']
 
 # # -- LaTeX options -----------------------------------------------------------
 # latex_documents = [('index', project + '.tex', project + ' docs',

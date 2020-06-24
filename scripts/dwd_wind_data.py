@@ -78,14 +78,14 @@ states = df_stn['state'].unique()
 for state in states:
     # create directories to store files
     # for each state if they do not exist
-    path = 'data/met/de/wind_hourly/' + state.replace(' ', '')
+    fpath = 'data/met/de/wind_hourly/' + state.replace(' ', '')
     try:
-        os.makedirs(path)
+        os.makedirs(fpath)
     except OSError as exception:
         if exception.errno != errno.EEXIST:
             raise
         else:
-            print ('\nBE CAREFUL! Directory %s already exists.' % path)
+            print ('\nBE CAREFUL! Directory %s already exists.' % fpath)
 
     # list of station ids and start + end dates in the state
     df_state = df_stn.loc[df_stn['state']==state]
@@ -100,7 +100,7 @@ for state in states:
         # add leading zeros to station ids if less than 5 digits
         stn = stn.zfill(5)
         # file download directory
-        dest = path + '/' + stn
+        dest = fpath + '/' + stn
         # historical data (not current year)
         if start < yr or end < yr:
             # convert datetime to string

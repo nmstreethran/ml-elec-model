@@ -35,11 +35,11 @@ Eurostat NUTS data:
 
 - https://ec.europa.eu/eurostat/web/nuts/background
 
-Polygons approximately representing bidding zones in Norway and Sweden are from `tmrowco/electricitymap-contrib <https://github.com/tmrowco/electricitymap-contrib>`__:
+Polygons approximately representing bidding zones in Norway and Sweden are from `Tomorrow's electricityMap <https://github.com/tmrowco/electricitymap-contrib>`__:
 
 - https://github.com/tmrowco/electricitymap-contrib/tree/master/web/third_party_maps
 
-These sources have been used by tmrowco:
+These sources have been used by Tomorrow:
 
 - Norway:
    - http://driftsdata.statnett.no/Web/map/snpscustom

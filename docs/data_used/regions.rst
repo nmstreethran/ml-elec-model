@@ -47,7 +47,7 @@ The nomenclature of territorial units for statistics (:term:`NUTS`) [Eurostat]_ 
 
 The map below illustrates the national borders of focus countries and their interconnections.
 
-.. jupyter-execute:: ../scripts/nuts0_plot.py
+.. jupyter-execute:: ../../scripts/nuts0_plot.py
    :hide-code:
 
 NUTS 0 boundaries (national borders) for the focus countries and their interconnections. Data from Eurostat (© EuroGeographics for the administrative boundaries).
@@ -207,11 +207,11 @@ There is no clear indication of the bidding zone boundaries for Norway and Swede
    |         |              | Halland, Skåne  |            |
    +---------+--------------+-----------------+------------+
 
-Approximate bidding zone polygons are available from the tmrowco/electricitymap-contrib repository [tmrowco2020]_.
+Approximate bidding zone polygons are available from Tomorrow's electricityMap repository [tmrowco2020]_.
 
 Combining all of these produces the following map.
 
-.. jupyter-execute:: ../scripts/bidding_zones_plot.py
+.. jupyter-execute:: ../../scripts/zones_plot.py
    :hide-code:
 
-Approximate bidding zones of focus countries and their interconnections, made using polygons by tmrowco and Eurostat (© EuroGeographics for the administrative boundaries), and map tiles from OpenStreetMap / CartoDB.
+Approximate bidding zones of focus countries and their interconnections, made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).

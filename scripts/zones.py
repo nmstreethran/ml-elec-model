@@ -1,7 +1,7 @@
 """NUTS data for the focus countries and interconnections
 
 This script first executes zones_no_se.py to obtain approximate NO and SE
-bidding zones from Electricity Map
+bidding zones from Tomorrow's electricityMap
 (https://github.com/tmrowco/electricitymap-contrib). It then obtains
 nomenclature of territorial units for statistics (NUTS) data at level 0
 for DE, AT, CH, CZ, FI, LT, LU, NL, and PL, and NUTS data at level 2 for
@@ -72,8 +72,19 @@ zones = gpd.GeoDataFrame(
     pd.concat([nuts, bzn], ignore_index=True),
     crs=[nuts, bzn][0].crs)
 
-"""
+"""save as GeoJSON
 
-# save as GeoJSON
+# import libraries
+import os
+import errno
+
+# create directory to store data
+try:
+    os.makedirs('data/')
+except OSError as exception:
+    if exception.errno != errno.EEXIST:
+        raise
+
+# save dataframe
 zones.to_file('data/bidding_zones.geojson', driver='GeoJSON')
 """

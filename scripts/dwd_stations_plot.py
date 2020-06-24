@@ -19,13 +19,20 @@ from bokeh.io import output_file, show
 from bokeh.embed import components
 from bokeh.palettes import viridis
 from pyproj import Transformer
+import pandas as pd
+from os import path
 
-# import variables from dwd_stations_nuts.py
-from dwd_stations_nuts import dwd_de as data
-
-# drop geometry columns and unnecessary data
-data = data.drop(
-    columns=['geometry', 'point', 'COAST_TYPE', 'MOUNT_TYPE', 'URBN_TYPE'])
+# import data
+if path.isfile('../data/dwd_stations.csv'):
+    data = pd.read_csv('../data/dwd_stations.csv')
+elif path.isfile('data/dwd_stations.csv'):
+    data = pd.read_csv('data/dwd_stations.csv')
+else:
+    from dwd_stations_nuts import dwd_de as data
+    # drop geometry columns and unnecessary data
+    data = data.drop(
+        columns=['geometry', 'point', 'COAST_TYPE',
+            'MOUNT_TYPE', 'URBN_TYPE'])
 
 # transform latitudes and longitudes from WGS84 to Web Mercator projection
 lons = tuple(data['longitude'])
@@ -55,7 +62,6 @@ TOOLTIPS = [
 # set axis types to mercator so that latitudes and longitudes are used
 # in the figure
 p = figure(
-    title='German weather stations. Data: DWD.de, Eurostat.',
     x_axis_type='mercator', y_axis_type='mercator', tooltips=TOOLTIPS)
 
 # set OpenStreetMap / CartoDB overlay

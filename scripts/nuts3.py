@@ -28,8 +28,19 @@ nuts3 = nuts3.sort_values(['NUTS_ID'])
 # reset index
 nuts3 = nuts3.reset_index(drop=True)
 
-"""
+"""save as GeoJSON
 
-# save as GeoJSON
+# import libraries
+import os
+import errno
+
+# create directory to store data
+try:
+    os.makedirs('data/')
+except OSError as exception:
+    if exception.errno != errno.EEXIST:
+        raise
+
+# save dataframe
 nuts3.to_file('data/nuts3.geojson', driver='GeoJSON')
 """

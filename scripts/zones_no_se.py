@@ -1,7 +1,7 @@
 """Bidding zones in Norway and Sweden
 
 This script obtains approximate NO and SE electricity market bidding
-zones from Electricity Map
+zones from Tomorrow's electricityMap
 (https://github.com/tmrowco/electricitymap-contrib).
 """
 
