@@ -23,10 +23,9 @@ import pandas as pd
 from os import path
 
 # import data
-if path.isfile('../data/dwd_stations.csv'):
-    data = pd.read_csv('../data/dwd_stations.csv')
-elif path.isfile('data/dwd_stations.csv'):
-    data = pd.read_csv('data/dwd_stations.csv')
+if path.isfile('data/met/de/dwd_stations.csv'):
+    data = pd.read_csv(
+        'data/met/de/dwd_stations.csv', encoding='ISO-8859-1')
 else:
     from dwd_stations_nuts import dwd_de as data
     # drop geometry columns and unnecessary data
@@ -74,7 +73,7 @@ p.circle(source=geo_source, x='mercator_x', y='mercator_y',
 # open the map
 show(p)
 
-"""
+"""output components
 
 # output the map and save to a custom path
 output_file('charts/dwd_stations/dwd_stations_plot.html')

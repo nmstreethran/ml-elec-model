@@ -2,8 +2,10 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
-# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
-# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+# This workflow will download a prebuilt Ruby version, install
+# dependencies and run tests with Rake
+# For more information see:
+# https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
 
 name: links
 
@@ -19,8 +21,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
-    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-    # change this to (see https://github.com/ruby/setup-ruby#versioning):
+    # To automatically get bug fixes and new Ruby versions for
+    # ruby/setup-ruby, change this to
+    # (see https://github.com/ruby/setup-ruby#versioning):
       uses: ruby/setup-ruby@v1
     # uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
       with:
@@ -29,4 +32,7 @@ jobs:
     # https://github.com/dkhamsing/awesome_bot
       run: gem install awesome_bot
     - name: Check links
-      run: awesome_bot --allow-dupe --skip-save-results --white-list doi.org,github.com/nmstreethran/ml-elec-model.git,img.shields.io,www.dnvgl.com/services/forecaster-94823,gridscientific.com/about-us `find . -name "*.md"` `find . -name "*.rst"`
+      run: "awesome_bot --allow-dupe --skip-save-results --white-list
+        doi.org,github.com/nmstreethran/ml-elec-model.git,img.shields.io,\
+        dnvgl.com/services/forecaster-94823,gridscientific.com/about-us\
+        `find . -name '*.md'` `find . -name '*.rst'`"

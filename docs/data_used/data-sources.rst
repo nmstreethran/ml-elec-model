@@ -12,6 +12,8 @@ European Network of Transmission Systems Operators for Electricity (:term:`ENTSO
    - https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/terms%20and%20conditions/191025_List_of_Data_available_for_reuse_v2_cln.pdf
 - Regional security coordinators:
    - https://www.entsoe.eu/major-projects/rscis/
+- Power statistics:
+   - https://www.entsoe.eu/data/power-stats/
 - Energy identification codes (:term:`EIC`\s):
    - https://www.entsoe.eu/data/energy-identification-codes-eic/
 - Guides:
@@ -27,6 +29,20 @@ Tools:
 
 - :term:`ENTSO-E` Python client:
    - https://github.com/EnergieID/entsoe-py
+
+Power plants
+------------
+
+Germany
+~~~~~~~
+
+Bundesnetzagentur:
+
+- https://www.bundesnetzagentur.de/EN/Areas/Energy/Companies/SecurityOfSupply/GeneratingCapacity/PowerPlantList/PubliPowerPlantList_node.html
+
+Netztransparenz - Erneuerbare-Energien-Gesetz (EEG, which roughly translates to Renewable Energy Sources Act) plant data:
+
+- https://www.netztransparenz.de/EEG/Anlagenstammdaten
 
 Geographical data
 -----------------
@@ -140,6 +156,11 @@ Nord Pool:
    - https://www.nordpoolgroup.com/trading/join-our-markets/membership/
 - Terms and conditions for use:
    - https://www.nordpoolgroup.com/About-us/Terms-and-conditions-for-use/
+
+EEX:
+
+- https://www.eex.com/en/market-data/power
+- https://www.eex-transparency.com/power/
 
 :term:`ENTSO-E TP`:
 

@@ -31,7 +31,7 @@ for data in dataList:
         encoding='ISO-8859-1', skiprows=2, names=cols_stn)
     stn = pd.concat([stn, stnData])
 
-# tanslate column titles to English
+# tanslate column titles into English
 stn = stn.set_axis(['id', 'start_date', 'end_date',
     'height', 'latitude', 'longitude', 'name', 'state'],
     axis='columns', inplace=False)
@@ -45,8 +45,21 @@ stn = stn.sort_values(by=['id'])
 # reset index
 stn = stn.reset_index(drop=True)
 
-"""
+"""save as CSV file
 
-# save as CSV file
-stn.to_csv('data/dwd_stations.csv', index=False)
+# import libraries
+import os
+import errno
+
+# create directory to store data
+try:
+    os.makedirs('data/met/de/')
+except OSError as exception:
+    if exception.errno != errno.EEXIST:
+        raise
+    else:
+        print ('\nBE CAREFUL! Directory already exists.')
+
+stn.to_csv(
+    'data/met/de/dwd_stations.csv', index=False, encoding='ISO-8859-1')
 """

@@ -30,7 +30,8 @@ start = pd.to_datetime(start, format='%Y%m%d%H')
 end = pd.to_datetime(end, format='%Y%m%d%H')
 
 # hourly solar data repo url
-repourl = 'https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/solar/'
+repourl = ('https://opendata.dwd.de/climate_environment/CDC/' +
+    'observations_germany/climate/hourly/solar/')
 
 # read fixed width formatted text file with
 # list of weather stations in DE
@@ -98,7 +99,7 @@ for state in states:
         for file in glob.glob(dest + '/produkt*.txt'):
             df_station = pd.read_csv(file, sep=';')
 
-            # tanslate column titles to English
+            # tanslate column titles into English
             df_station = df_station.set_axis([
                 'station_id', 'timestamp_end', 'QLoNC',
                 'longwave_downward_radiation', 'diffuse_radiation',
@@ -117,4 +118,6 @@ for state in states:
 
             # set end timestamps as index
             df_station.set_index(['timestamp_end'], inplace=True)
-            df_station.to_csv(dest + '/solar_hourly_' + stn + '.csv')
+            df_station.to_csv(
+                dest + '/solar_hourly_' + stn + '.csv',
+                encoding='ISO-8859-1')

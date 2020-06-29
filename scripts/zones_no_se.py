@@ -10,7 +10,8 @@ import geopandas as gpd
 import pandas as pd
 
 # root url for approximate NO and SE bidding zone polygons from tmrowco
-url = 'https://raw.githubusercontent.com/tmrowco/electricitymap-contrib/master/web/third_party_maps/'
+url = ('https://raw.githubusercontent.com/tmrowco/' +
+    'electricitymap-contrib/master/web/third_party_maps/')
 
 # create empty lists to store a list of bidding zones
 # and a list of files to obtain from the url

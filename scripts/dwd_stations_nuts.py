@@ -11,12 +11,15 @@ statistics (NUTS) data at level 3 from Eurostat
 # import libraries
 from shapely.geometry import Point
 import geopandas as gpd
+import os
+import errno
 
 # import data from dwd_stations.py
 from dwd_stations import stn as dwd
 
 # GeoJSON NUTS data at level 3 with decimal coordinates and multipolygons
-url = 'https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/nuts/geojson/NUTS_RG_01M_2016_4326_LEVL_3.geojson'
+url = ('https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/' +
+    'nuts/geojson/NUTS_RG_01M_2016_4326_LEVL_3.geojson')
 nuts = gpd.read_file(url)
 
 # filter for Germany (DE)
@@ -54,19 +57,16 @@ dwd_de = nuts.merge(dwd, on='NUTS_ID', how='right')
 # deal with unavailable NUTS data
 dwd_de['NUTS_NAME'] = dwd_de['NUTS_NAME'].fillna('none')
 
-"""save as CSV
-
-# import libraries
-import os
-import errno
-
+# save as CSV
 # create directory to store data
 try:
-    os.makedirs('data/')
+    os.makedirs('data/met/de/')
 except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
+    else:
+        print ('\nBE CAREFUL! Directory already exists.')
 
 # save dataframe
-dwd_de.to_csv('data/dwd_stations.csv', index=False)
-"""
+dwd_de.to_csv(
+    'data/met/de/dwd_stations.csv', index=False, encoding='ISO-8859-1')

@@ -47,10 +47,10 @@ The nomenclature of territorial units for statistics (:term:`NUTS`) [Eurostat]_ 
 
 The map below illustrates the national borders of focus countries and their interconnections.
 
-.. jupyter-execute:: ../../scripts/nuts0_plot.py
-   :hide-code:
+.. figure:: ../images/countries.png
+   :alt: NUTS 0 boundaries (national borders) for the focus countries and their interconnections. Data from Eurostat (© EuroGeographics for the administrative boundaries).
 
-NUTS 0 boundaries (national borders) for the focus countries and their interconnections. Data from Eurostat (© EuroGeographics for the administrative boundaries).
+   NUTS 0 boundaries (national borders) for the focus countries and their interconnections. Data from Eurostat (© EuroGeographics for the administrative boundaries).
 
 Transmission system operators and interconnections
 --------------------------------------------------
@@ -211,7 +211,7 @@ Approximate bidding zone polygons are available from Tomorrow's electricityMap r
 
 Combining all of these produces the following map.
 
-.. jupyter-execute:: ../../scripts/zones_plot.py
-   :hide-code:
+.. figure:: ../images/bidding_zones.png
+   :alt: Approximate bidding zones of focus countries and their interconnections, made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).
 
-Approximate bidding zones of focus countries and their interconnections, made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).
+   Approximate bidding zones of focus countries and their interconnections, made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).

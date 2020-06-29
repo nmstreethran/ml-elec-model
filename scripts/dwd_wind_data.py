@@ -30,7 +30,8 @@ start = pd.to_datetime(start, format='%Y%m%d%H')
 end = pd.to_datetime(end, format='%Y%m%d%H')
 
 # hourly wind data repo url
-repourl = 'https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/wind/'
+repourl = ('https://opendata.dwd.de/climate_environment/CDC/' +
+    'observations_germany/climate/hourly/wind/')
 
 # read fixed width formatted text file
 # with list of weather stations in DE
@@ -60,7 +61,7 @@ else:
         repourl + 'recent/FF_Stundenwerte_Beschreibung_Stationen.txt',
         encoding='ISO-8859-1', skiprows=2, names=cols_stn)
 
-# tanslate column titles to English
+# tanslate column titles into English
 df_stn = df_stn.set_axis([
     'station_id', 'start_date', 'end_date', 'station_height', 'latitude',
     'longitude', 'station_name', 'state'], axis='columns', inplace=False)
@@ -148,4 +149,6 @@ for state in states:
 
             # set end timestamps as index
             df_station.set_index(['timestamp_end'], inplace=True)
-            df_station.to_csv(dest + '/wind_hourly_' + stn + '.csv')
+            df_station.to_csv(
+                dest + '/wind_hourly_' + stn + '.csv',
+                encoding='ISO-8859-1')

@@ -11,12 +11,15 @@ DK from Eurostat (https://ec.europa.eu/eurostat/web/nuts/background).
 # import libraries
 import pandas as pd
 import geopandas as gpd
+import os
+import errno
 
 # import NO and SE zones
 from zones_no_se import bzn, bznList
 
 # GeoJSON NUTS data at level 0 with decimal coordinates and multipolygons
-url0 = 'https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/nuts/geojson/NUTS_RG_01M_2016_4326_LEVL_0.geojson'
+url0 = ('https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/' +
+    'nuts/geojson/NUTS_RG_01M_2016_4326_LEVL_0.geojson')
 nuts0 = gpd.read_file(url0)
 
 # filter for the following countries: DE, AT, CH, CZ, FI, LT, LU, NL,
@@ -29,7 +32,8 @@ nuts0 = nuts0.drop(
     (nuts0.CNTR_CODE=='PL'))].index)
 
 # GeoJSON NUTS data at level 2 with decimal coordinates and multipolygons
-url2 = 'https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/nuts/geojson/NUTS_RG_01M_2016_4326_LEVL_2.geojson'
+url2 = ('https://ec.europa.eu/eurostat/cache/GISCO/distribution/v2/' +
+    'nuts/geojson/NUTS_RG_01M_2016_4326_LEVL_2.geojson')
 nuts2 = gpd.read_file(url2)
 
 # filter for DK
@@ -72,19 +76,15 @@ zones = gpd.GeoDataFrame(
     pd.concat([nuts, bzn], ignore_index=True),
     crs=[nuts, bzn][0].crs)
 
-"""save as GeoJSON
-
-# import libraries
-import os
-import errno
-
+# save as GeoJSON
 # create directory to store data
 try:
-    os.makedirs('data/')
+    os.makedirs('data/geo/')
 except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
+    else:
+        print ('\nBE CAREFUL! Directory already exists.')
 
 # save dataframe
-zones.to_file('data/bidding_zones.geojson', driver='GeoJSON')
-"""
+zones.to_file('data/geo/bidding_zones.geojson', driver='GeoJSON')
