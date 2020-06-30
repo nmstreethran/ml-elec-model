@@ -10,12 +10,12 @@ meteorological service
 
 # import libraries
 import pandas as pd
-import os
+from os import makedirs
 import errno
-import requests
-import glob
-import zipfile
-import io
+from requests import get
+from glob import glob
+from zipfile import BadZipFile, ZipFile
+from io import BytesIO
 from datetime import datetime, timedelta
 
 # define start and end dates of data
@@ -81,7 +81,7 @@ for state in states:
     # for each state if they do not exist
     fpath = 'data/met/de/wind_hourly/' + state.replace(' ', '')
     try:
-        os.makedirs(fpath)
+        makedirs(fpath)
     except OSError as exception:
         if exception.errno != errno.EEXIST:
             raise
@@ -121,15 +121,15 @@ for state in states:
 
         # download contents of zip file into directory
         try:
-            r = requests.get(url)
-            z = zipfile.ZipFile(io.BytesIO(r.content))
+            r = get(url)
+            z = ZipFile(BytesIO(r.content))
             z.extractall(dest)
         # exception if no zip file exists
-        except zipfile.BadZipFile:
+        except BadZipFile:
             print ('No data exists for station ' + stn + ' in ' + state)
 
         # read weather data for station
-        for file in glob.glob(dest + '/produkt*.txt'):
+        for file in glob(dest + '/produkt*.txt'):
             df_station = pd.read_csv(file, sep=';')
             
             # tanslate column titles to English

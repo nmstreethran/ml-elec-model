@@ -57,6 +57,9 @@ Glossary
    IRENA
       International Renewable Energy Agency
 
+   LAU
+      local administrative units
+
    LCOE
       levelised cost of electricity
 
@@ -67,7 +70,7 @@ Glossary
       National Renewable Energy Laboratory
 
    NUTS
-      Nomenclature of territorial units for statistics
+      nomenclature of territorial units for statistics
 
    O&M
       operation and maintenance

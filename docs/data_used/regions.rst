@@ -52,6 +52,61 @@ The map below illustrates the national borders of focus countries and their inte
 
    NUTS 0 boundaries (national borders) for the focus countries and their interconnections. Data from Eurostat (© EuroGeographics for the administrative boundaries).
 
+Local administrative units (:term:`LAU`) are municipalities and communes, which are smaller than :term:`NUTS` 3 areas [Eurostatb]_. The table below shows how :term:`NUTS` and :term:`LAU` correspond to national administrative units in each country [Eurostata]_.
+
+.. table:: Correspondence between the NUTS levels and the national administrative units (last update 11/06/2020, based on NUTS 2021 and LAU 2019). The number of units are shown in brackets. Data: Eurostat.
+
+   +---------+---------------+-------------------+------------+--------------+
+   | Country | NUTS 1        | NUTS 2            | NUTS 3     | LAU          |
+   | code    |               |                   |            |              |
+   +=========+===============+===================+============+==============+
+   | AT      | Gruppen von   | Bundesländer (9)  | Gruppen    | Gemeinden    |
+   |         | Bundesländern |                   | von        | (2,096)      |
+   |         | (3)           |                   | Gemeinden  |              |
+   |         |               |                   | (35)       |              |
+   +---------+---------------+-------------------+------------+--------------+
+   | CH      | N/A (1)       | Grossregionen /   | Kantone /  | Gemeinden /  |
+   |         |               | Grandes regions / | Cantons /  | Communes /   |
+   |         |               | Grandi regioni    | Cantoni    | Comuni       |
+   |         |               | (7)               | (26)       | (2,222)      |
+   +---------+---------------+-------------------+------------+--------------+
+   | CZ      | Území (1)     | Regiony           | Kraje (14) | Obce (6,258) |
+   |         |               | soudržnosti (8)   |            |              |
+   +---------+---------------+-------------------+------------+--------------+
+   | DE      | Länder (16)   | Regierungsbezirke | Kreise     | Gemeinden    |
+   |         |               | (38)              | (401)      | (11,087)     |
+   +---------+---------------+-------------------+------------+--------------+
+   | DK      | N/A (1)       | Regioner (5)      | Landsdele  | Kommuner     |
+   |         |               |                   | (11)       | (99)         |
+   +---------+---------------+-------------------+------------+--------------+
+   | FI      | Manner-Suomi, | Suuralueet /      | Maakunnat  | Kunnat /     |
+   |         | Ahvenananmaa  | Storområden (5)   | / Landskap | Kommuner     |
+   |         | / Fasta       |                   | (19)       | (311)        |
+   |         | Finland,      |                   |            |              |
+   |         | Åland (2)     |                   |            |              |
+   +---------+---------------+-------------------+------------+--------------+
+   | LT      | N/A (1)       | Regionai (2)      | Apskritys  | Savivaldybės |
+   |         |               |                   | (10)       | (60)         |
+   +---------+---------------+-------------------+------------+--------------+
+   | LU      | N/A (1)       | N/A (1)           | N/A (1)    | Communes     |
+   |         |               |                   |            | (102)        |
+   +---------+---------------+-------------------+------------+--------------+
+   | NL      | Landsdelen    | Provincies (12)   | N/A (40)   | Gemeenten    |
+   |         | (4)           |                   |            | (355)        |
+   +---------+---------------+-------------------+------------+--------------+
+   | NO      | N/A (1)       | Landsdeler (7)    | Fylker     | Kommuner     |
+   |         |               |                   | (18)       | (356)        |
+   +---------+---------------+-------------------+------------+--------------+
+   | PL      | Makroregiony  | Regiony (17)      | Podregiony | Gminy        |
+   |         | (7)           |                   | (73)       | (2,478)      |
+   +---------+---------------+-------------------+------------+--------------+
+   | SE      | Grupper av    | Riksområden (8)   | Län (21)   | Kommuner     |
+   |         | riksområden   |                   |            | (290)        |
+   |         | (3)           |                   |            |              |
+   +---------+---------------+-------------------+------------+--------------+
+
+Some datasets provide postcodes, which must be translated into geographical locations for better clustering and comparisons. GeoNames [GeoNames]_ provides open postcode data.
+
 Transmission system operators and interconnections
 --------------------------------------------------
 

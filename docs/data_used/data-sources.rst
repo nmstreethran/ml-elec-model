@@ -71,6 +71,10 @@ Maps:
 - https://en.wikipedia.org/w/index.php?title=Counties_of_Norway&oldid=890663009
 - https://en.wikipedia.org/w/index.php?title=Counties_of_Sweden&oldid=882806371
 
+Postcodes:
+
+- https://www.geonames.org/postal-codes/
+
 Press releases and reports:
 
 - https://ec.europa.eu/commission/presscorner/detail/en/IP_10_425

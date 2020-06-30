@@ -11,7 +11,7 @@ DK from Eurostat (https://ec.europa.eu/eurostat/web/nuts/background).
 # import libraries
 import pandas as pd
 import geopandas as gpd
-import os
+from os import makedirs
 import errno
 
 # import NO and SE zones
@@ -79,7 +79,7 @@ zones = gpd.GeoDataFrame(
 # save as GeoJSON
 # create directory to store data
 try:
-    os.makedirs('data/geo/')
+    makedirs('data/geo/')
 except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise

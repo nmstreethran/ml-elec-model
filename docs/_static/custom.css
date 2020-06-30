@@ -1,9 +1,20 @@
 /* home logo */
 .logo {
-  filter: invert(5%) sepia(51%) saturate(7057%) hue-rotate(250deg) brightness(107%) contrast(109%);
+  filter: invert(5%) sepia(51%) saturate(7057%) hue-rotate(250deg)
+    brightness(107%) contrast(109%);
 }
 
 /* citation label float */
 dl.footnote > dt, dl.citation > dt {
   float: none;
+}
+
+/* caption format */
+caption {
+  caption-side: top;
+  text-align: center;
+}
+
+.caption-text {
+  color: #6c757d;
 }

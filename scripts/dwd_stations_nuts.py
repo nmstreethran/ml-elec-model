@@ -11,7 +11,7 @@ statistics (NUTS) data at level 3 from Eurostat
 # import libraries
 from shapely.geometry import Point
 import geopandas as gpd
-import os
+from os import makedirs
 import errno
 
 # import data from dwd_stations.py
@@ -60,7 +60,7 @@ dwd_de['NUTS_NAME'] = dwd_de['NUTS_NAME'].fillna('none')
 # save as CSV
 # create directory to store data
 try:
-    os.makedirs('data/met/de/')
+    makedirs('data/met/de/')
 except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise

@@ -12,7 +12,7 @@ from entsoe.mappings import DOMAIN_MAPPINGS, BIDDING_ZONES
 from entsoe.exceptions import NoMatchingDataError
 from requests.exceptions import RequestException
 import pandas as pd
-import os
+from os import makedirs
 import errno
 from getpass import getpass
 
@@ -39,7 +39,7 @@ bznList = [
 # create a directory to store files if it does not already exist
 fpath = 'data/entsoe'
 try:
-    os.makedirs(fpath)
+    makedirs(fpath)
 except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise

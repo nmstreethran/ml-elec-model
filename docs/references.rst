@@ -25,6 +25,9 @@ References
 .. [EuropeanCommission2016] Overview of European Electricity Markets (METIS Technical Notes). (2016). European Union. https://ec.europa.eu/energy/sites/ener/files/documents/overview_of_european_electricity_markets.pdf.
 .. [EuropeanCommission] Renewable energy — Energy — European Commission. (n.d.). https://ec.europa.eu/energy/topics/renewable-energy_en.
 .. [Eurostat] NUTS - Nomenclature of territorial units for statistics — Eurostat. (n.d.). https://ec.europa.eu/eurostat/web/nuts/background.
+.. [Eurostata] National structures — Eurostat. (n.d.). https://ec.europa.eu/eurostat/web/nuts/national-structures.
+.. [Eurostatb] Local Administrative Units (LAU) — Eurostat. (n.d.). https://ec.europa.eu/eurostat/web/nuts/local-administrative-units.
+.. [GeoNames] Postal Codes — GeoNames. (n.d.). https://www.geonames.org/postal-codes/.
 .. [Glismann2018] Glismann, S. (2018, September 6). Modelling from a TSO Perspective — TenneT NL.
 .. [GridScientific] About Us - Grid Scientific. (n.d.). http://gridscientific.com/about-us/.
 .. [Hay2015] Hay, S., & Ferguson, A. (2015). A Review of Power System Modelling Platforms and Capabilities. The Institution of Engineering and Technology. https://www.theiet.org/media/1291/pnjv-3-15.pdf.

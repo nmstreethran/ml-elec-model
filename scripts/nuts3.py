@@ -8,7 +8,7 @@ countries: DE, DK, NO, SE, AT, CH, CZ, FI, LT, LU, NL, PL.
 
 # import libraries
 import geopandas as gpd
-import os
+from os import makedirs
 import errno
 
 # GeoJSON NUTS data at level 3 with decimal coordinates and multipolygons
@@ -34,7 +34,7 @@ nuts3 = nuts3.reset_index(drop=True)
 # save as GeoJSON
 # create directory to store data
 try:
-    os.makedirs('data/geo/')
+    makedirs('data/geo/')
 except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
