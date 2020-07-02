@@ -1,7 +1,7 @@
-"""German renewable energy power plant data
+"""German renewable energy power generator data
 
 Extracts German Erneuerbare-Energien-Gesetz (EEG, which roughly translates
-to Renewable Energy Sources Act) plant data from Netztransparenz.de
+to Renewable Energy Sources Act) generator data from Netztransparenz.de
 (https://www.netztransparenz.de/EEG/Anlagenstammdaten).
 """
 
@@ -17,8 +17,14 @@ import pandas as pd
 urlBase = ('https://www.netztransparenz.de/portals/1/Netztransparenz ' +
     'Anlagenstammdaten 2018 ')
 
-# list of TSOs
-tsoList = ['50Hertz Transmission', 'Amprion', 'TenneT TSO', 'TransnetBW']
+# list of TSOs and the file name
+tsoList = [
+    ('50Hertz Transmission',
+    '50Hertz Transmission GmbH EEG-Zahlungen Stammdaten 2018'),
+    ('Amprion', 'Netztransparenz Anlagenstammdaten 2018 Amprion GmbH'),
+    ('TenneT TSO', 'TenneT TSO GmbH Anlagenstammdaten 2018'),
+    ('TransnetBW', 'TransnetBW_Anlagenstammdaten_2018')
+]
 
 # create directory to store data
 dest = 'data/power/de/'
@@ -30,10 +36,18 @@ except OSError as exception:
     else:
         print ('\nBE CAREFUL! Directory ' + dest + ' already exists.')
 
-# download contents of zip file into directory
-for tso in tsoList:
+# roughly tanslate column titles into English
+cols = ['EEG_plant_key', 'NB_BNR', 'network_operator', 'address',
+        'postal_code', 'city_district', 'municipality_key', 'state',
+        'installed_capacity', 'energy_carrier', 'feed_in_voltage_level',
+        'power_measurement', 'controllability', 'commissioning',
+        'decommissioning', 'network_connection', 'network_disconnection']
+
+for tso, f in tsoList:
     # URL of zip file for each TSO
     url = urlBase + tso + ' GmbH.zip'
+
+    # download contents of zip file into directory
     try:
         r = get(url)
         z = ZipFile(BytesIO(r.content))
@@ -42,44 +56,17 @@ for tso in tsoList:
     except BadZipFile:
         print ('No data exists for ' + tso)
 
-# roughly tanslate column titles into English
-cols = ['EEG_plant_key', 'NB_BNR', 'network_operator', 'street_land_lot',
-        'postal_code', 'city_district', 'municipality_key', 'state',
-        'installed_capacity', 'energy_carrier', 'feed_in_voltage_level',
-        'power_measurement', 'controllability', 'commissioning',
-        'decommissioning', 'network_access', 'network_outlet']
+    # read downloaded CSV file and assign translated column names
+    # with additional settings for encoding, decimals, dates, etc.
+    data = pd.read_csv(
+        dest + f + '.csv', encoding='ISO-8859-1', decimal=',', sep=';',
+        header=0, names=cols, dayfirst=True, thousands='.',
+        parse_dates=['commissioning', 'decommissioning',
+        'network_connection', 'network_disconnection'],
+        dtype={'NB_BNR': str, 'postal_code': str, 'municipality_key': str})
 
-# assign column names for each dataset
-data = pd.read_csv(
-    dest + '50Hertz Transmission GmbH EEG-Zahlungen Stammdaten 2018.csv',
-    encoding='ISO-8859-1', decimal=',', sep=';',
-    dtype={'Netzzugang': str, 'Netzabgang': str})
-data = data.set_axis(cols, axis='columns', inplace=False)
-data.to_csv(
-    dest + '50Hertz_Transmission_2018.csv', index=None,
-    encoding='ISO-8859-1')
+    # replace space with underscore in file name
+    fname = tso.replace(' ', '_')
 
-data = pd.read_csv(
-    dest + 'Netztransparenz Anlagenstammdaten 2018 Amprion GmbH.csv',
-    encoding='ISO-8859-1', decimal=',', sep=';',
-    dtype={'INSTALLIERTE_LEISTUNG': 'str'})
-data = data.set_axis(cols, axis='columns', inplace=False)
-data.to_csv(
-    dest + 'Amprion_2018.csv', index=None, encoding='ISO-8859-1')
-
-data = pd.read_csv(
-    dest + 'TenneT TSO GmbH Anlagenstammdaten 2018.csv',
-    encoding='ISO-8859-1', decimal=',', sep=';',
-    dtype={'PLZ': str, 'Ausserbetriebnahme': str, 'Netzzugang': str,
-    'Netzabgang': str})
-data = data.set_axis(cols, axis='columns', inplace=False)
-data.to_csv(
-    dest + 'TenneT_TSO_2018.csv', index=None, encoding='ISO-8859-1')
-
-data = pd.read_csv(
-    dest + 'TransnetBW_Anlagenstammdaten_2018.csv',
-    encoding='ISO-8859-1', decimal=',', sep=';',
-    dtype={'Ausserbetriebnahme': str})
-data = data.set_axis(cols, axis='columns', inplace=False)
-data.to_csv(
-    dest + 'TransnetBW_2018.csv', index=None, encoding='ISO-8859-1')
+    # save as new CSV
+    data.to_csv(dest + fname + '_2018.csv', index=None, encoding='utf-8')

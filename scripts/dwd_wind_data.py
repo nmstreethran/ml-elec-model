@@ -29,7 +29,7 @@ yr = pd.to_datetime(datetime.now().year, format='%Y')
 start = pd.to_datetime(start, format='%Y%m%d%H')
 end = pd.to_datetime(end, format='%Y%m%d%H')
 
-# hourly wind data repo url
+# hourly wind data repo URL
 repourl = ('https://opendata.dwd.de/climate_environment/CDC/' +
     'observations_germany/climate/hourly/wind/')
 
@@ -49,17 +49,16 @@ else:
 
 # then, extract the data,
 # skipping first two rows and assigning column names
-# encoding used due to presence of accented latin characters (e.g., ü)
 if start < yr or end < yr:
     # historical data (not current year)
     df_stn = pd.read_fwf(
         repourl + 'historical/FF_Stundenwerte_Beschreibung_Stationen.txt',
-        encoding='ISO-8859-1', skiprows=2, names=cols_stn)
+        encoding='utf-8', skiprows=2, names=cols_stn)
 else:
     # recent data (current year)
     df_stn = pd.read_fwf(
         repourl + 'recent/FF_Stundenwerte_Beschreibung_Stationen.txt',
-        encoding='ISO-8859-1', skiprows=2, names=cols_stn)
+        encoding='utf-8', skiprows=2, names=cols_stn)
 
 # tanslate column titles into English
 df_stn = df_stn.set_axis([
@@ -88,7 +87,7 @@ for state in states:
         else:
             print ('\nBE CAREFUL! Directory %s already exists.' % fpath)
 
-    # list of station ids and start + end dates in the state
+    # list of station IDs and start + end dates in the state
     df_state = df_stn.loc[df_stn['state']==state]
     station_ids = df_state['station_id'].tolist()
     start_dates = df_state['start_date'].tolist()
@@ -98,7 +97,7 @@ for state in states:
 
     # download and extract data
     for stn, sd, ed in stations:
-        # add leading zeros to station ids if less than 5 digits
+        # add leading zeros to station IDs if less than 5 digits
         stn = stn.zfill(5)
         # file download directory
         dest = fpath + '/' + stn
@@ -112,7 +111,7 @@ for state in states:
                 # change end date to be the
                 # last day of the previous year
                 ed_str = (yr - timedelta(days=1)).strftime('%Y%m%d')
-                # zip file url
+                # zip file URL
             url = (repourl + 'historical/stundenwerte_FF_' + stn + '_'
                 + sd_str + '_' + ed_str + '_hist.zip')
         else:
@@ -151,4 +150,4 @@ for state in states:
             df_station.set_index(['timestamp_end'], inplace=True)
             df_station.to_csv(
                 dest + '/wind_hourly_' + stn + '.csv',
-                encoding='ISO-8859-1')
+                encoding='utf-8')

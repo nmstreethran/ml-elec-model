@@ -23,12 +23,11 @@ dataList = ['CS', 'EB', 'F', 'FF', 'N', 'P0', 'RR', 'SD', 'ST', 'TD',
 
 # then, extract the data
 # skipping first two rows and assigning column names
-# encoding used due to presence of accented latin characters (e.g., ü)
 stn = pd.DataFrame()
 for data in dataList:
     stnData = pd.read_fwf(url + data +
         '_Stundenwerte_Beschreibung_Stationen.txt',
-        encoding='ISO-8859-1', skiprows=2, names=cols_stn)
+        encoding='utf-8', skiprows=2, names=cols_stn)
     stn = pd.concat([stn, stnData])
 
 # tanslate column titles into English
@@ -39,7 +38,7 @@ stn = stn.set_axis(['id', 'start_date', 'end_date',
 # drop dates and duplicates
 stn = stn.drop(columns=['start_date', 'end_date'])
 stn = stn.drop_duplicates(subset=['id'], keep='first')
-# sort values by station id
+# sort values by station ID
 stn = stn.sort_values(by=['id'])
 
 # reset index
@@ -61,5 +60,5 @@ except OSError as exception:
         print ('\nBE CAREFUL! Directory already exists.')
 
 stn.to_csv(
-    'data/met/de/dwd_stations.csv', index=False, encoding='ISO-8859-1')
+    'data/met/de/dwd_stations.csv', index=False, encoding='utf-8')
 """

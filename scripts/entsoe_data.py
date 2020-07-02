@@ -54,7 +54,7 @@ for bzn in bznList:
         df = df.rename('price')
         df.to_csv(
             fpath + '/' + 'day_ahead_prices_' + bzn + '.csv',
-            encoding='ISO-8859-1')
+            encoding='utf-8')
     except NoMatchingDataError:
         print('No matching data found for ' + bzn + ': day_ahead_prices')
     except RequestException as e:
@@ -65,7 +65,7 @@ for bzn in bznList:
         df = df.rename_axis('timestamp')
         df = df.rename('load')
         df.to_csv(
-            fpath + '/' + 'load__' + bzn + '.csv', encoding='ISO-8859-1')
+            fpath + '/' + 'load__' + bzn + '.csv', encoding='utf-8')
     except NoMatchingDataError:
         print('No matching data found for ' + bzn + ': load')
     except RequestException as e:
@@ -77,7 +77,7 @@ for bzn in bznList:
         df = df.rename('load_forecast')
         df.to_csv(
             fpath + '/' + 'load_forecast_' + bzn + '.csv',
-            encoding='ISO-8859-1')
+            encoding='utf-8')
     except NoMatchingDataError:
         print('No matching data found for ' + bzn + ': load_forecast')
     except RequestException as e:
@@ -89,7 +89,7 @@ for bzn in bznList:
         df = df.rename('generation_forecast')
         df.to_csv(
             fpath + '/' + 'generation_forecast_' + bzn + '.csv',
-            encoding='ISO-8859-1')
+            encoding='utf-8')
     except NoMatchingDataError:
         print(
             'No matching data found for ' + bzn + ': generation_forecast')
@@ -102,7 +102,7 @@ for bzn in bznList:
         df = df.rename_axis('timestamp')
         df.to_csv(
             fpath + '/' + 'wind_and_solar_forecast_' + bzn + '.csv',
-            encoding='ISO-8859-1')
+            encoding='utf-8')
     except NoMatchingDataError:
         print(
             'No matching data found for ' + bzn +
@@ -116,7 +116,7 @@ for bzn in bznList:
         df = df.rename_axis('timestamp')
         df.to_csv(
             fpath + '/' + 'generation__' + bzn + '.csv',
-            encoding='ISO-8859-1')
+            encoding='utf-8')
     except NoMatchingDataError:
         print('No matching data found for ' + bzn + ': generation')
     except RequestException as e:
@@ -128,7 +128,7 @@ for bzn in bznList:
         df = df.rename_axis('timestamp')
         df.to_csv(
             fpath + '/' + 'installed_generation_capacity__' + bzn + '.csv',
-            encoding='ISO-8859-1')
+            encoding='utf-8')
     except NoMatchingDataError:
         print(
             'No matching data for ' + bzn +
@@ -142,7 +142,7 @@ for bzn in bznList:
         df = df.rename_axis('id')
         df.to_csv(
             fpath + '/' + 'installed_generation_capacity_per_unit_' + bzn
-            + '.csv', encoding='ISO-8859-1')
+            + '.csv', encoding='utf-8')
     except NoMatchingDataError:
         print(
             'No matching data found for ' + bzn +
@@ -157,7 +157,7 @@ for bzn in bznList:
             bzn, start=start, end=end)
         df.to_csv(
             fpath + '/' + 'unavailability_of_production_units_' + bzn
-            + '.csv', encoding='ISO-8859-1')
+            + '.csv', encoding='utf-8')
     except NoMatchingDataError:
         print(
             'No matching data for ' + bzn +
@@ -170,7 +170,7 @@ for bzn in bznList:
             bzn, start=start, end=end, docstatus=None)
         df.to_csv(
             fpath + '/' + 'unavailability_of_generation_units_' + bzn +
-            '.csv', encoding='ISO-8859-1')
+            '.csv', encoding='utf-8')
     except NoMatchingDataError:
         print(
             'No matching data found for ' + bzn +
@@ -183,7 +183,7 @@ for bzn in bznList:
             bzn, start=start, end=end)
         df.to_csv(
             fpath + '/' + 'withdrawn_unavailability_of_generation_units_' +
-            bzn + '.csv', encoding='ISO-8859-1')
+            bzn + '.csv', encoding='utf-8')
     except NoMatchingDataError:
         print(
             'No matching data for ' + bzn +
@@ -198,7 +198,7 @@ for bzn in bznList:
     # #         bzn, start=start, end=end, lookup_bzones=True)
     # #     df.to_csv(
     # #         fpath + '/' + 'generation_per_plant_' + bzn + '.csv',
-    # #         encoding='ISO-8859-1')
+    # #         encoding='utf-8')
     # # except NoMatchingDataError:
     # #     print('No matching data for ' + bzn + ': generation_per_plant')
     # # except RequestException as e:

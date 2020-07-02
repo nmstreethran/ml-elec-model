@@ -69,4 +69,4 @@ except OSError as exception:
 
 # save dataframe
 dwd_de.to_csv(
-    'data/met/de/dwd_stations.csv', index=False, encoding='ISO-8859-1')
+    'data/met/de/dwd_stations.csv', index=False, encoding='utf-8')

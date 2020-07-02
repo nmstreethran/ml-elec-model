@@ -54,8 +54,8 @@ for country in countries:
     # load data and assign column names
     data = pd.read_csv(
         dest + country + '.txt', sep='\t', header=None, names=cols,
-        encoding='ISO-8859-1')
+        encoding='utf-8')
 
     # save as CSV
     data.to_csv(dest + 'postcodes' + country + '.csv', index=None,
-        encoding='ISO-8859-1')
+        encoding='utf-8')

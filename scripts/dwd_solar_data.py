@@ -29,7 +29,7 @@ yr = pd.to_datetime(datetime.now().year, format='%Y')
 start = pd.to_datetime(start, format='%Y%m%d%H')
 end = pd.to_datetime(end, format='%Y%m%d%H')
 
-# hourly solar data repo url
+# hourly solar data repo URL
 repourl = ('https://opendata.dwd.de/climate_environment/CDC/' +
     'observations_germany/climate/hourly/solar/')
 
@@ -42,9 +42,8 @@ cols_stn = pd.read_csv(
 
 # then, extract the data
 # skipping first two rows and assigning column names
-# encoding used due to presence of accented latin characters (e.g., ü)
 df_stn = pd.read_fwf(repourl + 'ST_Stundenwerte_Beschreibung_Stationen.txt',
-    encoding='ISO-8859-1', skiprows=2, names=cols_stn)
+    encoding='utf-8', skiprows=2, names=cols_stn)
 
 # tanslate column titles to English
 df_stn = df_stn.set_axis([
@@ -73,17 +72,17 @@ for state in states:
         else:
             print ('\nBE CAREFUL! Directory %s already exists.' % fpath)
 
-    # list of station ids in the state
+    # list of station IDs in the state
     df_state = df_stn.loc[df_stn['state'] == state]
     stations = df_state['station_id'].tolist()
 
     # download and extract data
     for stn in stations:
-        # add leading zeros to station ids if less than 5 digits
+        # add leading zeros to station IDs if less than 5 digits
         stn = stn.zfill(5)
         # file download directory
         dest = fpath + '/' + stn
-        # zip file url
+        # zip file URL
         url = repourl + 'stundenwerte_ST_' + stn + '_row.zip'
 
         # download contents of zip file into directory
@@ -120,4 +119,4 @@ for state in states:
             df_station.set_index(['timestamp_end'], inplace=True)
             df_station.to_csv(
                 dest + '/solar_hourly_' + stn + '.csv',
-                encoding='ISO-8859-1')
+                encoding='utf-8')

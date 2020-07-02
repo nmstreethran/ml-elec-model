@@ -25,7 +25,7 @@ from os import path
 # import data
 if path.isfile('data/met/de/dwd_stations.csv'):
     data = pd.read_csv(
-        'data/met/de/dwd_stations.csv', encoding='ISO-8859-1')
+        'data/met/de/dwd_stations.csv', encoding='utf-8')
 else:
     from dwd_stations_nuts import dwd_de as data
     # drop geometry columns and unnecessary data
