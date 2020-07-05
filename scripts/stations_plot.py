@@ -1,37 +1,41 @@
 """Plotting German weather station data
 
-This script executes dwd_stations.py and dwd_stations_nuts.py to obtain
-German weather station data from Deutscher Wetterdienst (DWD), Germany's
-meteorological service
-(https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html), and
-nomenclature of territorial units for statistics (NUTS) data at level 3
-from Eurostat (https://ec.europa.eu/eurostat/web/nuts/background),
-respectively. nuts_de.py combines these two datasets. This script then
+This script obtains German weather station data from Deutscher Wetterdienst
+(DWD), Germany's meteorological service
+(https://www.dwd.de/EN/climate_environment/cdc/cdc_node.html) and
 plots the data to produce an interactive map of weather stations in
 Germany with tooltips that contain metadata.
 """
 
 # import libraries
-from bokeh.models import ColumnDataSource, CategoricalColorMapper
+from bokeh.models import ColumnDataSource, CategoricalColorMapper, Plot
 from bokeh.plotting import figure
 from bokeh.tile_providers import get_provider, Vendors
 from bokeh.io import output_file, show
-from bokeh.embed import components
 from bokeh.palettes import viridis
 from pyproj import Transformer
 import pandas as pd
-from os import path
+
+# GitLab raw file base URL
+url = 'https://gitlab.com/api/v4/projects/19753809/repository/files/'
 
 # import data
-if path.isfile('data/met/de/dwd_stations.csv'):
-    data = pd.read_csv(
-        'data/met/de/dwd_stations.csv', encoding='utf-8')
-else:
-    from dwd_stations_nuts import dwd_de as data
-    # drop geometry columns and unnecessary data
-    data = data.drop(
-        columns=['geometry', 'point', 'COAST_TYPE',
-            'MOUNT_TYPE', 'URBN_TYPE'])
+wind = pd.read_csv(
+    url + 'meteorology%2Fwind_hourly%2Fstations.csv/raw?ref=master',
+    encoding='utf-8')
+solar = pd.read_csv(
+    url + 'meteorology%2Fsolar_hourly%2Fstations.csv/raw?ref=master',
+    encoding='utf-8')
+
+# assign station type to column
+wind['type'] = 'wind'
+solar['type'] = 'solar'
+
+# concatenate datasets
+data = pd.concat([wind, solar], ignore_index=True)
+
+# drop date columns
+data = data.drop(columns=['start_date', 'end_date'])
 
 # transform latitudes and longitudes from WGS84 to Web Mercator projection
 lons = tuple(data['longitude'])
@@ -42,38 +46,48 @@ xm, ym = transformer.transform(lons, lats)
 data['mercator_x'] = xm
 data['mercator_y'] = ym
 
-# generate unique colours for each state
-state = list(set(data['state']))
-palette = viridis(len(state))
-color_map = CategoricalColorMapper(factors=state, palette=palette)
+# generate unique colours for each station type
+types = list(set(data['type']))
+palette = viridis(len(types))
+color_map = CategoricalColorMapper(factors=types, palette=palette)
 
 # create dictionary of source data for the map
 geo_source = ColumnDataSource(data)
 
 # define map tooltips
 TOOLTIPS = [
-    ('Station', '@name'), ('id', '@id'), ('Height (m)', '@height'),
-    ('State', '@state'), ('NUTS 3', '@NUTS_ID: @NUTS_NAME'),
-    ('(Lon, Lat)', '(@longitude, @latitude)')
-]
+    ('Station', '@station_name'), ('ID', '@station_id'),
+    ('Height (m)', '@station_height'), ('State', '@state'),
+    ('(Lon, Lat)', '(@longitude, @latitude)'), ('Type', '@type')]
+
+# set output backend for the glyph API
+p = Plot(output_backend='webgl')
 
 # set figure title, tooltips and axis types
 # set axis types to mercator so that latitudes and longitudes are used
 # in the figure
+# set output backend for the plotting API
 p = figure(
-    x_axis_type='mercator', y_axis_type='mercator', tooltips=TOOLTIPS)
+    x_axis_type='mercator', y_axis_type='mercator',
+    tooltips=TOOLTIPS, output_backend='webgl')
 
 # set OpenStreetMap / CartoDB overlay
 p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
 
 # add data points
-p.circle(source=geo_source, x='mercator_x', y='mercator_y',
-    color={'field': 'state', 'transform': color_map})
+p.circle(
+    x='mercator_x', y='mercator_y', source=geo_source,
+    color={'field': 'type', 'transform': color_map})
 
 # open the map
 show(p)
 
-"""output components
+# Bokeh components
+
+"""
+
+# import libraries
+from bokeh.embed import components
 
 # output the map and save to a custom path
 output_file('charts/dwd_stations/dwd_stations_plot.html')

@@ -8,7 +8,7 @@ Weather data for Germany is extracted from :term:`DWD`'s Climate Data Center (:t
 
 A map of German meteorological stations is shown below.
 
-.. bokeh-plot:: ../scripts/dwd_stations_plot.py
+.. bokeh-plot:: ../scripts/stations_plot.py
    :source-position: none
 
 A map of German meteorological stations and their metadata, including the station's name, id and height (m), the state and NUTS 3 region it is located in, and its latitude and longitude, made using data from Deutscher Wetterdienst and Eurostat (© EuroGeographics for the administrative boundaries), and map tiles from OpenStreetMap / CartoDB.

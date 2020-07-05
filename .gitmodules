@@ -1,3 +1,6 @@
 [submodule "docs/html"]
 	path = docs/html
 	url = git@gitlab.com:nithiya/ml-elec-model.git
+[submodule "data"]
+	path = data
+	url = git@gitlab.com:nithiya/ml-elec-model-data.git

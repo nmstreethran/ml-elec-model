@@ -4,7 +4,7 @@ Combines German Erneuerbare-Energien-Gesetz (EEG, which roughly translates
 to Renewable Energy Sources Act) generator data from Netztransparenz.de
 (https://www.netztransparenz.de/EEG/Anlagenstammdaten) with postcode and
 geo location data from GeoNames (https://download.geonames.org/export/zip/)
-for the following countries: DE, DK, NO, SE, AT, CH, CZ, FI, LT, LU, NL, PL.
+for the following countries: DE, DK, SE, AT, CH, CZ, FR, LU, NL, PL.
 """
 
 # import libraries

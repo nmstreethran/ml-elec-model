@@ -57,5 +57,4 @@ References
 .. [tmrowco2020] tmrowco/electricitymap-contrib. (2020). Tomorrow. https://github.com/tmrowco/electricitymap-contrib (Original work published 2016).
 .. [UL] Software Archive — UL - Renewables. (n.d.). UL - Renewables. https://aws-dewi.ul.com/software/.
 .. [UNFCCC2015] Paris Agreement. (2015). United Nations Framework Convention on Climate Change. https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement.
-.. [Wikipedia2019] Counties of Norway. (2019). In Wikipedia. https://en.wikipedia.org/w/index.php?title=Counties_of_Norway&oldid=890663009.
-.. [Wikipedia2019a] Counties of Sweden. (2019). In Wikipedia. https://en.wikipedia.org/w/index.php?title=Counties_of_Sweden&oldid=882806371.
+.. [Wikipedia2019] Counties of Sweden. (2019). In Wikipedia. https://en.wikipedia.org/w/index.php?title=Counties_of_Sweden&oldid=882806371.

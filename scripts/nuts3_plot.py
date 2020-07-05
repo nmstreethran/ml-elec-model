@@ -1,9 +1,8 @@
-"""Plotting NUTS 3 boundaries for focus countries and interconnections
+"""Plotting NUTS 3 boundaries for DE
 
-This script executes nuts3.py to obtain nomenclature of territorial units
-for statistics (NUTS) data at level 3 from Eurostat
-(https://ec.europa.eu/eurostat/web/nuts/background) for the following
-countries: DE, DK, NO, and SE, AT, CH, CZ, FI, LT, LU, NL, PL. It then
+This script obtains nomenclature of territorial units for
+statistics (NUTS) data at level 3 from Eurostat
+(https://ec.europa.eu/eurostat/web/nuts/background) for DE. It then
 creates a plot of the these boundaries.
 """
 
@@ -14,8 +13,8 @@ import geopandas as gpd
 from os import path
 
 # import data
-if path.isfile('data/geo/nuts3.geojson'):
-    nuts3 = gpd.read_file('data/geo/nuts3.geojson')
+if path.isfile('data/geography/polygons/nuts3_DE.geojson'):
+    nuts3 = gpd.read_file('data/geography/polygons/nuts3_DE.geojson')
 else:
     from nuts3 import nuts3
 

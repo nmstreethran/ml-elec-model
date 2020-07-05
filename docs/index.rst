@@ -76,6 +76,11 @@ Local builds of the documentation in HTML format can be viewed in ``docs/_build/
 
 A list of references used is available on `Zotero <https://www.zotero.org/groups/2327899/ml-elec-model/library>`__.
 
+Data
+----
+
+Datasets used and their descriptions are available at https://gitlab.com/nithiya/ml-elec-model-data.
+
 License
 -------
 

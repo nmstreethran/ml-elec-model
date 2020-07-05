@@ -17,6 +17,7 @@ Machine learning-based electricity system model.
 
 - [Installing dependencies](#installing-dependencies)
 - [Documentation](#documentation)
+- [Data](#data)
 - [License](#license)
 - [Credits](#credits)
 
@@ -73,6 +74,10 @@ make html
 ```
 
 A list of references used is available on [Zotero](https://www.zotero.org/groups/2327899/ml-elec-model/library).
+
+## Data
+
+Datasets used and their descriptions are available at <https://gitlab.com/nithiya/ml-elec-model-data>.
 
 ## License
 

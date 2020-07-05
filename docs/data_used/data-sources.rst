@@ -1,6 +1,8 @@
 Data sources
 ============
 
+See the data repository for full details of the data used: https://gitlab.com/nithiya/ml-elec-model-data
+
 Electricity system data
 -----------------------
 
@@ -51,24 +53,14 @@ Eurostat NUTS data:
 
 - https://ec.europa.eu/eurostat/web/nuts/background
 
-Polygons approximately representing bidding zones in Norway and Sweden are from `Tomorrow's electricityMap <https://github.com/tmrowco/electricitymap-contrib>`__:
+Polygons approximately representing bidding zones in Sweden are from `Tomorrow's electricityMap <https://github.com/tmrowco/electricitymap-contrib>`__:
 
 - https://github.com/tmrowco/electricitymap-contrib/tree/master/web/third_party_maps
 
-These sources have been used by Tomorrow:
-
-- Norway:
-   - http://driftsdata.statnett.no/Web/map/snpscustom
-   - https://www.nve.no/map-services/
-   - https://www.nve.no/karttjenester/
-   - License:
-      - https://data.norge.no/nlod/en/2.0/
-- Sweden:
-   - https://www.natomraden.se/
+https://www.natomraden.se/ has been used by Tomorrow.
 
 Maps:
 
-- https://en.wikipedia.org/w/index.php?title=Counties_of_Norway&oldid=890663009
 - https://en.wikipedia.org/w/index.php?title=Counties_of_Sweden&oldid=882806371
 
 Postcodes:
@@ -106,19 +98,19 @@ Danish Meteorological Institute:
 
 - http://research.dmi.dk/data/
 
+France
+~~~~~~
+
+Météo-France; France's meteorological service:
+
+- https://donneespubliques.meteofrance.fr/
+
 The Netherlands
 ~~~~~~~~~~~~~~~
 
 Royal Netherlands Meteorological Institute:
 
 - https://data.knmi.nl/datasets
-
-Norway
-~~~~~~
-
-Norwegian Meteorological Institute:
-
-- https://www.met.no/en/free-meteorological-data
 
 Sweden
 ~~~~~~

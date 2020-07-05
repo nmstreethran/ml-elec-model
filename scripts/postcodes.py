@@ -1,8 +1,7 @@
-"""Download postcode data
+"""Download postcode data for DE
 
 Extract postcode and geo location data from GeoNames
-(https://download.geonames.org/export/zip/) for the following
-countries: DE, DK, NO, SE, AT, CH, CZ, FI, LT, LU, NL, PL.
+(https://download.geonames.org/export/zip/) for DE.
 """
 
 # import libraries
@@ -13,49 +12,37 @@ from os import makedirs, remove
 import errno
 import pandas as pd
 
-# base URL to extract data
-urlBase = 'https://download.geonames.org/export/zip/'
-
-# list of countries
-countries = ['DE', 'DK', 'NO', 'SE', 'AT', 'CH', 'CZ', 'FI', 'LT', 'LU',
-    'NL', 'PL']
+# URL to extract data
+url = 'https://download.geonames.org/export/zip/DE.zip'
 
 # create directory to store data
-dest = 'data/geo/'
+dest = 'data/geography/postcodes/'
 try:
-    makedirs(dest)
+    makedirs(dest + 'temp/')
 except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
     else:
-        print ('\nBE CAREFUL! Directory ' + dest + ' already exists.')
+        print ('\nBE CAREFUL! Directory ' + dest + 'temp/ already exists.')
 
 # columns
 cols = ['country_code', 'postal_code', 'place_name', 'admin_name1',
     'admin_code1', 'admin_name2', 'admin_code2', 'admin_name3',
     'admin_code3', 'latitude', 'longitude', 'accuracy']
 
-for country in countries:
-    # URL of zip file for each country
-    url = urlBase + country + '.zip'
+# download contents of zip file into directory
+try:
+    r = get(url)
+    z = ZipFile(BytesIO(r.content))
+    z.extractall(dest + 'temp/')
+# exception if no zip file exists
+except BadZipFile:
+    print ('No data exists for DE')
 
-    # download contents of zip file into directory
-    try:
-        r = get(url)
-        z = ZipFile(BytesIO(r.content))
-        z.extractall(dest)
-    # exception if no zip file exists
-    except BadZipFile:
-        print ('No data exists for ' + country)
+# load data and assign column names
+data = pd.read_csv(
+    dest + 'temp/DE.txt', sep='\t', header=None, names=cols,
+    encoding='utf-8')
 
-    # delete readme
-    remove(dest + 'readme.txt')
-
-    # load data and assign column names
-    data = pd.read_csv(
-        dest + country + '.txt', sep='\t', header=None, names=cols,
-        encoding='utf-8')
-
-    # save as CSV
-    data.to_csv(dest + 'postcodes' + country + '.csv', index=None,
-        encoding='utf-8')
+# save as CSV
+data.to_csv(dest + 'postcodesDE.csv', index=None, encoding='utf-8')
