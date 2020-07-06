@@ -66,8 +66,34 @@ for tso, f in tsoList:
         'network_connection', 'network_disconnection'],
         dtype={'NB_BNR': str, 'postal_code': str, 'municipality_key': str})
 
+    # roughly translate values into English
+    data.energy_carrier.replace(
+        ['Wasser', 'Biomasse', 'Wind an Land', 'Deponiegas',
+        'Wind auf See', 'Klärgas', 'Geothermie', 'Grubengas'],
+        ['Hydro', 'Biomass', 'Onshore wind', 'Landfill gas',
+        'Offshore wind', 'Sewage gas', 'Geothermal', 'Mine gas'],
+        inplace=True)
+
+    data.power_measurement.replace(
+        ['Nein', 'Ja'], ['No', 'Yes'], inplace=True)
+
+    data.controllability.replace(
+        ['nicht regelbar', '70 % Begrenzung', 'regelbar n. § 9 Abs. 2 EEG',
+        'regelbar n § 9 Abs. 2 EEG', 'regelbar n. § 9 Abs. 1 EEG',
+        'regelbar n § 9 Abs. 1 EEG', 'regelbar nach § 9 Abs. 1 EEG'],
+        ['not adjustable', '70 % limit',
+        'adjustable according to § 9 Abs. 2 EEG',
+        'adjustable according to § 9 Abs. 2 EEG',
+        'adjustable according to § 9 Abs. 1 EEG',
+        'adjustable according to § 9 Abs. 1 EEG',
+        'adjustable according to § 9 Abs. 1 EEG'], inplace=True)
+
+    data.state.replace(
+        ['Ausschließliche Wirtschaftszone', 'Ausland'],
+        ['exclusive economic zone', 'foreign country'], inplace=True)
+
     # replace space with underscore in file name
     fname = tso.replace(' ', '_')
 
     # save as new CSV
-    data.to_csv(dest + fname + '_2018.csv', index=None, encoding='utf-8')
+    data.to_csv(dest + fname + '.csv', index=None, encoding='utf-8')

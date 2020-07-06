@@ -79,7 +79,7 @@ A list of references used is available on `Zotero <https://www.zotero.org/groups
 Data
 ----
 
-Datasets used and their descriptions are available at https://gitlab.com/nithiya/ml-elec-model-data.
+Datasets used and their descriptions are available at https://gitlab.com/nithiya/ml-elec-model-data. To clone the repository with the data included, add ``--recurse-submodules`` after ``git clone``.
 
 License
 -------
@@ -100,4 +100,4 @@ The Creative Commons license in markdown format is imported from `idleberg/Creat
 
 The HTML documentation uses the `pydata-sphinx-theme <https://pydata-sphinx-theme.readthedocs.io/en/latest/>`__. Copyright (c) 2019, PyData Community. Licensed under `The 3-Clause BSD License (BSD-3-Clause) <https://opensource.org/licenses/BSD-3-Clause>`__.
 
-The HTML documentation uses `Material design icons <https://google.github.io/material-design-icons/>`__. Copyright (c) Google. Licensed under the `Apache 2.0 License (Apache-2.0) <https://www.apache.org/licenses/LICENSE-2.0.html>`__.
+The HTML documentation uses `Twemoji <https://twemoji.twitter.com/>`__. Copyright (c) Twitter. The graphics are licensed under a `CC BY 4.0 license <https://creativecommons.org/licenses/by/4.0/>`__.

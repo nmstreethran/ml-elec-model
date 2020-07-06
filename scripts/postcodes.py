@@ -44,5 +44,8 @@ data = pd.read_csv(
     dest + 'temp/DE.txt', sep='\t', header=None, names=cols,
     encoding='utf-8')
 
+# drop country_code column
+data = data.drop(['country_code'], axis=1)
+
 # save as CSV
 data.to_csv(dest + 'postcodesDE.csv', index=None, encoding='utf-8')

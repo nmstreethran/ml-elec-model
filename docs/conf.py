@@ -37,7 +37,7 @@ master_doc = 'index'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'bokeh.sphinxext.bokeh_plot', 
+    'bokeh.sphinxext.bokeh_plot',
     # 'jupyter_sphinx'
 ]
 
@@ -54,10 +54,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The theme to use for HTML and HTML Help pages. See the documentation for
 # a list of builtin themes.
-#
 html_theme = 'pydata_sphinx_theme'
 
-html_logo = '_static/home.svg'
+html_logo = '_static/house.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -67,7 +66,9 @@ html_static_path = ['_static']
 html_theme_options = {
     'external_links': [
         {'url': 'https://www.zotero.org/groups/2327899/ml-elec-model/library',
-        'name': 'Zotero'}
+        'name': 'Zotero'},
+        {'url': 'https://gitlab.com/nithiya/ml-elec-model-data',
+        'name': 'Datasets'}
     ],
     'github_url': 'https://github.com/nmstreethran/ml-elec-model',
     'use_edit_page_button': True

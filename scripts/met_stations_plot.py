@@ -17,25 +17,29 @@ from pyproj import Transformer
 import pandas as pd
 
 # GitLab raw file base URL
-url = 'https://gitlab.com/api/v4/projects/19753809/repository/files/'
+url = ('https://gitlab.com/api/v4/projects/19753809/repository/files/' +
+    'meteorology%2F')
 
-# import data
-wind = pd.read_csv(
-    url + 'meteorology%2Fwind_hourly%2Fstations.csv/raw?ref=master',
-    encoding='utf-8')
-solar = pd.read_csv(
-    url + 'meteorology%2Fsolar_hourly%2Fstations.csv/raw?ref=master',
-    encoding='utf-8')
+# list of datasets to download
+datasets = ['sun', 'wind', 'cloudiness','precipitation', 'air_temperature',
+    'cloud_type', 'dew_point', 'pressure', 'soil_temperature',
+    'visibility', 'solar']
 
-# assign station type to column
-wind['type'] = 'wind'
-solar['type'] = 'solar'
+# create empty dataframe to store data
+data = pd.DataFrame()
 
-# concatenate datasets
-data = pd.concat([wind, solar], ignore_index=True)
+for dataset in datasets:
+    # import data
+    df = pd.read_csv(
+        url + dataset + '%2Fstations.csv/raw?ref=master', encoding='utf-8')
+    # concatenate datasets
+    data = pd.concat([data, df], ignore_index=True)
 
 # drop date columns
 data = data.drop(columns=['start_date', 'end_date'])
+
+# drop duplicate rows
+data = data.drop_duplicates(['station_id'])
 
 # transform latitudes and longitudes from WGS84 to Web Mercator projection
 lons = tuple(data['longitude'])
@@ -46,10 +50,10 @@ xm, ym = transformer.transform(lons, lats)
 data['mercator_x'] = xm
 data['mercator_y'] = ym
 
-# generate unique colours for each station type
-types = list(set(data['type']))
-palette = viridis(len(types))
-color_map = CategoricalColorMapper(factors=types, palette=palette)
+# generate unique colours for each state
+states = list(set(data['state']))
+palette = viridis(len(states))
+color_map = CategoricalColorMapper(factors=states, palette=palette)
 
 # create dictionary of source data for the map
 geo_source = ColumnDataSource(data)
@@ -58,7 +62,7 @@ geo_source = ColumnDataSource(data)
 TOOLTIPS = [
     ('Station', '@station_name'), ('ID', '@station_id'),
     ('Height (m)', '@station_height'), ('State', '@state'),
-    ('(Lon, Lat)', '(@longitude, @latitude)'), ('Type', '@type')]
+    ('(Lon, Lat)', '(@longitude, @latitude)')]
 
 # set output backend for the glyph API
 p = Plot(output_backend='webgl')
@@ -77,7 +81,7 @@ p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
 # add data points
 p.circle(
     x='mercator_x', y='mercator_y', source=geo_source,
-    color={'field': 'type', 'transform': color_map})
+    color={'field': 'state', 'transform': color_map})
 
 # open the map
 show(p)

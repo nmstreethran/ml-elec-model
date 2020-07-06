@@ -2,7 +2,7 @@
 
 Thank you for stopping by and considering contributing to this repository!
 
-**New to Git and GitHub?** See [these learning resources](https://help.github.com/en/github/getting-started-with-github/git-and-github-learning-resources) and this [10 min. Git tutorial](https://try.github.io/levels/1/challenges/1/).
+**New to Git and GitHub?** See [these learning resources](https://docs.github.com/en/github/getting-started-with-github/git-and-github-learning-resources) and this [10 min. Git tutorial](https://try.github.io/levels/1/challenges/1/).
 
 ## Contact me
 
@@ -26,10 +26,12 @@ Please refer to each project's style guidelines and guidelines for submitting pa
 - Push your work back up to your fork
 - Submit a pull request so that we can review your changes
 
+Tips:
+
 - Try not to pollute your pull request with unintended changes and keep them simple and small. If possible, squash your commits.
 - Try to share how your code has been tested before submitting a pull request.
-- If your pull request resolves an issue, include **closes #ISSUE_NUMBER** in your commit message (or a [synonym](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue)).
-- Review
+- If your pull request resolves an issue, include **closes #ISSUE_NUMBER** in your commit message (or a [synonym](https://docs.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue)).
+- Review:
   - If your pull request is ready for review, another contributor will be assigned to review your pull request.
   - The reviewer will accept or comment on the pull request.
   - If needed address the comments left by the reviewer. Once you're ready to continue the review, ping the reviewer in a comment.
