@@ -139,7 +139,6 @@ dmypy.json
 
 *.code-workspace
 .vscode/
-data_/
 old/
 draft/
 temp/
