@@ -60,6 +60,9 @@ for dataset, ds in datasets:
     stations = stations.drop(stations[
         (stations.start_date > start)|(stations.end_date < end)].index)
 
+    # drop duplicate rows
+    stations = stations.drop_duplicates(['station_id'])
+
     # create directory to store files
     dest = 'data/meteorology/' + dataset + '/'
     try:

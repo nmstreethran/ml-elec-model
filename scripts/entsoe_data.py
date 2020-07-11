@@ -32,19 +32,20 @@ start = pd.Timestamp('20180101', tz='Europe/Brussels')
 end = pd.Timestamp('20180701', tz='Europe/Brussels')
 
 # bidding zone
-bzn = 'DE-LU'
+bzn = 'DE-AT-LU'
 
 # create a directory to store files if it does not already exist
 fpaths = ['data/power/installed/', 'data/power/generation/',
     'data/prices/', 'data/load/']
 for fpath in fpaths:
     try:
-        makedirs(fpath)
+        makedirs(fpath + 'temp/')
     except OSError as exception:
         if exception.errno != errno.EEXIST:
             raise
         else:
-            print ('\nBE CAREFUL! Directory %s already exists.' % fpath)
+            print (
+                '\nBE CAREFUL! Directory %stemp/ already exists.' % fpath)
 
 # extract data for bidding zone
 # day-ahead prices
@@ -52,8 +53,7 @@ try:
     df = client.query_day_ahead_prices(bzn, start=start, end=end)
     df = df.rename_axis('timestamp')
     df = df.rename('price')
-    df.to_csv(
-        fpaths[2] + 'day_ahead_prices_' + bzn + '.csv', encoding='utf-8')
+    df.to_csv(fpaths[2] + 'day_ahead_prices_' + bzn + '.csv')
 except NoMatchingDataError:
     print('No matching data found for ' + bzn + ': day_ahead_prices')
 except RequestException as e:
@@ -64,7 +64,7 @@ try:
     df = client.query_load(bzn, start=start, end=end)
     df = df.rename_axis('timestamp')
     df = df.rename('load')
-    df.to_csv(fpaths[3] + 'load__' + bzn + '.csv', encoding='utf-8')
+    df.to_csv(fpaths[3] + 'load_' + bzn + '.csv')
 except NoMatchingDataError:
     print('No matching data found for ' + bzn + ': load')
 except RequestException as e:
@@ -75,7 +75,7 @@ try:
     df = client.query_load_forecast(bzn, start=start, end=end)
     df = df.rename_axis('timestamp')
     df = df.rename('load_forecast')
-    df.to_csv(fpaths[3] + 'load_forecast_' + bzn + '.csv', encoding='utf-8')
+    df.to_csv(fpaths[3] + 'load_forecast_' + bzn + '.csv')
 except NoMatchingDataError:
     print('No matching data found for ' + bzn + ': load_forecast')
 except RequestException as e:
@@ -86,8 +86,10 @@ try:
     df = client.query_generation_forecast(bzn, start=start, end=end)
     df = df.rename_axis('timestamp')
     df = df.rename('generation_forecast')
-    df.to_csv(
-        fpaths[1] + 'generation_forecast_' + bzn + '.csv', encoding='utf-8')
+    # remove duplicate rows
+    df = df.sort_values(by=['timestamp', 'generation_forecast'])
+    df = df.drop_duplicates(['timestamp'], keep='last')
+    df.to_csv(fpaths[1] + 'generation_forecast_' + bzn + '.csv')
 except NoMatchingDataError:
     print('No matching data found for ' + bzn + ': generation_forecast')
 except RequestException as e:
@@ -98,9 +100,7 @@ try:
     df = client.query_wind_and_solar_forecast(
         bzn, start=start, end=end, psr_type=None)
     df = df.rename_axis('timestamp')
-    df.to_csv(
-        fpaths[1] + 'wind_and_solar_forecast_' + bzn + '.csv',
-        encoding='utf-8')
+    df.to_csv(fpaths[1] + 'wind_and_solar_forecast_' + bzn + '.csv')
 except NoMatchingDataError:
     print(
         'No matching data found for ' + bzn + ': wind_and_solar_forecast')
@@ -112,8 +112,7 @@ try:
     df = client.query_generation(
         bzn, start=start, end=end, psr_type=None)
     df = df.rename_axis('timestamp')
-    df.to_csv(
-        fpath[1] + 'generation__' + bzn + '.csv', encoding='utf-8')
+    df.to_csv(fpaths[1] + 'generation_' + bzn + '.csv')
 except NoMatchingDataError:
     print('No matching data found for ' + bzn + ': generation')
 except RequestException as e:
@@ -125,8 +124,7 @@ try:
         bzn, start=start, end=end, psr_type=None)
     df = df.rename_axis('timestamp')
     df.to_csv(
-        fpaths[0] + 'installed_generation_capacity__' + bzn + '.csv',
-        encoding='utf-8')
+        fpaths[0] + 'installed_generation_capacity_' + bzn + '.csv')
 except NoMatchingDataError:
     print(
         'No matching data for ' + bzn + ': installed_generation_capacity')
@@ -138,6 +136,11 @@ try:
     df = client.query_installed_generation_capacity_per_unit(
         bzn, start=start, end=end, psr_type=None)
     df = df.rename_axis('id')
+    # manually replace accented characters
+    df['Name'] = df['Name'].str.replace('Ã¼', 'ü')
+    df['Name'] = df['Name'].str.replace('Ã¤', 'ä')
+    df['Name'] = df['Name'].str.replace('Ã¶', 'ö')
+    df['Name'] = df['Name'].str.replace('Ã', 'ß')
     df.to_csv(
         fpaths[0] + 'installed_generation_capacity_per_unit_' + bzn
         + '.csv', encoding='utf-8')
@@ -149,57 +152,54 @@ except RequestException as e:
     print(
         str(e) + '\n' + bzn + ': installed_generation_capacity_per_unit')
 
-# unavailability of production units
-try:
-    df = client.query_unavailability_of_production_units(
-        bzn, start=start, end=end)
-    df.to_csv(
-        fpaths[0] + 'unavailability_of_production_units_' + bzn
-        + '.csv', encoding='utf-8')
-except NoMatchingDataError:
-    print(
-        'No matching data for ' + bzn +
-        ': unavailability_of_production_units')
-except RequestException as e:
-    print(str(e) + '\n' + bzn + ': unavailability_of_production_units')
+# # unavailability of production units
+# try:
+#     df = client.query_unavailability_of_production_units(
+#         bzn, start=start, end=end)
+#     df.to_csv(
+#         fpaths[0] + 'unavailability_of_production_units_' + bzn + '.csv')
+# except NoMatchingDataError:
+#     print(
+#         'No matching data for ' + bzn +
+#         ': unavailability_of_production_units')
+# except RequestException as e:
+#     print(str(e) + '\n' + bzn + ': unavailability_of_production_units')
 
-# unavailability of generation units
-try:
-    df = client.query_unavailability_of_generation_units(
-        bzn, start=start, end=end, docstatus=None)
-    df.to_csv(
-        fpaths[0] + 'unavailability_of_generation_units_' + bzn +
-        '.csv', encoding='utf-8')
-except NoMatchingDataError:
-    print(
-        'No matching data found for ' + bzn +
-        ': unavailability_of_generation_units')
-except RequestException as e:
-    print(str(e) + '\n' + bzn + ': unavailability_of_generation_units')
+# # unavailability of generation units
+# try:
+#     df = client.query_unavailability_of_generation_units(
+#         bzn, start=start, end=end, docstatus=None)
+#     df.to_csv(
+#         fpaths[0] + 'unavailability_of_generation_units_' + bzn + '.csv')
+# except NoMatchingDataError:
+#     print(
+#         'No matching data found for ' + bzn +
+#         ': unavailability_of_generation_units')
+# except RequestException as e:
+#     print(str(e) + '\n' + bzn + ': unavailability_of_generation_units')
 
-# withdrawn unavailability of generation units
-try:
-    df = client.query_withdrawn_unavailability_of_generation_units(
-        bzn, start=start, end=end)
-    df.to_csv(
-        fpaths[0] + 'withdrawn_unavailability_of_generation_units_' +
-        bzn + '.csv', encoding='utf-8')
-except NoMatchingDataError:
-    print(
-        'No matching data for ' + bzn +
-        ': withdrawn_unavailability_of_generation_units')
-except RequestException as e:
-    print(
-        str(e) + '\n' + bzn +
-        ': withdrawn_unavailability_of_generation_units')
+# # withdrawn unavailability of generation units
+# try:
+#     df = client.query_withdrawn_unavailability_of_generation_units(
+#         bzn, start=start, end=end)
+#     df.to_csv(
+#         fpaths[0] + 'withdrawn_unavailability_of_generation_units_' +
+#         bzn + '.csv')
+# except NoMatchingDataError:
+#     print(
+#         'No matching data for ' + bzn +
+#         ': withdrawn_unavailability_of_generation_units')
+# except RequestException as e:
+#     print(
+#         str(e) + '\n' + bzn +
+#         ': withdrawn_unavailability_of_generation_units')
 
-# generation per plant
-try:
-    df = client.query_generation_per_plant(
-        bzn, start=start, end=end, lookup_bzones=True)
-    df.to_csv(
-        fpaths[0] + 'generation_per_plant_' + bzn + '.csv', encoding='utf-8')
-except NoMatchingDataError:
-    print('No matching data for ' + bzn + ': generation_per_plant')
-except RequestException as e:
-    print(str(e) + '\n' + bzn + ': generation_per_plant')
+# # generation per plant
+# try:
+#     df = client.query_generation_per_plant(
+#         bzn, start=start, end=end, lookup_bzones=True)
+#     df.to_csv(fpaths[0] + 'generation_per_plant_' + bzn + '.csv')
+# except NoMatchingDataError:
+#     print('No matching data for ' + bzn + ': generation_per_plant')
+# except RequestException as e:
+#     print(str(e) + '\n' + bzn + ': generation_per_plant')

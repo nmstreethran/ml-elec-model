@@ -21,9 +21,9 @@ url = ('https://gitlab.com/api/v4/projects/19753809/repository/files/' +
     'meteorology%2F')
 
 # list of datasets to download
-datasets = ['sun', 'wind', 'cloudiness','precipitation', 'air_temperature',
-    'cloud_type', 'dew_point', 'pressure', 'soil_temperature',
-    'visibility', 'solar']
+datasets = ['sun', 'wind', 'cloudiness','precipitation',
+    'air_temperature', 'cloud_type', 'dew_point', 'pressure',
+    'soil_temperature', 'visibility', 'solar']
 
 # create empty dataframe to store data
 data = pd.DataFrame()
@@ -32,20 +32,39 @@ for dataset in datasets:
     # import data
     df = pd.read_csv(
         url + dataset + '%2Fstations.csv/raw?ref=master', encoding='utf-8')
+    
+    # create new dataframe with station ID and dataset type
+    df_type = pd.DataFrame({'station_id': df['station_id']})
+    df_type[dataset] = dataset
+
     # concatenate datasets
     data = pd.concat([data, df], ignore_index=True)
 
-# drop date columns
-data = data.drop(columns=['start_date', 'end_date'])
+    # drop duplicate rows
+    data = data.drop_duplicates(['station_id'])
 
-# drop duplicate rows
-data = data.drop_duplicates(['station_id'])
+    # merge with dataframe with dataset type
+    data = pd.merge(data, df_type, on=['station_id'], how='outer')
+
+# fill null values in the dataset columns
+data[datasets] = data[datasets].fillna('none')
+
+# merge all dataset values into new column
+data['type'] = data[datasets].agg(', '.join, axis=1)
+
+# drop date and dataset columns
+data = data.drop(columns=['start_date', 'end_date'])
+data = data.drop(columns=datasets)
+
+# remove 'none' strings and underscores
+data['type'] = data['type'].str.replace('none, ', '')
+data['type'] = data['type'].str.replace(', none', '')
+data['type'] = data['type'].str.replace('_', ' ')
 
 # transform latitudes and longitudes from WGS84 to Web Mercator projection
 lons = tuple(data['longitude'])
 lats = tuple(data['latitude'])
-transformer = Transformer.from_crs(
-    'epsg:4326', 'epsg:3857', always_xy=True)
+transformer = Transformer.from_crs('epsg:4326', 'epsg:3857', always_xy=True)
 xm, ym = transformer.transform(lons, lats)
 data['mercator_x'] = xm
 data['mercator_y'] = ym
@@ -62,7 +81,7 @@ geo_source = ColumnDataSource(data)
 TOOLTIPS = [
     ('Station', '@station_name'), ('ID', '@station_id'),
     ('Height (m)', '@station_height'), ('State', '@state'),
-    ('(Lon, Lat)', '(@longitude, @latitude)')]
+    ('Type', '@type'), ('(Lon, Lat)', '(@longitude, @latitude)')]
 
 # set output backend for the glyph API
 p = Plot(output_backend='webgl')

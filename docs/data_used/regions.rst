@@ -126,9 +126,9 @@ Europe has multiple :term:`TSO`\s [ENTSO-Ea]_ and cross-border interconnections.
    +---------+-----------------------+------------------+-------------------+
    | CZ      | ČEPS a.s.             |                  | CZ                |
    +---------+-----------------------+------------------+-------------------+
-   | DE      | TransnetBW GmBH,      | AT, CH, CZ, DK,  | DE-LU             |
-   |         | TenneT TSO GmBH,      | FR, LU, NL, PL,  |                   |
-   |         | Amprion GmBH, 50Hertz | SE               |                   |
+   | DE      | TransnetBW GmBH,      | AT, CH, CZ, DK,  | DE-LU (DE-AT-LU   |
+   |         | TenneT TSO GmBH,      | FR, LU, NL, PL,  | prior to          |
+   |         | Amprion GmBH, 50Hertz | SE               | 01/10/2018)       |
    |         | Transmission GmBH     |                  |                   |
    +---------+-----------------------+------------------+-------------------+
    | DK      | Energinet.dk          | DE, NO, SE       | DK-1, DK-2        |
@@ -170,7 +170,9 @@ The table below lists bidding zones in Germany and its interconnections by count
    +---------+----------------+-------------------+
    | CZ      |                | CZ                |
    +---------+----------------+-------------------+
-   | DE      | EEX, EPEX      | DE-LU             |
+   | DE      | EEX, EPEX      | DE-LU (DE-AT-LU   |
+   |         |                | prior to          |
+   |         |                | 01/10/2018)       |
    +---------+----------------+-------------------+
    | DK      | EEX, Nord Pool | DK-1, DK-2        |
    +---------+----------------+-------------------+
@@ -193,6 +195,8 @@ Prior to 01/10/2018, Germany was part of the DE-AT-LU bidding zone, together wit
    *New bidding zones will be active from the 1st of October, however, first data submissions, like month ahead forecasts, are expected from the 1st of September.*
 
    *Validity end date for BZN|DE-AT-LU is the end of September 2018. [...]*
+
+Since this project will focus on the first half of 2018, the DE-AT-LU bidding zone will be used.
 
 Mapping bidding zones to :term:`NUTS` 3 territories is straightforward for DE, AT, CH, CZ, FR, LU, NL, and PL (bidding zone type 1 for all except DE, which is type 2) -- all :term:`NUTS` 3 territories in these countries are part of the same bidding zone.
 

@@ -105,16 +105,16 @@ nuts = nuts.drop(
 # assign bidding zones to a new column
 nuts['idx'] = nuts['id']
 
-# manually assign zones for Western DK, Eastern DK, and DE-LU
+# manually assign zones for Western DK, Eastern DK, and DE-AT-LU
 nutsDK1 = ['DK03', 'DK04', 'DK05']
 nutsDK2 = ['DK01', 'DK02']
-nutsDELU = ['DE', 'LU']
+nutsDEATLU = ['DE', 'LU', 'AT']
 for nutsID in nutsDK1:
     nuts.loc[nuts['id'] == nutsID, 'idx'] = 'DK-1'
 for nutsID in nutsDK2:
     nuts.loc[nuts['id'] == nutsID, 'idx'] = 'DK-2'
-for nutsID in nutsDELU:
-    nuts.loc[nuts['id'] == nutsID, 'idx'] = 'DE-LU'
+for nutsID in nutsDEATLU:
+    nuts.loc[nuts['id'] == nutsID, 'idx'] = 'DE-AT-LU'
 
 # drop ID column
 nuts = nuts.drop(['id'], axis=1)

@@ -8,7 +8,7 @@ The :term:`ENTSO-E` :term:`API` Python client (entsoe-py) [EnergieID2019]_ is us
 The bidding zones in Germany and its interconnections, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the Pandas client.
 
 .. IMPORTANT::
-   Note that ``DE-LU`` only works for timestamps starting 01/10/2018 [ENTSO-Ee]_. Use ``DE-AT-LU`` for timestamps prior to this date.
+   Note that ``DE-LU`` only works for timestamps starting 01/10/2018 [ENTSO-Ee]_. Use ``DE-AT-LU`` for timestamps prior to this date. Since this project is focussing on the first half of 2018, ``DE-AT-LU`` is used.
 
 .. table:: Bidding zones in Germany and its interconnections, and their corresponding EICs.
 
@@ -20,23 +20,51 @@ The bidding zones in Germany and its interconnections, mapped to their correspon
    +---------------+-------------+----------------------+
    | Switzerland   | CH          | ``10YCH-SWISSGRIDZ`` |
    +---------------+-------------+----------------------+
-   | Czech         | CZ          | ``10YCZ-CEPS--N``    |
+   | Czech         | CZ          | ``10YCZ-CEPS-----N`` |
    | Republic      |             |                      |
+   +---------------+-------------+----------------------+
+   | Germany       |             | ``10Y1001A1001A83F`` |
+   +---------------+-------------+----------------------+
+   | Germany       |             | ``10YDE-VE-------2`` |
+   | (50Hertz      |             |                      |
+   | Transmission  |             |                      |
+   +---------------+-------------+----------------------+
+   | Germany       |             | ``10YDE-RWENET---I`` |
+   | (Amprion)     |             |                      |
+   +---------------+-------------+----------------------+
+   | Germany       |             | ``10YDE-EON------1`` |
+   | (TenneT TSO)  |             |                      |
+   +---------------+-------------+----------------------+
+   | Germany       |             | ``10YDE-ENBW-----N`` |
+   | (TransnetBW)  |             |                      |
+   +---------------+-------------+----------------------+
+   | Germany,      | DE-AT-LU    | ``10Y1001A1001A63L`` |
+   | Austria, and  |             |                      |
+   | Luxembourg    |             |                      |
    +---------------+-------------+----------------------+
    | Germany and   | DE-LU       | ``10Y1001A1001A82H`` |
    | Luxembourg    |             |                      |
    +---------------+-------------+----------------------+
-   | Western       | DK-1        | ``10YDK-1---W``      |
+   | Luxembourg    |             | ``10YLU-CEGEDEL-NQ`` |
+   +---------------+-------------+----------------------+
+   | Denmark       |             | ``10Y1001A1001A65H`` |
+   +---------------+-------------+----------------------+
+   | Denmark       |             | ``10Y1001A1001A796`` |
+   | (Energinet)   |             |                      |
+   +---------------+-------------+----------------------+
+   | Western       | DK-1        | ``10YDK-1--------W`` |
    | Denmark       |             |                      |
    +---------------+-------------+----------------------+
-   | Eastern       | DK-2        | ``10YDK-2---M``      |
+   | Eastern       | DK-2        | ``10YDK-2--------M`` |
    | Denmark       |             |                      |
    +---------------+-------------+----------------------+
-   | France        | FR          | ``10YFR-RTE--C``     |
+   | France        | FR          | ``10YFR-RTE------C`` |
    +---------------+-------------+----------------------+
-   | Netherlands   | NL          | ``10YNL----L``       |
+   | Netherlands   | NL          | ``10YNL----------L`` |
    +---------------+-------------+----------------------+
-   | Poland        | PL          | ``10YPL-AREA--S``    |
+   | Poland        | PL          | ``10YPL-AREA-----S`` |
+   +---------------+-------------+----------------------+
+   | Sweden        |             | ``10YSE-1--------K`` |
    +---------------+-------------+----------------------+
    | Luleå, Sweden | SE-1        | ``10Y1001A1001A44P`` |
    +---------------+-------------+----------------------+
@@ -46,7 +74,7 @@ The bidding zones in Germany and its interconnections, mapped to their correspon
    | Stockholm,    | SE-3        | ``10Y1001A1001A46L`` |
    | Sweden        |             |                      |
    +---------------+-------------+----------------------+
-   | Malmö, Sweden | SE-4        | ``10Y1001A1001A47``  |
+   | Malmö, Sweden | SE-4        | ``10Y1001A1001A47J`` |
    +---------------+-------------+----------------------+
 
 Generation
