@@ -17,25 +17,27 @@ from pyproj import Transformer
 import pandas as pd
 
 # GitLab raw file base URL
-url = ('https://gitlab.com/api/v4/projects/19753809/repository/files/' +
+url = (
+    'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
     'meteorology%2F')
 
 # list of datasets to download
-datasets = ['sun', 'wind', 'cloudiness','precipitation',
+datasets = [
+    'sun', 'wind', 'cloudiness','precipitation',
     'air_temperature', 'cloud_type', 'dew_point', 'pressure',
     'soil_temperature', 'visibility', 'solar']
 
 # create empty dataframe to store data
 data = pd.DataFrame()
 
-for dataset in datasets:
+for d in datasets:
     # import data
     df = pd.read_csv(
-        url + dataset + '%2Fstations.csv/raw?ref=master', encoding='utf-8')
+        url + d + '%2Fstations.csv/raw?ref=master', encoding='utf-8')
     
     # create new dataframe with station ID and dataset type
     df_type = pd.DataFrame({'station_id': df['station_id']})
-    df_type[dataset] = dataset
+    df_type[d] = d
 
     # concatenate datasets
     data = pd.concat([data, df], ignore_index=True)

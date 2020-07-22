@@ -67,11 +67,7 @@ To view the full list of dependencies, see [`requirements.txt`](requirements.txt
 
 The documentation is built using [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted using [GitLab Pages](https://gitlab.com/nithiya/ml-elec-model/). It is available at <https://nithiya.gitlab.io/ml-elec-model/>. The files can be found in the `docs` folder.
 
-To build the documentation locally, clone this repository and install all requirements. Local builds of the documentation in HTML format can be viewed in `docs/_build/html/index.html` after running the following in the `docs` directory:
-
-```sh
-make html
-```
+To build the documentation locally, clone this repository and install all requirements. Local builds of the documentation in HTML format can be viewed in `docs/_build/html/index.html` after running `make html` in the `docs` directory.
 
 A list of references used is available on [Zotero](https://www.zotero.org/groups/2327899/ml-elec-model/library).
 
@@ -88,7 +84,7 @@ Unless otherwise stated:
 
 ## Credits
 
-This repository is a continuation and improvement of the work done by Nithiya Streethran in [ENSYSTRA/short-term-forecasting](https://github.com/ENSYSTRA/short-term-forecasting). ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No: 765515.
+This repository is a continuation and improvement of the work done by Nithiya Streethran in ENSYSTRA. ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No: 765515.
 
 Contributing guidelines are adapted from the [Open Science MOOC](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source). The contents of the MOOC are licensed under a [Creative Commons Zero v1.0 Universal (CC0 1.0) license](https://creativecommons.org/publicdomain/zero/1.0/).
 

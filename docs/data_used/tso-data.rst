@@ -27,7 +27,7 @@ The bidding zones in Germany and its interconnections, mapped to their correspon
    +---------------+-------------+----------------------+
    | Germany       |             | ``10YDE-VE-------2`` |
    | (50Hertz      |             |                      |
-   | Transmission  |             |                      |
+   | Transmission) |             |                      |
    +---------------+-------------+----------------------+
    | Germany       |             | ``10YDE-RWENET---I`` |
    | (Amprion)     |             |                      |

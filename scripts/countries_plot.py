@@ -106,7 +106,8 @@ mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
 
 # configure plot
 fig, ax = plt.subplots(1, figsize=(13, 13))
-cntr.plot(column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
+cntr.plot(
+    column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
     legend_kwds={'loc': 'lower right'})
 plt.ylabel('Latitude (Web Mercator)')
 plt.xlabel('Longitude (Web Mercator)')

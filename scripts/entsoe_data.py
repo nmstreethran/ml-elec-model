@@ -35,17 +35,18 @@ end = pd.Timestamp('20180701', tz='Europe/Brussels')
 bzn = 'DE-AT-LU'
 
 # create a directory to store files if it does not already exist
-fpaths = ['data/power/installed/', 'data/power/generation/',
+fpaths = [
+    'data/power/installed/', 'data/power/generation/',
     'data/prices/', 'data/load/']
-for fpath in fpaths:
+
+for f in fpaths:
     try:
-        makedirs(fpath + 'temp/')
+        makedirs(f + 'temp/')
     except OSError as exception:
         if exception.errno != errno.EEXIST:
             raise
         else:
-            print (
-                '\nBE CAREFUL! Directory %stemp/ already exists.' % fpath)
+            print ('\nBE CAREFUL! Directory %stemp/ already exists.' % f)
 
 # extract data for bidding zone
 # day-ahead prices

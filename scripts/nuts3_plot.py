@@ -28,7 +28,8 @@ mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
 
 # configure plot
 fig, ax = plt.subplots(1, figsize=(13, 13))
-nuts3.plot(column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
+nuts3.plot(
+    column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
     legend_kwds={'loc': 'lower right'})
 plt.ylabel('Latitude (Web Mercator)')
 plt.xlabel('Longitude (Web Mercator)')
@@ -58,7 +59,8 @@ TOOLTIPS = [('NUTS', '@NUTS_ID: @NUTS_NAME')]
 # set figure title, tooltips and axis types
 # set axis types to mercator so that latitudes and longitudes are used
 # in the figure
-p = figure(title='NUTS 3 boundaries. Data: Eurostat.',
+p = figure(
+    title='NUTS 3 boundaries. Data: Eurostat.',
     tooltips=TOOLTIPS, x_axis_type='mercator', y_axis_type='mercator')
 
 # set OpenStreetMap / CartoDB overlay

@@ -29,18 +29,19 @@ start = pd.to_datetime(start, format='%Y%m%d')
 end = pd.to_datetime(end, format='%Y%m%d')
 
 # list of datasets to download
-datasets = [('sun', 'SD'), ('wind', 'FF'), ('cloudiness', 'N'),
+datasets = [
+    ('sun', 'SD'), ('wind', 'FF'), ('cloudiness', 'N'),
     ('precipitation', 'RR'), ('air_temperature', 'TU'),
     ('cloud_type', 'CS'), ('dew_point', 'TD'), ('pressure', 'P0'),
     ('soil_temperature', 'EB'), ('visibility', 'VV'), ('solar', 'ST')]
 
-for dataset, ds in datasets:
+for d, D in datasets:
     # hourly data repository URL
     repourl = (
         'https://opendata.dwd.de/climate_environment/CDC/' +
-        'observations_germany/climate/hourly/' + dataset + '/')
+        'observations_germany/climate/hourly/' + d + '/')
 
-    dest = 'data/meteorology/' + dataset + '/'
+    dest = 'data/meteorology/' + d + '/'
     try:
         makedirs(dest + 'temp/')
     except OSError as exception:
@@ -53,7 +54,7 @@ for dataset, ds in datasets:
     # read CSV file with list of stations
     stations = pd.read_csv(
         'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
-        'meteorology%2F' + dataset + '%2Fstations.csv/raw?ref=master',
+        'meteorology%2F' + d + '%2Fstations.csv/raw?ref=master',
         encoding='utf-8', parse_dates=['start_date', 'end_date'])
 
     for idx in range(len(stations)):
@@ -69,8 +70,8 @@ for dataset, ds in datasets:
 
         # get zip file download URLs
         # for solar data
-        if dataset == 'solar':
-            url = repourl + 'stundenwerte_' + ds + '_' + stn_id + '_row.zip'
+        if d == 'solar':
+            url = repourl + 'stundenwerte_' + D + '_' + stn_id + '_row.zip'
 
         # for historical data (not solar)
         elif end < yr:
@@ -79,13 +80,13 @@ for dataset, ds in datasets:
             if ed >= yr.strftime('%Y%m%d'):
                 ed = (yr - timedelta(days=1)).strftime('%Y%m%d')
             url = (
-                repourl + 'historical/stundenwerte_' + ds + '_' + stn_id +
+                repourl + 'historical/stundenwerte_' + D + '_' + stn_id +
                 '_' + sd + '_' + ed + '_hist.zip')
 
         # for recent data (current year, not solar)
         else:
             url = (
-                repourl + 'recent/stundenwerte_' + ds + '_' + stn_id +
+                repourl + 'recent/stundenwerte_' + D + '_' + stn_id +
                 '_akt.zip')
 
         # download contents of zip file into temporary directory

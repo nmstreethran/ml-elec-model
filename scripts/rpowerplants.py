@@ -38,11 +38,12 @@ except OSError as exception:
         print ('\nBE CAREFUL! Directory ' + dest + 'temp/ already exists.')
 
 # roughly tanslate column titles into English
-cols = ['EEG_plant_key', 'NB_BNR', 'network_operator', 'address',
-        'postal_code', 'city_district', 'municipality_key', 'state',
-        'installed_capacity', 'energy_carrier', 'feed_in_voltage_level',
-        'power_measurement', 'controllability', 'commissioning',
-        'decommissioning', 'network_connection', 'network_disconnection']
+cols = [
+    'EEG_plant_key', 'NB_BNR', 'network_operator', 'address',
+    'postal_code', 'city_district', 'municipality_key', 'state',
+    'installed_capacity', 'energy_carrier', 'feed_in_voltage_level',
+    'power_measurement', 'controllability', 'commissioning',
+    'decommissioning', 'network_connection', 'network_disconnection']
 
 for tso, f in tsoList:
     # URL of zip file for each TSO

@@ -24,31 +24,35 @@ start = pd.to_datetime(start, format='%Y%m%d')
 end = pd.to_datetime(end, format='%Y%m%d')
 
 # roughly tanslate column titles into English
-cols = ['station_id', 'start_date', 'end_date', 'station_height',
+cols = [
+    'station_id', 'start_date', 'end_date', 'station_height',
     'latitude', 'longitude', 'station_name', 'state']
 
 # list of datasets to download
-datasets = [('sun', 'SD'), ('wind', 'FF'), ('cloudiness', 'N'),
+datasets = [
+    ('sun', 'SD'), ('wind', 'FF'), ('cloudiness', 'N'),
     ('precipitation', 'RR'), ('air_temperature', 'TU'),
     ('cloud_type', 'CS'), ('dew_point', 'TD'), ('pressure', 'P0'),
     ('soil_temperature', 'EB'), ('visibility', 'VV'), ('solar', 'ST')]
 
-for dataset, ds in datasets:
+for d, D in datasets:
     # hourly data repository URL
     url = (
         'https://opendata.dwd.de/climate_environment/CDC/' +
-        'observations_germany/climate/hourly/' + dataset + '/')
+        'observations_germany/climate/hourly/' + d + '/')
 
     # file URL, depending on directory structure
-    if dataset == 'solar':
+    if d == 'solar':
         furl = url + 'ST_Stundenwerte_Beschreibung_Stationen.txt'
     elif end < yr:
         # historical data (not current year)
-        furl = (url + 'historical/' + ds +
+        furl = (
+            url + 'historical/' + D +
             '_Stundenwerte_Beschreibung_Stationen.txt')
     else:
         # recent data (current year)
-        furl = (url + 'recent/' + ds +
+        furl = (
+            url + 'recent/' + D +
             '_Stundenwerte_Beschreibung_Stationen.txt')
 
     # extract the data, skipping first two rows and assigning column names
@@ -64,7 +68,7 @@ for dataset, ds in datasets:
     stations = stations.drop_duplicates(['station_id'])
 
     # create directory to store files
-    dest = 'data/meteorology/' + dataset + '/'
+    dest = 'data/meteorology/' + d + '/'
     try:
         makedirs(dest)
     except OSError as exception:
