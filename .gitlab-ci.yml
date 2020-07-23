@@ -1,0 +1,37 @@
+image: python:3.7-alpine
+
+test:
+  stage: test
+  script:
+  - pip install -U bokeh geopandas pydata-sphinx-theme
+  - cd docs
+  - sphinx-build -b html . public
+  only:
+  - branches
+  except:
+  - master
+
+pages:
+  stage: deploy
+  script:
+  - pip install -U bokeh geopandas pydata-sphinx-theme
+  - cd docs
+  - sphinx-build -b html . public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+
+# testing markdown links
+# https://github.com/dkhamsing/awesome_bot
+markdown_links:
+  stage: .post
+  image: ruby:latest
+  before_script:
+    - gem install awesome_bot
+  script:
+    - "awesome_bot --allow-dupe --skip-save-results --white-list
+      doi.org,ml-elec-model.git,img.shields.io,\
+      dnvgl.com/services/forecaster-94823,gridscientific.com/about-us
+      `find . -name '*.md'` `find . -name '*.rst'`"

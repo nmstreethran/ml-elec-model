@@ -1,7 +1,6 @@
 # ml-elec-model <!-- omit in toc -->
 
 <!-- start badges -->
-[![Action: links](https://github.com/nmstreethran/ml-elec-model/workflows/links/badge.svg)](https://github.com/nmstreethran/ml-elec-model/actions?query=workflow%3Alinks)
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/nithiya/ml-elec-model?labelColor=darkslategray)](https://gitlab.com/nithiya/ml-elec-model/pipelines)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-yellow?labelColor=darkslategray)](https://opensource.org/licenses/MIT)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/content%20license-CC%20BY%204.0-blue?labelColor=darkslategray)](https://creativecommons.org/licenses/by/4.0/)
@@ -29,10 +28,10 @@ First, clone this repository via either HTTPS or SSH:
 
 ```sh
 # HTTPS
-git clone https://github.com/nmstreethran/ml-elec-model.git
+git clone https://gitlab.com/nithiya/ml-elec-model.git
 
 # SSH
-git clone git@github.com:nmstreethran/ml-elec-model.git
+git clone git@gitlab.com:nithiya/ml-elec-model.git
 ```
 
 Then, create and activate a virtual environment (recommended):
@@ -65,7 +64,7 @@ To view the full list of dependencies, see [`requirements.txt`](requirements.txt
 
 ## Documentation
 
-The documentation is built using [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted using [GitLab Pages](https://gitlab.com/nithiya/ml-elec-model/). It is available at <https://nithiya.gitlab.io/ml-elec-model/>. The files can be found in the `docs` folder.
+The documentation is built using [Sphinx](https://www.sphinx-doc.org/en/master/) and hosted using GitLab Pages. It is available at <https://nithiya.gitlab.io/ml-elec-model/>. The files can be found in the `docs` folder.
 
 To build the documentation locally, clone this repository and install all requirements. Local builds of the documentation in HTML format can be viewed in `docs/_build/html/index.html` after running `make html` in the `docs` directory.
 

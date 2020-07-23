@@ -28,10 +28,10 @@ First, clone this repository via either HTTPS or SSH:
 .. code:: sh
 
    # HTTPS
-   git clone https://github.com/nmstreethran/ml-elec-model.git
+   git clone https://gitlab.com/nithiya/ml-elec-model.git
 
    # SSH
-   git clone git@github.com:nmstreethran/ml-elec-model.git
+   git clone git@gitlab.com:nithiya/ml-elec-model.git
 
 Then, create and activate a virtual environment (recommended):
 
@@ -64,7 +64,7 @@ To view the full list of dependencies, see ``requirements.txt``.
 Documentation
 -------------
 
-The documentation is built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and hosted using `GitLab Pages <https://gitlab.com/nithiya/ml-elec-model/>`__. It is available at https://nithiya.gitlab.io/ml-elec-model/. The files can be found in the ``docs`` folder.
+The documentation is built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and hosted using GitLab Pages. It is available at https://nithiya.gitlab.io/ml-elec-model/. The files can be found in the ``docs`` folder.
 
 To build the documentation locally, clone this repository and install all requirements.
 
