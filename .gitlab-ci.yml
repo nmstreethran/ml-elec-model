@@ -1,11 +1,10 @@
-image: python:3.7-alpine
+image: python:latest
 
 test:
   stage: test
   script:
-  - pip install -U bokeh geopandas pydata-sphinx-theme
-  - cd docs
-  - sphinx-build -b html . public
+  - pip install bokeh geopandas pydata-sphinx-theme
+  - sphinx-build -b html docs public
   only:
   - branches
   except:
@@ -14,9 +13,8 @@ test:
 pages:
   stage: deploy
   script:
-  - pip install -U bokeh geopandas pydata-sphinx-theme
-  - cd docs
-  - sphinx-build -b html . public
+  - pip install bokeh geopandas pydata-sphinx-theme
+  - sphinx-build -b html docs public
   artifacts:
     paths:
     - public
