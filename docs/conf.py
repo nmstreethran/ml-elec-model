@@ -65,21 +65,23 @@ html_static_path = ['_static']
 
 html_theme_options = {
     'external_links': [
+        {'url': 'https://gitlab.com/nithiya/ml-elec-model',
+        'name': 'GitLab'},
         {'url': 'https://www.zotero.org/groups/2327899/ml-elec-model/library',
         'name': 'Zotero'},
         {'url': 'https://gitlab.com/nithiya/ml-elec-model-data',
         'name': 'Datasets'}
     ],
-    'github_url': 'https://github.com/nmstreethran/ml-elec-model',
-    'use_edit_page_button': True
+    # 'github_url': 'https://github.com/nmstreethran/ml-elec-model',
+    # 'use_edit_page_button': True
 }
 
-html_context = {
-    'github_user': 'nmstreethran',
-    'github_repo': 'ml-elec-model',
-    'github_version': 'master',
-    'doc_path': 'docs'
-}
+# html_context = {
+#     'github_user': 'nmstreethran',
+#     'github_repo': 'ml-elec-model',
+#     'github_version': 'master',
+#     'doc_path': 'docs'
+# }
 
 # directories of .py files for bokeh plots
 bokeh_plot_pyfile_include_dirs = ['../scripts']

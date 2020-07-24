@@ -1,25 +1,26 @@
+# building sphinx doc
 image: python:latest
 
 test:
   stage: test
   script:
-  - pip install bokeh geopandas pydata-sphinx-theme
-  - sphinx-build -b html docs public
+    - pip install bokeh geopandas pydata-sphinx-theme
+    - sphinx-build -b html docs public
   only:
-  - branches
+    - branches
   except:
-  - master
+    - master
 
 pages:
   stage: deploy
   script:
-  - pip install bokeh geopandas pydata-sphinx-theme
-  - sphinx-build -b html docs public
+    - pip install bokeh geopandas pydata-sphinx-theme
+    - sphinx-build -b html docs public
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master
 
 # testing markdown links
 # https://github.com/dkhamsing/awesome_bot

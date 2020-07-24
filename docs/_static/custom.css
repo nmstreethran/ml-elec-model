@@ -12,3 +12,17 @@ caption {
 .caption-text {
   color: #6c757d;
 }
+
+/* external link indicator */
+a.reference.external:not([href~="nithiya.gitlab.io/ml-elec-model"]):after {
+  content: " \f35d";
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  text-rendering: auto;
+  font-weight: 900;
+  font-variant: normal;
+  font-size: x-small;
+  font-style: normal;
+  white-space: pre;
+  -webkit-font-smoothing: antialiased;
+}
