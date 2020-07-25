@@ -1,18 +1,27 @@
-# building sphinx doc
-image: python:latest
+stages:
+  - test
+  - deploy
+  - test_links
 
+# testing sphinx doc build
 test:
   stage: test
+  image: python:latest
   script:
     - pip install bokeh geopandas pydata-sphinx-theme
     - sphinx-build -b html docs public
   only:
-    - branches
+    refs:
+      - merge_requests
+    changes:
+      - docs/**/*
   except:
-    - master
+    - schedules
 
+# building and deploying sphinx doc
 pages:
   stage: deploy
+  image: python:latest
   script:
     - pip install bokeh geopandas pydata-sphinx-theme
     - sphinx-build -b html docs public
@@ -20,12 +29,17 @@ pages:
     paths:
       - public
   only:
-    - master
+    refs:
+      - master
+    changes:
+      - docs/**/*
+  except:
+    - schedules
 
-# testing markdown links
+# testing links in markdown and rst files
 # https://github.com/dkhamsing/awesome_bot
-markdown_links:
-  stage: .post
+links:
+  stage: test_links
   image: ruby:latest
   before_script:
     - gem install awesome_bot
@@ -34,3 +48,10 @@ markdown_links:
       doi.org,ml-elec-model.git,img.shields.io,\
       dnvgl.com/services/forecaster-94823,gridscientific.com/about-us
       `find . -name '*.md'` `find . -name '*.rst'`"
+  only:
+    refs:
+      - schedules
+      - merge_requests
+    changes:
+      - "**/*.rst"
+      - "**/*.md"

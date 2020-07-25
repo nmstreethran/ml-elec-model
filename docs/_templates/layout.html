@@ -1,7 +1,7 @@
 {% extends "!layout.html" %}
   {% block footer %}
     {{ super() }}
-    <!-- <link rel="stylesheet" href="/_static/custom.css" type="text/css" /> -->
+    <!-- custom style sheet -->
     <style>
       /* citation label float */
       dl.footnote > dt, dl.citation > dt {
@@ -19,7 +19,7 @@
       }
 
       /* external link indicator */
-      a.reference.external:not([href~="nithiya.gitlab.io/ml-elec-model"]):after {
+      a.reference.external:not([href*="nithiya.gitlab.io/ml-elec-model"]):after {
         content: " \f35d";
         font-family: "Font Awesome 5 Free";
         display: inline-block;
