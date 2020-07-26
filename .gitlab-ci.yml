@@ -1,14 +1,16 @@
 stages:
-  - test
-  - deploy
+  - test_docs
+  - deploy_docs
   - test_links
+  - lint_python
 
 # testing sphinx doc build
-test:
-  stage: test
+pages_test:
+  stage: test_docs
   image: python:latest
-  script:
+  before_script:
     - pip install bokeh geopandas pydata-sphinx-theme
+  script:
     - sphinx-build -b html docs public
   only:
     refs:
@@ -20,10 +22,11 @@ test:
 
 # building and deploying sphinx doc
 pages:
-  stage: deploy
+  stage: deploy_docs
   image: python:latest
-  script:
+  before_script:
     - pip install bokeh geopandas pydata-sphinx-theme
+  script:
     - sphinx-build -b html docs public
   artifacts:
     paths:
@@ -55,3 +58,23 @@ links:
     changes:
       - "**/*.rst"
       - "**/*.md"
+
+# linting python scripts
+lint:
+  stage: lint_python
+  image: python:latest
+  before_script:
+    - pip install -r requirements.txt
+    - pip install flake8
+  script:
+    - flake8 scripts
+    - flake8 docs/conf.py
+  only:
+    refs:
+      - master
+      - merge_requests
+    changes:
+      - scripts/**/*
+      - docs/conf.py
+  except:
+    - schedules

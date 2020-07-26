@@ -55,10 +55,10 @@ nuts0 = gpd.read_file(url0)
 
 # filter for the following countries: DE, AT, CH, CZ, LU, NL, and PL
 nuts0 = nuts0.drop(nuts0[~(
-    (nuts0.CNTR_CODE=='AT')|(nuts0.CNTR_CODE=='CH')|
-    (nuts0.CNTR_CODE=='CZ')|(nuts0.CNTR_CODE=='DE')|
-    (nuts0.CNTR_CODE=='LU')|(nuts0.CNTR_CODE=='NL')|
-    (nuts0.CNTR_CODE=='PL'))].index)
+    (nuts0.CNTR_CODE == 'AT') | (nuts0.CNTR_CODE == 'CH') |
+    (nuts0.CNTR_CODE == 'CZ') | (nuts0.CNTR_CODE == 'DE') |
+    (nuts0.CNTR_CODE == 'LU') | (nuts0.CNTR_CODE == 'NL') |
+    (nuts0.CNTR_CODE == 'PL'))].index)
 
 # GeoJSON NUTS data at level 1 with decimal coordinates and multipolygons
 url1 = (
@@ -69,7 +69,7 @@ nuts1 = gpd.read_file(url1)
 # exclude RUP FR - RÉGIONS ULTRAPÉRIPHÉRIQUES FRANÇAISES' (FRY) /
 # French Overseas Territories
 nuts1 = nuts1[~nuts1.NUTS_ID.str.contains('FRY')]
-nuts1 = nuts1.drop(nuts1[~((nuts1.CNTR_CODE=='FR'))].index)
+nuts1 = nuts1.drop(nuts1[~((nuts1.CNTR_CODE == 'FR'))].index)
 
 # create new dummy column with country name
 nuts1['CNTR'] = 'FR'
@@ -90,7 +90,7 @@ url2 = (
 nuts2 = gpd.read_file(url2)
 
 # filter for DK
-nuts2 = nuts2.drop(nuts2[~((nuts2.CNTR_CODE=='DK'))].index)
+nuts2 = nuts2.drop(nuts2[~((nuts2.CNTR_CODE == 'DK'))].index)
 
 # concatenate NUTS dataframes
 nuts = gpd.GeoDataFrame(
@@ -100,7 +100,7 @@ nuts = gpd.GeoDataFrame(
 # delete redundant columns
 nuts = nuts.drop(
     ['COAST_TYPE', 'MOUNT_TYPE', 'LEVL_CODE', 'FID',
-    'CNTR_CODE', 'NUTS_ID', 'NUTS_NAME', 'URBN_TYPE'], axis=1)
+        'CNTR_CODE', 'NUTS_ID', 'NUTS_NAME', 'URBN_TYPE'], axis=1)
 
 # assign bidding zones to a new column
 nuts['idx'] = nuts['id']
@@ -137,7 +137,7 @@ except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
     else:
-        print ('\nBE CAREFUL! Directory ' + dest + ' already exists.')
+        print('\nBE CAREFUL! Directory ' + dest + ' already exists.')
 
 # save dataframe as GeoJSON
 zones.to_file(dest + 'bidding_zones.geojson', driver='GeoJSON')

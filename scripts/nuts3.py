@@ -17,7 +17,7 @@ url = (
 nuts3 = gpd.read_file(url)
 
 # filter for DE
-nuts3 = nuts3.drop(nuts3[~((nuts3.CNTR_CODE=='DE'))].index)
+nuts3 = nuts3.drop(nuts3[~((nuts3.CNTR_CODE == 'DE'))].index)
 
 # sort values by NUTS_ID
 nuts3 = nuts3.sort_values(['NUTS_ID'])
@@ -34,7 +34,7 @@ except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
     else:
-        print ('\nBE CAREFUL! Directory ' + dest + ' already exists.')
+        print('\nBE CAREFUL! Directory ' + dest + ' already exists.')
 
 # save dataframe
 nuts3.to_file(dest + 'nuts3_DE.geojson', driver='GeoJSON')

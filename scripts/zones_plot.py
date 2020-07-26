@@ -19,7 +19,7 @@ zones = gpd.read_file(
 # Bokeh plot
 
 # import libraries
-from bokeh.io import output_file, show
+from bokeh.io import show # output_file
 from bokeh.models import GeoJSONDataSource, CategoricalColorMapper, Plot
 from bokeh.plotting import figure
 from bokeh.palettes import viridis

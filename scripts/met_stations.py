@@ -62,7 +62,7 @@ for d, D in datasets:
 
     # filter stations with data between start and end dates
     stations = stations.drop(stations[
-        (stations.start_date > start)|(stations.end_date < end)].index)
+        (stations.start_date > start) | (stations.end_date < end)].index)
 
     # drop duplicate rows
     stations = stations.drop_duplicates(['station_id'])
@@ -75,7 +75,7 @@ for d, D in datasets:
         if exception.errno != errno.EEXIST:
             raise
         else:
-            print ('\nBE CAREFUL! Directory ' + dest + ' already exists.')
+            print('\nBE CAREFUL! Directory ' + dest + ' already exists.')
 
     # save as file
     stations.to_csv(dest + 'stations.csv', encoding='utf-8', index=None)

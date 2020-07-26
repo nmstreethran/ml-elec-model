@@ -22,12 +22,12 @@ nuts1 = gpd.read_file(url1)
 # exclude RUP FR - RÉGIONS ULTRAPÉRIPHÉRIQUES FRANÇAISES' (FRY) /
 # French Overseas Territories
 nuts1 = nuts1[~nuts1.NUTS_ID.str.contains('FRY')]
-nuts1 = nuts1.drop(nuts1[~((nuts1.CNTR_CODE=='FR'))].index)
+nuts1 = nuts1.drop(nuts1[~((nuts1.CNTR_CODE == 'FR'))].index)
 
 # clear NUTS data except polygons
 nuts1 = nuts1.drop(
     ['id', 'COAST_TYPE', 'MOUNT_TYPE', 'FID',
-    'NUTS_ID', 'URBN_TYPE', 'NUTS_NAME'], axis=1)
+        'NUTS_ID', 'URBN_TYPE', 'NUTS_NAME'], axis=1)
 
 # dissolve to combine polygons
 nuts1 = nuts1.dissolve(by='LEVL_CODE')
@@ -46,16 +46,16 @@ nuts0 = gpd.read_file(url0)
 
 # filter for DE and interconnections (except FR)
 nuts0 = nuts0.drop(nuts0[~(
-    (nuts0.CNTR_CODE=='AT')|(nuts0.CNTR_CODE=='CH')|
-    (nuts0.CNTR_CODE=='CZ')|(nuts0.CNTR_CODE=='DE')|
-    (nuts0.CNTR_CODE=='DK')|(nuts0.CNTR_CODE=='LU')|
-    (nuts0.CNTR_CODE=='NL')|(nuts0.CNTR_CODE=='PL')|
-    (nuts0.CNTR_CODE=='SE'))].index)
+    (nuts0.CNTR_CODE == 'AT') | (nuts0.CNTR_CODE == 'CH') |
+    (nuts0.CNTR_CODE == 'CZ') | (nuts0.CNTR_CODE == 'DE') |
+    (nuts0.CNTR_CODE == 'DK') | (nuts0.CNTR_CODE == 'LU') |
+    (nuts0.CNTR_CODE == 'NL') | (nuts0.CNTR_CODE == 'PL') |
+    (nuts0.CNTR_CODE == 'SE'))].index)
 
 # clear NUTS data except polygons
 nuts0 = nuts0.drop(
     ['id', 'COAST_TYPE', 'MOUNT_TYPE', 'FID',
-    'NUTS_ID', 'URBN_TYPE', 'LEVL_CODE'], axis=1)
+        'NUTS_ID', 'URBN_TYPE', 'LEVL_CODE'], axis=1)
 
 # rename NUTS_ID column to CNTR
 nuts0 = nuts0.rename(columns={'NUTS_NAME': 'CNTR'})
@@ -73,7 +73,7 @@ except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
     else:
-        print ('\nBE CAREFUL! Directory ' + dest + ' already exists.')
+        print('\nBE CAREFUL! Directory ' + dest + ' already exists.')
 
 # save dataframe
 countries.to_file(dest + 'countries.geojson', driver='GeoJSON')

@@ -8,7 +8,7 @@ Extract postcode and geo location data from GeoNames
 from io import BytesIO
 from requests import get
 from zipfile import BadZipFile, ZipFile
-from os import makedirs, remove
+from os import makedirs
 import errno
 import pandas as pd
 
@@ -23,7 +23,7 @@ except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
     else:
-        print ('\nBE CAREFUL! Directory ' + dest + 'temp/ already exists.')
+        print('\nBE CAREFUL! Directory ' + dest + 'temp/ already exists.')
 
 # columns
 cols = [
@@ -38,7 +38,7 @@ try:
     z.extractall(dest + 'temp/')
 # exception if no zip file exists
 except BadZipFile:
-    print ('No data exists for DE')
+    print('No data exists for DE')
 
 # load data and assign column names
 data = pd.read_csv(

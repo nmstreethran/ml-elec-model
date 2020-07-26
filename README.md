@@ -1,7 +1,6 @@
 # ml-elec-model <!-- omit in toc -->
 
 <!-- start badges -->
-[![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/nithiya/ml-elec-model?labelColor=darkslategray)](https://gitlab.com/nithiya/ml-elec-model/pipelines)
 [![Code license: MIT](https://img.shields.io/badge/code%20license-MIT-yellow?labelColor=darkslategray)](https://opensource.org/licenses/MIT)
 [![Content license: CC BY 4.0](https://img.shields.io/badge/content%20license-CC%20BY%204.0-blue?labelColor=darkslategray)](https://creativecommons.org/licenses/by/4.0/)
 <!-- end badges -->

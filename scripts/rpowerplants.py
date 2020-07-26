@@ -21,7 +21,7 @@ urlBase = (
 # list of TSOs and the file name
 tsoList = [
     ('50Hertz Transmission',
-    '50Hertz Transmission GmbH EEG-Zahlungen Stammdaten 2018'),
+        '50Hertz Transmission GmbH EEG-Zahlungen Stammdaten 2018'),
     ('Amprion', 'Netztransparenz Anlagenstammdaten 2018 Amprion GmbH'),
     ('TenneT TSO', 'TenneT TSO GmbH Anlagenstammdaten 2018'),
     ('TransnetBW', 'TransnetBW_Anlagenstammdaten_2018')
@@ -35,7 +35,7 @@ except OSError as exception:
     if exception.errno != errno.EEXIST:
         raise
     else:
-        print ('\nBE CAREFUL! Directory ' + dest + 'temp/ already exists.')
+        print('\nBE CAREFUL! Directory ' + dest + 'temp/ already exists.')
 
 # roughly tanslate column titles into English
 cols = [
@@ -56,7 +56,7 @@ for tso, f in tsoList:
         z.extractall(dest + 'temp/')
     # exception if no zip file exists
     except BadZipFile:
-        print ('No data exists for ' + tso)
+        print('No data exists for ' + tso)
 
     # read downloaded CSV file and assign translated column names
     # with additional settings for encoding, decimals, dates, etc.
@@ -64,15 +64,15 @@ for tso, f in tsoList:
         dest + 'temp/' + f + '.csv', encoding='ISO-8859-1', decimal=',',
         sep=';', header=0, names=cols, dayfirst=True, thousands='.',
         parse_dates=['commissioning', 'decommissioning',
-        'network_connection', 'network_disconnection'],
+            'network_connection', 'network_disconnection'],
         dtype={'NB_BNR': str, 'postal_code': str, 'municipality_key': str})
 
     # roughly translate values into English
     data.energy_carrier.replace(
         ['Wasser', 'Biomasse', 'Wind an Land', 'Deponiegas',
-        'Wind auf See', 'Klärgas', 'Geothermie', 'Grubengas'],
+            'Wind auf See', 'Klärgas', 'Geothermie', 'Grubengas'],
         ['Hydro', 'Biomass', 'Onshore wind', 'Landfill gas',
-        'Offshore wind', 'Sewage gas', 'Geothermal', 'Mine gas'],
+            'Offshore wind', 'Sewage gas', 'Geothermal', 'Mine gas'],
         inplace=True)
 
     data.power_measurement.replace(
@@ -80,14 +80,14 @@ for tso, f in tsoList:
 
     data.controllability.replace(
         ['nicht regelbar', '70 % Begrenzung', 'regelbar n. § 9 Abs. 2 EEG',
-        'regelbar n § 9 Abs. 2 EEG', 'regelbar n. § 9 Abs. 1 EEG',
-        'regelbar n § 9 Abs. 1 EEG', 'regelbar nach § 9 Abs. 1 EEG'],
+            'regelbar n § 9 Abs. 2 EEG', 'regelbar n. § 9 Abs. 1 EEG',
+            'regelbar n § 9 Abs. 1 EEG', 'regelbar nach § 9 Abs. 1 EEG'],
         ['not adjustable', '70 % limit',
-        'adjustable according to § 9 Abs. 2 EEG',
-        'adjustable according to § 9 Abs. 2 EEG',
-        'adjustable according to § 9 Abs. 1 EEG',
-        'adjustable according to § 9 Abs. 1 EEG',
-        'adjustable according to § 9 Abs. 1 EEG'], inplace=True)
+            'adjustable according to § 9 Abs. 2 EEG',
+            'adjustable according to § 9 Abs. 2 EEG',
+            'adjustable according to § 9 Abs. 1 EEG',
+            'adjustable according to § 9 Abs. 1 EEG',
+            'adjustable according to § 9 Abs. 1 EEG'], inplace=True)
 
     data.state.replace(
         ['Ausschließliche Wirtschaftszone', 'Ausland'],

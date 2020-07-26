@@ -46,7 +46,7 @@ for f in fpaths:
         if exception.errno != errno.EEXIST:
             raise
         else:
-            print ('\nBE CAREFUL! Directory %stemp/ already exists.' % f)
+            print('\nBE CAREFUL! Directory %stemp/ already exists.' % f)
 
 # extract data for bidding zone
 # day-ahead prices

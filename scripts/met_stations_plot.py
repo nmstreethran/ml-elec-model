@@ -11,7 +11,7 @@ Germany with tooltips that contain metadata.
 from bokeh.models import ColumnDataSource, CategoricalColorMapper, Plot
 from bokeh.plotting import figure
 from bokeh.tile_providers import get_provider, Vendors
-from bokeh.io import output_file, show
+from bokeh.io import show # output_file
 from bokeh.palettes import viridis
 from pyproj import Transformer
 import pandas as pd
@@ -23,7 +23,7 @@ url = (
 
 # list of datasets to download
 datasets = [
-    'sun', 'wind', 'cloudiness','precipitation',
+    'sun', 'wind', 'cloudiness', 'precipitation',
     'air_temperature', 'cloud_type', 'dew_point', 'pressure',
     'soil_temperature', 'visibility', 'solar']
 
@@ -34,7 +34,7 @@ for d in datasets:
     # import data
     df = pd.read_csv(
         url + d + '%2Fstations.csv/raw?ref=master', encoding='utf-8')
-    
+
     # create new dataframe with station ID and dataset type
     df_type = pd.DataFrame({'station_id': df['station_id']})
     df_type[d] = d

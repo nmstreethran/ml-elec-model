@@ -48,7 +48,7 @@ for d, D in datasets:
         if exception.errno != errno.EEXIST:
             raise
         else:
-            print (
+            print(
                 '\nBE CAREFUL! Directory ' + dest + 'temp/ already exists.')
 
     # read CSV file with list of stations
@@ -96,11 +96,11 @@ for d, D in datasets:
             z.extractall(dest + 'temp/')
         # exception if no zip file exists
         except BadZipFile:
-            print ('No data exists for station ' + stn_id)
+            print('No data exists for station ' + stn_id)
 
         # read weather data for station
         data = pd.read_csv(
-            dest + 'temp/produkt_' + ds.lower() + '_stunde_' + sd + '_' +
+            dest + 'temp/produkt_' + D.lower() + '_stunde_' + sd + '_' +
             ed + '_' + stn_id + '.txt', sep=';', encoding='ISO-8859-1')
 
         # rename timestamp column
@@ -112,7 +112,7 @@ for d, D in datasets:
 
         # filter for date range
         data = data.drop(data[
-            (data.TIMESTAMP < start)|(data.TIMESTAMP > end)].index)
+            (data.TIMESTAMP < start) | (data.TIMESTAMP > end)].index)
 
         # set end timestamps as index
         data.set_index(['TIMESTAMP'], inplace=True)
