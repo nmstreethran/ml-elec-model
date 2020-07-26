@@ -1,48 +1,31 @@
 stages:
+  - test
   - test_docs
-  - deploy_docs
-  - test_links
-  - lint_python
+  - deploy
 
-# testing sphinx doc build
-pages_test:
-  stage: test_docs
+# linting Python scripts
+linting:
+  stage: test
   image: python:latest
   before_script:
-    - pip install bokeh geopandas pydata-sphinx-theme
+    - pip install -r requirements.txt
+    - pip install flake8
   script:
-    - sphinx-build -b html docs public
-  only:
-    refs:
-      - merge_requests
-    changes:
-      - docs/**/*
-  except:
-    - schedules
-
-# building and deploying sphinx doc
-pages:
-  stage: deploy_docs
-  image: python:latest
-  before_script:
-    - pip install bokeh geopandas pydata-sphinx-theme
-  script:
-    - sphinx-build -b html docs public
-  artifacts:
-    paths:
-      - public
+    - flake8 scripts docs/conf.py
   only:
     refs:
       - master
+      - merge_requests
     changes:
-      - docs/**/*
+      - scripts/**/*
+      - docs/conf.py
   except:
     - schedules
 
-# testing links in markdown and rst files
+# checking links in markdown and reStructuredText files
 # https://github.com/dkhamsing/awesome_bot
 links:
-  stage: test_links
+  stage: test
   image: ruby:latest
   before_script:
     - gem install awesome_bot
@@ -59,22 +42,37 @@ links:
       - "**/*.rst"
       - "**/*.md"
 
-# linting python scripts
-lint:
-  stage: lint_python
+# testing Sphinx doc build
+pages_test:
+  stage: test_docs
   image: python:latest
   before_script:
-    - pip install -r requirements.txt
-    - pip install flake8
+    - pip install bokeh geopandas pydata-sphinx-theme
   script:
-    - flake8 scripts
-    - flake8 docs/conf.py
+    - sphinx-build -b html docs public
+  only:
+    refs:
+      - merge_requests
+    changes:
+      - docs/**/*
+  except:
+    - schedules
+
+# building and deploying Sphinx doc
+pages:
+  stage: deploy
+  image: python:latest
+  before_script:
+    - pip install bokeh geopandas pydata-sphinx-theme
+  script:
+    - sphinx-build -b html docs public
+  artifacts:
+    paths:
+      - public
   only:
     refs:
       - master
-      - merge_requests
     changes:
-      - scripts/**/*
-      - docs/conf.py
+      - docs/**/*
   except:
     - schedules
