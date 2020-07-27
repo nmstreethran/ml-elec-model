@@ -9,18 +9,34 @@ It then creates a plot of the these boundaries.
 
 # import libraries
 import geopandas as gpd
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 
 # import data
 cntr = gpd.read_file(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
     'geography%2Fpolygons%2Fcountries.geojson/raw?ref=master')
 
-# Bokeh plot
+# convert to Web Mercator projection
+cntr = cntr.to_crs(crs='EPSG:3857')
 
-"""
+# plot styles
+plt.style.use('seaborn')
+mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
+
+# configure plot
+fig, ax = plt.subplots(1, figsize=(13, 13))
+cntr.plot(
+    column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
+    legend_kwds={'loc': 'lower right'})
+plt.ylabel('Latitude (Web Mercator)')
+plt.xlabel('Longitude (Web Mercator)')
+plt.show()
+
+"""Bokeh plot
 
 # import libraries
-from bokeh.io import output_file, show
+from bokeh.io import show
 from bokeh.models import GeoJSONDataSource, CategoricalColorMapper, Plot
 from bokeh.plotting import figure
 from bokeh.palettes import viridis
@@ -59,56 +75,6 @@ p.patches(
     'xs', 'ys', fill_color={'field': 'CNTR_CODE', 'transform': color_map},
     source=geo_source, line_color='white', line_width=.5)
 
-# output the map and save to a custom path
-output_file('charts/countries_plot.html')
-
 # open the map
 show(p)
 """
-
-# Bokeh components
-
-"""
-
-# import libraries
-from bokeh.embed import components
-
-# to export script and div components
-script, div = components(p)
-# remove script HTML tags to save as JavaScript file
-script = script.replace('<script type="text/javascript">', '')
-script = script.replace('</script>', '')
-
-# export script as JavaScript file
-with open('charts/countries.js', 'w') as f:
-    print(script, file=f)
-# export div as HTML file
-with open('charts/countries-div.html', 'w') as f:
-    print(div, file=f)
-# export div as JavaScript file
-# (so that it can be read by nuts.html)
-with open('charts/countries-div.js', 'w') as f:
-    print('document.write(`' + div + '\n`);', file=f)
-"""
-
-# Matplotlib plot
-
-# import libraries
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-
-# convert to Web Mercator projection
-cntr = cntr.to_crs(crs='EPSG:3857')
-
-# plot styles
-plt.style.use('seaborn')
-mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
-
-# configure plot
-fig, ax = plt.subplots(1, figsize=(13, 13))
-cntr.plot(
-    column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
-    legend_kwds={'loc': 'lower right'})
-plt.ylabel('Latitude (Web Mercator)')
-plt.xlabel('Longitude (Web Mercator)')
-plt.show()

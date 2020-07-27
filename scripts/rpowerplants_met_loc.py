@@ -5,69 +5,72 @@ import pandas as pd
 import numpy as np
 
 # %%
-# load data
-tso = pd.read_csv(
-    'data/power/installed/TransnetBW.csv', encoding='utf-8')
 postcodes = pd.read_csv(
-    'data/geography/postcodes/postcodesDE.csv', encoding='utf-8')
-wind = pd.read_csv(
-    'data/meteorology/wind/stations.csv', encoding='utf-8')
-
-# %%
+    'data/geography/postcodes/postcodesDE.csv', encoding='utf-8',
+    usecols=['postal_code', 'latitude', 'longitude'],
+    dtype={'postal_code': str})
 # take the first postcode value when there are duplicates, drop all others
 postcodes = postcodes.drop_duplicates(['postal_code'])
 
 # %%
-# filter for solar and wind power plants
-tso = tso.drop(tso[~(
-    # (tso.energy_carrier=='Solar')|
-    (tso.energy_carrier == 'Onshore wind') |
-    (tso.energy_carrier == 'Offshore wind'))].index)
+# load data
+tsoList = ['50Hertz_Transmission', 'Amprion', 'TenneT_TSO', 'TransnetBW']
+tso = pd.DataFrame()
+for t in tsoList:
+    df = pd.read_csv(
+    'data/power/installed/' + t + '.csv', encoding='utf-8',
+    usecols=['EEG_plant_key', 'postal_code', 'energy_carrier'],
+    dtype={'postal_code': str})
+    tso = pd.concat([tso, df], ignore_index=True)
 
 # %%
-# rename lat and lon columns for met data
-wind = wind.rename(columns={'longitude': 'met_lon', 'latitude': 'met_lat'})
+metList = ['solar', 'wind']
+for m in metList:
+    met = pd.read_csv(
+        'data/meteorology/' + m + '/stations.csv', encoding='utf-8',
+        usecols=['station_id', 'latitude', 'longitude'])
+    # rename lat and lon columns for met data
+    met = met.rename(
+        columns={'longitude': 'met_lon', 'latitude': 'met_lat'})
 
-# drop columns
-wind = wind.drop(['state', 'start_date', 'end_date'], axis=1)
+    # filter for solar and wind power plants
+    if m == 'solar':
+        tsoData = tso.drop(tso[~((tso.energy_carrier == 'Solar'))].index)
+    else:
+        tsoData = tso.drop(tso[~(
+            (tso.energy_carrier == 'Onshore wind') |
+            (tso.energy_carrier == 'Offshore wind'))].index)
 
-# %%
-# merge postcode and TSO data
-tso_loc = pd.merge(tso, postcodes, on=['postal_code'], how='left')
+    tsoData = tsoData.drop(['energy_carrier'], axis=1)
 
-# %%
-# create list of met station coordinates
-lonList = wind['met_lon']
-latList = wind['met_lat']
-coordList = list(zip(lonList, latList))
+    # merge postcode and TSO data
+    tsoData = pd.merge(tsoData, postcodes, on=['postal_code'], how='left')
 
-# %%
-# create nearest neighbour tree with coordinate list
-tree = spatial.KDTree(coordList)
+    # create list of met station coordinates
+    lonList = met['met_lon']
+    latList = met['met_lat']
+    coordList = list(zip(lonList, latList))
 
-# %%
-# create new empty columns to store tree data
-tso_loc['distance'] = np.nan
-tso_loc['met_lon'] = np.nan
-tso_loc['met_lat'] = np.nan
+    # create nearest neighbour tree with coordinate list
+    tree = spatial.KDTree(coordList)
 
-# %%
-# find nearest met station for each power plant in TSO data
-for idx in range(len(tso_loc)):
-    stn = tree.query(
-        [(tso_loc.loc[idx, 'longitude'], tso_loc.loc[idx, 'latitude'])])
-    if stn[1][0] < len(coordList):
-        tso_loc.loc[idx, 'distance'] = stn[0][0]
-        tso_loc.loc[idx, 'met_lon'] = coordList[stn[1][0]][0]
-        tso_loc.loc[idx, 'met_lat'] = coordList[stn[1][0]][1]
+    # create new empty columns to store tree data
+    tsoData['distance'] = np.nan
+    tsoData['met_lon'] = np.nan
+    tsoData['met_lat'] = np.nan
 
-# %%
-# merge TSO and met data
-tso_wind = pd.merge(tso_loc, wind, on=['met_lon', 'met_lat'], how='left')
+    # find nearest met station for each power plant in TSO data
+    for idx in range(len(tsoData)):
+        stn = tree.query(
+            [(tsoData.loc[idx, 'longitude'], tsoData.loc[idx, 'latitude'])])
+        if stn[1][0] < len(coordList):
+            tsoData.loc[idx, 'distance'] = stn[0][0]
+            tsoData.loc[idx, 'met_lon'] = coordList[stn[1][0]][0]
+            tsoData.loc[idx, 'met_lat'] = coordList[stn[1][0]][1]
 
-# %%
-# tso_wind.sort_values(by=['distance'])
-# for idx in range(len(tso_wind)):
-#     if tso_wind.loc[idx, 'distance'] == np.nan:
-#         print(tso_wind.iloc[idx, 9])
-# 77888	Sasbachwalden
+    # merge TSO and met data
+    tsoData = pd.merge(tsoData, met, on=['met_lon', 'met_lat'], how='left')
+
+    tsoData = tsoData.sort_values(by=['distance'])
+
+    tsoData.to_csv('data/' + m + '.csv', encoding='utf-8', index=False)

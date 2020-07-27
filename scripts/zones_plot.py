@@ -10,20 +10,16 @@ for statistics (NUTS) data from Eurostat
 
 # import libraries
 import geopandas as gpd
+from bokeh.io import show
+from bokeh.models import GeoJSONDataSource, CategoricalColorMapper, Plot
+from bokeh.plotting import figure
+from bokeh.palettes import viridis
+# from bokeh.tile_providers import get_provider, Vendors
 
 # import data
 zones = gpd.read_file(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
     'geography%2Fpolygons%2Fbidding_zones.geojson/raw?ref=master')
-
-# Bokeh plot
-
-# import libraries
-from bokeh.io import show # output_file
-from bokeh.models import GeoJSONDataSource, CategoricalColorMapper, Plot
-from bokeh.plotting import figure
-from bokeh.palettes import viridis
-# from bokeh.tile_providers import get_provider, Vendors
 
 # load data source
 geo_source = GeoJSONDataSource(geojson=zones.to_json())
@@ -62,37 +58,7 @@ p.patches(
 # open the map
 show(p)
 
-# Bokeh components
-
-"""
-
-# output the map and save to a custom path
-output_file('charts/zones_plot.html')
-
-# import libraries
-from bokeh.embed import components
-
-# to export script and div components
-script, div = components(p)
-# remove script HTML tags to save as JavaScript file
-script = script.replace('<script type="text/javascript">', '')
-script = script.replace('</script>', '')
-
-# export script as JavaScript file
-with open('charts/bidding_zones/zones.js', 'w') as f:
-    print(script, file=f)
-# export div as HTML file
-with open('charts/bidding_zones/zones-div.html', 'w') as f:
-    print(div, file=f)
-# export div as JavaScript file
-# (so that it can be read by zones.html)
-with open('charts/bidding_zones/zones-div.js', 'w') as f:
-    print('document.write(`' + div + '\n`);', file=f)
-"""
-
-# Matplotlib plot
-
-"""
+"""Matplotlib plot
 
 # import libraries
 import matplotlib as mpl

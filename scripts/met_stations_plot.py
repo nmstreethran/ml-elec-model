@@ -11,7 +11,7 @@ Germany with tooltips that contain metadata.
 from bokeh.models import ColumnDataSource, CategoricalColorMapper, Plot
 from bokeh.plotting import figure
 from bokeh.tile_providers import get_provider, Vendors
-from bokeh.io import show # output_file
+from bokeh.io import show
 from bokeh.palettes import viridis
 from pyproj import Transformer
 import pandas as pd
@@ -106,31 +106,3 @@ p.circle(
 
 # open the map
 show(p)
-
-# Bokeh components
-
-"""
-
-# import libraries
-from bokeh.embed import components
-
-# output the map and save to a custom path
-output_file('charts/dwd_stations/dwd_stations_plot.html')
-
-# to export script and div components
-script, div = components(p)
-# remove script HTML tags to save as JavaScript file
-script = script.replace('<script type="text/javascript">', '')
-script = script.replace('</script>', '')
-
-# export script as JavaScript file
-with open('charts/dwd_stations/dwd_stations.js', 'w') as f:
-    print(script, file=f)
-# export div as HTML file
-with open('charts/dwd_stations/dwd_stations-div.html', 'w') as f:
-    print(div, file=f)
-# export div as JavaScript file
-# (so that it can be read by dwd_stations.html)
-with open('charts/dwd_stations/dwd_stations-div.js', 'w') as f:
-    print('document.write(`' + div + '\n`);', file=f)
-"""

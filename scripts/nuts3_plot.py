@@ -38,7 +38,7 @@ plt.show()
 """Bokeh plot
 
 # import libraries
-from bokeh.io import output_file, show
+from bokeh.io import show
 from bokeh.models import GeoJSONDataSource, CategoricalColorMapper
 from bokeh.plotting import figure
 from bokeh.palettes import viridis
@@ -67,30 +67,10 @@ p = figure(
 p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
 
 # add data and configure plot
-p.patches('xs', 'ys',
-    fill_color={'field': 'CNTR_CODE', 'transform': color_map},
+p.patches(
+    'xs', 'ys', fill_color={'field': 'CNTR_CODE', 'transform': color_map},
     source=geo_source, line_color='white', line_width=.5)
 
 # open the map
 show(p)
-
-# output the map and save to a custom path
-output_file('charts/nuts/nuts_plot.html')
-
-# to export script and div components
-script, div = components(p)
-# remove script HTML tags to save as JavaScript file
-script = script.replace('<script type="text/javascript">', '')
-script = script.replace('</script>', '')
-
-# export script as JavaScript file
-with open('charts/nuts/nuts.js', 'w') as f:
-    print(script, file=f)
-# export div as HTML file
-with open('charts/nuts/nuts-div.html', 'w') as f:
-    print(div, file=f)
-# export div as JavaScript file
-# (so that it can be read by nuts.html)
-with open('charts/nuts/nuts-div.js', 'w') as f:
-    print('document.write(`' + div + '\n`);', file=f)
 """
