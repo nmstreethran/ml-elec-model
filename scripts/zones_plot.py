@@ -42,7 +42,7 @@ p = Plot(output_backend='webgl')
 p = figure(
     # x_axis_type='mercator', y_axis_type='mercator',
     tooltips=TOOLTIPS, output_backend='webgl', tools='save, hover',
-    plot_width=400)
+    sizing_mode='stretch_both')
 
 # # set OpenStreetMap / CartoDB overlay
 # p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
