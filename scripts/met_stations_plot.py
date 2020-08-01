@@ -94,7 +94,7 @@ p = Plot(output_backend='webgl')
 # set output backend for the plotting API
 p = figure(
     x_axis_type='mercator', y_axis_type='mercator', tooltips=TOOLTIPS,
-    output_backend='webgl', sizing_mode='stretch_both')
+    output_backend='webgl', sizing_mode='scale_both')
 
 # set OpenStreetMap / CartoDB overlay
 p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))

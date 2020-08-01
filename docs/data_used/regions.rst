@@ -240,4 +240,4 @@ Approximate bidding zone polygons are available from Tomorrow's electricityMap r
 .. bokeh-plot:: ../scripts/zones_plot.py
    :source-position: none
 
-Approximate bidding zones of Germany and its interconnections, made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).
+Approximate bidding zones of Germany and its interconnections (in the first half of 2018), made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).

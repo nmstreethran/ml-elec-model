@@ -14,12 +14,15 @@ from bokeh.io import show
 from bokeh.models import GeoJSONDataSource, CategoricalColorMapper, Plot
 from bokeh.plotting import figure
 from bokeh.palettes import viridis
-# from bokeh.tile_providers import get_provider, Vendors
+from bokeh.tile_providers import get_provider, Vendors
 
 # import data
 zones = gpd.read_file(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
     'geography%2Fpolygons%2Fbidding_zones.geojson/raw?ref=master')
+
+# convert to Web Mercator projection
+zones = zones.to_crs(crs='EPSG:3857')
 
 # load data source
 geo_source = GeoJSONDataSource(geojson=zones.to_json())
@@ -40,12 +43,11 @@ p = Plot(output_backend='webgl')
 # in the figure
 # set output backend for the plotting API
 p = figure(
-    # x_axis_type='mercator', y_axis_type='mercator',
-    tooltips=TOOLTIPS, output_backend='webgl', tools='save, hover',
-    sizing_mode='stretch_both')
+    x_axis_type='mercator', y_axis_type='mercator',
+    tooltips=TOOLTIPS, output_backend='webgl', sizing_mode='scale_both')
 
-# # set OpenStreetMap / CartoDB overlay
-# p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
+# set OpenStreetMap / CartoDB overlay
+p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
 
 # hover settings
 p.hover.point_policy = 'follow_mouse'
@@ -63,9 +65,6 @@ show(p)
 # import libraries
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-
-# convert to Web Mercator projection
-zones = zones.to_crs(crs='EPSG:3857')
 
 # plot styles
 plt.style.use('seaborn')
