@@ -63,8 +63,9 @@ for tso, f in tsoList:
     data = pd.read_csv(
         dest + 'temp/' + f + '.csv', encoding='ISO-8859-1', decimal=',',
         sep=';', header=0, names=cols, dayfirst=True, thousands='.',
-        parse_dates=['commissioning', 'decommissioning',
-                'network_connection', 'network_disconnection'],
+        parse_dates=[
+            'commissioning', 'decommissioning',
+            'network_connection', 'network_disconnection'],
         dtype={'NB_BNR': str, 'postal_code': str, 'municipality_key': str})
 
     # roughly translate values into English

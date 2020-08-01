@@ -18,9 +18,9 @@ tsoList = ['50Hertz_Transmission', 'Amprion', 'TenneT_TSO', 'TransnetBW']
 tso = pd.DataFrame()
 for t in tsoList:
     df = pd.read_csv(
-    'data/power/installed/' + t + '.csv', encoding='utf-8',
-    usecols=['EEG_plant_key', 'postal_code', 'energy_carrier'],
-    dtype={'postal_code': str})
+        'data/power/installed/' + t + '.csv', encoding='utf-8',
+        usecols=['EEG_plant_key', 'postal_code', 'energy_carrier'],
+        dtype={'postal_code': str})
     tso = pd.concat([tso, df], ignore_index=True)
 
 # %%
