@@ -29,11 +29,15 @@ cols = [
     'latitude', 'longitude', 'station_name', 'state']
 
 # list of datasets to download
-datasets = [
-    ('sun', 'SD'), ('wind', 'FF'), ('cloudiness', 'N'),
-    ('precipitation', 'RR'), ('air_temperature', 'TU'),
-    ('cloud_type', 'CS'), ('dew_point', 'TD'), ('pressure', 'P0'),
-    ('soil_temperature', 'EB'), ('visibility', 'VV'), ('solar', 'ST')]
+met = [
+    'sun', 'wind', 'cloudiness', 'precipitation', 'air_temperature',
+    'cloud_type', 'dew_point', 'pressure', 'soil_temperature',
+    'visibility', 'solar']
+codes = ['SD', 'FF', 'N', 'RR', 'TU', 'CS', 'TD', 'P0', 'EB', 'VV', 'ST']
+datasets = list(zip(met, codes))
+
+# create empty dataframe to store data
+data = pd.DataFrame()
 
 for d, D in datasets:
     # hourly data repository URL
@@ -64,18 +68,43 @@ for d, D in datasets:
     stations = stations.drop(stations[
         (stations.start_date > start) | (stations.end_date < end)].index)
 
+    # create new dataframe with station ID and dataset type
+    df_type = pd.DataFrame({'station_id': stations['station_id']})
+    df_type[d] = d
+
+    # concatenate datasets
+    data = pd.concat([data, stations], ignore_index=True)
+
     # drop duplicate rows
-    stations = stations.drop_duplicates(['station_id'])
+    data = data.drop_duplicates(['station_id'])
 
-    # create directory to store files
-    dest = 'data/meteorology/' + d + '/'
-    try:
-        makedirs(dest)
-    except OSError as exception:
-        if exception.errno != errno.EEXIST:
-            raise
-        else:
-            print('\nBE CAREFUL! Directory ' + dest + ' already exists.')
+    # merge with dataframe with dataset type
+    data = pd.merge(data, df_type, on=['station_id'], how='outer')
 
-    # save as file
-    stations.to_csv(dest + 'stations.csv', encoding='utf-8', index=None)
+# fill null values in the dataset columns
+data[met] = data[met].fillna('none')
+
+# merge all dataset values into new column
+data['type'] = data[met].agg(', '.join, axis=1)
+
+# drop date and dataset columns
+data = data.drop(columns=['start_date', 'end_date'])
+data = data.drop(columns=met)
+
+# remove 'none' strings and underscores
+data['type'] = data['type'].str.replace('none, ', '')
+data['type'] = data['type'].str.replace(', none', '')
+data['type'] = data['type'].str.replace('_', ' ')
+
+# create directory to store files
+dest = 'data/meteorology/'
+try:
+    makedirs(dest)
+except OSError as exception:
+    if exception.errno != errno.EEXIST:
+        raise
+    else:
+        print('\nBE CAREFUL! Directory ' + dest + ' already exists.')
+
+# save as file
+data.to_csv(dest + 'stations.csv', encoding='utf-8', index=None)

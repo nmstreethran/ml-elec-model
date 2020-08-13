@@ -15,7 +15,8 @@ import errno
 from requests import get
 from zipfile import BadZipFile, ZipFile
 from io import BytesIO
-from datetime import datetime, timedelta
+from datetime import datetime
+from glob import glob
 
 # define start and end dates of data (within the same year)
 start = '20180101'
@@ -35,6 +36,12 @@ datasets = [
     ('cloud_type', 'CS'), ('dew_point', 'TD'), ('pressure', 'P0'),
     ('soil_temperature', 'EB'), ('visibility', 'VV'), ('solar', 'ST')]
 
+# read CSV file with list of stations
+metStations = pd.read_csv(
+    'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
+    'meteorology%2Fstations.csv/raw?ref=master',
+    encoding='utf-8')
+
 for d, D in datasets:
     # hourly data repository URL
     repourl = (
@@ -51,11 +58,8 @@ for d, D in datasets:
             print(
                 '\nBE CAREFUL! Directory ' + dest + 'temp/ already exists.')
 
-    # read CSV file with list of stations
-    stations = pd.read_csv(
-        'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
-        'meteorology%2F' + d + '%2Fstations.csv/raw?ref=master',
-        encoding='utf-8', parse_dates=['start_date', 'end_date'])
+    # filter meteorological data based on energy carrier
+    stations = metStations[metStations['type'].str.contains(d)]
 
     for idx in range(len(stations)):
         # station ID
@@ -64,9 +68,9 @@ for d, D in datasets:
         # add leading zeros to station ID if less than 5 digits long
         stn_id = str(stn).zfill(5)
 
-        # convert dates to strings
-        sd = stations.loc[idx, 'start_date'].strftime('%Y%m%d')
-        ed = stations.loc[idx, 'end_date'].strftime('%Y%m%d')
+        # # convert dates to strings
+        # sd = stations.loc[idx, 'start_date'].strftime('%Y%m%d')
+        # ed = stations.loc[idx, 'end_date'].strftime('%Y%m%d')
 
         # get zip file download URLs
         # for solar data
@@ -75,13 +79,14 @@ for d, D in datasets:
 
         # for historical data (not solar)
         elif end < yr:
-            # if ed falls within the current year
-            # change it to be the last day of the previous year
-            if ed >= yr.strftime('%Y%m%d'):
-                ed = (yr - timedelta(days=1)).strftime('%Y%m%d')
-            url = (
-                repourl + 'historical/stundenwerte_' + D + '_' + stn_id +
-                '_' + sd + '_' + ed + '_hist.zip')
+            # # if ed falls within the current year
+            # # change it to be the last day of the previous year
+            # if ed >= yr.strftime('%Y%m%d'):
+            #     ed = (yr - timedelta(days=1)).strftime('%Y%m%d')
+            for f in glob(
+                'historical/stundenwerte_' + D + '_' + stn_id +
+                    '_*_hist.zip'):
+                url = (repourl + f)
 
         # for recent data (current year, not solar)
         else:
@@ -99,9 +104,11 @@ for d, D in datasets:
             print('No data exists for station ' + stn_id)
 
         # read weather data for station
-        data = pd.read_csv(
-            dest + 'temp/produkt_' + D.lower() + '_stunde_' + sd + '_' +
-            ed + '_' + stn_id + '.txt', sep=';', encoding='ISO-8859-1')
+        for f in glob(
+            'temp/produkt_' + D.lower() + '_stunde_*_' +
+                stn_id + '.txt'):
+            data = pd.read_csv(
+                dest + f, sep=';', encoding='ISO-8859-1')
 
         # rename timestamp column
         data.rename(columns={data.columns[1]: 'TIMESTAMP'}, inplace=True)

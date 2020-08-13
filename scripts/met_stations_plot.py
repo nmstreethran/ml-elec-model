@@ -19,49 +19,9 @@ import pandas as pd
 # GitLab raw file base URL
 url = (
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
-    'meteorology%2F')
+    'meteorology%2Fstations.csv/raw?ref=master')
 
-# list of datasets to download
-datasets = [
-    'sun', 'wind', 'cloudiness', 'precipitation',
-    'air_temperature', 'cloud_type', 'dew_point', 'pressure',
-    'soil_temperature', 'visibility', 'solar']
-
-# create empty dataframe to store data
-data = pd.DataFrame()
-
-for d in datasets:
-    # import data
-    df = pd.read_csv(
-        url + d + '%2Fstations.csv/raw?ref=master', encoding='utf-8')
-
-    # create new dataframe with station ID and dataset type
-    df_type = pd.DataFrame({'station_id': df['station_id']})
-    df_type[d] = d
-
-    # concatenate datasets
-    data = pd.concat([data, df], ignore_index=True)
-
-    # drop duplicate rows
-    data = data.drop_duplicates(['station_id'])
-
-    # merge with dataframe with dataset type
-    data = pd.merge(data, df_type, on=['station_id'], how='outer')
-
-# fill null values in the dataset columns
-data[datasets] = data[datasets].fillna('none')
-
-# merge all dataset values into new column
-data['type'] = data[datasets].agg(', '.join, axis=1)
-
-# drop date and dataset columns
-data = data.drop(columns=['start_date', 'end_date'])
-data = data.drop(columns=datasets)
-
-# remove 'none' strings and underscores
-data['type'] = data['type'].str.replace('none, ', '')
-data['type'] = data['type'].str.replace(', none', '')
-data['type'] = data['type'].str.replace('_', ' ')
+data = pd.read_csv(url, encoding='utf-8')
 
 # transform latitudes and longitudes from WGS84 to Web Mercator projection
 lons = tuple(data['longitude'])

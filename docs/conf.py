@@ -14,21 +14,24 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+# import libraries
+from datetime import datetime
+
 
 # -- Project information -----------------------------------------------------
 
 project = 'ml-elec-model'
-copyright = '2018-2020, Nithiya Streethran. Except where otherwise noted, \
-content on this site is licensed under a Creative Commons Attribution 4.0 \
-International (CC BY 4.0) license'
+copyright = (
+    '2018-2020, Nithiya Streethran. Except where otherwise noted, ' +
+    'content on this site is licensed under a Creative Commons ' +
+    'Attribution 4.0 International (CC BY 4.0) license. Last updated ' +
+    str(datetime.today().strftime('%-d %B %Y')))
 author = 'Nithiya Streethran'
 # version = '0.1.0'
 # release = '0.1.0'
 
 
 # -- General configuration ---------------------------------------------------
-
-# import libraries
 
 # override default master doc from contents
 master_doc = 'index'

@@ -24,8 +24,7 @@ tsoList = [
         '50Hertz Transmission GmbH EEG-Zahlungen Stammdaten 2018'),
     ('Amprion', 'Netztransparenz Anlagenstammdaten 2018 Amprion GmbH'),
     ('TenneT TSO', 'TenneT TSO GmbH Anlagenstammdaten 2018'),
-    ('TransnetBW', 'TransnetBW_Anlagenstammdaten_2018')
-]
+    ('TransnetBW', 'TransnetBW_Anlagenstammdaten_2018')]
 
 # create directory to store data
 dest = 'data/power/installed/'
@@ -44,6 +43,9 @@ cols = [
     'installed_capacity', 'energy_carrier', 'feed_in_voltage_level',
     'power_measurement', 'controllability', 'commissioning',
     'decommissioning', 'network_connection', 'network_disconnection']
+
+# create empty dataframe to store concatenated data
+allData = pd.DataFrame()
 
 for tso, f in tsoList:
     # URL of zip file for each TSO
@@ -72,12 +74,12 @@ for tso, f in tsoList:
     data.energy_carrier.replace(
         ['Wasser', 'Biomasse', 'Wind an Land', 'Deponiegas',
             'Wind auf See', 'Klärgas', 'Geothermie', 'Grubengas'],
-        ['Hydro', 'Biomass', 'Onshore wind', 'Landfill gas',
-            'Offshore wind', 'Sewage gas', 'Geothermal', 'Mine gas'],
+        ['hydro', 'biomass', 'onshore wind', 'landfill gas',
+            'offshore wind', 'sewage gas', 'geothermal', 'mine gas'],
         inplace=True)
 
     data.power_measurement.replace(
-        ['Nein', 'Ja'], ['No', 'Yes'], inplace=True)
+        ['Nein', 'Ja'], ['no', 'yes'], inplace=True)
 
     data.controllability.replace(
         ['nicht regelbar', '70 % Begrenzung', 'regelbar n. § 9 Abs. 2 EEG',
@@ -94,8 +96,30 @@ for tso, f in tsoList:
         ['Ausschließliche Wirtschaftszone', 'Ausland'],
         ['exclusive economic zone', 'foreign country'], inplace=True)
 
-    # replace space with underscore in file name
-    fname = tso.replace(' ', '_')
+    # new column with TSO name
+    data['TSO'] = tso
 
-    # save as new CSV
-    data.to_csv(dest + fname + '.csv', index=None, encoding='utf-8')
+    # drop duplicate values
+    data = data.drop_duplicates(['EEG_plant_key'])
+
+    # remove non numeric postal code entries
+    data = data[
+        pd.to_numeric(data['postal_code'], errors='coerce').notnull()]
+
+    # concatenate data
+    allData = pd.concat([allData, data], ignore_index=True)
+
+    # # replace space with underscore in file name
+    # fname = tso.replace(' ', '_')
+
+    # # save as new CSV
+    # data.to_csv(dest + fname + '.csv', index=None, encoding='utf-8')
+
+# filter data by energy type
+eType = ['wind']
+# eType = ['solar', 'wind', 'biomass', 'gas', 'hydro', 'geothermal']
+
+# save data as CSV
+for e in eType:
+    eData = allData[allData['energy_carrier'].str.contains(e)]
+    eData.to_csv(dest + e + '.csv', index=None, encoding='utf-8')

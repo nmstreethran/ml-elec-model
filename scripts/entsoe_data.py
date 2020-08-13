@@ -132,26 +132,26 @@ except NoMatchingDataError:
 except RequestException as e:
     print(str(e) + '\n' + bzn + ': installed_generation_capacity')
 
-# installed generation capacity per unit
-try:
-    df = client.query_installed_generation_capacity_per_unit(
-        bzn, start=start, end=end, psr_type=None)
-    df = df.rename_axis('id')
-    # manually replace accented characters
-    df['Name'] = df['Name'].str.replace('Ã¼', 'ü')
-    df['Name'] = df['Name'].str.replace('Ã¤', 'ä')
-    df['Name'] = df['Name'].str.replace('Ã¶', 'ö')
-    df['Name'] = df['Name'].str.replace('Ã', 'ß')
-    df.to_csv(
-        fpaths[0] + 'installed_generation_capacity_per_unit_' + bzn
-        + '.csv', encoding='utf-8')
-except NoMatchingDataError:
-    print(
-        'No matching data found for ' + bzn +
-        ': installed_generation_capacity_per_unit')
-except RequestException as e:
-    print(
-        str(e) + '\n' + bzn + ': installed_generation_capacity_per_unit')
+# # installed generation capacity per unit
+# try:
+#     df = client.query_installed_generation_capacity_per_unit(
+#         bzn, start=start, end=end, psr_type=None)
+#     df = df.rename_axis('id')
+#     # manually replace accented characters
+#     df['Name'] = df['Name'].str.replace('Ã¼', 'ü')
+#     df['Name'] = df['Name'].str.replace('Ã¤', 'ä')
+#     df['Name'] = df['Name'].str.replace('Ã¶', 'ö')
+#     df['Name'] = df['Name'].str.replace('Ã', 'ß')
+#     df.to_csv(
+#         fpaths[0] + 'installed_generation_capacity_per_unit_' + bzn
+#         + '.csv', encoding='utf-8')
+# except NoMatchingDataError:
+#     print(
+#         'No matching data found for ' + bzn +
+#         ': installed_generation_capacity_per_unit')
+# except RequestException as e:
+#     print(
+#         str(e) + '\n' + bzn + ': installed_generation_capacity_per_unit')
 
 # # unavailability of production units
 # try:
