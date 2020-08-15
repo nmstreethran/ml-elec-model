@@ -17,9 +17,6 @@ cntr = gpd.read_file(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
     'geography%2Fpolygons%2Fcountries.geojson/raw?ref=master')
 
-# convert to Web Mercator projection
-cntr = cntr.to_crs(crs='EPSG:3857')
-
 # plot styles
 plt.style.use('seaborn')
 mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
@@ -29,8 +26,8 @@ fig, ax = plt.subplots(1, figsize=(13, 13))
 cntr.plot(
     column='CNTR_CODE', ax=ax, legend=True, cmap='viridis',
     legend_kwds={'loc': 'lower right'})
-plt.ylabel('Latitude (Web Mercator)')
-plt.xlabel('Longitude (Web Mercator)')
+plt.ylabel('Latitude')
+plt.xlabel('Longitude')
 plt.show()
 
 """Bokeh plot
@@ -40,7 +37,6 @@ from bokeh.io import show
 from bokeh.models import GeoJSONDataSource, CategoricalColorMapper, Plot
 from bokeh.plotting import figure
 from bokeh.palettes import viridis
-# from bokeh.tile_providers import get_provider, Vendors
 
 # load data source
 geo_source = GeoJSONDataSource(geojson=cntr.to_json())
@@ -60,12 +56,8 @@ p = Plot(output_backend='webgl')
 # set axis types to mercator so that latitudes and longitudes are used
 # in the figure
 p = figure(
-    # x_axis_type='mercator', y_axis_type='mercator'
     tooltips=TOOLTIPS, output_backend='webgl', tools='save, hover',
-    plot_width=400)
-
-# # set OpenStreetMap / CartoDB overlay
-# p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
+    plot_width=4, plot_height=6)
 
 # hover settings
 p.hover.point_policy = 'follow_mouse'

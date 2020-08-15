@@ -10,19 +10,33 @@ for statistics (NUTS) data from Eurostat
 
 # import libraries
 import geopandas as gpd
-from bokeh.io import show
-from bokeh.models import GeoJSONDataSource, CategoricalColorMapper, Plot
-from bokeh.plotting import figure
-from bokeh.palettes import viridis
-# from bokeh.tile_providers import get_provider, Vendors
+import matplotlib as mpl
+import matplotlib.pyplot as plt
 
 # import data
 zones = gpd.read_file(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
     'geography%2Fpolygons%2Fbidding_zones.geojson/raw?ref=master')
 
-# # convert to Web Mercator projection
-# zones = zones.to_crs(crs='EPSG:3857')
+# plot styles
+plt.style.use('seaborn')
+mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
+
+# configure plot
+fig, ax = plt.subplots(1, figsize=(13, 13))
+zones.plot(
+    column='zone', ax=ax, legend=True, cmap='viridis',
+    legend_kwds={'loc': 'lower right'})
+plt.ylabel('Latitude')
+plt.xlabel('Longitude')
+plt.show()
+
+"""Bokeh plot
+
+from bokeh.io import show
+from bokeh.models import GeoJSONDataSource, CategoricalColorMapper, Plot
+from bokeh.plotting import figure
+from bokeh.palettes import viridis
 
 # load data source
 geo_source = GeoJSONDataSource(geojson=zones.to_json())
@@ -43,13 +57,8 @@ p = Plot(output_backend='webgl')
 # in the figure
 # set output backend for the plotting API
 p = figure(
-    # x_axis_type='mercator', y_axis_type='mercator',
     tooltips=TOOLTIPS, output_backend='webgl', sizing_mode='scale_width',
-    # plot_width=400, plot_height=600
-    )
-
-# # set OpenStreetMap / CartoDB overlay
-# p.add_tile(get_provider(Vendors.CARTODBPOSITRON_RETINA))
+    plot_width=4, plot_height=6)
 
 # hover settings
 p.hover.point_policy = 'follow_mouse'
@@ -61,23 +70,4 @@ p.patches(
 
 # open the map
 show(p)
-
-"""Matplotlib plot
-
-# import libraries
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-
-# plot styles
-plt.style.use('seaborn')
-mpl.rcParams['font.sans-serif'] = ['Lato', 'sans-serif']
-
-# configure plot
-fig, ax = plt.subplots(1, figsize=(13, 13))
-zones.plot(
-    column='zone', ax=ax, legend=True, cmap='viridis',
-    legend_kwds={'loc': 'lower right'})
-plt.ylabel('Latitude (Web Mercator)')
-plt.xlabel('Longitude (Web Mercator)')
-plt.show()
 """

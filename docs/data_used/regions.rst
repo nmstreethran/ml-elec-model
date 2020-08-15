@@ -237,7 +237,7 @@ There is no clear indication of the bidding zone boundaries for Sweden, so some 
 
 Approximate bidding zone polygons are available from Tomorrow's electricityMap repository [tmrowco2020]_. Combining all of these produces the following map.
 
-.. bokeh-plot:: ../scripts/zones_plot.py
-   :source-position: none
+.. figure:: ../images/zones.png
+   :alt: Approximate bidding zones of Germany and its interconnections (in the first half of 2018), made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).
 
-Approximate bidding zones of Germany and its interconnections (in the first half of 2018), made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).
+   Approximate bidding zones of Germany and its interconnections (in the first half of 2018), made using polygons by Tomorrow and Eurostat (© EuroGeographics for the administrative boundaries).
