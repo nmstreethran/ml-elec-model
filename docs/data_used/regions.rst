@@ -107,8 +107,8 @@ Local administrative units (:term:`LAU`) are municipalities and communes, which 
 
 Some datasets provide postcodes, which must be translated into geographical locations for better clustering and comparisons. GeoNames [GeoNames]_ provides open postcode data.
 
-Transmission system operators and interconnections
---------------------------------------------------
+Transmission system
+-------------------
 
 Europe has multiple :term:`TSO`\s [ENTSO-Ea]_ and cross-border interconnections. These are listed for Germany and its interconnections, along with bidding zones, in the table below.
 

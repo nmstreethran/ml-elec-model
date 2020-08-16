@@ -12,11 +12,26 @@ Welcome to ml-elec-model's documentation!
    glossary
    references
 
+Machine learning-based electricity system model.
+
+Repository: https://gitlab.com/nithiya/ml-elec-model
+
 by Nithiya Streethran (nmstreethran at gmail dot com)
 
 **This project is a work-in-progress. Feedback and suggestions are always welcome. Please open an issue or refer to the contributing guidelines in the main repository if you would like to contribute.**
 
-Machine learning-based electricity system model.
+About
+-----
+
+Due to the global transition into a low-carbon energy system, there is an increase in electrification and decentralisation of the energy system with renewable energy resources. There is an increasing share of intermittent renewable energy resources, namely solar and wind, in supplying the electricity demand in Europe, with Germany having the highest share. Advancement in technology means that larger amounts of high-resolution data describing the electricity system will be collected, which can be exploited to better manage the intermittent system in the short term. This project will investigate how machine learning algorithms and publicly available electricity system and meteorological data can be used by wind and solar energy generating companies in Germany for short-term forecasting of the generation, load, and market prices, and subsequently manage their portfolio and bids in the electricity market. Due to the proprietary nature of existing tools used by energy companies, this project will propose a fully open-source solution.
+
+**Focus:**
+
+- Forecasting of electricity generation, load, and market prices using regression algorithms
+- Data for the first half of 2018
+   - German meteorological measurements and power plants
+   - Generation, load, and market prices for the DE-AT-LU bidding zone
+- Starting off with wind energy
 
 Installing dependencies
 -----------------------
@@ -76,6 +91,12 @@ Data
 ----
 
 Datasets used and their descriptions are available at https://gitlab.com/nithiya/ml-elec-model-data. To clone the repository with the data included, add ``--recurse-submodules`` after ``git clone``.
+
+Raw data can be accessed using the GitLab API. For example, the following URL points to ``data/meteorology/stations.csv``. Slashes in the file path are URL encoded to ``%2F``.
+
+.. code:: md
+
+   https://gitlab.com/api/v4/projects/19753809/repository/files/meteorology%2Fstations.csv/raw?ref=master
 
 License
 -------

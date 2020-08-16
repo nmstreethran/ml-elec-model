@@ -1,9 +1,9 @@
 """Plotting postcode-aggregated German wind power generator data
 
-This script plots an interactive map of aggregated wind energy generators
-in Germany with tooltips that contain their approximate location, the
-closest wind meteorological station, installed capacity in the postal code
-area, and the transmission system operator.
+This script plots an interactive map of wind energy generators aggregated by
+postal code in Germany. The tooltips show their approximate location, the
+closest wind meteorological station, total installed capacity, and the
+responsible transmission system operator.
 Data sources:
 - German Erneuerbare-Energien-Gesetz (EEG, which roughly translates to
     Renewable Energy Sources Act) power generator data from

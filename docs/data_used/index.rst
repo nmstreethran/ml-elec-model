@@ -9,4 +9,5 @@ Data
    tso-data
    met-data
    market-data
+   aggregated
    feature-selection

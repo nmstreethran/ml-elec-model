@@ -1,10 +1,7 @@
 Meteorological data
 ===================
 
-Germany
--------
-
-Weather data for Germany is extracted from :term:`DWD`'s Climate Data Center (:term:`DWD CDC`) OpenData [DWD]_. The data is subject to the server's terms of use [DWD18]_.
+Weather data for Germany is extracted from :term:`DWD`'s Climate Data Center (:term:`CDC`) OpenData [DWD]_. The data is subject to the server's terms of use [DWD18]_.
 
 A map of German meteorological stations is shown below.
 

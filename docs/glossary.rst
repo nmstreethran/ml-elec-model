@@ -24,7 +24,7 @@ Glossary
    DWD
       Deutscher Wetterdienst (German meteorological service)
 
-   DWD CDC
+   CDC
       :term:`DWD`'s Climate Data Center
 
    EIC
