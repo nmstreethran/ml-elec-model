@@ -87,8 +87,7 @@ data[met] = data[met].fillna('none')
 # merge all dataset values into new column
 data['type'] = data[met].agg(', '.join, axis=1)
 
-# drop date and dataset columns
-data = data.drop(columns=['start_date', 'end_date'])
+# drop dataset columns
 data = data.drop(columns=met)
 
 # remove 'none' strings and underscores

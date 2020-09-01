@@ -8,8 +8,11 @@ Unless otherwise stated, CSV datasets use UTF-8 character encoding, ``.`` for de
 Geography
 ---------
 
+Polygons
+~~~~~~~~
+
 Bidding zone polygons
-~~~~~~~~~~~~~~~~~~~~~
+`````````````````````
 
 ``data/geography/polygons/bidding_zones.geojson``
 
@@ -42,7 +45,7 @@ It is created by running the Python script ``scripts/zones.py``. The script pars
    - SE-SE4.json
 
 Country polygons
-~~~~~~~~~~~~~~~~
+````````````````
 
 ``data/geography/polygons/countries.geojson``
 
@@ -66,16 +69,8 @@ It is created by running the Python script ``scripts/countries.py``. The script 
 - NUTS_RG_01M_2016_4326_LEVL_0.geojson
 - NUTS_RG_01M_2016_4326_LEVL_1.geojson
 
-Postal codes
-~~~~~~~~~~~~
-
-``data/geography/postcodes/postcodesDE.csv`` is a CSV file containing German postcodes, which is created by running the Python script ``scripts/postcodes.py``. This script downloads data from the `GeoNames Postal Code dataset <https://www.geonames.org/postal-codes/>`__.
-
 Metadata
-~~~~~~~~
-
-NUTS 2016 data
-``````````````
+````````
 
 Complete metadata is in the `metadata.pdf <https://gisco-services.ec.europa.eu/distribution/v2/nuts/nuts-2016-metadata.pdf>`__ file. See also the `Eurostat website <https://ec.europa.eu/eurostat/web/nuts/background>`__.
 
@@ -109,11 +104,11 @@ No subset code - all :term:`NUTS` levels are in the same file. It means quadrupl
 
 format: ``.geojson`` (https://geojson.org)
 
-License and copyright
-~~~~~~~~~~~~~~~~~~~~~
+License and copyright information
+`````````````````````````````````
 
-NUTS 2016 data
-``````````````
+NUTS 2016
++++++++++
 
 © European Union, 1995 - today
 
@@ -125,18 +120,29 @@ Eurostat has a policy of encouraging free re-use of its data, both for non-comme
 In addition to the general copyright and licence policy applicable to the whole Eurostat website, the following specific provisions apply to the Administrative units / Statistical units datasets downloaded. The download and usage of these data is subject to the acceptance of the following clauses:
 
 - The Commission agrees to grant the non-exclusive and not transferable right to use and process the Eurostat/GISCO geographical data downloaded from this page (the "data").
-- The permission to use the data is granted on condition that:
-   - the data will not be used for commercial purposes;
-   - the source will be acknowledged. A copyright notice, as specified below, will have to be visible on any printed or electronic publication using the data downloaded from this page.
-      - data source will have to be acknowledged in the legend of the map and in the introductory page of the publication with the following copyright notice: **© EuroGeographics for the administrative boundaries**
+- The permission to use the data is granted on condition that: (1) the data will not be used for commercial purposes; (2) the source will be acknowledged. A copyright notice, as specified below, will have to be visible on any printed or electronic publication using the data downloaded from this page.
+- Data source will have to be acknowledged in the legend of the map and in the introductory page of the publication with the following copyright notice: **© EuroGeographics for the administrative boundaries**.
 
-Polygons of SE bidding zones
-````````````````````````````
+electricityMap
+++++++++++++++
 
 electricityMap by Tomorrow is licensed under the terms of the `MIT License <https://opensource.org/licenses/MIT>`__.
 
-GeoNames Postal Code dataset
-````````````````````````````
+References
+``````````
+
+- `NUTS 2016 release notes <https://gisco-services.ec.europa.eu/distribution/v2/nuts/nuts-2016-release-notes.txt>`__
+- `GISCO data distribution API <https://gisco-services.ec.europa.eu/distribution/v2/nuts/>`__
+- `Eurostat copyright notice and free re-use of data <https://ec.europa.eu/eurostat/about/policies/copyright>`__
+- `Administrative units / Statistical units download provisions <https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units>`__
+
+Postal codes
+~~~~~~~~~~~~
+
+``data/geography/postcodes/postcodesDE.csv`` is a CSV file containing German postcodes, which is created by running the Python script ``scripts/postcodes.py``. This script downloads data from the `GeoNames Postal Code dataset <https://www.geonames.org/postal-codes/>`__.
+
+License
+```````
 
 **The following descriptions are derived from the readme file obtained during download.**
 
@@ -169,17 +175,6 @@ The data format is tab-delimited text in UTF-8 encoding, with the following fiel
 - longitude: estimated longitude (wgs84)
 - accuracy: accuracy of latitudes and longitudes from 1=estimated, 4=geonameid, 6=centroid of addresses or shape
 
-References
-~~~~~~~~~~
-
-NUTS 2016 data
-``````````````
-
-- `NUTS 2016 release notes <https://gisco-services.ec.europa.eu/distribution/v2/nuts/nuts-2016-release-notes.txt>`__
-- `GISCO data distribution API <https://gisco-services.ec.europa.eu/distribution/v2/nuts/>`__
-- `Eurostat copyright notice and free re-use of data <https://ec.europa.eu/eurostat/about/policies/copyright>`__
-- `Administrative units / Statistical units download provisions <https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units>`__
-
 Meteorology
 -----------
 
@@ -190,7 +185,7 @@ Data downloaded from the Deutscher Wetterdienst (:term:`DWD`; German meteorologi
 List of stations
 ~~~~~~~~~~~~~~~~
 
-**Last download date: 13.08.2020**
+**Last download date: 01.09.2020**
 
 The file named ``data/meteorology/stations.csv`` contains the list of meteorological stations in Germany for each observation type obtained by running the Python script ``scripts/met_stations.py``.
 
@@ -210,14 +205,34 @@ Column names for lists of meteorological stations:
 - Stationsname: station_name
 - Bundesland: state
 
+Wind
+~~~~
+
+**Last download date: 01.09.2020**
+
+Files in the ``data/meteorology/wind`` directory contains historical hourly station observations of wind speed and wind direction for Germany. These files are obtained by running the Python script ``scripts/met_data.py``.
+
+See https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/wind/historical/DESCRIPTION_obsgermany_climate_hourly_wind_historical_en.pdf for the full description. Accessed version (version v006, 2018) was last edited on 19.12.2018.
+
+The file comprises following parameters:
+
+- STATIONS_ID: station identification number
+- MESS_DATUM_ENDE: end of measurement interval (yyyymmddhh)
+- QN_3: quality level of next columns; coding see paragraph "Quality information"
+- F: mean wind speed (m/s)
+- D: mean wind direction (Grad)
+- eor: end of record; can be ignored
+
+with missing values are marked as -999. The definition of measurement time changed over time and referred to time units MOZ, MEZ or UTC (see the station specific Metadaten_Parameter* for the exact definition). Nowadays, hourly wind speed and wind direction is given as the average of the six 10 min intervals measured in the previous hour (e.g., at UTC 11, the average wind speed and average wind direction during UTC 10 - UTC 11 is given).
+
 License and copyright
 ~~~~~~~~~~~~~~~~~~~~~
 
-**Terms of use for data on the :term:`CDC` ftp server**
+**Terms of use for data on the CDC ftp server**
 
 **Please note:** This `English translation <https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.pdf>`__ is intended as a convenience to non-German-reading customers and has no legal effect for compliance or enforcement purposes. Only the `German version <https://opendata.dwd.de/climate_environment/CDC/Nutzungsbedingungen_German.pdf>`__ shall be legally binding.
 
-**All data in the freely accessible area of the :term:`CDC`'s ftp server are protected by copyright.**
+**All data in the freely accessible area of the CDC's ftp server are protected by copyright.**
 
 The freely accessible data may be re-used without any restrictions provided that the source reference is indicated, as laid down in the GeoNutzV ordinance ("Verordnung zur Festlegung der Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes = Ordinance to Determine the Conditions for Use for the Provision of Spatial Data of the Federation). As to the layout of source references, the :term:`DWD` requests adherence to the following guidelines (cf. § 7 of the :term:`DWD` Law and § 3 of the GeoNutzV ordinance):
 

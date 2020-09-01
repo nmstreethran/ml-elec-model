@@ -31,7 +31,7 @@ links:
     - gem install awesome_bot
   script:
     - "awesome_bot --allow-dupe --skip-save-results --white-list
-      doi.org,ml-elec-model.git,img.shields.io,\
+      doi.org,ml-elec-model.git,eumetsat.int,bkg.bund.de,\
       dnvgl.com/services/forecaster-94823,gridscientific.com/about-us
       `find . -name '*.md'` `find . -name '*.rst'`"
   only:

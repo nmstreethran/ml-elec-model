@@ -36,7 +36,7 @@ stns = pd.read_csv(
     urlBase + 'meteorology%2Fstations.csv/raw?ref=master',
     # 'data/meteorology/stations.csv',
     encoding='utf-8',
-    usecols=['station_id', 'latitude', 'longitude', 'type', 'state'])
+    usecols=['station_id', 'latitude', 'longitude', 'type'])
 
 # rename lat and lon columns for met data
 stns = stns.rename(columns={'longitude': 'met_lon', 'latitude': 'met_lat'})
@@ -60,8 +60,9 @@ for m in eList:
     pp = pd.read_csv(
         urlBase + 'power%2Finstalled%2F' + m + '.csv/raw?ref=master',
         # 'data/power/installed/' + m + '.csv',
-        encoding='utf-8',
-        usecols=['postal_code', 'installed_capacity', 'city_district', 'TSO'])
+        encoding='utf-8', usecols=[
+            'postal_code', 'installed_capacity',
+            'city_district', 'TSO', 'state'])
 
     # aggregate by postal code
     pp = pd.merge(pp.groupby(

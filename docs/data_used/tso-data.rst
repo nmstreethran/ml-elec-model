@@ -1,11 +1,9 @@
 Electricity system data
 =======================
 
-The :term:`ENTSO-E TP` [ENTSO-Ef]_ has a dashboard with various electricity system data tables and visualisations available to the public. The list of data available for free re-use is available on the website [ENTSO-E2019]_. All users must first accept the platform's terms and conditions and privacy policy [ENTSO-Eg]_ before gaining access to the dashboard. However, in order to export datasets in various formats (such as ``.csv`` and ``.xml``), as well as gain additional functionalities, it is required to register for a free account [#f4]_ on :term:`ENTSO-E TP`. :term:`ENTSO-E TP`'s Restful application programming interface (:term:`API`) can then be used to automate the data extraction process (see the :term:`API` implementation [ENTSO-E2016]_ and user guides [ENTSO-E]_ for more info). Once a free account has been created, request for a security token to access the :term:`API` by sending an email to the :term:`ENTSO-E TP` Helpdesk (transparency at entsoe dot eu), stating 'Restful :term:`API` access' in the subject and the email address used to register for the account. Once granted, the security token can be viewed via account settings.
+See `Data sources <data_used/data-sources.html#entso-e-transparency-platform-data>`__ for more information regarding data from the :term:`ENTSO-E TP` used in this project.
 
-The :term:`ENTSO-E` :term:`API` Python client (entsoe-py) [EnergieID2019]_ is used to easily query the required data and return them as Pandas dataframes or series. The queries for generation and installed generation capacity per unit return dataframes, while the query for load returns a series.
-
-The bidding zones in Germany and its interconnections, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the Pandas client.
+The bidding zones in Germany and its interconnections, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the pandas client.
 
 .. IMPORTANT::
    Note that ``DE-LU`` only works for timestamps starting 01/10/2018 [ENTSO-Ee]_. Use ``DE-AT-LU`` for timestamps prior to this date. Since this project is focussing on the first half of 2018, ``DE-AT-LU`` is used.

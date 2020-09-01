@@ -15,8 +15,7 @@ import errno
 from requests import get
 from zipfile import BadZipFile, ZipFile
 from io import BytesIO
-from datetime import datetime
-from glob import glob
+from datetime import datetime, timedelta
 
 # define start and end dates of data (within the same year)
 start = '20180101'
@@ -40,7 +39,11 @@ datasets = [
 metStations = pd.read_csv(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
     'meteorology%2Fstations.csv/raw?ref=master',
-    encoding='utf-8')
+    encoding='utf-8', parse_dates=['start_date', 'end_date'])
+
+metStations = pd.read_csv(
+    'data/meteorology/stations.csv',
+    encoding='utf-8', parse_dates=['start_date', 'end_date'])
 
 for d, D in datasets:
     # hourly data repository URL
@@ -61,6 +64,9 @@ for d, D in datasets:
     # filter meteorological data based on energy carrier
     stations = metStations[metStations['type'].str.contains(d)]
 
+    # reset index
+    stations = stations.reset_index(drop=True)
+
     for idx in range(len(stations)):
         # station ID
         stn = stations.loc[idx, 'station_id']
@@ -68,9 +74,9 @@ for d, D in datasets:
         # add leading zeros to station ID if less than 5 digits long
         stn_id = str(stn).zfill(5)
 
-        # # convert dates to strings
-        # sd = stations.loc[idx, 'start_date'].strftime('%Y%m%d')
-        # ed = stations.loc[idx, 'end_date'].strftime('%Y%m%d')
+        # convert dates to strings
+        sd = stations.loc[idx, 'start_date'].strftime('%Y%m%d')
+        ed = stations.loc[idx, 'end_date'].strftime('%Y%m%d')
 
         # get zip file download URLs
         # for solar data
@@ -79,14 +85,13 @@ for d, D in datasets:
 
         # for historical data (not solar)
         elif end < yr:
-            # # if ed falls within the current year
-            # # change it to be the last day of the previous year
-            # if ed >= yr.strftime('%Y%m%d'):
-            #     ed = (yr - timedelta(days=1)).strftime('%Y%m%d')
-            for f in glob(
-                'historical/stundenwerte_' + D + '_' + stn_id +
-                    '_*_hist.zip'):
-                url = (repourl + f)
+            # if ed falls within the current year
+            # change it to be the last day of the previous year
+            if ed >= yr.strftime('%Y%m%d'):
+                ed = (yr - timedelta(days=1)).strftime('%Y%m%d')
+            url = (
+                repourl + 'historical/stundenwerte_' + D + '_' + stn_id +
+                '_' + sd + '_' + ed + '_hist.zip')
 
         # for recent data (current year, not solar)
         else:
@@ -99,30 +104,29 @@ for d, D in datasets:
             r = get(url)
             z = ZipFile(BytesIO(r.content))
             z.extractall(dest + 'temp/')
+
+            # read weather data for station
+            data = pd.read_csv(
+                dest + 'temp/produkt_' + D.lower() + '_stunde_' + sd + '_' +
+                ed + '_' + stn_id + '.txt', sep=';', encoding='ISO-8859-1')
+
+            # rename timestamp column
+            data.rename(columns={data.columns[1]: 'TIMESTAMP'}, inplace=True)
+
+            # convert timestamp to datetime
+            data['TIMESTAMP'] = pd.to_datetime(
+                data['TIMESTAMP'], format='%Y%m%d%H')
+
+            # filter for date range
+            data = data.drop(data[
+                (data.TIMESTAMP < start) | (data.TIMESTAMP > end)].index)
+
+            # set end timestamps as index
+            data.set_index(['TIMESTAMP'], inplace=True)
+
+            # save as CSV
+            data.to_csv(dest + stn_id + '.csv', encoding='utf-8')
+
         # exception if no zip file exists
         except BadZipFile:
             print('No data exists for station ' + stn_id)
-
-        # read weather data for station
-        for f in glob(
-            'temp/produkt_' + D.lower() + '_stunde_*_' +
-                stn_id + '.txt'):
-            data = pd.read_csv(
-                dest + f, sep=';', encoding='ISO-8859-1')
-
-        # rename timestamp column
-        data.rename(columns={data.columns[1]: 'TIMESTAMP'}, inplace=True)
-
-        # convert timestamp to datetime
-        data['TIMESTAMP'] = pd.to_datetime(
-            data['TIMESTAMP'], format='%Y%m%d%H')
-
-        # filter for date range
-        data = data.drop(data[
-            (data.TIMESTAMP < start) | (data.TIMESTAMP > end)].index)
-
-        # set end timestamps as index
-        data.set_index(['TIMESTAMP'], inplace=True)
-
-        # save as CSV
-        data.to_csv(dest + stn_id + '.csv', encoding='utf-8')
