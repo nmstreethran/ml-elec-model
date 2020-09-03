@@ -6,16 +6,10 @@ References
 .. [DWD18] Terms of use for data on the CDC ftp server. (2018, November 27). https://opendata.dwd.de/climate_environment/CDC/Terms_of_use.txt.
 .. [ElementEnergy] Project Case Studies - Element Energy. (n.d.). http://www.element-energy.co.uk/sectors/energy-networks/project-case-studies/.
 .. [EliaGroup2018] Towards a consumer-centric system. (2018). Elia Group. https://www.elia.be/-/media/project/elia/elia-site/company/publication/studies-and-reports/studies/elia-vision-paper-2018_front-spreads-back.pdf.
-.. [EnergieID2019] EnergieID/entsoe-py. (2019). [Python]. EnergieID cvba-so. https://github.com/EnergieID/entsoe-py (Original work published 2017).
-.. [ENTSO-E2016] ENTSO-E Transparency Platform Data Extraction Process Implementation Guide. (2016). ENTSO-E AISBL. https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf.
-.. [ENTSO-E2019] List of data available for free re-use. (2019, October 28). ENTSO-E AISBL. https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/terms%20and%20conditions/191025_List_of_Data_available_for_reuse_v2_cln.pdf.
-.. [ENTSO-E] Transparency Platform restful API - user guide. (n.d.). https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html.
 .. [ENTSO-Ea] Regional Security Coordinators FAQ. (n.d.). https://www.entsoe.eu/major-projects/rscis/.
 .. [ENTSO-Eb] Help Page — ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/content/static_content/Static%20content/knowledge%20base/knowledge%20base.html.
 .. [ENTSO-Ed] Energy Identification Codes (EICs). (n.d.). https://www.entsoe.eu/data/energy-identification-codes-eic/.
 .. [ENTSO-Ee] DE-AT-LU Bidding zone split — News — ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/news/widget?id=5b7c1e9b5092e75a10bab903.
-.. [ENTSO-Ef] ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/.
-.. [ENTSO-Eg] Terms and Conditions — ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/content/static_content/Static%20content/terms%20and%20conditions/terms%20and%20conditions.html.
 .. [EPEXSPOT] EPEX SPOT SE: About EPEX SPOT. (n.d.). https://www.epexspot.com/en/about.
 .. [Erbach2016] Erbach, G. (2016). Understanding electricity markets in the EU [Briefing]. European Union. https://www.europarl.europa.eu/thinktank/en/document.html?reference=EPRS_BRI%282016%29593519.
 .. [etsap-TIMES2020] etsap-TIMES/TIMES_model. (2020). [GAMS]. https://github.com/etsap-TIMES/TIMES_model (Original work published 2019).
@@ -58,3 +52,10 @@ References
 .. [UL] Software Archive — UL - Renewables. (n.d.). UL - Renewables. https://aws-dewi.ul.com/software/.
 .. [UNFCCC2015] Paris Agreement. (2015). United Nations Framework Convention on Climate Change. https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement.
 .. [Wikipedia2019] Counties of Sweden. (2019). In Wikipedia. https://en.wikipedia.org/w/index.php?title=Counties_of_Sweden&oldid=882806371.
+
+.. .. [EnergieID2019] EnergieID/entsoe-py. (2019). [Python]. EnergieID cvba-so. https://github.com/EnergieID/entsoe-py (Original work published 2017).
+.. .. [ENTSO-E2016] ENTSO-E Transparency Platform Data Extraction Process Implementation Guide. (2016). ENTSO-E AISBL. https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/web%20api/RestfulAPI_IG.pdf.
+.. .. [ENTSO-E2019] List of data available for free re-use. (2019, October 28). ENTSO-E AISBL. https://transparency.entsoe.eu/content/static_content/download?path=/Static%20content/terms%20and%20conditions/191025_List_of_Data_available_for_reuse_v2_cln.pdf.
+.. .. [ENTSO-E] Transparency Platform restful API - user guide. (n.d.). https://transparency.entsoe.eu/content/static_content/Static%20content/web%20api/Guide.html.
+.. .. [ENTSO-Ef] ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/.
+.. .. [ENTSO-Eg] Terms and Conditions — ENTSO-E Transparency Platform. (n.d.). https://transparency.entsoe.eu/content/static_content/Static%20content/terms%20and%20conditions/terms%20and%20conditions.html.

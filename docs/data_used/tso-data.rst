@@ -1,7 +1,7 @@
 Electricity system data
 =======================
 
-See `Data sources <data_used/data-sources.html#entso-e-transparency-platform-data>`__ for more information regarding data from the :term:`ENTSO-E TP` used in this project.
+See `Data sources <./data-sources.html#entso-e-transparency-platform-data>`__ for more information regarding data from the :term:`ENTSO-E TP` used in this project.
 
 The bidding zones in Germany and its interconnections, mapped to their corresponding Energy Identification Codes (:term:`EIC`\s) [ENTSO-Ed]_ as shown in the table below, are used when querying using the pandas client.
 
@@ -140,7 +140,3 @@ The load is calculated using the average of real-time load values per bidding zo
    = Net generation – Exports + Imports – Absorbed energy
 
 For these calculations, the net generation is preferred. However, gross generation may be used if it is available with the better precision. The :term:`TSO`\s responsible for each area decide whether to use gross or net generation, but they are required to keep their choice consistent per bidding zone. Absorbed energy is also provided as separate information with the aggregated generation output of the hydro pumped storage. The physical flow on the tie line is measured as agreed by neighbouring :term:`TSO`\s or bidding zones, where applicable. This dataset is published on :term:`ENTSO-E TP` no later than one hour after the end of the operating period.
-
-.. rubric:: Footnotes
-
-.. [#f4] https://transparency.entsoe.eu/usrm/user/createPublicUser

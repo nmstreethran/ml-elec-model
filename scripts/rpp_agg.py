@@ -23,8 +23,7 @@ import errno
 urlBase = 'https://gitlab.com/api/v4/projects/19753809/repository/files/'
 
 postcodes = pd.read_csv(
-    urlBase + 'geography%2Fpostcodes%2FpostcodesDE.csv/raw?ref=master',
-    # 'data/geography/postcodes/postcodesDE.csv',
+    urlBase + 'geography%2Fpostcodes%2FpostcodesDE%2Ecsv/raw?ref=master',
     encoding='utf-8',
     usecols=['postal_code', 'latitude', 'longitude', 'accuracy'])
 
@@ -33,8 +32,7 @@ postcodes = postcodes.drop_duplicates(['postal_code'])
 
 # read meteorological station data
 stns = pd.read_csv(
-    urlBase + 'meteorology%2Fstations.csv/raw?ref=master',
-    # 'data/meteorology/stations.csv',
+    urlBase + 'meteorology%2Fstations%2Ecsv/raw?ref=master',
     encoding='utf-8',
     usecols=['station_id', 'latitude', 'longitude', 'type'])
 
@@ -43,7 +41,6 @@ stns = stns.rename(columns={'longitude': 'met_lon', 'latitude': 'met_lat'})
 
 # list of intermittent energy carriers
 eList = ['wind']
-# eList = ['wind', 'solar']
 
 # create directory to store data
 dest = 'data/power/installed/'
@@ -58,8 +55,7 @@ except OSError as exception:
 for m in eList:
     # read installed power plants data
     pp = pd.read_csv(
-        urlBase + 'power%2Finstalled%2F' + m + '.csv/raw?ref=master',
-        # 'data/power/installed/' + m + '.csv',
+        urlBase + 'power%2Finstalled%2F' + m + '%2Ecsv/raw?ref=master',
         encoding='utf-8', usecols=[
             'postal_code', 'installed_capacity',
             'city_district', 'TSO', 'state'])

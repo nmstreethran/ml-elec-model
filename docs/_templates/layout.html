@@ -21,7 +21,7 @@
 
     /* external link indicator */
     footer a::after,
-    a.reference.external:not([href*="nithiya.gitlab.io/ml-elec-model"])::after {
+    a.reference.external:not([href^="./"]):not([href^="#"])::after {
       content: " \f35d";
       font-family: "Font Awesome 5 Free";
       display: inline-block;

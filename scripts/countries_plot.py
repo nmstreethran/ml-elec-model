@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 # import data
 cntr = gpd.read_file(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
-    'geography%2Fpolygons%2Fcountries.geojson/raw?ref=master')
+    'geography%2Fpolygons%2Fcountries%2Egeojson/raw?ref=master')
 
 # plot styles
 plt.style.use('seaborn')

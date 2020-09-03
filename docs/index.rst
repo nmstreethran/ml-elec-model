@@ -79,7 +79,7 @@ To view the full list of dependencies, see ``requirements.txt``.
 Documentation
 -------------
 
-The documentation is built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and hosted using GitLab Pages. It is available at https://nithiya.gitlab.io/ml-elec-model/. The files can be found in the ``docs`` folder.
+The documentation is built using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and hosted using GitLab Pages. It is available at `nithiya.gitlab.io/ml-elec-model/ <./index.html>`__. The files can be found in the ``docs`` folder.
 
 To build the documentation locally, clone this repository and install all requirements, as detailed above. Then, change the directory to ``docs`` by running ``cd docs``, and run ``make html``. Local builds of the documentation in HTML format can be viewed in ``docs/_build/html/index.html``.
 
@@ -90,11 +90,19 @@ Data
 
 Datasets used and their descriptions are available at https://gitlab.com/nithiya/ml-elec-model-data. To clone the repository with the data included, add ``--recurse-submodules`` after ``git clone``.
 
-Raw data can be accessed using the GitLab API. For example, the following URL points to ``data/meteorology/stations.csv``. Slashes in the file path are URL encoded to ``%2F``.
+Raw data can be accessed using the `GitLab API <https://docs.gitlab.com/ee/api/repository_files.html#get-raw-file-from-repository>`__:
 
 .. code:: md
 
-   https://gitlab.com/api/v4/projects/19753809/repository/files/meteorology%2Fstations.csv/raw?ref=master
+   GET /projects/:id/repository/files/:file_path/raw
+
+The required parameters are ``file_path``, which is `URL (percent) encoded <https://en.wikipedia.org/wiki/Percent-encoding>`__ (e.g., ``/`` to ``%2F``), and ``ref``, which is the name of the branch, tag, or commit.
+
+For example, the following URL points to ``data/meteorology/stations.csv``:
+
+.. code:: md
+
+   https://gitlab.com/api/v4/projects/19753809/repository/files/meteorology%2Fstations%2Ecsv/raw?ref=master
 
 License
 -------
@@ -107,12 +115,12 @@ Unless otherwise stated:
 Credits
 -------
 
-This repository is a continuation and improvement of the work done by Nithiya Streethran in ENSYSTRA. ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No: 765515.
+This repository is a continuation and improvement of the work done by Nithiya Streethran in `ENSYSTRA <https://ensystra.eu/>`__. ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No: 765515.
 
 Contributing guidelines is adapted from the `Open Science MOOC <https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source>`__. The contents of the MOOC are licensed under a `Creative Commons Zero v1.0 Universal (CC0-1.0) license <https://creativecommons.org/publicdomain/zero/1.0/>`__.
 
 The Creative Commons license in markdown format is imported from `idleberg/Creative-Commons-Markdown <https://github.com/idleberg/Creative-Commons-Markdown>`__.
 
-The HTML documentation uses the `pydata-sphinx-theme <https://pydata-sphinx-theme.readthedocs.io/en/latest/>`__. Copyright (c) 2019, PyData Community. Licensed under `The 3-Clause BSD License (BSD-3-Clause) <https://opensource.org/licenses/BSD-3-Clause>`__.
+The HTML documentation uses the `PyData Sphinx Theme <https://pydata-sphinx-theme.readthedocs.io/en/latest/>`__. Copyright (c) 2019, PyData Community. Licensed under `The 3-Clause BSD License (BSD-3-Clause) <https://opensource.org/licenses/BSD-3-Clause>`__.
 
 The HTML documentation uses `Twemoji <https://twemoji.twitter.com/>`__. Copyright (c) Twitter. The graphics are licensed under a `CC-BY-4.0 license <https://creativecommons.org/licenses/by/4.0/>`__.

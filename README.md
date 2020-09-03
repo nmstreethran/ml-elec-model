@@ -83,10 +83,18 @@ A list of references used is available on [Zotero](https://www.zotero.org/groups
 
 Datasets used and their descriptions are available at <https://gitlab.com/nithiya/ml-elec-model-data>. To clone the repository with the data included, add `--recurse-submodules` after `git clone`.
 
-Raw data can be accessed using the GitLab API. For example, the following URL points to `data/meteorology/stations.csv`. Slashes in the file path are URL encoded to `%2F`.
+Raw data can be accessed using the [GitLab API](https://docs.gitlab.com/ee/api/repository_files.html#get-raw-file-from-repository):
 
 ```md
-https://gitlab.com/api/v4/projects/19753809/repository/files/meteorology%2Fstations.csv/raw?ref=master
+GET /projects/:id/repository/files/:file_path/raw
+```
+
+The required parameters are `file_path`, which is [URL (percent) encoded](https://en.wikipedia.org/wiki/Percent-encoding) (e.g., `/` to `%2F`), and `ref`, which is the name of the branch, tag, or commit.
+
+For example, the following URL points to `data/meteorology/stations.csv`:
+
+```md
+https://gitlab.com/api/v4/projects/19753809/repository/files/meteorology%2Fstations%2Ecsv/raw?ref=master
 ```
 
 ## License
@@ -98,12 +106,12 @@ Unless otherwise stated:
 
 ## Credits
 
-This repository is a continuation and improvement of the work done by Nithiya Streethran in ENSYSTRA. ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No: 765515.
+This repository is a continuation and improvement of the work done by Nithiya Streethran in [ENSYSTRA](https://ensystra.eu/). ENSYSTRA is funded by the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No: 765515.
 
 Contributing guidelines are adapted from the [Open Science MOOC](https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source). The contents of the MOOC are licensed under a [Creative Commons Zero v1.0 Universal (CC0-1.0) license](https://creativecommons.org/publicdomain/zero/1.0/).
 
 The Creative Commons license in markdown format is imported from [idleberg/Creative-Commons-Markdown](https://github.com/idleberg/Creative-Commons-Markdown).
 
-The HTML documentation uses the [pydata-sphinx-theme](https://pydata-sphinx-theme.readthedocs.io/en/latest/). Copyright (c) 2019, PyData Community. Licensed under [The 3-Clause BSD License (BSD-3-Clause)](https://opensource.org/licenses/BSD-3-Clause).
+The HTML documentation uses the [PyData Sphinx Theme](https://pydata-sphinx-theme.readthedocs.io/en/latest/). Copyright (c) 2019, PyData Community. Licensed under [The 3-Clause BSD License (BSD-3-Clause)](https://opensource.org/licenses/BSD-3-Clause).
 
 The HTML documentation uses [Twemoji](https://twemoji.twitter.com/). Copyright (c) Twitter. The graphics are licensed under a [CC-BY-4.0 license](https://creativecommons.org/licenses/by/4.0/).

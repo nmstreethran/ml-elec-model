@@ -19,9 +19,12 @@ import pandas as pd
 # GitLab raw file base URL
 url = (
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
-    'meteorology%2Fstations.csv/raw?ref=master')
+    'meteorology%2Fstations%2Ecsv/raw?ref=master')
 
-data = pd.read_csv(url, encoding='utf-8')
+data = pd.read_csv(
+    url, encoding='utf-8', usecols=[
+        'station_id', 'station_height', 'latitude', 'longitude',
+        'station_name', 'state', 'type'])
 
 # transform latitudes and longitudes from WGS84 to Web Mercator projection
 lons = tuple(data['longitude'])

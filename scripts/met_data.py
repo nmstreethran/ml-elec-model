@@ -38,11 +38,7 @@ datasets = [
 # read CSV file with list of stations
 metStations = pd.read_csv(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
-    'meteorology%2Fstations.csv/raw?ref=master',
-    encoding='utf-8', parse_dates=['start_date', 'end_date'])
-
-metStations = pd.read_csv(
-    'data/meteorology/stations.csv',
+    'meteorology%2Fstations%2Ecsv/raw?ref=master',
     encoding='utf-8', parse_dates=['start_date', 'end_date'])
 
 for d, D in datasets:
