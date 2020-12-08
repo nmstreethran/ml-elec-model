@@ -44,14 +44,12 @@ First, clone this repository (including datasets) via either HTTPS or SSH:
 
    .. code:: sh
 
-      # SSH
-      git clone --recurse-submodules git@gitlab.com:nithiya/ml-elec-model.git
+      git clone --recurse-submodules https://gitlab.com/nithiya/ml-elec-model.git
 
 - via SSH:
 
    .. code:: sh
 
-      # SSH
       git clone --recurse-submodules git@gitlab.com:nithiya/ml-elec-model.git
 
 Then, navigate to the directory of the cloned repository:
@@ -64,7 +62,7 @@ Finally, using either ``venv`` or `Anaconda <https://www.anaconda.com/products/i
 
 - using ``venv``:
 
-   .. code:: sh
+   .. code::
 
       python3.8 -m venv env
       source env/bin/activate
@@ -72,7 +70,7 @@ Finally, using either ``venv`` or `Anaconda <https://www.anaconda.com/products/i
 
 - using Anaconda:
 
-   .. code:: sh
+   .. code::
 
       conda create --name ml-elec-model python=3.8
       conda activate ml-elec-model

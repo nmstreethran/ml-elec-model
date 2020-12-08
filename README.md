@@ -38,14 +38,12 @@ First, clone this repository (including datasets) via either HTTPS or SSH:
 - via HTTPS:
 
   ```sh
-  # HTTPS
   git clone --recurse-submodules https://gitlab.com/nithiya/ml-elec-model.git
   ```
 
 - via SSH:
 
   ```sh
-  # SSH
   git clone --recurse-submodules git@gitlab.com:nithiya/ml-elec-model.git
   ```
 
