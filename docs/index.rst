@@ -38,37 +38,51 @@ Installing dependencies
 
 Running scripts and building the documentation locally require a clone of this repository and installation of `Python 3 <https://www.python.org/>`__.
 
-First, clone this repository via either HTTPS or SSH:
+First, clone this repository (including datasets) via either HTTPS or SSH:
+
+- via HTTPS:
+
+   .. code:: sh
+
+      # SSH
+      git clone --recurse-submodules git@gitlab.com:nithiya/ml-elec-model.git
+
+- via SSH:
+
+   .. code:: sh
+
+      # SSH
+      git clone --recurse-submodules git@gitlab.com:nithiya/ml-elec-model.git
+
+Then, navigate to the directory of the cloned repository:
 
 .. code:: sh
 
-   # HTTPS
-   git clone https://gitlab.com/nithiya/ml-elec-model.git
+   cd ml-elec-model
 
-   # SSH
-   git clone git@gitlab.com:nithiya/ml-elec-model.git
+Using either ``venv`` or `Anaconda <https://www.anaconda.com/products/individual>`__, create and activate a virtual environment:
 
-Navigate to the directory of the cloned repository. Then, create and activate a virtual environment (recommended):
+- using ``venv``:
 
-.. code:: sh
+   .. code:: sh
 
-   python3 -m venv env
-   source env/bin/activate
+      python3 -m venv env
+      source env/bin/activate
 
-Alternatively, if using `Anaconda <https://www.anaconda.com/products/individual>`__:
+- using Anaconda:
 
-.. code:: sh
+   .. code:: sh
 
-   conda create --name ml-elec-model python=3
-   conda activate ml-elec-model
+      conda create --name ml-elec-model python=3
+      conda activate ml-elec-model
 
-Finally, install the dependencies:
+Finally, install the dependencies using pip (recommended):
 
 .. code:: sh
 
    pip install -r requirements.txt
 
-If using Anaconda, the required packages can be alternatively be installed via `conda-forge <https://conda-forge.org/>`__, instead of using ``pip install``:
+If using Anaconda, the required packages can alternatively be installed via `conda-forge <https://conda-forge.org/>`__ (note that packages installed this way may be outdated):
 
 .. code:: sh
 
@@ -88,7 +102,7 @@ A list of references used is available on `Zotero <https://www.zotero.org/groups
 Data
 ----
 
-Datasets used and their descriptions are available at https://gitlab.com/nithiya/ml-elec-model-data. To clone the repository with the data included, add ``--recurse-submodules`` after ``git clone``.
+Datasets used and their descriptions are available at https://gitlab.com/nithiya/ml-elec-model-data.
 
 Raw data can be accessed using the `GitLab API <https://docs.gitlab.com/ee/api/repository_files.html#get-raw-file-from-repository>`__:
 

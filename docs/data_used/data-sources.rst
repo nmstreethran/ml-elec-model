@@ -3,7 +3,7 @@ Data sources
 
 Data repository: https://gitlab.com/nithiya/ml-elec-model-data
 
-Unless otherwise stated, CSV datasets use UTF-8 character encoding, ``.`` for decimals, and ``,`` as the separator.
+Unless otherwise stated, CSV datasets use UTF-8 character encoding, ``.`` as decimals, and ``,`` as the separator.
 
 Geography
 ---------
