@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 # import data
 zones = gpd.read_file(
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
-    'geography%2Fpolygons%2Fbidding_zones.geojson/raw?ref=master')
+    'geography%2Fpolygons%2Fbidding%5Fzones%2Egeojson/raw?ref=master')
 
 # plot styles
 plt.style.use('seaborn')

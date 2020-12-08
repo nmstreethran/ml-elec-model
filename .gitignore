@@ -135,18 +135,15 @@ dmypy.json
 
 ##################################################################
 
-## User files and folders
-
+## User files
 *.code-workspace
+requirements_tmp*
+credentials.txt
+
+# User folders
 .vscode/
 old/
 draft/
 temp/
 test/
-credentials.txt
-todo.md
-requirements_tmp*
-requirements.sh
-compile.sh
-ml-elec-model
 charts/

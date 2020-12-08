@@ -27,8 +27,7 @@ import pandas as pd
 # GitLab raw file base URL
 url = (
     'https://gitlab.com/api/v4/projects/19753809/repository/files/' +
-    'power%2Finstalled%2Fwind_agg%2Ecsv/raw?ref=master')
-#   'data/power/installed/wind_agg.csv')
+    'power%2Finstalled%2Fwind%5Fagg%2Ecsv/raw?ref=master')
 
 data = pd.read_csv(url, encoding='utf-8')
 
