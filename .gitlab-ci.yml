@@ -16,16 +16,16 @@ linting:
     refs:
       - master
       - merge_requests
-    changes:
-      - scripts/**/*
-      - docs/conf.py
+    # changes:
+    #   - scripts/**/*
+    #   - docs/conf.py
   except:
     - schedules
 
 # checking links in markdown and reStructuredText files
 # https://github.com/dkhamsing/awesome_bot
 links:
-  stage: test
+  stage: test_docs
   image: ruby:latest
   before_script:
     - gem install awesome_bot
@@ -38,9 +38,9 @@ links:
     refs:
       - schedules
       - merge_requests
-    changes:
-      - "**/*.rst"
-      - "**/*.md"
+    # changes:
+    #   - "**/*.rst"
+    #   - "**/*.md"
 
 # testing Sphinx doc build
 pages_test:
