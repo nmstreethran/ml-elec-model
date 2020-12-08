@@ -6,7 +6,7 @@ stages:
 # linting Python scripts
 linting:
   stage: test
-  image: python:latest
+  image: python:3.8
   before_script:
     - pip install -r requirements.txt
     - pip install flake8
@@ -45,7 +45,7 @@ links:
 # testing Sphinx doc build
 pages_test:
   stage: test_docs
-  image: python:latest
+  image: python:3.8
   before_script:
     - pip install bokeh geopandas pydata-sphinx-theme
   script:
@@ -59,7 +59,7 @@ pages_test:
 # building and deploying Sphinx doc
 pages:
   stage: deploy
-  image: python:latest
+  image: python:3.8
   before_script:
     - pip install bokeh geopandas pydata-sphinx-theme
   script:
