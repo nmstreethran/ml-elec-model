@@ -55,33 +55,25 @@ Then, navigate to the directory of the cloned repository:
 cd ml-elec-model
 ```
 
-Using either `venv` or [Anaconda](https://www.anaconda.com/products/individual), create and activate a virtual environment:
+Using either `venv` or [Anaconda](https://www.anaconda.com/products/individual), create and activate a virtual environment, and install all dependencies:
 
 - using `venv`:
 
   ```sh
-  python3 -m venv env
+  python3.8 -m venv env
   source env/bin/activate
+  pip install -r requirements.txt
   ```
 
 - using Anaconda:
 
   ```sh
-  conda create --name ml-elec-model python=3
+  conda create --name ml-elec-model python=3.8
   conda activate ml-elec-model
+  conda install --channel conda-forge --file requirements.txt
   ```
 
-Finally, install the dependencies using pip (recommended):
-
-```sh
-pip install -r requirements.txt
-```
-
-If using Anaconda, the required packages can alternatively be installed via [conda-forge](https://conda-forge.org/) (note that packages installed this way may be outdated):
-
-```sh
-conda install --channel conda-forge --file requirements.txt
-```
+Note that some packages installed via [conda-forge](https://conda-forge.org/) may be outdated compared to the pip version.
 
 To view the full list of dependencies, see [`requirements.txt`](requirements.txt).
 
