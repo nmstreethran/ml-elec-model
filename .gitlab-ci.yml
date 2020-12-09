@@ -13,11 +13,7 @@ linting:
     - flake8 scripts docs/conf.py
   only:
     refs:
-      # - master
       - merge_requests
-    # changes:
-    #   - scripts/**/*
-    #   - docs/conf.py
   except:
     - schedules
 
@@ -30,16 +26,12 @@ links:
     - gem install awesome_bot
   script:
     - "awesome_bot --allow-dupe --skip-save-results --white-list
-      doi.org,ml-elec-model.git,eumetsat.int,bkg.bund.de,\
-      dnvgl.com/services/forecaster-94823,gridscientific.com/about-us
-      `find . -name '*.md'` `find . -name '*.rst'`"
+      bkg.bund.de,doi.org,dnvgl.com/services/forecaster-94823,\
+      elia.be,ml-elec-model.git `find . -name '*.md'` `find . -name '*.rst'`"
   only:
     refs:
       - schedules
       - merge_requests
-    # changes:
-    #   - "**/*.rst"
-    #   - "**/*.md"
 
 # testing Sphinx doc build
 pages_test:
@@ -48,6 +40,9 @@ pages_test:
   before_script:
     - pip install bokeh geopandas pydata-sphinx-theme
   script:
+    - 'sed
+      -e "s/nithiya.gitlab.io\/ml-elec-model\//\`& <.\/index.html>\`__/"
+      -e "1,3d" README.rst > docs/readme.rst'
     - sphinx-build -b html docs public
   only:
     refs:
@@ -60,6 +55,9 @@ pages:
   stage: deploy
   image: python:3.8
   before_script:
+    - 'sed \
+      -e "s/nithiya.gitlab.io\/ml-elec-model\//\`& <.\/index.html>\`__/" \
+      -e "1,3d" README.rst > docs/readme.rst'
     - pip install bokeh geopandas pydata-sphinx-theme
   script:
     - sphinx-build -b html docs public
