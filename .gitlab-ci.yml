@@ -1,6 +1,5 @@
 stages:
   - test
-  - test_docs
   - deploy
 
 # linting Python scripts
@@ -14,7 +13,7 @@ linting:
     - flake8 scripts docs/conf.py
   only:
     refs:
-      - master
+      # - master
       - merge_requests
     # changes:
     #   - scripts/**/*
@@ -25,7 +24,7 @@ linting:
 # checking links in markdown and reStructuredText files
 # https://github.com/dkhamsing/awesome_bot
 links:
-  stage: test_docs
+  stage: test
   image: ruby:latest
   before_script:
     - gem install awesome_bot
@@ -44,7 +43,7 @@ links:
 
 # testing Sphinx doc build
 pages_test:
-  stage: test_docs
+  stage: test
   image: python:3.8
   before_script:
     - pip install bokeh geopandas pydata-sphinx-theme
