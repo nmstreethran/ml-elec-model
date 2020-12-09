@@ -55,8 +55,8 @@ pages:
   stage: deploy
   image: python:3.8
   before_script:
-    - 'sed \
-      -e "s/nithiya.gitlab.io\/ml-elec-model\//\`& <.\/index.html>\`__/" \
+    - 'sed
+      -e "s/nithiya.gitlab.io\/ml-elec-model\//\`& <.\/index.html>\`__/"
       -e "1,3d" README.rst > docs/readme.rst'
     - pip install bokeh geopandas pydata-sphinx-theme
   script:
