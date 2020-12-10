@@ -1,7 +1,3 @@
-stages:
-  - test
-  - deploy
-
 # linting Python scripts
 linting:
   stage: test
@@ -14,6 +10,8 @@ linting:
   only:
     refs:
       - merge_requests
+    changes:
+      - "**/*.py"
   except:
     - schedules
 
@@ -32,6 +30,9 @@ links:
     refs:
       - schedules
       - merge_requests
+    changes:
+      - "**/*.md"
+      - "**/*.rst"
 
 # testing Sphinx doc build
 pages_test:
@@ -47,6 +48,9 @@ pages_test:
   only:
     refs:
       - merge_requests
+    changes:
+      - README.rst
+      - docs/**/*
   except:
     - schedules
 
@@ -67,5 +71,8 @@ pages:
   only:
     refs:
       - master
+    changes:
+      - README.rst
+      - docs/**/*
   except:
     - schedules
