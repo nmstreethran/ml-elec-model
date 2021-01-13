@@ -13,7 +13,8 @@ linting:
     changes:
       - "**/*.py"
   except:
-    - schedules
+    refs:
+      - schedules
 
 # checking links in markdown and reStructuredText files
 # https://github.com/dkhamsing/awesome_bot
@@ -52,7 +53,8 @@ pages_test:
       - README.rst
       - docs/**/*
   except:
-    - schedules
+    refs:
+      - schedules
 
 # building and deploying Sphinx doc
 pages:
@@ -75,4 +77,5 @@ pages:
       - README.rst
       - docs/**/*
   except:
-    - schedules
+    refs:
+      - schedules

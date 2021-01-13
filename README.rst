@@ -25,21 +25,21 @@ Due to the global transition into a low-carbon energy system, there is an increa
 Installing dependencies
 -----------------------
 
-Running scripts and building the documentation locally require a clone of this repository and installation of `Python 3 <https://www.python.org/>`__.
+Running scripts and building the documentation locally require installation of `Python 3.8 <https://www.python.org/>`__.
 
-First, clone this repository (including datasets) via either HTTPS or SSH:
+Once Python is installed, clone this repository (including datasets):
 
-- via HTTPS:
+-  *Option 1* - via HTTPS:
 
-.. code:: sh
+   .. code:: sh
 
-   git clone --recurse-submodules https://gitlab.com/nithiya/ml-elec-model.git
+      git clone --recurse-submodules https://gitlab.com/nithiya/ml-elec-model.git
 
-- via SSH:
+-  *Option 2* - via SSH:
 
-.. code:: sh
+   .. code:: sh
 
-   git clone --recurse-submodules git@gitlab.com:nithiya/ml-elec-model.git
+      git clone --recurse-submodules git@gitlab.com:nithiya/ml-elec-model.git
 
 Then, navigate to the directory of the cloned repository:
 
@@ -47,23 +47,23 @@ Then, navigate to the directory of the cloned repository:
 
    cd ml-elec-model
 
-Finally, using either ``venv`` or `Anaconda <https://www.anaconda.com/products/individual>`__, create and activate a virtual environment, and install all dependencies:
+Finally, create and activate a virtual environment, and install all dependencies:
 
-- using ``venv``:
+-  *Option 1* - using ``venv``:
 
-.. code:: sh
+   .. code:: sh
 
-   python3.8 -m venv env
-   source env/bin/activate
-   pip install -r requirements.txt
+      python3.8 -m venv env
+      source env/bin/activate
+      pip install -r requirements.txt
 
-- using Anaconda:
+-  *Option 2* - using `Anaconda <https://www.anaconda.com/products/individual>`__:
 
-.. code:: sh
+   .. code:: sh
 
-   conda create --name ml-elec-model python=3.8
-   conda activate ml-elec-model
-   conda install --channel conda-forge --file requirements.txt
+      conda create --name ml-elec-model python=3.8
+      conda activate ml-elec-model
+      conda install --channel conda-forge --file requirements.txt
 
 Note that while the required packages are installed in an Anaconda virtual environment using `conda-forge <https://conda-forge.org/>`__, some packages may be outdated compared to the pip versions.
 
@@ -102,7 +102,7 @@ License
 
 Unless otherwise stated:
 
-- Python scripts, Jupyter notebooks, and any other form of code or snippets in this repository are licensed under the `MIT License (MIT) <https://opensource.org/licenses/MIT>`__.
+- Python scripts, Jupyter notebooks, and any other form of code or snippets in this repository are licensed under the `MIT License <https://opensource.org/licenses/MIT>`__.
 - content, images, and documentation are licensed under a `Creative Commons Attribution 4.0 International (CC-BY-4.0) license <https://creativecommons.org/licenses/by/4.0/>`__.
 
 Credits
