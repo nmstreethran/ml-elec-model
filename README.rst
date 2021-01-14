@@ -25,7 +25,7 @@ Due to the global transition into a low-carbon energy system, there is an increa
 Installing dependencies
 -----------------------
 
-Running scripts and building the documentation locally require installation of `Python 3.8 <https://www.python.org/>`__.
+Running scripts and building the documentation locally require installation of `Python 3.9 <https://www.python.org/>`__.
 
 Once Python is installed, clone this repository (including datasets):
 
@@ -53,7 +53,7 @@ Finally, create and activate a virtual environment, and install all dependencies
 
    .. code:: sh
 
-      python3.8 -m venv env
+      python3.9 -m venv env
       source env/bin/activate
       pip install -r requirements.txt
 
@@ -61,7 +61,7 @@ Finally, create and activate a virtual environment, and install all dependencies
 
    .. code:: sh
 
-      conda create --name ml-elec-model python=3.8
+      conda create --name ml-elec-model python=3.9
       conda activate ml-elec-model
       conda install --channel conda-forge --file requirements.txt
 
