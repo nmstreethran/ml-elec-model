@@ -1,21 +1,55 @@
-image: python:3.9
+.python:
+  image: python:3.9
+  variables:
+    PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache/pip
+  cache:
+    key: python-cache
+    paths:
+      - .cache/pip
+      - env/
+  before_script:
+    - python3.9 -m venv env
+    - source env/bin/activate
+    - pip install -r requirements.txt
+  except:
+    refs:
+      - schedules
 
-variables:
-  PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache/pip
+.pages:
+  extends: .python
+  script:
+    - sed
+      -e "s/nithiya.gitlab.io\/ml-elec-model\//\`& <.\/index.html>\`__/"
+      -e "1,3d" README.rst > docs/readme.rst
+    - sphinx-build -b html docs public
+  only:
+    changes:
+      - README.rst
+      - docs/**/*
 
-cache:
-  key: python-cache
-  paths:
-    - .cache/pip
-    - env/
+# building and deploying Sphinx doc
+pages:
+  extends: .pages
+  stage: deploy
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 week
+  only:
+    refs:
+      - master
 
-before_script:
-  - python3.9 -m venv env
-  - source env/bin/activate
-  - pip install -r requirements.txt
+# testing Sphinx doc build
+test_pages:
+  extends: .pages
+  stage: test
+  only:
+    refs:
+      - merge_requests
 
 # linting Python scripts
-lint:
+test_lint:
+  extends: .python
   stage: test
   script:
     - pip install flake8
@@ -25,16 +59,12 @@ lint:
       - merge_requests
     changes:
       - "**/*.py"
-  except:
-    refs:
-      - schedules
 
 # checking links in markdown and reStructuredText files
 # https://github.com/dkhamsing/awesome_bot
-link_test:
+test_links:
   stage: test
   image: ruby:latest
-  cache: {}
   before_script:
     - gem install awesome_bot
   script:
@@ -48,45 +78,3 @@ link_test:
     changes:
       - "**/*.md"
       - "**/*.rst"
-
-# testing Sphinx doc build
-pages_test:
-  stage: test
-  script:
-    - 'sed
-      -e "s/nithiya.gitlab.io\/ml-elec-model\//\`& <.\/index.html>\`__/"
-      -e "1,3d" README.rst > docs/readme.rst'
-    - sphinx-build -b html docs test
-  artifacts:
-    paths:
-      - test
-  only:
-    refs:
-      - merge_requests
-    changes:
-      - README.rst
-      - docs/**/*
-  except:
-    refs:
-      - schedules
-
-# building and deploying Sphinx doc
-pages:
-  stage: deploy
-  script:
-    - 'sed
-      -e "s/nithiya.gitlab.io\/ml-elec-model\//\`& <.\/index.html>\`__/"
-      -e "1,3d" README.rst > docs/readme.rst'
-    - sphinx-build -b html docs public
-  artifacts:
-    paths:
-      - public
-  only:
-    refs:
-      - master
-    changes:
-      - README.rst
-      - docs/**/*
-  except:
-    refs:
-      - schedules
