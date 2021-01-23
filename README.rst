@@ -112,8 +112,6 @@ This repository is a continuation and improvement of the work done by Nithiya St
 
 Contributing guidelines is adapted from the `Open Science MOOC <https://github.com/OpenScienceMOOC/Module-5-Open-Research-Software-and-Open-Source>`__. The contents of the MOOC are licensed under a `Creative Commons Zero v1.0 Universal (CC0-1.0) license <https://creativecommons.org/publicdomain/zero/1.0/>`__.
 
-The Creative Commons license in markdown format is imported from `idleberg/Creative-Commons-Markdown <https://github.com/idleberg/Creative-Commons-Markdown>`__.
-
 The HTML documentation uses the `PyData Sphinx Theme <https://pydata-sphinx-theme.readthedocs.io/en/latest/>`__. Copyright (c) 2019, PyData Community. Licensed under `The 3-Clause BSD License (BSD-3-Clause) <https://opensource.org/licenses/BSD-3-Clause>`__.
 
 The HTML documentation uses `Twemoji <https://twemoji.twitter.com/>`__. Copyright (c) Twitter. The graphics are licensed under a `CC-BY-4.0 license <https://creativecommons.org/licenses/by/4.0/>`__.

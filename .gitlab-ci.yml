@@ -1,11 +1,11 @@
 .python:
   image: python:3.9
   variables:
-    PIP_CACHE_DIR: $CI_PROJECT_DIR/.cache/pip
+    PIP_CACHE_DIR: .cache/pip
   cache:
     key: python-cache
     paths:
-      - .cache/pip
+      - $PIP_CACHE_DIR
       - env/
   before_script:
     - python3.9 -m venv env
@@ -42,7 +42,7 @@ pages:
 # testing Sphinx doc build
 test_pages:
   extends: .pages
-  stage: test
+  stage: build
   only:
     refs:
       - merge_requests
@@ -65,16 +65,25 @@ test_lint:
 test_links:
   stage: test
   image: ruby:latest
+  variables:
+    GEM_HOME: .gem
+    GEM_PATH: $GEM_HOME/bin:$GEM_PATH
+  cache:
+    key: awesome_bot-cache
+    paths:
+      - $GEM_HOME
   before_script:
+    - export PATH="$GEM_PATH:$PATH"
     - gem install awesome_bot
   script:
     - "awesome_bot --allow-dupe --skip-save-results --white-list
       bkg.bund.de,doi.org,dnvgl.com/services/forecaster-94823,\
-      elia.be,ml-elec-model.git `find . -name '*.md'` `find . -name '*.rst'`"
+      elia.be,ml-elec-model.git
+      `find . -path ./.gem -prune -false -o -name '*.md' -o -name '*.rst'`"
   only:
     refs:
-      - schedules
       - merge_requests
+      - schedules
     changes:
       - "**/*.md"
       - "**/*.rst"
