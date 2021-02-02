@@ -1,3 +1,0 @@
-[submodule "data"]
-	path = data
-	url = git@gitlab.com:nithiya/ml-elec-model-data.git
